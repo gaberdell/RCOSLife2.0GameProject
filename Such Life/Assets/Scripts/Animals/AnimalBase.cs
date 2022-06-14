@@ -23,5 +23,10 @@ public class AnimalBase : MonoBehaviour
     public float posX;
     public float posY;
 
+    public string  getAnimal()
+    {
+        return this.GetType().Name; //Get the animal type
+    }
+
 
 }
