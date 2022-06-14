@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D body;
-    public SpriteRenderer spriteRenderer;
+    //public SpriteRenderer spriteRenderer;
 
 
 
@@ -14,15 +14,18 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 direction;
 
+    /*
     void SpriteFlip() {
         //if we are facing right, and the player holds left, flip.
         if(!spriteRenderer.flipX && direction.x < 0){
             spriteRenderer.flipX = true;
-        } else if (spriteRenderer.flipX && direction.x > 0) /*if we are facing left, and the player holds right, flip.*/
+        } else if (spriteRenderer.flipX && direction.x > 0) /*if we are facing left, and the player holds right, flip.
         {
             spriteRenderer.flipX = false;
         }
     }
+    */
+
     // Start is called before the first frame update
     void Start() {
         
@@ -37,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() {
         //Movement
-        SpriteFlip();
+        //SpriteFlip();
         body.MovePosition(body.position + direction * walkSpeed * Time.fixedDeltaTime);
     }
 }
