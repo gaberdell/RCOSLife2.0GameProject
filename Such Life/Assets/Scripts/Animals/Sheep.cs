@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Sheep : AnimalBase
-{   
-    
+{
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,8 @@ public class Sheep : AnimalBase
         runspeed = 1.4f;
         awareness = 5;
         currState = State.Idling;
-        position = new Vector2(transform.position.x, transform.position.x);
+        position = new Vector2(transform.position.x, transform.position.y);
+        newposition = position;
         time = 0f;
         timeDelay = 2f;
     }
@@ -48,8 +49,14 @@ public class Sheep : AnimalBase
         }
         else
         {
-            transform.position = Vector2.MoveTowards(position, newposition, 0.01f);
-            position = new Vector2(transform.position.x, transform.position.x);
+
+            transform.position = Vector2.MoveTowards(position, newposition, walkspeed / 300);
+            position = transform.position;
         }
     }
+
+        void OnCollisionEnter(Collision collision)
+        {
+            
+        }
 }

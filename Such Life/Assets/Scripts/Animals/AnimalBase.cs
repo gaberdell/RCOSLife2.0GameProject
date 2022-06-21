@@ -25,6 +25,7 @@ public class AnimalBase : MonoBehaviour
     public Vector2 newposition;
     public float time;
     public float timeDelay;
+    public bool reached; //Determines if the animal has reached its destination
     //random pos
     public void PositionChange()
     {
@@ -34,9 +35,18 @@ public class AnimalBase : MonoBehaviour
         float posymin = transform.position.y - currSpeed;
         float posymax = transform.position.y + currSpeed;
 
-
-        newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
-        
+        int gen = Random.Range(0, 2);
+        if (gen == 0) {
+        newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
+    }
+        else if (gen == 1)
+        {
+            newposition = new Vector2(transform.position.x, Random.Range(posymin, posymax));
+        }
+        else if(gen == 2)
+        {
+            newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+        }
     }
 
     public string  getAnimal()
