@@ -19,6 +19,7 @@ public class Sheep : AnimalBase
         newposition = position;
         time = 0f;
         timeDelay = 2f;
+        player = GameObject.Find("MC");
     }
 
     // Update is called once per frame
@@ -55,8 +56,15 @@ public class Sheep : AnimalBase
         }
     }
 
-        void OnCollisionEnter(Collision collision)
+        void OnCollisionEnter2D(Collision2D collision)
         {
-            
+
+        if (collision.gameObject.tag == "Player")
+        {
+            float posdiffx = transform.position.x - player.transform.position.x * 4;
+            float posdiffy = transform.position.x - player.transform.position.x * 4;
+            newposition.x = transform.position.x - posdiffx;
+            newposition.y = transform.position.y - posdiffy;
         }
+    }
 }

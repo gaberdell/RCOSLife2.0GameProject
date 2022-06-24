@@ -26,6 +26,8 @@ public class AnimalBase : MonoBehaviour
     public float time;
     public float timeDelay;
     public bool reached; //Determines if the animal has reached its destination
+    public GameObject player;
+    public RaycastHit hit;
     //random pos
     public void PositionChange()
     {
