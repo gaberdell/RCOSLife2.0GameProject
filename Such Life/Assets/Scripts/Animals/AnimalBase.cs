@@ -36,9 +36,10 @@ public class AnimalBase : MonoBehaviour
         float posymax = transform.position.y + currSpeed;
 
         int gen = Random.Range(0, 2);
-        if (gen == 0) {
-        newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
-    }
+        if (gen == 0) 
+        {
+            newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
+        }
         else if (gen == 1)
         {
             newposition = new Vector2(transform.position.x, Random.Range(posymin, posymax));
