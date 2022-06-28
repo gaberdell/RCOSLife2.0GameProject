@@ -26,6 +26,8 @@ public class AnimalBase : MonoBehaviour
     public float time;
     public float timeDelay;
     public bool reached; //Determines if the animal has reached its destination
+    public GameObject player;
+    public RaycastHit hit;
     //random pos
     public void PositionChange()
     {
@@ -36,9 +38,10 @@ public class AnimalBase : MonoBehaviour
         float posymax = transform.position.y + currSpeed;
 
         int gen = Random.Range(0, 2);
-        if (gen == 0) {
-        newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
-    }
+        if (gen == 0) 
+        {
+            newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
+        }
         else if (gen == 1)
         {
             newposition = new Vector2(transform.position.x, Random.Range(posymin, posymax));
