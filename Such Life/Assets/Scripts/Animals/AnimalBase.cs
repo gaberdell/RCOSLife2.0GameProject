@@ -20,6 +20,7 @@ public class AnimalBase : MonoBehaviour
     public float currHP; //Current HP of Animal
     public float currMaxSpeed; //Current possible max speed
     public float currSpeed; //Current Speed of Animal
+    public float weight; //Determines how much the animal will get pushed
     public Animator animate;
     public Vector2 position;
     public Vector2 newposition;
