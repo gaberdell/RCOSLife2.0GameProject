@@ -10,9 +10,9 @@ using UnityEngine.AI;
 public class AnimalBase : MonoBehaviour
 {   
     //The State and Stats of animal
-    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following } //The different states the animal can be in
+    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Hungry } //The different states the animal can be in
     public State currState = State.Idling; 
-    public int awareness; //When the animal can detect the player. Is different for different animals, and can change depending on state
+    public int awareness; //When the animal can detect objects. Is different for different animals, and can change depending on state
     public float walkspeed; //How fast the animal walks
     public float runspeed; //How fast the animal runs
     public Rigidbody2D animal;
@@ -29,6 +29,9 @@ public class AnimalBase : MonoBehaviour
     public bool reached; //Determines if the animal has reached its destination
     public GameObject player;
     public RaycastHit hit;
+
+
+
     //random pos
     public void PositionChange()
     {
@@ -74,6 +77,11 @@ public class AnimalBase : MonoBehaviour
     {
         currMaxSpeed = 0;
         currState = State.Idling;
+    }
+
+    public void Hungry()
+    {
+        currState = State.Hungry;
     }
 
     public float getHP()

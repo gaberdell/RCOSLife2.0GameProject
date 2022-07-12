@@ -56,15 +56,18 @@ public class Sheep : AnimalBase
         }
     }
 
-        void OnCollisionEnter2D(Collision2D collision)
-        {
+    void OnCollisionEnter2D(Collision2D collision)
+    {
 
         if (collision.gameObject.tag == "Player")
         {
             float posdiffx = transform.position.x - player.transform.position.x * 4;
             float posdiffy = transform.position.x - player.transform.position.x * 4;
-            newposition.x = transform.position.x - posdiffx;
-            newposition.y = transform.position.y - posdiffy;
+            
+                newposition.x = transform.position.x - posdiffx;
+                newposition.y = transform.position.y - posdiffy;
+
+            
         }
     }
 }
