@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Slim : mobBase
 {
+
+    public Transform player;
+    public float awareness;
+    public float radius;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +35,21 @@ public class Slim : mobBase
     void PositionChange()
     {
 
+        if(playerSighted){
+            chasing();
+        }
+        else{
+            
+            wandering();
+        }
+        
+    }
+
+    void chasing(){
+
+    }
+
+    void wandering(){
         //the character will walk in random angles for every 1.3s
         float angle = Random.Range(0f, 360f);
         Quaternion rotate = Quaternion.AngleAxis(angle, Vector3.forward); //rotate the character with random angle
@@ -38,45 +58,54 @@ public class Slim : mobBase
         latestUP.Normalize();
         transform.up = latestUP;
         timeToChangeDirection = 2.0f;
-
     }
 
-
-
-    /*public void PositionChange()
+    //Checking on the FOV circle in an interval
+    private IEnumerator FOVCheck()
     {
-        float posxmin = transform.position.x - 1.0f;
-        float posxmax = transform.position.x + 1.0f;
-        float posymin = transform.position.y - 1.0f;
-        float posymax = transform.position.y + 1.0f;
+        WaitForSeconds wait = new WaitForSeconds(0.2f);
 
-        currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+        while (true)
+        {
+            yield return wait;
+            FOV();
+        }
     }
 
-    // Update is called once per frame
-    private void FixedUpdate()
+    //check for collider on our target layer
+    private void FOV()
     {
-        time_move -= Time.deltaTime;
-        if(playerSighted){ // chase state
-            playerObj = GameObject.Find("player");
-            transform.position = Vector2.MoveTowards(this.transform.position, playerObj.transform.position, walkSpeed * Time.deltaTime);
-        } else { //wandering state
-            //wandering around with breaks
-            transform.position = Vector2.MoveTowards(this.transform.position, monster.transform.position, .00f);
-    
-            if (time_move <= 2f)
+        Collider2D[] rangeCheckPlayer = Physics2D.OverlapCircleAll(transform.position, radius, targetLayerPlayer);
+        //Check to see if anything in the collison box
+        if (rangeCheckPlayer.Length > 0)
+        {
+            //check to see if the player is detected within range
+            Transform targetPlayer = rangeCheckPlayer[0].transform;
+            Vector2 directionToTargetPlayer = (targetPlayer.position - transform.position).normalized;
+
+            if (Vector2.Angle(transform.up, directionToTargetPlayer) < angle / 2)
             {
-                transform.position = Vector2.MoveTowards(this.transform.position, currPosition, walkSpeed/400);
+                float distanceToTargetPlayer = Vector2.Distance(transform.position, targetPlayer.position);
+                //check to see if the Raycast hit the obstructionLayer object or not, if not
+                //the enemy spotted the player
+                if (!Physics2D.Raycast(transform.position, directionToTargetPlayer, distanceToTargetPlayer, obstructionLayer))
+                {
+                    playerSighted = true;
+                }
+                else
+                {
+                    playerSighted = false;
+                }
             }
-
-            if (time_move <= 0f)
+            else
             {
-                PositionChange();
-                time_move = 2.8f;
+                playerSighted = false;
             }
         }
-    }*/
-
-
+        else if (playerSighted)
+        {
+            playerSighted = false;
+        }
+    }
 
 }
