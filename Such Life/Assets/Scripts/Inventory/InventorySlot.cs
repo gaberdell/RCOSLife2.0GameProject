@@ -5,7 +5,7 @@ using UnityEngine;
 
 [System.Serializable]
 
-public class InventorySlots
+public class InventorySlot
 {
     [SerializeField] private InventoryItemData itemData;
     [SerializeField] private int stackSize;
@@ -14,14 +14,14 @@ public class InventorySlots
     public int StackSize => stackSize;
 
     /* Constructor */
-    public InventorySlots(InventoryItemData itemInfo, int amount)
+    public InventorySlot(InventoryItemData itemInfo, int amount)
     {
         itemData = itemInfo;
         stackSize = amount;
     }
 
     //empty out the slot (i.e. delete an item)
-    public InventorySlots()
+    public InventorySlot()
     {
         ClearSlot();
     }
@@ -44,6 +44,12 @@ public class InventorySlots
     public void RemoveFromStack(int amount)
     {
         stackSize -= amount;
+    }
+
+    public void UpdateInventorySlot(InventoryItemData data, int amount)
+    {
+        itemData = data;
+        stackSize = amount;
     }
 
     //check to see if there is room left in stack, if yes, combine until

@@ -50,24 +50,21 @@ public class Sheep : AnimalBase
         }
         else
         {
-
-            transform.position = Vector2.MoveTowards(position, newposition, walkspeed / 300);
-            position = transform.position;
+            if (currState == State.Pushed)
+            {
+                newposition = transform.position;
+                position = transform.position;
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(position, newposition, walkspeed / 300);
+                position = transform.position;
+            }
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void FixedUpdate()
     {
 
-        if (collision.gameObject.tag == "Player")
-        {
-            float posdiffx = transform.position.x - player.transform.position.x * 4;
-            float posdiffy = transform.position.x - player.transform.position.x * 4;
-            
-                newposition.x = transform.position.x - posdiffx;
-                newposition.y = transform.position.y - posdiffy;
-
-            
-        }
     }
 }

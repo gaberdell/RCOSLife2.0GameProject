@@ -10,7 +10,7 @@ using UnityEngine.AI;
 public class AnimalBase : MonoBehaviour
 {   
     //The State and Stats of animal
-    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Hungry } //The different states the animal can be in
+    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Hungry, Pushed } //The different states the animal can be in
     public State currState = State.Idling; 
     public int awareness; //When the animal can detect objects. Is different for different animals, and can change depending on state
     public float walkspeed; //How fast the animal walks
@@ -21,6 +21,7 @@ public class AnimalBase : MonoBehaviour
     public float currMaxSpeed; //Current possible max speed
     public float currSpeed; //Current Speed of Animal
     public float weight; //Determines how much the animal will get pushed
+    
     public Animator animate;
     public Vector2 position;
     public Vector2 newposition;
@@ -92,5 +93,23 @@ public class AnimalBase : MonoBehaviour
     public float getSpeed()
     {
         return currSpeed;
+    }
+
+
+   
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.tag == "Player")
+        { 
+                currState = State.Pushed;            
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+            newposition = transform.position;
+            currState = State.Idling;   
+
     }
 }
