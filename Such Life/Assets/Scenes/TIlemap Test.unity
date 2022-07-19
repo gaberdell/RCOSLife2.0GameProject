@@ -173,6 +173,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &672589664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+  m_PrefabInstance: {fileID: 1813457449}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &672589665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672589664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 168803ef6470e4c43829505cf53c60fc, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &701661472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,6 +1973,7 @@ MonoBehaviour:
   timeDelay: 0
   reached: 0
   player: {fileID: 0}
+  aniSprite: {fileID: 0}
 --- !u!50 &836133678
 Rigidbody2D:
   serializedVersion: 4
@@ -2062,7 +2098,7 @@ GameObject:
   - component: {fileID: 922345621}
   - component: {fileID: 922345620}
   - component: {fileID: 922345623}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Slim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2092,6 +2128,10 @@ MonoBehaviour:
   timeToChangeDirection: 0
   time_move: 3
   playerObj: {fileID: 0}
+  player: {fileID: 0}
+  awareness: 0
+  radius: 0
+  angle: 0
 --- !u!212 &922345621
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2131,8 +2171,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 3f0d6662cdab9b348bfe4829d11e2a77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2185,6 +2225,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1893995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.1893995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1893995
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7847
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1568
+      objectReference: {fileID: 0}
     - target: {fileID: 5611377554060918271, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_IsTrigger
       value: 0
