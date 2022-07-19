@@ -8,6 +8,8 @@ public class Slim : mobBase
     public Transform player;
     public float awareness;
     public float radius;
+    public float angle;
+    //public UnityEngine.AI.NavMeshAgent player;
 
     // Start is called before the first frame update
     void Start()
@@ -68,12 +70,12 @@ public class Slim : mobBase
         while (true)
         {
             yield return wait;
-            FOV();
+            //FOV();
         }
     }
 
     //check for collider on our target layer
-    private void FOV()
+    /*private void FOV()
     {
         Collider2D[] rangeCheckPlayer = Physics2D.OverlapCircleAll(transform.position, radius, targetLayerPlayer);
         //Check to see if anything in the collison box
@@ -106,6 +108,6 @@ public class Slim : mobBase
         {
             playerSighted = false;
         }
-    }
+    }*/
 
 }
