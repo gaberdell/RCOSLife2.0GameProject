@@ -17,7 +17,14 @@ public class mobBase : MonoBehaviour
     public float timeToChangeDirection = 1.3f;
     public float time_move;
     //public Animator an;
-    public GameObject playerObj;
+    public GameObject monsterObj;
+    public GameObject player;
+    public Vector2 newPosition;
+
+    public float posxmin;
+    public float posymin;
+    public float posxmax;
+    public float posymax;
 
     /*void PositionChange()
     {
@@ -31,11 +38,6 @@ public class mobBase : MonoBehaviour
         transform.up = latestUP;
 
         timeToChangeDirection -= Time.deltaTime;
-
-        if (timeToChangeDirection <= 0)
-        {
-            PositionChange();
-        }
 
         monster.velocity = transform.up*2;
     }
