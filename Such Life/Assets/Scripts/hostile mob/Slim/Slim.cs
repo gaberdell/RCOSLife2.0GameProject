@@ -21,7 +21,7 @@ public class Slim : mobBase
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
-        //agent.updateUPAxis = false;
+        agent.updateUpAxis = false;
 
         maxHealth = 5;
         damage = 2;
