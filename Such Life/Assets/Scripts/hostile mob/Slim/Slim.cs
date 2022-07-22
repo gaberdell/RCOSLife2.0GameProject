@@ -1,65 +1,81 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Slim : mobBase
 {
-
-    public Transform player;
     public float awareness;
     public float radius;
     public float angle;
+    public SpriteRenderer slimeSprite;
+    public float wanderingSpeed;
     //public UnityEngine.AI.NavMeshAgent player;
+    public Transform target;
+
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
         maxHealth = 5;
         damage = 2;
         currHealth = maxHealth;
         walkSpeed = 1f;
+        wanderingSpeed = 0.01f;
         currPosition = new Vector2(transform.position.x, transform.position.y);
         playerSighted = false;
     }
 
     void Update(){
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        timeToChangeDirection -= Time.deltaTime;
-
-        if (timeToChangeDirection <= 0)
-        {
-            PositionChange();
-        }
-
-        monster.velocity = transform.up/2;
+        chasing(target);
     }
 
     void PositionChange()
     {
 
-        if(playerSighted){
-            chasing();
-        }
-        else{
-            
-            wandering();
-        }
+        posxmin = transform.position.x - 5.0f;
+        posxmax = transform.position.x + 5.0f;
+        posymin = transform.position.y - 5.0f;
+        posymax = transform.position.y + 5.0f;
+
+
+        newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         
     }
 
-    void chasing(){
+    void chasing(Transform target){
 
+        agent.SetDestination(target.position);
     }
 
     void wandering(){
         //the character will walk in random angles for every 1.3s
-        float angle = Random.Range(0f, 360f);
-        Quaternion rotate = Quaternion.AngleAxis(angle, Vector3.forward); //rotate the character with random angle
-        Vector3 latestUP = rotate* Vector3.up;
-        latestUP.z = 0;
-        latestUP.Normalize();
-        transform.up = latestUP;
-        timeToChangeDirection = 2.0f;
+
+        timeToChangeDirection -= Time.deltaTime;
+
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, .00f);
+
+        //an.SetBool("playerSighted", false);
+        if (timeToChangeDirection <= 2f)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, newPosition, wanderingSpeed);
+        }
+
+        if (timeToChangeDirection <= 0f)
+        {
+            PositionChange();
+            timeToChangeDirection = 2.8f;
+        }
+
+
     }
 
     //Checking on the FOV circle in an interval
@@ -71,6 +87,23 @@ public class Slim : mobBase
         {
             yield return wait;
             //FOV();
+        }
+    }
+
+    private void flipSprite(GameObject target)
+    {
+        Vector3 direction = target.transform.position - this.transform.position;
+        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //flip sprites based on the direction of the target and "this"
+        if (angle >= 90 || angle <= -90)
+        {
+            //face left
+            slimeSprite.flipX = false;
+            
+        }
+        else
+        {
+            slimeSprite.flipX = true;
         }
     }
 

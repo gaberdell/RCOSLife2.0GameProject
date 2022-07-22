@@ -30,7 +30,7 @@ public class AnimalBase : MonoBehaviour
     public bool reached; //Determines if the animal has reached its destination
     public GameObject player;
     public RaycastHit hit;
-
+    public SpriteRenderer aniSprite;
 
 
     //random pos
@@ -55,6 +55,7 @@ public class AnimalBase : MonoBehaviour
         {
             newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         }
+        flipSprite();
     }
 
     public string  getAnimal()
@@ -95,8 +96,23 @@ public class AnimalBase : MonoBehaviour
         return currSpeed;
     }
 
+    private void flipSprite()
+    {
+        Vector2 direction = newposition - position; 
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //flip sprites based on the direction of the target and "this"
+        if (angle >= 90 || angle <= -90)
+        {
+            //face left
+            aniSprite.flipX = false;
 
-   
+        }
+        else
+        {
+            aniSprite.flipX = true;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
 

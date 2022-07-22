@@ -20,6 +20,7 @@ public class Sheep : AnimalBase
         time = 0f;
         timeDelay = 2f;
         player = GameObject.Find("MC");
+        aniSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

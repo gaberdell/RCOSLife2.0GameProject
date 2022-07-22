@@ -9,12 +9,17 @@ public abstract class InventoryDisplay : MonoBehaviour
 {
     [SerializeField] PlayerItemData playerInventoryItem;    
 
-    protected InventorySystem inventorysystem;
+    protected InventorySystem inventorySystem;
     protected Dictionary<InventorySlot_UI, InventorySlot> slotDictionary;
 
     //getter
-    public InventorySystem InventorySystem => inventorysystem;
+    public InventorySystem InventorySystem => inventorySystem;
     public Dictionary<InventorySlot_UI, InventorySlot> SlotDictionary => slotDictionary;
+
+    protected virtual void Start()
+    {
+
+    }
 
     public abstract void AssignSlot(InventorySystem invToDisplay);
 
