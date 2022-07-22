@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Slim : mobBase
 {
@@ -10,10 +11,18 @@ public class Slim : mobBase
     public SpriteRenderer slimeSprite;
     public float wanderingSpeed;
     //public UnityEngine.AI.NavMeshAgent player;
+    public Transform target;
+
+    public NavMeshAgent agent;
 
     // Start is called before the first frame update
     void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+
         maxHealth = 5;
         damage = 2;
         currHealth = maxHealth;
@@ -23,31 +32,10 @@ public class Slim : mobBase
         playerSighted = false;
     }
 
-    void FixedUpdate(){
+    void Update(){
+        target = GameObject.FindGameObjectWithTag("Player").transform;
 
-        timeToChangeDirection -= Time.deltaTime;
-
-        /*if (timeToChangeDirection <= 0)
-        {
-            PositionChange();
-            flipSprite(monsterObj);
-        }*/
-
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, .00f);
-
-        //an.SetBool("playerSighted", false);
-        if (timeToChangeDirection <= 2f)
-        {
-            transform.position = Vector2.MoveTowards(this.transform.position, newPosition, wanderingSpeed);
-        }
-
-        if (timeToChangeDirection <= 0f)
-        {
-            PositionChange();
-            timeToChangeDirection = 2.8f;
-        }
-
-        //monster.velocity = transform.up/2;
+        chasing(target);
     }
 
     void PositionChange()
@@ -63,19 +51,29 @@ public class Slim : mobBase
         
     }
 
-    void chasing(){
+    void chasing(Transform target){
 
+        agent.SetDestination(target.position);
     }
 
     void wandering(){
         //the character will walk in random angles for every 1.3s
-        angle = Random.Range(0f, 360f);
-        Quaternion rotate = Quaternion.AngleAxis(angle, Vector3.forward); //rotate the character with random angle
-        Vector3 latestUP = rotate* Vector3.up;
-        latestUP.z = 0;
-        latestUP.Normalize();
-        transform.up = latestUP;
-        timeToChangeDirection = 2.0f;
+
+        timeToChangeDirection -= Time.deltaTime;
+
+        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, .00f);
+
+        //an.SetBool("playerSighted", false);
+        if (timeToChangeDirection <= 2f)
+        {
+            transform.position = Vector2.MoveTowards(this.transform.position, newPosition, wanderingSpeed);
+        }
+
+        if (timeToChangeDirection <= 0f)
+        {
+            PositionChange();
+            timeToChangeDirection = 2.8f;
+        }
 
 
     }
