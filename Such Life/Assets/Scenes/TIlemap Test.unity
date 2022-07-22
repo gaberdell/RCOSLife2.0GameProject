@@ -1938,6 +1938,7 @@ MonoBehaviour:
   timeDelay: 0
   reached: 0
   player: {fileID: 0}
+  aniSprite: {fileID: 0}
 --- !u!50 &836133678
 Rigidbody2D:
   serializedVersion: 4
@@ -2091,7 +2092,18 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0}
   timeToChangeDirection: 0
   time_move: 3
-  playerObj: {fileID: 0}
+  monsterObj: {fileID: 922345619}
+  player: {fileID: 998963367}
+  newPosition: {x: 0, y: 0}
+  posxmin: 0
+  posymin: 0
+  posxmax: 0
+  posymax: 0
+  awareness: 0
+  radius: 0
+  angle: 0
+  slimeSprite: {fileID: 922345621}
+  wanderingSpeed: 0
 --- !u!212 &922345621
 SpriteRenderer:
   m_ObjectHideFlags: 0
