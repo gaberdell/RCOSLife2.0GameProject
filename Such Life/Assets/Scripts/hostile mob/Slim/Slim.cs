@@ -58,16 +58,17 @@ public class Slim : mobBase
     }
 
     void wandering(){
-        //the character will walk in random angles for every 1.3s
+        //the Slim will walk in random angles for every 1.3s
 
         timeToChangeDirection -= Time.deltaTime;
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, .00f);
+        //transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, .00f);
 
         //an.SetBool("playerSighted", false);
         if (timeToChangeDirection <= 2f)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, newPosition, wanderingSpeed);
+            //transform.position = Vector2.MoveTowards(this.transform.position, newPosition, wanderingSpeed);
+            agent.SetDestination(newPosition);
         }
 
         if (timeToChangeDirection <= 0f)
