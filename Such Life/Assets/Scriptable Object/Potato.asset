@@ -16,5 +16,5 @@ MonoBehaviour:
   DisplayName: Potato
   Description: A starchy vegetable that can be turn into a magical clear liquid.
   Icon: {fileID: -6137242429100743368, guid: 15cd4fb3ad94c264ea503f760f3f15ff, type: 3}
-  MaxStackSize: 5
+  MaxStackSize: 1
   Type: 

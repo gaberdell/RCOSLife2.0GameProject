@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 160807297}
   - component: {fileID: 160807298}
   m_Layer: 0
-  m_Name: PlayerObject
+  m_Name: MouseObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -418,6 +418,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemSprite: {fileID: 664023951}
   ItemCount: {fileID: 735336037}
+  AssignedInventorySlot:
+    itemData: {fileID: 0}
+    stackSize: -1
 --- !u!1 &214179115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f86d3b7c9e7a8444491ddcb63a0f87f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInventoryItem: {fileID: 160807298}
+  mouseInventoryItem: {fileID: 0}
   inventoryHolder: {fileID: 5642498061771927946}
   slots:
   - {fileID: 651600963}
@@ -1256,7 +1259,7 @@ GameObject:
   - component: {fileID: 664023952}
   - component: {fileID: 664023951}
   m_Layer: 5
-  m_Name: Icon (1)
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1575,7 +1578,7 @@ GameObject:
   - component: {fileID: 735336038}
   - component: {fileID: 735336037}
   m_Layer: 5
-  m_Name: Quantity (1)
+  m_Name: Quantity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1629,8 +1632,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
