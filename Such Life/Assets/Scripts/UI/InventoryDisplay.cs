@@ -43,8 +43,6 @@ public abstract class InventoryDisplay : MonoBehaviour
     //This function will incharge of picking up and placing item in the Hotbar
     public void SlotClicked(InventorySlot_UI clickedUISlot)
     {
-        //If player is holding shift key? Split the Stack from the mouse
-
         //         If clicked slot have item and                             mouse is not holding an item
         if(clickedUISlot.AssignedInventorySlot.ItemData != null && mouseInventoryItem.AssignedInventorySlot.ItemData == null)
         {
@@ -56,14 +54,18 @@ public abstract class InventoryDisplay : MonoBehaviour
         }
 
         // If clicked slot don't have item and mouse is holding an item, then place down the item
+        if (clickedUISlot.AssignedInventorySlot.ItemData == null && mouseInventoryItem.AssignedInventorySlot.ItemData != null)
+        {
+            clickedUISlot.AssignedInventorySlot.AssignItem(mouseInventoryItem.AssignedInventorySlot);
+            clickedUISlot.UpdateUISlot();
 
+            mouseInventoryItem.ClearSlot();
+        }
         // If clicked slot has an item and mouse is holding an item, decide what to do?
         //Are both item the same?
         //Yes: Combine the item
         // If slot total item + mouse total item <= stackSize, combine those 2
         // If slot total item + mouse total item > stackSize, combine unil = to stackSize of the item on the slot and leave the rest on the mouse
         //No: Swap item of the slot and the mouse; 
-
-        Debug.Log("Slot clicked");
     }
 }
