@@ -32,6 +32,8 @@ public class AnimalBase : MonoBehaviour
     public RaycastHit hit;
     public SpriteRenderer aniSprite;
 
+    public NavMeshAgent navi;
+
 
     //random pos
     public void PositionChange()
