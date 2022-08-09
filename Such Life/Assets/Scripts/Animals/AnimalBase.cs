@@ -57,7 +57,8 @@ public class AnimalBase : MonoBehaviour
         {
             newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         }
-        flipSprite();
+        navi.speed = currSpeed*2;
+        navi.SetDestination(newposition);
     }
 
     public string  getAnimal()
@@ -88,6 +89,11 @@ public class AnimalBase : MonoBehaviour
         currState = State.Hungry;
     }
 
+    public void Follow()
+    {
+        currState = State.Following;
+    }
+
     public float getHP()
     {
         return currHP;
@@ -98,7 +104,7 @@ public class AnimalBase : MonoBehaviour
         return currSpeed;
     }
 
-    private void flipSprite()
+   public void flipSprite()
     {
         Vector2 direction = newposition - position; 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -126,8 +132,10 @@ public class AnimalBase : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
+        if (currState == State.Pushed)
+        {
             newposition = transform.position;
-            currState = State.Idling;   
-
+            currState = State.Idling;
+        }
     }
 }
