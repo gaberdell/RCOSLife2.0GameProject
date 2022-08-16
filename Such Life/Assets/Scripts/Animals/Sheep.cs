@@ -21,6 +21,9 @@ public class Sheep : AnimalBase
         timeDelay = 2f;
         player = GameObject.Find("MC");
         aniSprite = GetComponent<SpriteRenderer>();
+        navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        navi.updateRotation = false;
+        navi.updateUpAxis = false;
     }
 
     // Update is called once per frame
@@ -48,6 +51,15 @@ public class Sheep : AnimalBase
                     Idle();
                 }
             }
+            
+            if(currState == State.Following)
+            {
+                int gen = Random.Range(0, 100);
+                if (gen > 90)
+                {
+                    Idle();
+                }
+            }
         }
         else
         {
@@ -55,13 +67,24 @@ public class Sheep : AnimalBase
             {
                 newposition = transform.position;
                 position = transform.position;
+                navi.SetDestination(newposition);
+                int gen = Random.Range(0, 100);
+                if(gen > 90)
+                {
+                    Follow();
+                }
             }
-            else
+
+            else if(currState == State.Following)
             {
-                transform.position = Vector2.MoveTowards(position, newposition, walkspeed / 300);
-                position = transform.position;
+                newposition.x = player.transform.position.x;
+                newposition.y = player.transform.position.y;
+                navi.speed = walkspeed*2;
+                navi.SetDestination(newposition);
             }
         }
+        position = transform.position;
+        flipSprite();
     }
 
     void FixedUpdate()
