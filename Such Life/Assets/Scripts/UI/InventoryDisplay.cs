@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 
 /* This abstract class represent the slots in the player's inventory */
+/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+
 public abstract class InventoryDisplay : MonoBehaviour
 {
     [SerializeField] MouseItemData mouseInventoryItem;    
@@ -66,6 +68,65 @@ public abstract class InventoryDisplay : MonoBehaviour
         //Yes: Combine the item
         // If slot total item + mouse total item <= stackSize, combine those 2
         // If slot total item + mouse total item > stackSize, combine unil = to stackSize of the item on the slot and leave the rest on the mouse
-        //No: Swap item of the slot and the mouse; 
+        //No: Swap item of the slot and the mouse;
+
+        //both  mouse inventory and the clicked slot have item
+        if (clickedUISlot.AssignedInventorySlot.ItemData != null && mouseInventoryItem.AssignedInventorySlot.ItemData != null)
+        {
+            bool sameItem = clickedUISlot.AssignedInventorySlot.ItemData == mouseInventoryItem.AssignedInventorySlot.ItemData;
+            if (sameItem && clickedUISlot.AssignedInventorySlot.RoomLeftInStack(mouseInventoryItem.AssignedInventorySlot.StackSize)) //combine items it does not reach the max stack
+            {
+                clickedUISlot.AssignedInventorySlot.AssignItem(mouseInventoryItem.AssignedInventorySlot);
+                clickedUISlot.UpdateUISlot();
+
+                mouseInventoryItem.ClearSlot();
+            }
+            else if(sameItem && 
+                !clickedUISlot.AssignedInventorySlot.RoomLeftInStack(mouseInventoryItem.AssignedInventorySlot.StackSize, out int leftInStack))
+            {
+                //same item, not room left in the stack
+                if(leftInStack < 1)
+                {
+                    //stack full so swap item
+                    SwapSlots(clickedUISlot);
+                }
+                else
+                {
+                    //slot not at max, take item from mous inventory until max stack
+                    int remainingOnMouse = mouseInventoryItem.AssignedInventorySlot.StackSize - leftInStack;
+                    clickedUISlot.AssignedInventorySlot.AddToStack(leftInStack);
+                    clickedUISlot.UpdateUISlot();
+
+                    var newItem = new InventorySlot(mouseInventoryItem.AssignedInventorySlot.ItemData, remainingOnMouse);
+                    mouseInventoryItem.ClearSlot();
+                    mouseInventoryItem.UpdateMouseSlot(newItem);
+
+                }
+            }
+            //both mouse inventory and clicked slot does not have the same item
+            if (!sameItem)
+            {
+                SwapSlots(clickedUISlot);
+            } 
+        }
+
+    }
+
+    private void SwapSlots(InventorySlot_UI clickedUISlot)
+    {
+
+        //clone the item on the mouse and store it, then remove the item in the mouse inventory
+        var clonedSlot = new InventorySlot(mouseInventoryItem.AssignedInventorySlot.ItemData, mouseInventoryItem.AssignedInventorySlot.StackSize);
+        mouseInventoryItem.ClearSlot();
+
+        //update the mouseInventory with the desired swapped item
+        mouseInventoryItem.UpdateMouseSlot(clickedUISlot.AssignedInventorySlot);
+
+        //empty the spot that the player clicks
+        clickedUISlot.ClearSlot();
+
+        //then put back the item that we store (in the temp var) from the mouse at the beginning to the clicked slot.
+        clickedUISlot.AssignedInventorySlot.AssignItem(clonedSlot);
+        clickedUISlot.UpdateUISlot();
     }
 }
