@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/* Codes provided by: Dan Pos - Game Dev Tutorials! */
 public class InventorySlot_UI : MonoBehaviour
 {
     [SerializeField] private Image itemSprite;

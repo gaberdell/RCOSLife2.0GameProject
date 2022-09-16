@@ -16,5 +16,5 @@ MonoBehaviour:
   DisplayName: Tomato
   Description: 'Red, juicy.... fruit.... hmmmm I thought it was a vegetable. '
   Icon: {fileID: 2134584563556110807, guid: 15cd4fb3ad94c264ea503f760f3f15ff, type: 3}
-  MaxStackSize: 2
+  MaxStackSize: 5
   Type: 

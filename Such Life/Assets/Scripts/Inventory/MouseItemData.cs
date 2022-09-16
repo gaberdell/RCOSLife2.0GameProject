@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
 
+/* Codes provided by: Dan Pos - Game Dev Tutorials! */
 public class MouseItemData : MonoBehaviour
 {
     public Image ItemSprite;
