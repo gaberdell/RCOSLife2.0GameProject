@@ -33,8 +33,6 @@ public class Slim : mobBase
     }
 
     void Update(){
-        
-
         target = GameObject.FindGameObjectWithTag("Player").transform;
 
         chasing(target);
@@ -42,18 +40,15 @@ public class Slim : mobBase
 
     void PositionChange()
     {
-
         posxmin = transform.position.x - 5.0f;
         posxmax = transform.position.x + 5.0f;
         posymin = transform.position.y - 5.0f;
         posymax = transform.position.y + 5.0f;
 
         newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
-        
     }
 
     void chasing(Transform target){
-
         agent.SetDestination(target.position);
     }
 
