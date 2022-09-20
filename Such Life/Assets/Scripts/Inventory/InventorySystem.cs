@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using System.Linq;
 
+/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+
 [System.Serializable]
 public class InventorySystem
 {

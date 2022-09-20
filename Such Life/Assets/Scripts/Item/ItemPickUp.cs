@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+
 [RequireComponent(typeof(CircleCollider2D))]
 public class ItemPickUp : MonoBehaviour
 {

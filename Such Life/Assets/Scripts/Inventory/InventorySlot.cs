@@ -83,4 +83,20 @@ public class InventorySlot
         if (stackSize + amountToAdd <= itemData.MaxStackSize) return true;
         else return false;
     }
+
+    public bool SplitStack(out InventorySlot splitStack)
+    {
+        if (stackSize <= 1)
+        {
+            splitStack = null;
+            return false;
+        }
+
+        //calculate half of the stack
+        int halfStack = Mathf.RoundToInt(stackSize / 2);
+        RemoveFromStack(halfStack);
+
+        splitStack = new InventorySlot(itemData, halfStack);
+        return true;
+    }
 }

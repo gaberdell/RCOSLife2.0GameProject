@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+
 [System.Serializable]
 public class InventoryHolder : MonoBehaviour
 {
