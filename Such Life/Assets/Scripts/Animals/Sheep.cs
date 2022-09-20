@@ -8,7 +8,7 @@ public class Sheep : AnimalBase
     // Start is called before the first frame update
     void Start()
     {
-        HPCap = 90;
+        HPCap = 80;
         currHP = HPCap;
         currMaxSpeed = 0;
         walkspeed = 1f;
