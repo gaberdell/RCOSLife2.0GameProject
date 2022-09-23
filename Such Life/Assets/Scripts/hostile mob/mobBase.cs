@@ -26,6 +26,24 @@ public class mobBase : MonoBehaviour
     public float posxmax;
     public float posymax;
 
+    public float awareness;
+    public float radius;
+    public float angle;
+    public SpriteRenderer MobSprite;
+    public float wanderingSpeed;
+    public Transform target;
+    public NavMeshAgent agent;
+
+    void PositionChange()
+    {
+        posxmin = transform.position.x - 5.0f;
+        posxmax = transform.position.x + 5.0f;
+        posymin = transform.position.y - 5.0f;
+        posymax = transform.position.y + 5.0f;
+
+        newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+    }
+
     /*void PositionChange()
     {
 

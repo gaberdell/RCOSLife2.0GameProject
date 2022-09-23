@@ -5,15 +5,9 @@ using UnityEngine.AI;
 
 public class Slim : mobBase
 {
-    public float awareness;
-    public float radius;
-    public float angle;
-    public SpriteRenderer slimeSprite;
-    public float wanderingSpeed;
-    //public UnityEngine.AI.NavMeshAgent player;
-    public Transform target;
 
-    public NavMeshAgent agent;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -37,15 +31,7 @@ public class Slim : mobBase
         chasing(target);
     }
 
-    void PositionChange()
-    {
-        posxmin = transform.position.x - 5.0f;
-        posxmax = transform.position.x + 5.0f;
-        posymin = transform.position.y - 5.0f;
-        posymax = transform.position.y + 5.0f;
 
-        newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
-    }
 
     void chasing(Transform target){
         agent.SetDestination(target.position);
@@ -94,12 +80,12 @@ public class Slim : mobBase
         if (angle >= 90 || angle <= -90)
         {
             //face left
-            slimeSprite.flipX = false;
+            MobSprite.flipX = false;
             
         }
         else
         {
-            slimeSprite.flipX = true;
+            MobSprite.flipX = true;
         }
     }
 
