@@ -45,14 +45,28 @@ public abstract class InventoryDisplay : MonoBehaviour
     //This function will incharge of picking up and placing item in the Hotbar
     public void SlotClicked(InventorySlot_UI clickedUISlot)
     {
+        /*maybe change so that the user don't have to just press Shift to split but let
+        user customize the split key in the new Unity input system. (This is hardcoding :( ) */
+        bool playerPressedShift = Keyboard.current.leftShiftKey.isPressed;
+        
+        
         //         If clicked slot have item and                             mouse is not holding an item
         if(clickedUISlot.AssignedInventorySlot.ItemData != null && mouseInventoryItem.AssignedInventorySlot.ItemData == null)
         {
-            //If player is holding shift key? Split the Stack from the mouse
-
-            mouseInventoryItem.UpdateMouseSlot(clickedUISlot.AssignedInventorySlot);
-            clickedUISlot.ClearSlot();
-            return;
+            //If player is holding shift key? Split the Stack from inventory slot and 
+            //put it into mouse inventory
+            if (playerPressedShift && clickedUISlot.AssignedInventorySlot.SplitStack(out InventorySlot halfStackSlot)) //split stacc
+            {
+                mouseInventoryItem.UpdateMouseSlot(halfStackSlot);
+                clickedUISlot.UpdateUISlot();
+                return;
+            }
+            else
+            {
+                mouseInventoryItem.UpdateMouseSlot(clickedUISlot.AssignedInventorySlot);
+                clickedUISlot.ClearSlot();
+                return;
+            }
         }
 
         // If clicked slot don't have item and mouse is holding an item, then place down the item
@@ -62,6 +76,7 @@ public abstract class InventoryDisplay : MonoBehaviour
             clickedUISlot.UpdateUISlot();
 
             mouseInventoryItem.ClearSlot();
+            return;
         }
         // If clicked slot has an item and mouse is holding an item, decide what to do?
         //Are both item the same?
@@ -80,6 +95,7 @@ public abstract class InventoryDisplay : MonoBehaviour
                 clickedUISlot.UpdateUISlot();
 
                 mouseInventoryItem.ClearSlot();
+                return;
             }
             else if(sameItem && 
                 !clickedUISlot.AssignedInventorySlot.RoomLeftInStack(mouseInventoryItem.AssignedInventorySlot.StackSize, out int leftInStack))
@@ -100,7 +116,7 @@ public abstract class InventoryDisplay : MonoBehaviour
                     var newItem = new InventorySlot(mouseInventoryItem.AssignedInventorySlot.ItemData, remainingOnMouse);
                     mouseInventoryItem.ClearSlot();
                     mouseInventoryItem.UpdateMouseSlot(newItem);
-
+                    return;
                 }
             }
             //both mouse inventory and clicked slot does not have the same item
