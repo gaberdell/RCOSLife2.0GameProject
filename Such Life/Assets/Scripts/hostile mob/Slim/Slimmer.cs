@@ -18,7 +18,9 @@ public class Slimmer : mobBase
     {
         target = GameObject.Find("MC").transform;
         agent = GetComponent<NavMeshAgent>();
-        agent.acceleration = 100;
+        agent.acceleration = 200;
+        agent.stoppingDistance = 1f;
+        agent.autoBraking = false;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
