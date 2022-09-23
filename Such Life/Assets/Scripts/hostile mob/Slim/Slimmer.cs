@@ -9,8 +9,6 @@ public class Slimmer : mobBase
     private float time;
     private float alertRange;
     // Start is called before the first frame update
-    public Transform target;
-    public NavMeshAgent agent;
     public SpriteRenderer slimeSprite;
     
     void Start()

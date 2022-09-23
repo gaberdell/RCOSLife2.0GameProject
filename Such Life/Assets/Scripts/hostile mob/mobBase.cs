@@ -32,9 +32,9 @@ public class mobBase : MonoBehaviour
     public SpriteRenderer MobSprite;
     public float wanderingSpeed;
     public Transform target;
-    public NavMeshAgent agent;
+    public UnityEngine.AI.NavMeshAgent agent;
 
-    void PositionChange()
+    public void PositionChange()
     {
         posxmin = transform.position.x - 5.0f;
         posxmax = transform.position.x + 5.0f;
