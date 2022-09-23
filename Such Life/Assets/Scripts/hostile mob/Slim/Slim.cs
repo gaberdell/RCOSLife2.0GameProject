@@ -34,7 +34,6 @@ public class Slim : mobBase
 
     void Update(){
         target = GameObject.FindGameObjectWithTag("Player").transform;
-
         chasing(target);
     }
 
