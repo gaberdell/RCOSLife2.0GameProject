@@ -11,7 +11,6 @@ public class Slimmer : mobBase
     public float distance;
     // Start is called before the first frame update
     public Transform target;
-    public NavMeshAgent agent;
     public SpriteRenderer slimeSprite;
     
     void Start()
