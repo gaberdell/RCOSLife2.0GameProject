@@ -10,8 +10,7 @@ public class Slimmer : mobBase
     private float alertRange;
     public float distance;
     // Start is called before the first frame update
-    public Transform target;
-    public SpriteRenderer slimeSprite;
+    public SpriteRenderer slimeSprite; 
     
     void Start()
     {

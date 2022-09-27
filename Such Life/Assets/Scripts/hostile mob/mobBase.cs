@@ -57,7 +57,7 @@ public class mobBase : MonoBehaviour
 
     public void Idle()
     {
-        currstate = State.Idling;
+        currState = State.Idling;
     }
     /*void PositionChange()
     {
