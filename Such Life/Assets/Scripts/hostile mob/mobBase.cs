@@ -16,6 +16,12 @@ public class mobBase : MonoBehaviour
     public Vector2 initialPosition; //initial position
     public float timeToChangeDirection = 1.3f;
     public float time_move;
+
+    //States for Enemies
+    public enum State { Idling, Wander, Chasing, Dying };
+    public State currState;
+
+
     //public Animator an;
     public GameObject monsterObj;
     public GameObject player;
@@ -44,6 +50,15 @@ public class mobBase : MonoBehaviour
         newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
 
+    public string GetMob() //Returns the Mob Type
+    {
+        return this.GetType().Name;
+    }
+
+    public void Idle()
+    {
+        currstate = State.Idling;
+    }
     /*void PositionChange()
     {
 
