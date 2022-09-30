@@ -8,6 +8,10 @@ public class InventoryUIController : MonoBehaviour
     public DynamicInventoryDisplay inventoryPanel;
     public playerAction playerControl;
 
+    //Key press action
+    InputAction openInventory = new InputAction("Open Inventory");
+    
+
     private void Awake()
     {
         playerControl = new playerAction();
@@ -29,10 +33,14 @@ public class InventoryUIController : MonoBehaviour
     public void OpenInventory()
     {
         //check to see if you press the key or not
-        bool keyPressed = playerControl.Player.OpenInventory.ReadValue<float>() >= 0.6f;
+
+        //(Fix this so that the open inventory only call when the key is pressed and release)
+        bool keyPressed = playerControl.Player.OpenInventory.WasPressedThisFrame();
+
+
         if (keyPressed && !inventoryPanel.gameObject.activeInHierarchy)
         {
-            ShowInventory(new InventorySystem(Random.Range(20, 30)));
+            ShowInventory(new InventorySystem(30));
         }
         else if(keyPressed && inventoryPanel.gameObject.activeInHierarchy)
         {

@@ -18,7 +18,7 @@ public class mobBase : MonoBehaviour
     public float time_move;
 
     //States for Enemies
-    public enum State { Idling, Wander, Chasing, Dying };
+    public enum State { Idling, Wander, Chasing };
     public State currState;
 
 
@@ -59,6 +59,17 @@ public class mobBase : MonoBehaviour
     {
         currState = State.Idling;
     }
+
+    public void Wander()
+    {
+        currState = State.Wander;
+    }
+
+    public void Chasing()
+    {
+        currState = State.Chasing;
+    }
+        
     /*void PositionChange()
     {
 

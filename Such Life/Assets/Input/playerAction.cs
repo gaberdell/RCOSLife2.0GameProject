@@ -55,12 +55,12 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Open Inventory"",
+                    ""name"": ""OpenInventory"",
                     ""type"": ""Button"",
                     ""id"": ""91d7dbda-e7e3-4cd5-85b4-58ae846a1ac5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 }
             ],
@@ -289,10 +289,10 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""e0df125e-efce-4b3c-90ce-90cd954e3d8b"",
                     ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
+                    ""interactions"": ""Tap"",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Open Inventory"",
+                    ""action"": ""OpenInventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -883,7 +883,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Fire = m_Player.FindAction("Fire", throwIfNotFound: true);
-        m_Player_OpenInventory = m_Player.FindAction("Open Inventory", throwIfNotFound: true);
+        m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);

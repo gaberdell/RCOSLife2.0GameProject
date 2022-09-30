@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,8 @@ using UnityEngine.AI;
 public class Slim : mobBase
 {
 
-
-    
-
     // Start is called before the first frame update
+    /*
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -90,7 +89,7 @@ public class Slim : mobBase
     }
 
     //check for collider on our target layer
-    /*private void FOV()
+    private void FOV()
     {
         Collider2D[] rangeCheckPlayer = Physics2D.OverlapCircleAll(transform.position, radius, targetLayerPlayer);
         //Check to see if anything in the collison box
@@ -123,6 +122,6 @@ public class Slim : mobBase
         {
             playerSighted = false;
         }
-    }*/
-
+    }
+    */
 }
