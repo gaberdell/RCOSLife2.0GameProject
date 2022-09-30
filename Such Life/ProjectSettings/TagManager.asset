@@ -17,7 +17,7 @@ TagManager:
   - 
   - Entities
   - Background
-  - 
+  - Cursor
   - 
   - 
   - 
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Cursor
+    uniqueID: 3008680869
     locked: 0
