@@ -38,7 +38,7 @@
                     "id": "91d7dbda-e7e3-4cd5-85b4-58ae846a1ac5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "Press(behavior=2)",
                     "initialStateCheck": false
                 }
             ],
@@ -267,7 +267,7 @@
                     "name": "",
                     "id": "e0df125e-efce-4b3c-90ce-90cd954e3d8b",
                     "path": "<Keyboard>/tab",
-                    "interactions": "",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "OpenInventory",
