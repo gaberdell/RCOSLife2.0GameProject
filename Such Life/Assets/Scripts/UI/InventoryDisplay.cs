@@ -11,8 +11,8 @@ public abstract class InventoryDisplay : MonoBehaviour
 {
     [SerializeField] MouseItemData mouseInventoryItem;    
 
-    protected InventorySystem inventorySystem;
-    protected Dictionary<InventorySlot_UI, InventorySlot> slotDictionary;
+    protected InventorySystem inventorySystem; //inventory that we are trying to display on the UI canvas
+    protected Dictionary<InventorySlot_UI, InventorySlot> slotDictionary; //pair up UI slot with system slot
 
     //getter
     public InventorySystem InventorySystem => inventorySystem;
@@ -23,7 +23,7 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     }
 
-    public abstract void AssignSlot(InventorySystem invToDisplay);
+    public abstract void AssignSlot(InventorySystem invToDisplay); //to be implement in child classes
 
     protected virtual void UpdateSlot(InventorySlot updatedSlot)
     {
@@ -45,7 +45,7 @@ public abstract class InventoryDisplay : MonoBehaviour
     //This function will incharge of picking up and placing item in the Hotbar
     public void SlotClicked(InventorySlot_UI clickedUISlot)
     {
-        /*maybe change so that the user don't have to just press Shift to split but let
+        /* Change so that the user don't have to just press Shift to split but let
         user customize the split key in the new Unity input system. (This is hardcoding :( ) */
         bool playerPressedShift = Keyboard.current.leftShiftKey.isPressed;
         
@@ -61,7 +61,7 @@ public abstract class InventoryDisplay : MonoBehaviour
                 clickedUISlot.UpdateUISlot();
                 return;
             }
-            else
+            else //pick up item in the clicked slot
             {
                 mouseInventoryItem.UpdateMouseSlot(clickedUISlot.AssignedInventorySlot);
                 clickedUISlot.ClearSlot();
@@ -89,7 +89,7 @@ public abstract class InventoryDisplay : MonoBehaviour
         if (clickedUISlot.AssignedInventorySlot.ItemData != null && mouseInventoryItem.AssignedInventorySlot.ItemData != null)
         {
             bool sameItem = clickedUISlot.AssignedInventorySlot.ItemData == mouseInventoryItem.AssignedInventorySlot.ItemData;
-            if (sameItem && clickedUISlot.AssignedInventorySlot.RoomLeftInStack(mouseInventoryItem.AssignedInventorySlot.StackSize)) //combine items it does not reach the max stack
+            if (sameItem && clickedUISlot.AssignedInventorySlot.IsEnoughSpaceInStack(mouseInventoryItem.AssignedInventorySlot.StackSize)) //combine items it does not reach the max stack
             {
                 clickedUISlot.AssignedInventorySlot.AssignItem(mouseInventoryItem.AssignedInventorySlot);
                 clickedUISlot.UpdateUISlot();
@@ -98,7 +98,7 @@ public abstract class InventoryDisplay : MonoBehaviour
                 return;
             }
             else if(sameItem && 
-                !clickedUISlot.AssignedInventorySlot.RoomLeftInStack(mouseInventoryItem.AssignedInventorySlot.StackSize, out int leftInStack))
+                !clickedUISlot.AssignedInventorySlot.IsEnoughSpaceInStack(mouseInventoryItem.AssignedInventorySlot.StackSize, out int leftInStack))
             {
                 //same item, not room left in the stack
                 if(leftInStack < 1)
