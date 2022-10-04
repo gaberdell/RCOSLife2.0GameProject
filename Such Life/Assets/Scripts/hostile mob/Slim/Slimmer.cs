@@ -73,14 +73,17 @@ public class Slimmer : mobBase
     {
         float oldPosX = currPosition.x;
         float angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
-        if (distance >= 1.8f)
+        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
+        /*
+        if (distance >= 1.0f)
         {
-            this.currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
+            currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
         }
         else
         {
-            this.currPosition = new Vector2(currPosition.x + 1 * Mathf.Cos(angle), currPosition.y + 1 * Mathf.Sin(angle));
+            currPosition = new Vector2(currPosition.x + 1.5f * Mathf.Cos(angle), currPosition.y + 1.5f * Mathf.Sin(angle));
         }
+        */
         flipSprite(oldPosX);
         agent.SetDestination(currPosition);
     }
@@ -92,7 +95,7 @@ public class Slimmer : mobBase
         posymin = transform.position.y - 1.0f;
         posymax = transform.position.y + 1.0f;
 
-        this.currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+        currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
 
     void flipSprite(float PosX)
