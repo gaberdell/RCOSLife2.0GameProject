@@ -37,16 +37,16 @@ public class PlaceObject : MonoBehaviour
     private void createHouse(Vector3 pos, string key)
     {
         // create gameobject with name, scale at position pos
-        /*
-        Instantiate(Resources.Load("Prefab/housetest") as GameObject);
+        
+        GameObject currentObject = Instantiate(Resources.Load("housetest") as GameObject);
 
         // add class components here
-        current BuildingBase housetest = currentObject.AddComponent(typeof(BuildingBase)) as BuildingBase;
+        //BuildingBase housetest = currentObject.AddComponent(typeof(BuildingBase)) as BuildingBase;
         //itemPkup.pickUpRadius = 0.5f;
 
         currentObject.transform.position = pos;
         locationVSgameobjects.Add(key, currentObject);
-        */
+        
     }
 
     void Start()
@@ -82,8 +82,8 @@ public class PlaceObject : MonoBehaviour
             if (Vector3.Distance(mousepos, playerpos) <= placingRadius) // and placeable
             {
                 // placeable items
-                createGameObject("House", new Vector3(1f, 1f, 1f), mousepos, key);
-                //createHouse(mousepos, key);
+                //createGameObject("House", new Vector3(1f, 1f, 1f), mousepos, key);
+                createHouse(mousepos, key);
                 Debug.Log("placed " + "House");
             }
             else
@@ -95,8 +95,8 @@ public class PlaceObject : MonoBehaviour
                 }
                 else // !placeable
                 {
-                    createGameObject("House", new Vector3(1f, 1f, 1f), mousepos, key);
-                    //createHouse(mousepos, key);
+                    //createGameObject("House", new Vector3(1f, 1f, 1f), mousepos, key);
+                    createHouse(mousepos, key);
                     Debug.Log("placed " + "House");
                 }
             }
