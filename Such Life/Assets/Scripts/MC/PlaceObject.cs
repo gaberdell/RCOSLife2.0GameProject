@@ -37,14 +37,16 @@ public class PlaceObject : MonoBehaviour
     private void createHouse(Vector3 pos, string key)
     {
         // create gameobject with name, scale at position pos
-        GameObject currentObject = Resources.Load("Prefab/housetest") as GameObject;
+        /*
+        Instantiate(Resources.Load("Prefab/housetest") as GameObject);
 
         // add class components here
-        BuildingBase housetest = currentObject.AddComponent(typeof(BuildingBase)) as BuildingBase;
+        current BuildingBase housetest = currentObject.AddComponent(typeof(BuildingBase)) as BuildingBase;
         //itemPkup.pickUpRadius = 0.5f;
 
         currentObject.transform.position = pos;
         locationVSgameobjects.Add(key, currentObject);
+        */
     }
 
     void Start()
