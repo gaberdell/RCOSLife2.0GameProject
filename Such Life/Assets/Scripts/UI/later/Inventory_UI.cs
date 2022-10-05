@@ -7,12 +7,12 @@ using UnityEngine.InputSystem.Interactions;
 public class Inventory_UI : MonoBehaviour
 {   
     public GameObject InventroyScreen;
-    PlayerControl playerControl;
+    playerAction playerControl;
 
     /*
     private void Awake()
     {
-        playerControl = new PlayerControl();
+        playerControl = new playerAction();
     }
 
     

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
-
+/* This script is for building the user's backpack and chest system */
 [System.Serializable]
 public class InventoryHolder : MonoBehaviour
 {

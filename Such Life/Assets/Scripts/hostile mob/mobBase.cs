@@ -16,6 +16,12 @@ public class mobBase : MonoBehaviour
     public Vector2 initialPosition; //initial position
     public float timeToChangeDirection = 1.3f;
     public float time_move;
+
+    //States for Enemies
+    public enum State { Idling, Wander, Chasing };
+    public State currState;
+
+
     //public Animator an;
     public GameObject monsterObj;
     public GameObject player;
@@ -26,6 +32,44 @@ public class mobBase : MonoBehaviour
     public float posxmax;
     public float posymax;
 
+    public float awareness;
+    public float radius;
+    public float angle;
+    public SpriteRenderer MobSprite;
+    public float wanderingSpeed;
+    public Transform target;
+    public UnityEngine.AI.NavMeshAgent agent;
+
+    public void PositionChange()
+    {
+        posxmin = transform.position.x - 5.0f;
+        posxmax = transform.position.x + 5.0f;
+        posymin = transform.position.y - 5.0f;
+        posymax = transform.position.y + 5.0f;
+
+        newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+    }
+
+    public string GetMob() //Returns the Mob Type
+    {
+        return this.GetType().Name;
+    }
+
+    public void Idle()
+    {
+        currState = State.Idling;
+    }
+
+    public void Wander()
+    {
+        currState = State.Wander;
+    }
+
+    public void Chasing()
+    {
+        currState = State.Chasing;
+    }
+        
     /*void PositionChange()
     {
 
