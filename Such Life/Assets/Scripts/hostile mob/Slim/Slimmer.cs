@@ -17,15 +17,14 @@ public class Slimmer : mobBase
         agent.updateUpAxis = false;
 
         currState = State.Wander;
+        currPosition = new Vector2(transform.position.x, transform.position.y);
 
         maxHealth = 5;
         damage = 2;
         currHealth = maxHealth;
-        walkSpeed = 1f;
         playerSighted = false;
         time_move = 3.0f;
-        currPosition = new Vector2(transform.position.x, transform.position.y);
-
+        
         time_move = 4f;
         time = 0f;
         distance = 0f;
@@ -56,33 +55,32 @@ public class Slimmer : mobBase
                 wander();
             }
         }
+        agent.SetDestination(currPosition);
     }
 
     void wander()
     {
         float oldPosX = currPosition.x;
-        wanderPositionChange();
+        PositionChange();
         flipSprite(oldPosX);
-        agent.SetDestination(currPosition);
     }
 
     void chasing(float distance)
     {
         float oldPosX = currPosition.x;
         float angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
-        this.currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
+        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
         flipSprite(oldPosX);
-        agent.SetDestination(currPosition);
     }
 
-    void wanderPositionChange()
+    public override void PositionChange()
     { 
-        posxmin = transform.position.x - 1.0f;
-        posxmax = transform.position.x + 1.0f;
-        posymin = transform.position.y - 1.0f;
-        posymax = transform.position.y + 1.0f;
+        float posxmin = transform.position.x - 1.0f;
+        float posxmax = transform.position.x + 1.0f;
+        float posymin = transform.position.y - 1.0f;
+        float posymax = transform.position.y + 1.0f;
 
-        this.currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+        currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
 
     void flipSprite(float PosX)

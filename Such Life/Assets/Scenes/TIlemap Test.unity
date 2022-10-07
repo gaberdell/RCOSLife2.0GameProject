@@ -2059,7 +2059,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803139292}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2149,14 +2149,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3999626e7234184489d66bd8affb17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
   damage: 3
   maxHealth: 5
   currHealth: 5
   alertRange: 0
   playerSighted: 0
   currPosition: {x: 0, y: 0}
-  initialPosition: {x: 0, y: 0}
   distance: 0
   time: 0
   time_move: 3
