@@ -37,20 +37,17 @@ public class Slimmer : mobBase
         target = GameObject.Find("MC").transform;
         time += 1f * Time.deltaTime;
         distance = Vector2.Distance(target.position, currPosition);
-        if (distance <= alertRange && !playerSighted)
-        {
-            playerSighted = true;
-            currState = State.Chasing;
-            flipSprite(-target.position.x);
-        }
+        StateChange();
         if (time >= time_move)
         {
+            agent.isStopped = false;
+            agent.acceleration = 200;
             time = 0f;
             if (currState == State.Chasing)
             {
                 chasing(distance);
             }
-            else
+            else if (currState == State.Wander)
             {
                 wander();
             }
@@ -68,8 +65,8 @@ public class Slimmer : mobBase
     void chasing(float distance)
     {
         float oldPosX = currPosition.x;
-        float angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
-        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
+        angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
+        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 3 * Mathf.Sin(angle));
         flipSprite(oldPosX);
     }
 
@@ -82,6 +79,38 @@ public class Slimmer : mobBase
 
         currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        agent.isStopped = true;
+        if (collision.gameObject.tag == "Player" && currState == State.Attacking)
+        {
+            agent.isStopped = false;
+            bounce();
+        }
+    }
+
+    void StateChange()
+    {
+        if (distance <= alertRange && !playerSighted)
+        {
+            playerSighted = true;
+            currState = State.Chasing;
+            flipSprite(-target.position.x);
+        }
+        else if (agent.isStopped && currState == State.Attacking)
+        {
+            currState = State.Chasing;
+        }
+    }
+
+    void bounce()
+    {
+        angle = Mathf.Atan2((target.position.y - currPosition.y), (target.position.x - currPosition.x));
+        angle *= -1;
+        agent.acceleration = 10;
+        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 3 * Mathf.Sin(angle));
+    } 
 
     void flipSprite(float PosX)
     {

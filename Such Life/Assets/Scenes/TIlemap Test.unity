@@ -2131,7 +2131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803139292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.27, y: -3.03, z: 0}
+  m_LocalPosition: {x: 2.37, y: -1.73, z: 0}
   m_LocalScale: {x: 3.0436642, y: 3.0437646, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2152,6 +2152,7 @@ MonoBehaviour:
   damage: 3
   maxHealth: 5
   currHealth: 5
+  angle: 0
   alertRange: 0
   playerSighted: 0
   currPosition: {x: 0, y: 0}
@@ -2162,10 +2163,6 @@ MonoBehaviour:
   monsterObj: {fileID: 803139292}
   player: {fileID: 998963367}
   newPosition: {x: 0, y: 0}
-  posxmin: 0
-  posymin: 0
-  posxmax: 0
-  posymax: 0
   MobSprite: {fileID: 803139295}
   target: {fileID: 237598776}
   agent: {fileID: 803139298}
@@ -2352,7 +2349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836133676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.39, z: 0}
+  m_LocalPosition: {x: 5.56, y: 1.51, z: 0}
   m_LocalScale: {x: 1.5968406, y: 1.5968406, z: 1.5968406}
   m_Children: []
   m_Father: {fileID: 0}

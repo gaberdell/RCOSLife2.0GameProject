@@ -9,6 +9,7 @@ public class mobBase : MonoBehaviour
     public int damage; //damage that a enemy make in fighting
     public int maxHealth; //the total health of an enemy
     public int currHealth; //current health
+    public float angle;
     public float alertRange; //min distance from target required for mob to chase.
 
     public bool playerSighted = false; //check whether player is in monster's sight
@@ -18,7 +19,7 @@ public class mobBase : MonoBehaviour
     public float time_move; //time until Update() is called.
 
     //States for Enemies
-    public enum State { Idling, Wander, Chasing };
+    public enum State { Idling, Wander, Chasing, Attacking };
     public State currState;
 
     //public Animator an;
