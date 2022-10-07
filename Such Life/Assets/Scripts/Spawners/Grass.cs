@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grass : MonoBehaviour
 {
-    public GameObject Grass;
+    public GameObject GrassObj;
     public SpriteRenderer GrassSprite;
 
 
