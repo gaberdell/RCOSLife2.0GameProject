@@ -129,9 +129,10 @@ GameObject:
   - component: {fileID: 7925289063335126091}
   - component: {fileID: 9101217099699202712}
   - component: {fileID: 5642498061771927945}
+  - component: {fileID: 1706496984}
   m_Layer: 9
   m_Name: MC
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,8 +383,33 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 91d7dbda-e7e3-4cd5-85b4-58ae846a1ac5
     m_ActionName: Player/Open Inventory[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a36c0af5-e958-4018-85e2-98037ac3ffaf
+    m_ActionName: Player/CloseInventory[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 457af862-7ef9-4767-bca7-f2eda65b326c
+    m_ActionName: Player/Interacting[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1706496984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724269156444419255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79bbc2e720b0a54195ed1030e668d48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionPoint: {fileID: 227616985}
+  InteractionLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  InteractionPointRadius: 1

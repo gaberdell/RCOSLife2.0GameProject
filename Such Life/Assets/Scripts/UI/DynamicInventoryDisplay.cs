@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 /* class represent the slots in the player's backpack and any other openable items */
-/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+/* Base codes provided by: Dan Pos - Game Dev Tutorials! with slight modification */
 public class DynamicInventoryDisplay : InventoryDisplay
 {
     // for other class to access - Maybe a merchant (will use dynamic inventory display) have other
