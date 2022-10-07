@@ -24,15 +24,29 @@ public class Sheep : AnimalBase
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         navi.updateRotation = false;
         navi.updateUpAxis = false;
+        hungerCap = 100f;
+        hunger = 100f;
+        hungerDrain = 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(currHP <= 0)
+        {
+            currHP = 0;
+            currState = State.Dying;
+            aniSprite.flipY = true;
+        }
         time = time + 1f * Time.deltaTime;
         if (time >= timeDelay)
         {
             time = 0f;
+            if (currState == State.Hungry)
+            {
+
+            }
+
             if (currState == State.Idling)
             {
                 int gen = Random.Range(0, 100);
@@ -60,6 +74,22 @@ public class Sheep : AnimalBase
                     Idle();
                 }
             }
+            if(hunger < 30)
+            {
+                touchGrass();
+            }
+            if(hunger <= 0)
+            {
+                if(hunger < 0)
+                {
+                    hunger = 0;
+                }
+                currHP = currHP - 3;
+            }
+            else
+            {
+                hunger = hunger - hungerCap * hungerDrain;
+            }
         }
         else
         {
@@ -85,6 +115,12 @@ public class Sheep : AnimalBase
         }
         position = transform.position;
         flipSprite();
+    }
+
+    void touchGrass() //When the hunger is 0, this will trigger
+    {
+        currState = State.Hungry;
+
     }
 
     void FixedUpdate()

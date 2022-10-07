@@ -21,7 +21,10 @@ public class AnimalBase : MonoBehaviour
     public float currMaxSpeed; //Current possible max speed
     public float currSpeed; //Current Speed of Animal
     public float weight; //Determines how much the animal will get pushed
-    
+    public float hungerCap; //Max Hunger Value
+    public float hunger; //Hunger of the animal
+    public float hungerDrain; //How fast the hunger of the animal drains, by percentage per second
+
     public Animator animate;
     public Vector2 position;
     public Vector2 newposition;
@@ -32,7 +35,7 @@ public class AnimalBase : MonoBehaviour
     public RaycastHit hit;
     public SpriteRenderer aniSprite;
 
-    public NavMeshAgent navi;
+    public NavMeshAgent navi; //Hey, Listen!
 
 
     //random pos
