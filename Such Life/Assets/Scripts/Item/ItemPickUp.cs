@@ -21,6 +21,7 @@ public class ItemPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //adjust this function slightly when start to implement player and chest inventory
         var inventory = other.transform.GetComponent<InventoryHolder>();
         
         if (!inventory) return;

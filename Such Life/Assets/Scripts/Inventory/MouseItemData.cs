@@ -28,6 +28,7 @@ public class MouseItemData : MonoBehaviour
 
     private void Update()
     {
+        // To-do: Add controller support later down the lines
         //If there is an item in the mouse inventory, make the item follow the mouse
         if(AssignedInventorySlot.ItemData != null)
         {
@@ -35,6 +36,7 @@ public class MouseItemData : MonoBehaviour
             if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
                 ClearSlot();
+                // To-do: Drop item on the ground instead of delete it
             }
 
         }
@@ -51,6 +53,7 @@ public class MouseItemData : MonoBehaviour
     //modified from StackOverflow
     public static bool IsPointerOverUIObject()
     {
+        // Do a ray-cast on the mouse to see if it's ontop of any object, if yes, return true, else is false
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
         eventDataCurrentPosition.position = Mouse.current.position.ReadValue();
         List<RaycastResult> results = new List<RaycastResult>();
