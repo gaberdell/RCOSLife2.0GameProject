@@ -10,17 +10,18 @@ public class mobBase : MonoBehaviour
     public int damage; //damage that a enemy make in fighting
     public int maxHealth; //the total health of an enemy
     public int currHealth; //current health
-    public Rigidbody2D monster;
+    public float alertRange;
+
     public bool playerSighted = false; //check whether player is in monster's sight
     public Vector2 currPosition; //current position 
     public Vector2 initialPosition; //initial position
-    public float timeToChangeDirection = 1.3f;
+    public float distance;
+    public float time;
     public float time_move;
 
     //States for Enemies
     public enum State { Idling, Wander, Chasing };
     public State currState;
-
 
     //public Animator an;
     public GameObject monsterObj;
@@ -32,11 +33,7 @@ public class mobBase : MonoBehaviour
     public float posxmax;
     public float posymax;
 
-    public float awareness;
-    public float radius;
-    public float angle;
     public SpriteRenderer MobSprite;
-    public float wanderingSpeed;
     public Transform target;
     public UnityEngine.AI.NavMeshAgent agent;
 

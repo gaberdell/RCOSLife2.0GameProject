@@ -5,13 +5,7 @@ using UnityEngine.AI;
 
 public class Slimmer : mobBase
 {
-    private float timeDelay;
-    private float time;
-    private float alertRange;
-    public float distance;
     // Start is called before the first frame update
-    public SpriteRenderer slimeSprite; 
-    
     void Start()
     {
         target = GameObject.Find("MC").transform;
@@ -22,6 +16,8 @@ public class Slimmer : mobBase
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        currState = State.Wander;
+
         maxHealth = 5;
         damage = 2;
         currHealth = maxHealth;
@@ -30,7 +26,7 @@ public class Slimmer : mobBase
         time_move = 3.0f;
         currPosition = new Vector2(transform.position.x, transform.position.y);
 
-        timeDelay = 4f;
+        time_move = 4f;
         time = 0f;
         distance = 0f;
         alertRange = 6.0f;
@@ -45,12 +41,13 @@ public class Slimmer : mobBase
         if (distance <= alertRange && !playerSighted)
         {
             playerSighted = true;
+            currState = State.Chasing;
             flipSprite(-target.position.x);
         }
-        if (time >= timeDelay)
+        if (time >= time_move)
         {
             time = 0f;
-            if (playerSighted)
+            if (currState == State.Chasing)
             {
                 chasing(distance);
             }
@@ -73,14 +70,7 @@ public class Slimmer : mobBase
     {
         float oldPosX = currPosition.x;
         float angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
-        if (distance >= 1.8f)
-        {
-            this.currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
-        }
-        else
-        {
-            this.currPosition = new Vector2(currPosition.x + 1 * Mathf.Cos(angle), currPosition.y + 1 * Mathf.Sin(angle));
-        }
+        this.currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
         flipSprite(oldPosX);
         agent.SetDestination(currPosition);
     }
@@ -99,11 +89,11 @@ public class Slimmer : mobBase
     {
         if (currPosition.x > PosX)
         {
-            slimeSprite.flipX = true;
+            MobSprite.flipX = true;
         }
         else
         {
-            slimeSprite.flipX = false;
+            MobSprite.flipX = false;
         }
     }
 
