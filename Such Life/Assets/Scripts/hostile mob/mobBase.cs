@@ -6,18 +6,16 @@ public class mobBase : MonoBehaviour
 {
 
     //Some common feature for enemies
-    public float walkSpeed;
     public int damage; //damage that a enemy make in fighting
     public int maxHealth; //the total health of an enemy
     public int currHealth; //current health
-    public float alertRange;
+    public float alertRange; //min distance from target required for mob to chase.
 
     public bool playerSighted = false; //check whether player is in monster's sight
-    public Vector2 currPosition; //current position 
-    public Vector2 initialPosition; //initial position
-    public float distance;
-    public float time;
-    public float time_move;
+    public Vector2 currPosition; //current position
+    public float distance; 
+    public float time; //unique time variable
+    public float time_move; //time until Update() is called.
 
     //States for Enemies
     public enum State { Idling, Wander, Chasing };
@@ -28,21 +26,16 @@ public class mobBase : MonoBehaviour
     public GameObject player;
     public Vector2 newPosition;
 
-    public float posxmin;
-    public float posymin;
-    public float posxmax;
-    public float posymax;
-
     public SpriteRenderer MobSprite;
     public Transform target;
     public UnityEngine.AI.NavMeshAgent agent;
 
-    public void PositionChange()
+    virtual public void PositionChange()
     {
-        posxmin = transform.position.x - 5.0f;
-        posxmax = transform.position.x + 5.0f;
-        posymin = transform.position.y - 5.0f;
-        posymax = transform.position.y + 5.0f;
+        float posxmin = transform.position.x - 5.0f;
+        float posxmax = transform.position.x + 5.0f;
+        float posymin = transform.position.y - 5.0f;
+        float posymax = transform.position.y + 5.0f;
 
         newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
