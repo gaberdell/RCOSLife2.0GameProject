@@ -2059,7 +2059,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803139292}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2112,7 +2112,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 3f0d6662cdab9b348bfe4829d11e2a77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff33e67ca46410e45b964c20b2a1c4da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2131,7 +2131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803139292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.27, y: -3.03, z: 0}
+  m_LocalPosition: {x: 2.37, y: -1.73, z: 0}
   m_LocalScale: {x: 3.0436642, y: 3.0437646, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2149,33 +2149,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3999626e7234184489d66bd8affb17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 1
   damage: 3
   maxHealth: 5
   currHealth: 5
-  monster: {fileID: 803139294}
+  angle: 0
+  alertRange: 0
   playerSighted: 0
   currPosition: {x: 0, y: 0}
-  initialPosition: {x: 0, y: 0}
-  timeToChangeDirection: 0
+  distance: 0
+  time: 0
   time_move: 3
   currState: 0
   monsterObj: {fileID: 803139292}
   player: {fileID: 998963367}
   newPosition: {x: 0, y: 0}
-  posxmin: 0
-  posymin: 0
-  posxmax: 0
-  posymax: 0
-  awareness: 0
-  radius: 0
-  angle: 0
-  MobSprite: {fileID: 0}
-  wanderingSpeed: 0
+  MobSprite: {fileID: 803139295}
   target: {fileID: 237598776}
   agent: {fileID: 803139298}
-  distance: 0
-  slimeSprite: {fileID: 803139295}
 --- !u!195 &803139298
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2241,6 +2231,9 @@ MonoBehaviour:
   currMaxSpeed: 0
   currSpeed: 0
   weight: 0
+  hungerCap: 0
+  hunger: 0
+  hungerDrain: 0
   animate: {fileID: 0}
   position: {x: 0, y: 0}
   newposition: {x: 0, y: 0}
@@ -2356,7 +2349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 836133676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1.39, z: 0}
+  m_LocalPosition: {x: 5.56, y: 1.51, z: 0}
   m_LocalScale: {x: 1.5968406, y: 1.5968406, z: 1.5968406}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2549,13 +2542,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1879878445}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5777, y: -0.3095, z: 0}
+  m_LocalRotation: {x: -0, y: -0.0032753395, z: -0, w: 0.99999464}
+  m_LocalPosition: {x: 0.57774925, y: -0.30949998, z: -0.014984373}
   m_LocalScale: {x: 1.1437173, y: 0.9912, z: 1}
   m_Children: []
   m_Father: {fileID: 414790857}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -0.375, z: 0}
 --- !u!483693784 &1879878447
 TilemapRenderer:
   m_ObjectHideFlags: 0
