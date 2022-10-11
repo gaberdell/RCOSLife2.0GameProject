@@ -10,25 +10,32 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public Transform interactor;
     public float walkSpeed;
-    Vector2 direction;
+    public playerAction playerControls;
+    public Vector2 direction;
 
 
     private float inputX;
     private float inputY;
-
+    void Awake(){
+        playerControls = new playerAction();
+        direction = new Vector2();
+    }
     // Update is called once per frame
     void Update() {
+        playerControls.Player.Enable();
+        direction = playerControls.Player.Move.ReadValue<Vector2>();
+        inputX = direction.x;
+        inputY = direction.y;
+        //playerControls.
+        //    inputX = Input.GetAxis("Horizontal");
+        //    inputY = Input.GetAxis("Vertical");
 
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
-
-        direction = new Vector2(inputX, inputY).normalized;
-
+        //     direction = new Vector2(inputX, inputY).normalized;
         anim.SetFloat("Horizontal", inputX);
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
 
-        //give the game info of the direction that the player is facing (for interaction feature later)
+ //       give the game info of the direction that the player is facing (for interaction feature later)
         if (inputX == 0 && inputY > 0) /*N*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, 180);
         }
@@ -55,6 +62,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void OnMove(InputValue value){
+         direction = value.Get<Vector2>();   
+    }
+
     void FixedUpdate() {
     
         body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
@@ -62,5 +73,12 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-}
 
+    private void onEnable(){
+        playerControls.Enable();
+    }
+    private void onDisable(){
+        playerControls.Disable();
+
+    }
+}
