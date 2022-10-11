@@ -8,12 +8,16 @@ public class PlayerMovement : MouseFollow
 {
     public Rigidbody2D body;
     public Animator anim;
-    public Transform interactor;
+    public Transform interactor; // Shows mouse position
+    public Transform interactor_two; // Shows what user inputted
     public float walkSpeed;
     Vector2 direction;
 
     private float inputX;
     private float inputY;
+
+    //private float prevX; // Stores previous frame's movement
+    //private float prevY;
 
     // Update is called once per frame
     void Update() {
@@ -23,40 +27,57 @@ public class PlayerMovement : MouseFollow
 
         direction = new Vector2(inputX, inputY).normalized;
         
-
         anim.SetFloat("Horizontal", inputX);
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
 
         //give the game info of the direction that the player is facing (for interaction feature later)
+        /*
+        if (inputX == 0 && inputY == 0 && !(prevX == 0 && prevY == 0)) If no movement and the prevX and prevY variables have been updated,
+                                                                         the prevX and prevY variables should be used to update where character is facing{
+            anim.SetFloat("Horizontal", prevX);
+            anim.SetFloat("Vertical", prevY);
+            anim.SetFloat("Speed", 0.0f);
+        }*/
 
         
         if (inputX == 0 && inputY > 0) /*N*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, 180);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 180);
         }
         if (inputX > 0 && inputY > 0) /*NE*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, 135);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 135);
         }
         if (inputX > 0 && inputY == 0) /*E*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, 90);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 90);
         }
         if (inputX > 0 && inputY < 0) /*SE*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, 45);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 45);
         }
         if (inputX == 0 && inputY < 0) /*S*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, 0);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 0);
         }
         if (inputX < 0 && inputY < 0) /*SW*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, -45);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, -45);
         }
         if (inputX < 0 && inputY == 0) /*W*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, -90);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, -90);
         }
         if (inputX < 0 && inputY > 0) /*NW*/ {
-            interactor.localRotation = Quaternion.Euler(0, 0, -135);
+            interactor_two.localRotation = Quaternion.Euler(0, 0, -135);
         }
+
+        // Turns the interactor towards the mouse
+
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        interactor.localRotation = Quaternion.LookRotation(Vector3.forward,  interactor.position - mousePosition);
+        interactor.localRotation = Quaternion.LookRotation(Vector3.forward, interactor.position - mousePosition); 
+
+        //At the end, save the current inputX and inputY into prevX and prevY if not idle.
+        /*
+        if (!(inputX == 0 && inputY == 0)) {
+            prevX = inputX;
+            prevY = inputY;
+        }
+        */
     }
 
     void FixedUpdate() {
