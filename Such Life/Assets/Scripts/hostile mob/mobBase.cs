@@ -11,6 +11,8 @@ public class mobBase : MonoBehaviour
     public int currHealth; //current health
     public float angle;
     public float alertRange; //min distance from target required for mob to chase.
+    public float knockbackDuration;
+    public float knockbackPower;
 
     public bool playerSighted = false; //check whether player is in monster's sight
     public Vector2 currPosition; //current position
@@ -29,6 +31,7 @@ public class mobBase : MonoBehaviour
 
     public SpriteRenderer MobSprite;
     public Transform target;
+    public Rigidbody2D monsterBody;
     public UnityEngine.AI.NavMeshAgent agent;
 
     virtual public void PositionChange()
