@@ -32,21 +32,23 @@ public class InventoryUIController : MonoBehaviour
         InventoryHolder.OnDynamicInventoryDisplayRequested -= ShowInventory;
     }
 
-    /*
+    
     public void OpenInventory()
     {
         //check to see if you press the key or not
 
+        
         bool openInventoryKeyPressed = playerControl.Player.OpenInventory.WasPressedThisFrame();
         bool closeInventoryKeyPressed = playerControl.Player.CloseInventory.WasPressedThisFrame();
 
+        /*
         if ((openInventoryKeyPressed || closeInventoryKeyPressed) && inventoryPanel.gameObject.activeInHierarchy)
         {
             inventoryPanel.gameObject.SetActive(false);
         }
+        */
 
-
-        /* 
+        
         if (openInventoryKeyPressed && !inventoryPanel.gameObject.activeInHierarchy)
         {
             ShowInventory(new InventorySystem(30));
@@ -56,13 +58,15 @@ public class InventoryUIController : MonoBehaviour
             inventoryPanel.gameObject.SetActive(false);
         }
         
+        
     }
-    */
+    
 
 
     // Update is called once per frame
     void Update()
     {
+        /*
         bool openInventoryKeyPressed = playerControl.Player.OpenInventory.WasPressedThisFrame();
         bool closeInventoryKeyPressed = playerControl.Player.CloseInventory.WasPressedThisFrame();
 
@@ -70,7 +74,8 @@ public class InventoryUIController : MonoBehaviour
         {
             inventoryPanel.gameObject.SetActive(false);
         }
-        //OpenInventory();
+        */
+        OpenInventory();
     }
 
     void ShowInventory(InventorySystem inventoryToShow)
