@@ -22,15 +22,10 @@ public class PlayerMovement : MonoBehaviour
     }
     // Update is called once per frame
     void Update() {
-        playerControls.Player.Enable();
         direction = playerControls.Player.Move.ReadValue<Vector2>();
         inputX = direction.x;
         inputY = direction.y;
-        //playerControls.
-        //    inputX = Input.GetAxis("Horizontal");
-        //    inputY = Input.GetAxis("Vertical");
 
-        //     direction = new Vector2(inputX, inputY).normalized;
         anim.SetFloat("Horizontal", inputX);
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
@@ -62,23 +57,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnMove(InputValue value){
-         direction = value.Get<Vector2>();   
-    }
-
-    void FixedUpdate() {
-    
+    void FixedUpdate() {  
         body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
-
-
-
     }
 
-    private void onEnable(){
-        playerControls.Enable();
+    private void OnEnable(){
+        playerControls.Player.Enable();
     }
-    private void onDisable(){
-        playerControls.Disable();
+    private void OnDisable(){
+        playerControls.Player.Disable();
 
     }
 }
