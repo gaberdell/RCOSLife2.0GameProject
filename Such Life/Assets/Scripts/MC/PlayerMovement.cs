@@ -4,14 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MouseFollow
 {
     public Rigidbody2D body;
     public Animator anim;
     public Transform interactor;
     public float walkSpeed;
     Vector2 direction;
-
 
     private float inputX;
     private float inputY;
@@ -23,12 +22,15 @@ public class PlayerMovement : MonoBehaviour
         inputY = Input.GetAxis("Vertical");
 
         direction = new Vector2(inputX, inputY).normalized;
+        
 
         anim.SetFloat("Horizontal", inputX);
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
 
         //give the game info of the direction that the player is facing (for interaction feature later)
+
+        
         if (inputX == 0 && inputY > 0) /*N*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, 180);
         }
@@ -53,6 +55,8 @@ public class PlayerMovement : MonoBehaviour
         if (inputX < 0 && inputY > 0) /*NW*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, -135);
         }
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        interactor.localRotation = Quaternion.LookRotation(Vector3.forward,  interactor.position - mousePosition);
     }
 
     void FixedUpdate() {
