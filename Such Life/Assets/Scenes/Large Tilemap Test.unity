@@ -2159,6 +2159,7 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0}
   timeToChangeDirection: 0
   time_move: 3
+  currState: 0
   monsterObj: {fileID: 803139292}
   player: {fileID: 998963367}
   newPosition: {x: 0, y: 0}
@@ -2174,8 +2175,6 @@ MonoBehaviour:
   target: {fileID: 237598776}
   agent: {fileID: 803139298}
   distance: 0
-  target: {fileID: 237598776}
-  agent: {fileID: 803139298}
   slimeSprite: {fileID: 803139295}
 --- !u!195 &803139298
 NavMeshAgent:
@@ -2428,6 +2427,7 @@ MonoBehaviour:
   initialPosition: {x: 0, y: 0}
   timeToChangeDirection: 0
   time_move: 3
+  currState: 0
   monsterObj: {fileID: 922345619}
   player: {fileID: 998963367}
   newPosition: {x: 0, y: 0}
@@ -2571,6 +2571,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
   m_PrefabInstance: {fileID: 1813457449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &998963368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998963367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c7a0e7cd732367459219fdc14886c21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryItem: {fileID: 0}
+  player: {fileID: 237598776}
+  placingRadius: 5
+  gridWidth: 0.6
+  gridHeight: 0.6
 --- !u!1 &1378272457
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,5 +25,7 @@ public class InventoryItemData : ScriptableObject
     public string colliderType = "box"; // "box" refers to box collider, "circle" refers to circle collider, initizlized to box
     public Vector2 boxColliderSize = new Vector2(2f, 2f); // box collider initialized to 2x2
     public float circleColliderRadius;
-    
+
+
+
 }

@@ -22,7 +22,7 @@ public class BuildingBase : MonoBehaviour
     public Vector2 boxColliderSize = new Vector2(2f, 2f); // box collider initialized to 2x2
     public float circleColliderRadius;
 
-    private int stage = 1; // current stage of placing this object. '1': rotate the object. '2': this building is being constructed by citizen. '3': this building is complete
+    private int stage = 1; // current stage of placing this object. '1': this building is being constructed by citizen. '2': this building is complete
                            // initialized to 1
     public bool rotatable = true; // check if this building object can be rotated, set to true initially
     public int buildingTime; // time needed to be built, in seconds
@@ -42,12 +42,13 @@ public class BuildingBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.localScale = new Vector3(1f, 1f, 1f);
+        transform.localScale = new Vector3(2f, 2f, 1f);
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Mouse.current.rightButton.wasPressedThisFrame) // right click to rotate the building
         {
             rotateLeft();
@@ -57,6 +58,7 @@ public class BuildingBase : MonoBehaviour
             stage = 2;
             startBuilding = true;
         }
+        */
         if (startBuilding) // now the building is being built
         {
             timer += Time.deltaTime;
