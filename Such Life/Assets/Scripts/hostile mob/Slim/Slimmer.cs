@@ -9,6 +9,9 @@ public class Slimmer : mobBase
     void Start()
     {
         target = GameObject.Find("MC").transform;
+
+        monsterBody = GetComponent<Rigidbody2D>();
+
         agent = GetComponent<NavMeshAgent>();
         agent.acceleration = 200;
         agent.stoppingDistance = 1f;
@@ -29,6 +32,8 @@ public class Slimmer : mobBase
         time = 0f;
         distance = 0f;
         alertRange = 6.0f;
+        knockbackDuration = 1;
+        knockbackPower = 25;
     }
 
     // Update is called once per frame
@@ -40,8 +45,6 @@ public class Slimmer : mobBase
         StateChange();
         if (time >= time_move)
         {
-            agent.isStopped = false;
-            agent.acceleration = 200;
             time = 0f;
             if (currState == State.Chasing)
             {
@@ -51,8 +54,9 @@ public class Slimmer : mobBase
             {
                 wander();
             }
+            agent.SetDestination(currPosition);
         }
-        agent.SetDestination(currPosition);
+        
     }
 
     void wander()
@@ -82,10 +86,8 @@ public class Slimmer : mobBase
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        agent.isStopped = true;
-        if (collision.gameObject.tag == "Player" && currState == State.Attacking)
+        if (collision.gameObject.tag == "Player")
         {
-            agent.isStopped = false;
             bounce();
         }
     }
@@ -98,18 +100,17 @@ public class Slimmer : mobBase
             currState = State.Chasing;
             flipSprite(-target.position.x);
         }
-        else if (agent.isStopped && currState == State.Attacking)
-        {
-            currState = State.Chasing;
-        }
     }
 
     void bounce()
     {
-        angle = Mathf.Atan2((target.position.y - currPosition.y), (target.position.x - currPosition.x));
-        angle *= -1;
-        agent.acceleration = 10;
-        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 3 * Mathf.Sin(angle));
+        float timer = 0;
+        while (knockbackDuration > timer)
+        {
+            timer += Time.deltaTime;
+            Vector2 knockDirect = (target.transform.position - transform.position).normalized;
+            monsterBody.AddForce(-knockDirect * knockbackPower);
+        }
     } 
 
     void flipSprite(float PosX)
