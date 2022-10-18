@@ -3995,11 +3995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e639a9af1ca7248846fac2c2e9b726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1889440883 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2065209224, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
-  m_PrefabInstance: {fileID: 5642498061771927943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1906170047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4718,18 +4713,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 227616984, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
-    - target: {fileID: 227616984, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1706496984, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
-      propertyPath: InteractionPoint
-      value: 
-      objectReference: {fileID: 1889440883}
     - target: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_Name
       value: MC
