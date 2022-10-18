@@ -11,7 +11,8 @@ public class PlayerMovement : MouseFollow
     public Transform interactor; // Shows mouse position
     public Transform interactor_two; // Shows what user inputted
     public float walkSpeed;
-    Vector2 direction;
+    public playerAction playerControls;
+    public Vector2 direction;
 
     private float inputX;
     private float inputY;
@@ -80,12 +81,15 @@ public class PlayerMovement : MouseFollow
         */
     }
 
-    void FixedUpdate() {
-    
+    void FixedUpdate() {  
         body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
+    }
 
-
+    private void OnEnable(){
+        playerControls.Player.Enable();
+    }
+    private void OnDisable(){
+        playerControls.Player.Disable();
 
     }
 }
-
