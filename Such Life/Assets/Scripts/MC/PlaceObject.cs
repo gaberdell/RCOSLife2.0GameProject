@@ -40,7 +40,7 @@ public class PlaceObject : MonoBehaviour
     private Vector3 generateRandomPosition(Vector3 playerPos)
     {
         // generate random position around player's position, within a circle of radius droppingRadius
-        System.Random rand = new System.Random();
+        System.Random rand = new System.Random(Guid.NewGuid().GetHashCode());
         float radius = (float)(rand.NextDouble() * droppingRadius);
         float tmp = (float)rand.NextDouble();
         tmp = 2 * tmp * radius - radius;
@@ -73,7 +73,8 @@ public class PlaceObject : MonoBehaviour
         return currentObject;
         */
 
-        GameObject currentObject = Instantiate(GameObject.Find(name));
+        //GameObject currentObject = Instantiate(GameObject.Find(name));
+        GameObject currentObject = Instantiate(Resources.Load(name) as GameObject);
 
         //itemPkup.pickUpRadius = 0.5f;
 
@@ -151,11 +152,16 @@ public class PlaceObject : MonoBehaviour
 
             else // not placeable, drop item to a random position within a circle range
             {
-                Vector3 droppos = generateRandomPosition(playerpos);
-                current = createGameObject(itemdata.DisplayName, droppos, key);
-                Debug.Log("dropped item");
+                for (int i = 0; i < mouseItem.AssignedInventorySlot.StackSize; i++)
+                {
+                    Vector3 droppos = generateRandomPosition(playerpos);
+                    current = createGameObject(itemdata.DisplayName, droppos, key);
+                    Debug.Log("dropped item");
+                }
+                
             }
-
+            
+            mouseItem.ClearSlot();
             
             
         }
