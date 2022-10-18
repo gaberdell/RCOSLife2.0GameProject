@@ -104,10 +104,10 @@ public class Slimmer : mobBase
 
     void bounce()
     {
-        float timer = 0;
-        while (knockbackDuration > timer)
+        float bounce_time = 0;
+        while (knockbackDuration > bounce_time)
         {
-            timer += Time.deltaTime;
+            bounce_time += Time.deltaTime;
             Vector2 knockDirect = (target.transform.position - transform.position).normalized;
             monsterBody.AddForce(-knockDirect * knockbackPower);
         }
