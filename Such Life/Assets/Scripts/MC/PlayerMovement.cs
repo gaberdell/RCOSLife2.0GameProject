@@ -17,9 +17,6 @@ public class PlayerMovement : MouseFollow
     private float inputX;
     private float inputY;
 
-    //private float prevX; // Stores previous frame's movement
-    //private float prevY;
-
     // Update is called once per frame
     void Update() {
 
@@ -33,13 +30,11 @@ public class PlayerMovement : MouseFollow
         anim.SetFloat("Speed", direction.sqrMagnitude);
 
         //give the game info of the direction that the player is facing (for interaction feature later)
-        /*
-        if (inputX == 0 && inputY == 0 && !(prevX == 0 && prevY == 0)) If no movement and the prevX and prevY variables have been updated,
-                                                                         the prevX and prevY variables should be used to update where character is facing{
-            anim.SetFloat("Horizontal", prevX);
-            anim.SetFloat("Vertical", prevY);
-            anim.SetFloat("Speed", 0.0f);
-        }*/
+    
+        if(Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical") == -1) {
+            anim.SetFloat("LastHorizontal", Input.GetAxis("Horizontal"));
+            anim.SetFloat("LastVertical", Input.GetAxis("Vertical"));
+        }
 
         
         if (inputX == 0 && inputY > 0) /*N*/ {
@@ -71,14 +66,7 @@ public class PlayerMovement : MouseFollow
 
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         interactor.localRotation = Quaternion.LookRotation(Vector3.forward, interactor.position - mousePosition); 
-
-        //At the end, save the current inputX and inputY into prevX and prevY if not idle.
-        /*
-        if (!(inputX == 0 && inputY == 0)) {
-            prevX = inputX;
-            prevY = inputY;
-        }
-        */
+        
     }
 
     void FixedUpdate() {  
