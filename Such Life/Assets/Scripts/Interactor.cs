@@ -7,12 +7,13 @@ using UnityEngine.InputSystem;
 
 public class Interactor : MonoBehaviour
 {
-    public playerAction playerControl;
+    //public playerAction playerControl;
     public Transform InteractionPoint;
     public LayerMask InteractionLayer;
     public float InteractionPointRadius = 1f;
     public bool IsInteracting { get; private set; }
 
+    /*
     private void Awake()
     {
         playerControl = new playerAction();
@@ -27,6 +28,7 @@ public class Interactor : MonoBehaviour
     {
         playerControl.Disable();
     }
+    */
 
     private void Update()
     {
@@ -34,10 +36,23 @@ public class Interactor : MonoBehaviour
          * "InteractionPoint.position" and within the "InteractionPointRadius", our hitbox will be store in a collider 
          * type array "Physics.OverlapSphere()".
          */
-        var collider = Physics.OverlapSphere(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
+        var collider = Physics2D.OverlapCircleAll(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
+
+        //fix so that the player can press any desire key to open chest
+        if (Keyboard.current.eKey.wasPressedThisFrame)
+        {
+            for (int i = 0; i < collider.Length; i++)
+            {
+                var interactable = collider[i].GetComponent<IInteractable>();
+                if (interactable != null)
+                {
+                    StartInteraction(interactable);
+                }
+            }
+        }
 
         //check this again to see if it's WasPerformedThisFrame or WasPressedThisFrame
-        bool interactingKeyPressed = playerControl.Player.Interacting.WasPressedThisFrame();
+        /* bool interactingKeyPressed = playerControl.Player.Interacting.WasPressedThisFrame();
 
         if (interactingKeyPressed)
         {
@@ -59,7 +74,7 @@ public class Interactor : MonoBehaviour
             {
                 EndInteraction();
             }
-            */
+         
 
             for (int i = 0; i < collider.Length; i++)
             {
@@ -73,16 +88,21 @@ public class Interactor : MonoBehaviour
 
             
         }
+        */
+
     }
 
 
     void StartInteraction(IInteractable interactable)
     {
         interactable.Interact(this, out bool interactSuccessful);
-        // this bool will disable movement when player interact with interactable object/s
+        // this bool will disable movement when player interact with interactable object/s 
+        //in the player movement script (Not implement yet)
         IsInteracting = true;
     }
 
+    // this bool will enable movement when player stop interact with interactable object/s 
+    // in the player movement script (Not implement yet)
     /*
     void EndInteraction()
     {
