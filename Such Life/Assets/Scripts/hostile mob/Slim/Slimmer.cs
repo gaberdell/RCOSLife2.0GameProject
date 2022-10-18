@@ -11,6 +11,7 @@ public class Slimmer : mobBase
         target = GameObject.Find("MC").transform;
 
         monsterBody = GetComponent<Rigidbody2D>();
+        monsterBody.drag = 15f;
 
         agent = GetComponent<NavMeshAgent>();
         agent.acceleration = 200;
@@ -32,13 +33,14 @@ public class Slimmer : mobBase
         time = 0f;
         distance = 0f;
         alertRange = 6.0f;
-        knockbackDuration = 1;
-        knockbackPower = 25;
+        knockbackDuration = 0.7f;
+        knockbackPower = 30;
     }
 
     // Update is called once per frame
     void Update()
     {
+        currPosition = transform.position;
         target = GameObject.Find("MC").transform;
         time += 1f * Time.deltaTime;
         distance = Vector2.Distance(target.position, currPosition);
@@ -48,7 +50,7 @@ public class Slimmer : mobBase
             time = 0f;
             if (currState == State.Chasing)
             {
-                chasing(distance);
+                chasing();
             }
             else if (currState == State.Wander)
             {
@@ -66,11 +68,11 @@ public class Slimmer : mobBase
         flipSprite(oldPosX);
     }
 
-    void chasing(float distance)
+    void chasing()
     {
         float oldPosX = currPosition.x;
         angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
-        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 3 * Mathf.Sin(angle));
+        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 2 * Mathf.Sin(angle));
         flipSprite(oldPosX);
     }
 
@@ -90,6 +92,7 @@ public class Slimmer : mobBase
         {
             bounce();
         }
+        time = 0;
     }
 
     void StateChange()
@@ -111,6 +114,7 @@ public class Slimmer : mobBase
             Vector2 knockDirect = (target.transform.position - transform.position).normalized;
             monsterBody.AddForce(-knockDirect * knockbackPower);
         }
+        agent.SetDestination(transform.position);
     } 
 
     void flipSprite(float PosX)

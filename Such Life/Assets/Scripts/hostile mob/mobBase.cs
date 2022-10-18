@@ -27,7 +27,7 @@ public class mobBase : MonoBehaviour
     //public Animator an;
     public GameObject monsterObj;
     public GameObject player;
-    public Vector2 newPosition;
+    // public Vector2 newPosition;
 
     public SpriteRenderer MobSprite;
     public Transform target;
@@ -41,7 +41,7 @@ public class mobBase : MonoBehaviour
         float posymin = transform.position.y - 5.0f;
         float posymax = transform.position.y + 5.0f;
 
-        newPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+        currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
 
     public string GetMob() //Returns the Mob Type
