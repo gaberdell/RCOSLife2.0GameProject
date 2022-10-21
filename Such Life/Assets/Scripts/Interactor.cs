@@ -34,14 +34,13 @@ public class Interactor : MonoBehaviour
          * "InteractionPoint.position" and within the "InteractionPointRadius", our hitbox will be store in a collider 
          * type array "Physics.OverlapSphere()".
          */
-        var collider = Physics.OverlapSphere(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
+        var collider = Physics2D.OverlapCircleAll(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
 
         //check this again to see if it's WasPerformedThisFrame or WasPressedThisFrame
         bool interactingKeyPressed = playerControl.Player.Interacting.WasPressedThisFrame();
 
         if (interactingKeyPressed)
         {
-            print(interactingKeyPressed);
             //Codes to be test (If there are no interactable items around, player can't call startInteracting method)
             /* 
             if(collider.Length != 0)
