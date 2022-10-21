@@ -74,9 +74,24 @@ public class PlaceObject : MonoBehaviour
         */
 
         //GameObject currentObject = Instantiate(GameObject.Find(name));
-        GameObject currentObject = Instantiate(Resources.Load(name) as GameObject);
+        GameObject currentObject = new GameObject(name);
+        SpriteRenderer rend = currentObject.AddComponent<SpriteRenderer>();
+        rend.sprite = itemdata.Icon;
+        if (itemdata.colliderType == "circle")
+        {
+            CircleCollider2D cc = currentObject.AddComponent<CircleCollider2D>();
+            cc.radius = itemdata.circleColliderRadius;
+        }
+        else if (itemdata.colliderType == "box")
+        {
+            var bc = currentObject.AddComponent<BoxCollider2D>();
+            bc.size = itemdata.boxColliderSize;
+        }
+        ItemPickUp itempk = currentObject.AddComponent(typeof(ItemPickUp)) as ItemPickUp;
+        itempk.ItemData = itemdata;
 
-        //itemPkup.pickUpRadius = 0.5f;
+        //GameObject currentObject = Instantiate(Resources.Load(name) as GameObject);
+
 
         currentObject.transform.position = pos;
         if (itemdata.placeable)
