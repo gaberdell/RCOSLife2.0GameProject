@@ -35,15 +35,13 @@ public class InventoryUIController : MonoBehaviour
 
     // Change it so that the player can use mouse cursor to open up the chest if they are directly in front of them using the interact button or right click 
     // To open player's backpack, they have to press tab and to close it, either press tab or escape button
-
-    //this commented code block is currently broken
     
     public void OpenInventory()
     {
         //check to see if you press the key or not
         bool openInventoryKeyPressed = playerControl.Player.OpenInventory.WasPressedThisFrame();
         bool closeInventoryKeyPressed = playerControl.Player.CloseInventory.WasPressedThisFrame();
-            
+        
         if (openInventoryKeyPressed && !inventoryPanel.gameObject.activeInHierarchy)
         {
             ShowInventory(new InventorySystem(30));
