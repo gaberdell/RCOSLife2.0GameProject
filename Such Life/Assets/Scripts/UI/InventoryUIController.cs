@@ -8,31 +8,46 @@ using UnityEngine.InputSystem;
 public class InventoryUIController : MonoBehaviour
 {
     public DynamicInventoryDisplay inventoryPanel;
-    public playerAction playerControl;
+    //public playerAction playerControl;
 
     //Key press action
-    InputAction openInventory = new InputAction("Open Inventory");
+    //InputAction openInventory = new InputAction("Open Inventory");
     
 
     private void Awake()
     {
-        playerControl = new playerAction();
+        //playerControl = new playerAction();
         inventoryPanel.gameObject.SetActive(false);
     }
 
     private void OnEnable()
     {
-        playerControl.Enable();
+        //playerControl.Enable();
         InventoryHolder.OnDynamicInventoryDisplayRequested += ShowInventory;
     }
 
     private void OnDisable()
     {
-        playerControl.Disable();
+        //playerControl.Disable();
         InventoryHolder.OnDynamicInventoryDisplayRequested -= ShowInventory;
     }
 
-    
+    void Update()
+    {
+
+        if(inventoryPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            inventoryPanel.gameObject.SetActive(false);
+        }
+    }
+
+
+
+    // Change it so that the player can use mouse cursor to open up the chest if they are directly in front of them using the interact button or right click 
+    // To open player's backpack, they have to press tab and to close it, either press tab or escape button
+
+    //this commented code block is currently broken
+    /*
     public void OpenInventory()
     {
         //check to see if you press the key or not
@@ -46,7 +61,7 @@ public class InventoryUIController : MonoBehaviour
         {
             inventoryPanel.gameObject.SetActive(false);
         }
-        */
+        
 
         
         if (openInventoryKeyPressed && !inventoryPanel.gameObject.activeInHierarchy)
@@ -74,13 +89,14 @@ public class InventoryUIController : MonoBehaviour
         {
             inventoryPanel.gameObject.SetActive(false);
         }
-        */
+        
         OpenInventory();
     }
-
+    */
     void ShowInventory(InventorySystem inventoryToShow)
     {
         inventoryPanel.gameObject.SetActive(true);
         inventoryPanel.RefreshDynamicInventory(inventoryToShow);
     }
+    
 }
