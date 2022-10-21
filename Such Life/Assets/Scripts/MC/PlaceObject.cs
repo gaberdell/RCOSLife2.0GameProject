@@ -102,23 +102,7 @@ public class PlaceObject : MonoBehaviour
 
         return currentObject;
     }
-    /*
-    private GameObject createHouse(Vector3 pos, string key)
-    {
-        // create gameobject with name, scale at position pos
-        
-        GameObject currentObject = Instantiate(Resources.Load("housetest") as GameObject);
-
-        // add class components here
-        BuildingBase housetest = currentObject.AddComponent(typeof(BuildingBase)) as BuildingBase;
-        //itemPkup.pickUpRadius = 0.5f;
-
-        currentObject.transform.position = pos;
-        locationVSgameobjects.Add(key, currentObject);
-
-        return currentObject;
-    }
-    */
+    
     void Start()
     {
         locationVSgameobjects = new Dictionary<string, GameObject>();
@@ -129,6 +113,7 @@ public class PlaceObject : MonoBehaviour
     {
         // create a gameobject for current hotbar item, place it on cursor's location pos
         // assuming hotbar item has a datatype InventoryItemData
+        itemdata = mouseItem.AssignedInventorySlot.ItemData;
         if (Mouse.current.rightButton.wasPressedThisFrame && stage == 1)
         {
             Vector3 mousepos = Mouse.current.position.ReadValue();
@@ -140,7 +125,6 @@ public class PlaceObject : MonoBehaviour
             mousepos.z = playerpos.z;
             string key = mousepos.x.ToString("0.00") + mousepos.y.ToString("0.00");
 
-            itemdata = mouseItem.AssignedInventorySlot.ItemData;
             if (itemdata.placeable) // placeable
             {
                 if (locationVSgameobjects.ContainsKey(key))
@@ -184,6 +168,17 @@ public class PlaceObject : MonoBehaviour
         if (Mouse.current.rightButton.wasPressedThisFrame && stage == 2)
         {
             current.transform.Rotate(0f, 0f, 90f);
+        }
+        if (Mouse.current.leftButton.wasPressedThisFrame && stage == 1)
+        {
+            Vector3 playerpos = player.transform.position;
+            for (int i = 0; i < mouseItem.AssignedInventorySlot.StackSize; i++)
+            {
+                Vector3 droppos = generateRandomPosition(playerpos);
+                current = createGameObject(itemdata.DisplayName, droppos, "");
+                Debug.Log("dropped item");
+            }
+            mouseItem.ClearSlot();
         }
         if (Mouse.current.leftButton.wasPressedThisFrame && stage == 2)
         {
