@@ -13,6 +13,7 @@ public class Interactor : MonoBehaviour
     public float InteractionPointRadius = 1f;
     public bool IsInteracting { get; private set; }
 
+    
     private void Awake()
     {
         playerControl = new playerAction();
@@ -34,16 +35,16 @@ public class Interactor : MonoBehaviour
          * "InteractionPoint.position" and within the "InteractionPointRadius", our hitbox will be store in a collider 
          * type array "Physics.OverlapSphere()".
          */
-        var collider = Physics.OverlapSphere(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
+        var collider = Physics2D.OverlapCircleAll(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
 
         //check this again to see if it's WasPerformedThisFrame or WasPressedThisFrame
         bool interactingKeyPressed = playerControl.Player.Interacting.WasPressedThisFrame();
 
         if (interactingKeyPressed)
         {
-            print(interactingKeyPressed);
             //Codes to be test (If there are no interactable items around, player can't call startInteracting method)
-            /* 
+            
+            /*
             if(collider.Length != 0)
             {
                 for (int i = 0; i < collider.Length; i++)
@@ -59,7 +60,7 @@ public class Interactor : MonoBehaviour
             {
                 EndInteraction();
             }
-            */
+            */ 
 
             for (int i = 0; i < collider.Length; i++)
             {
@@ -69,20 +70,21 @@ public class Interactor : MonoBehaviour
                     StartInteraction(interactable);
                 }
             }
-
-
-            
         }
+
     }
 
 
     void StartInteraction(IInteractable interactable)
     {
         interactable.Interact(this, out bool interactSuccessful);
-        // this bool will disable movement when player interact with interactable object/s
+        // this bool will disable movement when player interact with interactable object/s 
+        //in the player movement script (Not implement yet)
         IsInteracting = true;
     }
 
+    // this bool will enable movement when player stop interact with interactable object/s 
+    // in the player movement script (Not implement yet)
     /*
     void EndInteraction()
     {
