@@ -28,6 +28,7 @@ public class PlaceObject : MonoBehaviour
     private Dictionary<string, GameObject> locationVSgameobjects;
     private int stage = 1;   // stage = 1: right click to place object; stage = 2: right click to rotate object (rotatable object only)
     private GameObject current;   // point to current game object
+    public GameObject placingRadiusobj;   // display the range of placing objects (circle around player)
     private InventoryItemData itemdata;
     // hotbar item goes here
 
@@ -106,6 +107,12 @@ public class PlaceObject : MonoBehaviour
     void Start()
     {
         locationVSgameobjects = new Dictionary<string, GameObject>();
+        placingRadiusobj.transform.position = player.transform.position;
+        placingRadiusobj.transform.localScale = new Vector3(placingRadius, placingRadius, 0f);
+        var sprr = placingRadiusobj.GetComponent<SpriteRenderer>();
+        Color c = Color.white;
+        c.a = 0f;
+        sprr.color = c;
     }
 
     // Update is called once per frame
@@ -114,6 +121,22 @@ public class PlaceObject : MonoBehaviour
         // create a gameobject for current hotbar item, place it on cursor's location pos
         // assuming hotbar item has a datatype InventoryItemData
         itemdata = mouseItem.AssignedInventorySlot.ItemData;
+        placingRadiusobj.transform.position = player.transform.position;
+        if (itemdata && itemdata.placeable)
+        {
+            // draw circle (indicating placing radius) around player
+            var sprr = placingRadiusobj.GetComponent<SpriteRenderer>();
+            Color c = Color.white;
+            c.a = 0.4f;
+            sprr.color = c;
+        }
+        else
+        {
+            var sprr = placingRadiusobj.GetComponent<SpriteRenderer>();
+            Color c = Color.white;
+            c.a = 0f;
+            sprr.color = c;
+        }
         if (Mouse.current.rightButton.wasPressedThisFrame && stage == 1)
         {
             Vector3 mousepos = Mouse.current.position.ReadValue();
@@ -141,7 +164,8 @@ public class PlaceObject : MonoBehaviour
                     {
                         stage = 2;
                     }
-                    Debug.Log("placed " + "House");
+                    Debug.Log("placed item");
+                    mouseItem.ClearSlot();
                 }
                 else // out of placing range
                 {
@@ -157,10 +181,10 @@ public class PlaceObject : MonoBehaviour
                     current = createGameObject(itemdata.DisplayName, droppos, key);
                     Debug.Log("dropped item");
                 }
-                
+                mouseItem.ClearSlot();
             }
             
-            mouseItem.ClearSlot();
+            
             
             
         }
