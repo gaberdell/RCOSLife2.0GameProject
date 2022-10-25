@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-/* Base codes provided by: Dan Pos - Game Dev Tutorials! with slight modification */
+/* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
 
 public class Interactor : MonoBehaviour
 {

@@ -17,7 +17,7 @@ public class StaticInventoryDisplay : InventoryDisplay
         // We already assign something in the inspector
         if(inventoryHolder != null)
         {
-            inventorySystem = inventoryHolder.InventorySystem;
+            inventorySystem = inventoryHolder.PrimaryInventorySystem;
             inventorySystem.OnInventorySlotChanged += UpdateSlot;
 
         }
