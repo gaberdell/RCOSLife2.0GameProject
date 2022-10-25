@@ -12,7 +12,7 @@ public class ChestInventory : InventoryHolder, IInteractable
     public void Interact(Interactor interactor, out bool interactSuccessful)
     {
         // if any is listening out on this event (hence the ?), if yes, invoke it
-        OnDynamicInventoryDisplayRequested?.Invoke(inventorySystem);
+        OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem);
         interactSuccessful = true;
     }
 
