@@ -34,6 +34,8 @@ public class AnimalBase : MonoBehaviour
     public GameObject player;
     public RaycastHit hit;
     public SpriteRenderer aniSprite;
+    public GameObject food;
+
 
     public NavMeshAgent navi; //Hey, Listen!
 
@@ -123,6 +125,42 @@ public class AnimalBase : MonoBehaviour
             aniSprite.flipX = true;
         }
     }
+
+    public GameObject findClosestObj(string tag)
+    {
+        GameObject[] things;
+        try
+        {
+            things = GameObject.FindGameObjectsWithTag(tag);
+            GameObject closest = null;
+            float distance = Mathf.Infinity;
+            foreach(GameObject thing in things)
+            {
+                Vector2 diff = (Vector2)thing.transform.position - position;
+                float curDistance = diff.sqrMagnitude;
+
+                if (curDistance < distance)
+                {
+                    closest = thing;
+                    distance = curDistance;
+                }
+               }
+            if (distance <= awareness)
+            {
+                return closest;
+            }
+            else
+            {
+                return null;
+            }
+        }
+            
+             catch
+        {
+            return null;
+        }
+    }
+       
 
     void OnCollisionEnter2D(Collision2D collision)
     {
