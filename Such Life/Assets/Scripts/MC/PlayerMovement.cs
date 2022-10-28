@@ -24,7 +24,7 @@ public class PlayerMovement : MouseFollow
         inputY = Input.GetAxis("Vertical");
 
         direction = new Vector2(inputX, inputY).normalized;
-        
+
         anim.SetFloat("Horizontal", inputX);
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
@@ -36,7 +36,34 @@ public class PlayerMovement : MouseFollow
             anim.SetFloat("LastVertical", Input.GetAxis("Vertical"));
         }
 
+        //Quaternion.LookRotation(Vector3.forward, interactor.position - mousePosition)
+
+        if (mousePosition.z == 180) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 180);//Will now turn interactor towards cardinal direction of mouse.
+        }
+        if (mousePosition.z == 135) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 135);
+        }
+        if (mousePosition.z == 90) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 90);
+        }
+        if (mousePosition.z == 45) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 45);
+        }
+        if (mousePosition.z == 0) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (mousePosition.z == -45) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, -45);
+        }
+        if (mousePosition.z == -90) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, -90);
+        }
+        if (mousePosition.z == -135) {
+            interactor_two.localRotation = Quaternion.Euler(0, 0, -135);
+        } 
         
+        //Tracks what user is inputting.
         if (inputX == 0 && inputY > 0) /*N*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 180);
         }
@@ -61,18 +88,26 @@ public class PlayerMovement : MouseFollow
         if (inputX < 0 && inputY > 0) /*NW*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -135);
         }
-
-        // Turns the interactor towards the mouse
-
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        interactor.localRotation = Quaternion.LookRotation(Vector3.forward, interactor.position - mousePosition); 
         
+        //If mouse is facing opposite from where player is moving, flip sprite around both axes.
+        /*
+        if((interactor.localRotation.z - interactor_two.localRotation.z > 90 ) || (interactor.localRotation.z - interactor_two.localRotation.z < -90)){
+            spriteRenderer.flipX = true;
+            spriteRenderer.flipY = true;
+        } 
+        else {
+            spriteRenderer.flipX = false;
+            spriteRenderer.flipY = false;
+        }
+        */
     }
 
+    
+        
     void FixedUpdate() {  
         body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
     }
-
+    /*
     private void OnEnable(){
         playerControls.Player.Enable();
     }
@@ -80,4 +115,5 @@ public class PlayerMovement : MouseFollow
         playerControls.Player.Disable();
 
     }
+    */
 }
