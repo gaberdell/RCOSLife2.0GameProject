@@ -14,7 +14,7 @@ public class Grass : MonoBehaviour
     void Start()
     {
         time = 29f;
-        timeDelay = 30f;
+        timeDelay = 3f;
         spawnerPos = this.transform.position;
         patchsize = Random.Range(0f, 5f);
     }
