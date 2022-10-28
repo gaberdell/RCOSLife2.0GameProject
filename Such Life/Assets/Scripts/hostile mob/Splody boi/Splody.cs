@@ -8,10 +8,13 @@ public class Splody : mobBase
     [SerializeField]
     public int explosionRange;
     // Start is called before the first frame update
-    public double explodeTimer;
-    public bool exploded;
+    [SerializeField] double explodeTimer;
+    [SerializeField] bool exploded;
+    [SerializeField] float speed;
     void Start()
     {
+        monsterBody = GetComponent<Rigidbody2D>();
+        
         target = GameObject.Find("MC").transform;
         agent = GetComponent<NavMeshAgent>();
         agent.acceleration = 200;
@@ -34,8 +37,9 @@ public class Splody : mobBase
         distance = 0f;
         alertRange = 6.0f;
         explosionRange = 3;
-        explodeTimer = 2f;
+        explodeTimer = 5f;
         exploded = false;
+        speed = 1f;
 }
 
     // Update is called once per frame
@@ -45,24 +49,25 @@ public class Splody : mobBase
         time += 1f * Time.deltaTime;
         distance = Vector2.Distance(target.position, currPosition);
         StateChange();
-        if (time >= time_move)
+
+        monsterBody.MovePosition(currPosition);
+        agent.isStopped = false;
+        agent.acceleration = 200;
+        if (currState == State.Chasing)
         {
-            agent.isStopped = false;
-            agent.acceleration = 200;
-            time = 0f;
-            if (currState == State.Chasing)
-            {
-                chasing(distance);
-            }
-            else if (currState == State.Wander)
-            {
+            chasing(distance);
+        }
+        else if (currState == State.Wander)
+        {   
+            if (time >= time_move){
                 wander();
             }
-            else if (currState == State.Attacking)
-            {
-                chargeExplosion();
-            }
         }
+        else if (currState == State.Attacking)
+        {
+            chargeExplosion();
+        }
+        
         //If and only if the agent active and is on a NavMesh, it should set the agent's destination.
         //
         if (!exploded) { 
@@ -72,18 +77,21 @@ public class Splody : mobBase
 
     void wander()
     {
-        float oldPosX = currPosition.x;
+        //float oldPosX = currPosition.x;
         PositionChange();
         //flipSprite(oldPosX);
     }
 
     void chasing(float distance)
     {
-        float speed = distance * Time.deltaTime * 163f;
+        speed *= Time.deltaTime;
         //angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
+        //Vector2 conversion = currPosition;
+        //agent.SetDestination(conversion);
         currPosition = Vector2.MoveTowards(currPosition,target.position, speed);
         print("Debug: speed is" + speed);
         //flipSprite(oldPosX);
+        speed /= Time.deltaTime;
     }
 
     public override void PositionChange()
@@ -107,13 +115,11 @@ public class Splody : mobBase
     }
     void chargeExplosion()
     {
-        if (explodeTimer <= 0) {
+        if(explodeTimer <= 0) {
             explode();
         }
-        else
-        {
-            print("Splody boi is charging up an explosion...");
-            explodeTimer -= 1f;
+        else {  
+            explodeTimer -= Time.deltaTime; 
         }
     }
     void StateChange()
@@ -131,7 +137,12 @@ public class Splody : mobBase
         else if (distance >= (explosionRange + 0.3) && currState == State.Attacking)
         {
             currState = State.Chasing;
-            explodeTimer = 1f;
+            explodeTimer = 5f;
+        }
+        else if(distance >= alertRange)
+        {
+            playerSighted = false;
+            currState = State.Wander;
         }
     }
     void explode()
