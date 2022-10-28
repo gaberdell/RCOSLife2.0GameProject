@@ -27,6 +27,7 @@ public class Sheep : AnimalBase
         hungerCap = 100f;
         hunger = 100f;
         hungerDrain = 0.1f;
+        food = null;
     }
 
     // Update is called once per frame
@@ -44,7 +45,16 @@ public class Sheep : AnimalBase
             time = 0f;
             if (currState == State.Hungry)
             {
-
+                food = findClosestObj("Grass");
+                newposition = food.transform.position;
+                navi.SetDestination(newposition);
+                float tempdist1 = Mathf.Round(position.sqrMagnitude * 100);
+                float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 100);
+                if(tempdist1 == tempdist2)
+                {
+                    Destroy(food);
+                    food = null;
+                }
             }
 
             if (currState == State.Idling)
@@ -74,7 +84,7 @@ public class Sheep : AnimalBase
                     Idle();
                 }
             }
-            if(hunger < 30)
+            if(hunger <= 30)
             {
                 touchGrass();
             }
@@ -127,4 +137,6 @@ public class Sheep : AnimalBase
     {
 
     }
+
 }
+   
