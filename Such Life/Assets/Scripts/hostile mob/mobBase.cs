@@ -13,6 +13,7 @@ public class mobBase : MonoBehaviour
     public float alertRange; //min distance from target required for mob to chase.
     public float knockbackDuration;
     public float knockbackPower;
+    public float speed;
 
     public bool playerSighted = false; //check whether player is in monster's sight
     public Vector2 currPosition; //current position
