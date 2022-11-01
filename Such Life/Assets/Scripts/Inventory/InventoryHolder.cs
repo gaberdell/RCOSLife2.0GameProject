@@ -4,25 +4,21 @@ using UnityEngine;
 using UnityEngine.Events;
 
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
-
+/* This script is for building the user's backpack and chest system */
 [System.Serializable]
 public class InventoryHolder : MonoBehaviour
 {
     [SerializeField] private int inventorySize;
-    [SerializeField] protected InventorySystem inventorySystem;
+    [SerializeField] protected InventorySystem primaryInvSystem;
 
     /* Getter */
-    public InventorySystem InventorySystem => inventorySystem;
+    public InventorySystem PrimaryInventorySystem => primaryInvSystem;
 
     public static UnityAction<InventorySystem> OnDynamicInventoryDisplayRequested;
 
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        inventorySystem = new InventorySystem(inventorySize); 
+        primaryInvSystem = new InventorySystem(inventorySize); 
     }
-
-
-
-
 }   
