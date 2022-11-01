@@ -10,10 +10,10 @@ public class Splody : mobBase
     // Start is called before the first frame update
     [SerializeField] double explodeTimer;
     [SerializeField] bool exploded;
-    [SerializeField] float speed;
     void Start()
     {
         monsterBody = GetComponent<Rigidbody2D>();
+        monsterBody.drag = 10f;
         
         target = GameObject.Find("MC").transform;
         agent = GetComponent<NavMeshAgent>();
@@ -39,7 +39,7 @@ public class Splody : mobBase
         explosionRange = 3;
         explodeTimer = 5f;
         exploded = false;
-        speed = 1f;
+        speed = 2f;
 }
 
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class Splody : mobBase
         distance = Vector2.Distance(target.position, currPosition);
         StateChange();
 
-        monsterBody.MovePosition(currPosition);
+        //monsterBody.MovePosition(currPosition);
         agent.isStopped = false;
         agent.acceleration = 200;
         if (currState == State.Chasing)
@@ -61,6 +61,7 @@ public class Splody : mobBase
         {   
             if (time >= time_move){
                 wander();
+                time = 0;
             }
         }
         else if (currState == State.Attacking)
@@ -70,8 +71,9 @@ public class Splody : mobBase
         
         //If and only if the agent active and is on a NavMesh, it should set the agent's destination.
         //
-        if (!exploded) { 
-        agent.SetDestination(currPosition);
+        if (!exploded) {
+            //print("This code runs");
+            agent.SetDestination(currPosition);
         }
     }
 
@@ -84,14 +86,14 @@ public class Splody : mobBase
 
     void chasing(float distance)
     {
-        speed *= Time.deltaTime;
+        float frame_speed = speed * Time.deltaTime;
         //angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
         //Vector2 conversion = currPosition;
         //agent.SetDestination(conversion);
-        currPosition = Vector2.MoveTowards(currPosition,target.position, speed);
+        currPosition = Vector2.MoveTowards(currPosition,target.position, frame_speed);
         print("Debug: speed is" + speed);
+        print("Debug: speed per frame is" + frame_speed);
         //flipSprite(oldPosX);
-        speed /= Time.deltaTime;
     }
 
     public override void PositionChange()
@@ -100,7 +102,6 @@ public class Splody : mobBase
         float posxmax = transform.position.x + 1.0f;
         float posymin = transform.position.y - 1.0f;
         float posymax = transform.position.y + 1.0f;
-
         currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
     
