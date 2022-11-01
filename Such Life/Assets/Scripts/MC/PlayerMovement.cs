@@ -65,6 +65,8 @@ public class PlayerMovement : MouseFollow
         if (mousePosition.x - body.position.x < -0.5 && mousePosition.y - body.position.y > 0.5) /*NW*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -135);
         }
+        anim.SetFloat("MouseX", mousePosition.x - body.position.x);
+        anim.SetFloat("MouseY", mousePosition.y - body.position.y);
         
         
         
@@ -95,17 +97,7 @@ public class PlayerMovement : MouseFollow
             interactor.localRotation = Quaternion.Euler(0, 0, -135);
         }
         
-        //If mouse is facing opposite from where player is moving, flip sprite around both axes.
-        /*
-        if((interactor.localRotation.z - interactor_two.localRotation.z > 90 ) || (interactor.localRotation.z - interactor_two.localRotation.z < -90)){
-            spriteRenderer.flipX = true;
-            spriteRenderer.flipY = true;
-        } 
-        else {
-            spriteRenderer.flipX = false;
-            spriteRenderer.flipY = false;
-        }
-        */
+        
     }
 
     
