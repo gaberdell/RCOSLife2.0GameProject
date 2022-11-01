@@ -41,28 +41,28 @@ public class PlayerMovement : MouseFollow
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
         //Will now turn interactor towards cardinal direction of mouse.
-        if (mousePosition.x > -0.5 && mousePosition.x < 0.5 && mousePosition.y > 0) /*N*/ {
+        if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y > 0) /*N*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 180);
         }
-        if (mousePosition.x > 0.5 && mousePosition.y > 0.5) /*NE*/ {
+        if (mousePosition.x - body.position.x > 0.5 && mousePosition.y - body.position.y > 0.5) /*NE*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 135);
         }
-        if (mousePosition.x > 0 && mousePosition.y > -0.5 && mousePosition.y < 0.5) /*E*/ {
+        if (mousePosition.x - body.position.x > 0 && mousePosition.y - body.position.y > -0.5 && mousePosition.y - body.position.y < 0.5) /*E*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 90);
         }
-        if (mousePosition.x > 0.5 && mousePosition.y < -0.5) /*SE*/ {
+        if (mousePosition.x - body.position.x > 0.5 && mousePosition.y - body.position.y < -0.5) /*SE*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 45);
         }
-        if (mousePosition.x > -0.5 && mousePosition.x < 0.5 && mousePosition.y < 0) /*S*/ {
+        if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y < 0) /*S*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        if (mousePosition.x < -0.5 && mousePosition.y < -0.5) /*SW*/ {
+        if (mousePosition.x - body.position.x < -0.5 && mousePosition.y - body.position.y < -0.5) /*SW*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -45);
         }
-        if (mousePosition.x < 0 && mousePosition.y > -0.5 && mousePosition.y < 0.5) /*W*/ {
+        if (mousePosition.x - body.position.x < 0 && mousePosition.y - body.position.y > -0.5 && mousePosition.y - body.position.y < 0.5) /*W*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -90);
         }
-        if (mousePosition.x < -0.5 && mousePosition.y > 0.5) /*NW*/ {
+        if (mousePosition.x - body.position.x < -0.5 && mousePosition.y - body.position.y > 0.5) /*NW*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -135);
         }
         
@@ -71,28 +71,28 @@ public class PlayerMovement : MouseFollow
 
         //Tracks what user is inputting.
         if (inputX == 0 && inputY > 0) /*N*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, 180);
+            interactor.localRotation = Quaternion.Euler(0, 0, 180);
         }
         if (inputX > 0 && inputY > 0) /*NE*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, 135);
+            interactor.localRotation = Quaternion.Euler(0, 0, 135);
         }
         if (inputX > 0 && inputY == 0) /*E*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, 90);
+            interactor.localRotation = Quaternion.Euler(0, 0, 90);
         }
         if (inputX > 0 && inputY < 0) /*SE*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, 45);
+            interactor.localRotation = Quaternion.Euler(0, 0, 45);
         }
         if (inputX == 0 && inputY < 0) /*S*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, 0);
+            interactor.localRotation = Quaternion.Euler(0, 0, 0);
         }
         if (inputX < 0 && inputY < 0) /*SW*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, -45);
+            interactor.localRotation = Quaternion.Euler(0, 0, -45);
         }
         if (inputX < 0 && inputY == 0) /*W*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, -90);
+            interactor.localRotation = Quaternion.Euler(0, 0, -90);
         }
         if (inputX < 0 && inputY > 0) /*NW*/ {
-            interactor_two.localRotation = Quaternion.Euler(0, 0, -135);
+            interactor.localRotation = Quaternion.Euler(0, 0, -135);
         }
         
         //If mouse is facing opposite from where player is moving, flip sprite around both axes.
