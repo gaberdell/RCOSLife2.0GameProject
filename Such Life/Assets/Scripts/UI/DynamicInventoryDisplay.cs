@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 /* class represent the slots in the player's backpack and any other openable items */
-/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+/* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
 public class DynamicInventoryDisplay : InventoryDisplay
 {
     // for other class to access - Maybe a merchant (will use dynamic inventory display) have other
@@ -22,6 +22,11 @@ public class DynamicInventoryDisplay : InventoryDisplay
         //clear out slots, update and assign slots 
         ClearSlots();
         inventorySystem = inventoryToShow;
+        if(inventorySystem != null)
+        {
+            inventorySystem.OnInventorySlotChanged += UpdateSlot;
+        }
+
         AssignSlot(inventoryToShow);
     }
 
@@ -34,6 +39,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
         {
             return;
         }
+
 
         //create and pair the inventory slot
         for(int i = 0; i < inventoryToShow.InventorySize; i++)
@@ -56,6 +62,14 @@ public class DynamicInventoryDisplay : InventoryDisplay
         if(slotDictionary != null)
         {
             slotDictionary.Clear();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (inventorySystem != null)
+        {
+            inventorySystem.OnInventorySlotChanged -= UpdateSlot;
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+/* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class ItemPickUp : MonoBehaviour
@@ -21,11 +21,12 @@ public class ItemPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        var inventory = other.transform.GetComponent<InventoryHolder>();
+        //adjust this function slightly when start to implement player and chest inventory
+        var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
         
         if (!inventory) return;
 
-        if (inventory.InventorySystem.AddToInventory(ItemData, 1))
+        if (inventory.AddToInventory(ItemData, 1))
         {
             Destroy(this.gameObject);
         }

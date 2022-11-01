@@ -19,6 +19,7 @@ public class InventorySystem
 
     //event that activate when we add an item into our inventory 
     public UnityAction<InventorySlot> OnInventorySlotChanged;
+
     /* Constructor */
     public InventorySystem(int size)
     {
@@ -39,13 +40,13 @@ public class InventorySystem
         if(ContainsItem(itemToAdd, out List<InventorySlot> invSlot))
         {
             //add item in and change inventory
-            foreach (var slot in invSlot)
+            foreach (var emptySlot in invSlot)
             {
                 //check to see if there are still room left in the slot
-                if (slot.RoomLeftInStack(amountToAdd))
+                if (emptySlot.IsEnoughSpaceInStack(amountToAdd))
                 {
-                    slot.AddToStack(amountToAdd);
-                    OnInventorySlotChanged?.Invoke(slot);
+                    emptySlot.AddToStack(amountToAdd);
+                    OnInventorySlotChanged?.Invoke(emptySlot);
                     return true;
                 }
             }
@@ -54,10 +55,15 @@ public class InventorySystem
         
         if(HasFreeSlot(out InventorySlot freeSlot)) //Gets the first available slot
         {
-            //add item into available slot
-            freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
-            OnInventorySlotChanged?.Invoke(freeSlot);
-            return true;
+            if (freeSlot.IsEnoughSpaceInStack(amountToAdd))
+            {
+                //add item into available slot
+                freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
+                OnInventorySlotChanged?.Invoke(freeSlot);
+                return true;
+            }
+            /* implement such that to only take what can fill the stack and check for another free slot 
+            to put the rest of the item in */
         }
         return false;
     }
