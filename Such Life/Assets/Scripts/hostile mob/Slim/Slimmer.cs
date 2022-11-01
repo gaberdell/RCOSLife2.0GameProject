@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Slimmer : mobBase
 {
+    public GameObject slimesplitter;
     private float time_stop;
 
     // Start is called before the first frame update
@@ -57,6 +58,7 @@ public class Slimmer : mobBase
             if (currState == State.Chasing)
             {
                 agent.SetDestination(target.position);
+                flipSprite(-target.position.x);
             }
             else if (currState == State.Wander)
             {
@@ -117,6 +119,15 @@ public class Slimmer : mobBase
             currState = State.Chasing;
             flipSprite(-target.position.x);
         }
+        if (currHealth == 0)
+        {
+            // Oof
+            Destroy(this.gameObject);
+
+            // Split up
+            Instantiate(slimesplitter, transform.position + transform.forward * 2, transform.rotation);
+            Instantiate(slimesplitter, transform.position + transform.right * 2, transform.rotation);
+        }
     }
 
     // The function used to implement bounce
@@ -136,7 +147,7 @@ public class Slimmer : mobBase
         }
         // Set the position of the slime to the place it just got knocked back to.
         agent.SetDestination(transform.position);
-    } 
+    }
     
     // Flip the sprite in relation to the position you give it.
     void flipSprite(float PosX)
