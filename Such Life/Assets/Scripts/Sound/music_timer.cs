@@ -1,3 +1,10 @@
+/*
+Alex Mattoni - 11/01/2022
+
+Basic timer script that plays an audio clip (attached via the
+Unity inspector) through a self-created AudioSource and AudioListener.
+
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
