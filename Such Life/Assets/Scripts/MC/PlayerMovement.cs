@@ -29,6 +29,7 @@ public class PlayerMovement : MouseFollow
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
 
+        
         //give the game info of the direction that the player is facing (for interaction feature later)
     
         if(Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical") == -1) {
@@ -96,7 +97,6 @@ public class PlayerMovement : MouseFollow
         if (inputX < 0 && inputY > 0) /*NW*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, -135);
         }
-        
         
     }
 
