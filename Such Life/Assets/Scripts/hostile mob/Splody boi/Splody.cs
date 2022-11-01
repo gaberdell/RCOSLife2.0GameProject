@@ -91,17 +91,17 @@ public class Splody : mobBase
         //Vector2 conversion = currPosition;
         //agent.SetDestination(conversion);
         currPosition = Vector2.MoveTowards(currPosition,target.position, frame_speed);
-        print("Debug: speed is" + speed);
-        print("Debug: speed per frame is" + frame_speed);
+        //print("Debug: speed is" + speed);
+       // print("Debug: speed per frame is" + frame_speed);
         //flipSprite(oldPosX);
     }
 
     public override void PositionChange()
     { 
-        float posxmin = transform.position.x - 1.0f;
-        float posxmax = transform.position.x + 1.0f;
-        float posymin = transform.position.y - 1.0f;
-        float posymax = transform.position.y + 1.0f;
+        float posxmin = transform.position.x - speed;
+        float posxmax = transform.position.x + speed;
+        float posymin = transform.position.y - speed;
+        float posymax = transform.position.y + speed;
         currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
     
