@@ -17,10 +17,7 @@ namespace SaveLoadSystem
      */
     public class SaveData
     {
-        public int index = 1;
-        [SerializeField] private float myFloat = 5.8f;
-        public bool ourBool = false;
-        public Vector3 ourVector = new Vector3(0, 10, 99);
+        public PlayerData playerInfo = new PlayerData();
     }
 }
 
