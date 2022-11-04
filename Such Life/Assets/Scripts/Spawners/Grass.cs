@@ -13,6 +13,7 @@ public class Grass : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GrassObj = Resources.Load("Prefab/Grass") as GameObject;
         time = 29f;
         timeDelay = 3f;
         spawnerPos = this.transform.position;

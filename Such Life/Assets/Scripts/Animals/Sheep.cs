@@ -55,16 +55,25 @@ public class Sheep : AnimalBase
 
             //If the Sheep is Hungry, it looks for the closest grass in its detection range
             if (currState == State.Hungry)
-            {
+            {   
                 food = findClosestObj("Grass");
-                newposition = food.transform.position;
-                navi.SetDestination(newposition);
-                float tempdist1 = Mathf.Round(position.sqrMagnitude * 100);
-                float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 100);
-                if(tempdist1 == tempdist2)
+                if (food)
                 {
-                    Destroy(food);
-                    food = null;
+                    newposition = food.transform.position;
+                    navi.SetDestination(newposition);
+                    float tempdist1 = Mathf.Round(position.sqrMagnitude * 10);
+                    float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 10);
+                    if (tempdist1 == tempdist2)
+                    {
+                        hunger += 20;
+                        currHP += 10; //Eating food recovers 20 hunger and 10hp. WILL CHANGE
+                        if(currHP > HPCap)
+                        {
+                            currHP = HPCap;
+                        }
+                        Destroy(food);
+                        food = null;
+                    }
                 }
             }
 

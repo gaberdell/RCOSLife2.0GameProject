@@ -1856,8 +1856,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_OverrideArea: 1
   m_Area: 1
   m_IgnoreFromBuild: 0
@@ -1925,7 +1925,6 @@ GameObject:
   - component: {fileID: 730515636}
   - component: {fileID: 730515635}
   - component: {fileID: 730515637}
-  - component: {fileID: 730515634}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1933,19 +1932,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &730515634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 730515633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  attenuationObject: {fileID: 0}
 --- !u!20 &730515635
 Camera:
   m_ObjectHideFlags: 0
@@ -2013,8 +1999,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c5e6e01c3d0746afaba7a80d76a37e2, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   target: {fileID: 237598776}
   movementSpeed: 0.125
   maximumPosition: {x: 4.835743, y: 1.789546}
@@ -2047,9 +2033,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ccddaadd02f7a814fb5f75ac946c9207, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
-  GrassObj: {fileID: 5844161352200464370, guid: 8d613bd87e93f57459bd7577328cafaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GrassObj: {fileID: 0}
   patchsize: 0
   timeDelay: 0
 --- !u!212 &741143206
@@ -2250,8 +2236,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3999626e7234184489d66bd8affb17a, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   damage: 3
   maxHealth: 5
   currHealth: 5
@@ -2272,6 +2258,7 @@ MonoBehaviour:
   target: {fileID: 237598776}
   monsterBody: {fileID: 0}
   agent: {fileID: 803139298}
+  slimesplitter: {fileID: 0}
 --- !u!195 &803139298
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2325,8 +2312,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37a5d18b18487a64ab4e5ed3a7178983, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   currState: 0
   awareness: 0
   walkspeed: 0
@@ -2363,8 +2350,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.3
-  m_AngularDrag: 0.05
+  m_LinearDrag: 10
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -2541,8 +2528,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: addaa6f2f37abbc46acb4a7361f1b27c, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   damage: 0
   maxHealth: 0
   currHealth: 0
@@ -2679,8 +2666,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_AgentTypeID: 0
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
@@ -2724,6 +2711,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5611377554060918271, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -6227,8 +6218,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   m_OverrideArea: 1
   m_Area: 0
   m_IgnoreFromBuild: 0
@@ -6262,8 +6253,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53ee47f9b6246774eaeb783507c8f8ea, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   mousePosition: {x: 0, y: 0, z: 0}
   cursorSpeed: 5
   body: {fileID: 0}
@@ -6367,11 +6358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 998963367}
     - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: target
-      value:
+      value: 
       objectReference: {fileID: 237598776}
     - target: {fileID: 2637762365785888353, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_RootOrder
