@@ -10,7 +10,7 @@ using UnityEngine.AI;
 public class AnimalBase : MonoBehaviour
 {   
     //The State and Stats of animal
-    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Hungry, Pushed } //The different states the animal can be in
+    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Pushed } //The different states the animal can be in
     public State currState = State.Idling; 
     public int awareness; //When the animal can detect objects. Is different for different animals, and can change depending on state
     public float walkspeed; //How fast the animal walks
@@ -98,12 +98,6 @@ public class AnimalBase : MonoBehaviour
     {
         currMaxSpeed = 0;
         currState = State.Idling;
-    }
-
-    //Sets the state of the Animal to Hungry
-    public void Hungry()
-    {
-        currState = State.Hungry;
     }
 
     //Sets the state of the Animal to Following
