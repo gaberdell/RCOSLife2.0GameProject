@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
 
+        
         //give the game info of the direction that the player is facing (for interaction feature later)
         if (inputX == 0 && inputY > 0) /*N*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, 180);
@@ -53,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         if (inputX < 0 && inputY > 0) /*NW*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, -135);
         }
+        
     }
 
     void FixedUpdate() {

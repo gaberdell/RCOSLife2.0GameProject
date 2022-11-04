@@ -1,0 +1,49 @@
+# Rhino
+newmtl SW fieldstone white fill
+Ka 0.0000 0.0000 0.0000
+Kd 1.0000 1.0000 1.0000
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 0.0000
+map_Kd SW fieldstone white fill_1000_DB.jpg
+map_Bump SW fieldstone white fill_1000_DB.jpg
+newmtl Brown staggered
+Ka 0.0000 0.0000 0.0000
+Kd 1.0000 1.0000 1.0000
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 0.0000
+map_Kd Brown staggered_500_DB.jpg
+map_Bump Brown staggered_500_DB.jpg
+newmtl Floor Boards
+Ka 0.0000 0.0000 0.0000
+Kd 1.0000 1.0000 1.0000
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 0.0000
+map_Kd Floor Boards_1000_DFB.jpg
+map_Bump Floor Boards_1000_DFB.jpg
+newmtl diffuse_0
+Ka 0.0000 0.0000 0.0000
+Kd 0.0000 0.0000 0.0000
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 0.0000
+newmtl Fog Matte Paint
+Ka 0.0000 0.0000 0.0000
+Kd 0.8000 0.7725 0.6980
+Ks 0.0196 0.0196 0.0196
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 5.1000
+newmtl Custom
+Ka 0.0000 0.0000 0.0000
+Kd 0.4980 0.3765 0.0941
+Ks 1.0000 1.0000 1.0000
+Tf 0.0000 0.0000 0.0000
+d 1.0000
+Ns 0.0000

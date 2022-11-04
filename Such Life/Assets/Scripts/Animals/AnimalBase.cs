@@ -10,7 +10,7 @@ using UnityEngine.AI;
 public class AnimalBase : MonoBehaviour
 {   
     //The State and Stats of animal
-    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Hungry, Pushed } //The different states the animal can be in
+    public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Pushed } //The different states the animal can be in
     public State currState = State.Idling; 
     public int awareness; //When the animal can detect objects. Is different for different animals, and can change depending on state
     public float walkspeed; //How fast the animal walks
@@ -26,15 +26,16 @@ public class AnimalBase : MonoBehaviour
     public float hungerDrain; //How fast the hunger of the animal drains, by percentage per second
 
     public Animator animate;
-    public Vector2 position;
-    public Vector2 newposition;
+    public Vector2 position; //The current position of the animal in a Vector2 object
+    public Vector2 newposition; //The position that the animal wants to reach
+
     public float time;
     public float timeDelay;
     public bool reached; //Determines if the animal has reached its destination
     public GameObject player;
     public RaycastHit hit;
     public SpriteRenderer aniSprite;
-    public GameObject food;
+    public GameObject food; //The variable that references the food object that the animal will go after
 
 
     public NavMeshAgent navi; //Hey, Listen!
@@ -71,44 +72,55 @@ public class AnimalBase : MonoBehaviour
         return this.GetType().Name; //Get the animal type
     }
 
+
+    //The following functions change the state of the Animal:
+
+    //Sets the Animal to Running State.
+    //It also sets the max speed of the animal to their running speed
     public void Run()
     {
         currState = State.Running;
         currMaxSpeed = runspeed;
     }
     
+    //Sets the Animal to Walking State.
+    //It also sets the max speed of the animal to their walking speed
     public void Walk()
     {
         currMaxSpeed = walkspeed;
         currState = State.Walking;
     }
 
+
+    //Sets the state of the Animal to Idling
+    //They don't move in this state so the speed is 0
     public void Idle()
     {
         currMaxSpeed = 0;
         currState = State.Idling;
     }
 
-    public void Hungry()
-    {
-        currState = State.Hungry;
-    }
-
+    //Sets the state of the Animal to Following
+    //In this state, the animal follows the player
     public void Follow()
     {
         currState = State.Following;
     }
 
+    //This function returns the value of the current amount of HP the Animal has
     public float getHP()
     {
         return currHP;
     }
 
+    //This function returns the speed the animal is currently moving at
     public float getSpeed()
     {
         return currSpeed;
     }
 
+    //This function flips the sprite of the animal.
+    //This may be removed in the future when animations are added.
    public void flipSprite()
     {
         Vector2 direction = newposition - position; 
@@ -126,14 +138,19 @@ public class AnimalBase : MonoBehaviour
         }
     }
 
+    //This function finds the closest Object with the tag given
     public GameObject findClosestObj(string tag)
     {
-        GameObject[] things;
+        GameObject[] things; 
+        //When no object with the tag is found, Unity returns an Error
         try
         {
+            //Get all the objects with the given tag in the scene
             things = GameObject.FindGameObjectsWithTag(tag);
             GameObject closest = null;
             float distance = Mathf.Infinity;
+
+            //Loop through the list and compare their distances to the Animal
             foreach(GameObject thing in things)
             {
                 Vector2 diff = (Vector2)thing.transform.position - position;
@@ -154,14 +171,13 @@ public class AnimalBase : MonoBehaviour
                 return null;
             }
         }
-            
+            //If an error is returned, return NULL
              catch
         {
             return null;
         }
     }
        
-
     void OnCollisionEnter2D(Collision2D collision)
     {
 
