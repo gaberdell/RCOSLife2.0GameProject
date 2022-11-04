@@ -7572,7 +7572,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2637762365785888348, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_Radius
-      value: 0.12089924
+      value: 0.11772628
       objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888348, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_Offset.x
@@ -7580,7 +7580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888348, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_Offset.y
-      value: -0.042680718
+      value: -0.039507758
       objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_Name
@@ -7598,6 +7598,14 @@ PrefabInstance:
       propertyPath: monsterBody
       value: 
       objectReference: {fileID: 1524731393}
+    - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+      propertyPath: slimeSplitter
+      value: 
+      objectReference: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+    - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+      propertyPath: slimesplitter
+      value: 
+      objectReference: {fileID: 2097849371}
     - target: {fileID: 2637762365785888353, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -7644,3 +7652,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+--- !u!1 &2097849371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+  m_PrefabInstance: {fileID: 1841010061}
+  m_PrefabAsset: {fileID: 0}

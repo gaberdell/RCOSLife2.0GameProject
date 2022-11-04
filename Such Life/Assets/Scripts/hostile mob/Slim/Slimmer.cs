@@ -5,8 +5,9 @@ using UnityEngine.AI;
 
 public class Slimmer : mobBase
 {
-    public GameObject slimesplitter;
-    private float time_stop;
+    private GameObject slimeSplitter;
+    public float time_stop;
+    public Vector2 prevPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class Slimmer : mobBase
 
         currState = State.Wander;
         currPosition = new Vector2(transform.position.x, transform.position.y);
+        prevPosition = currPosition;
 
     }
 
@@ -54,11 +56,12 @@ public class Slimmer : mobBase
         StateChange();
         if (time >= time_move)
         {
+            prevPosition = currPosition;
             agent.speed = speed;
+
             if (currState == State.Chasing)
             {
                 agent.SetDestination(target.position);
-                flipSprite(-target.position.x);
             }
             else if (currState == State.Wander)
             {
@@ -74,11 +77,9 @@ public class Slimmer : mobBase
     }
 
     // Wandering. The slime will walk in random directions
-    void wander()
+    public void wander()
     {
-        float oldPosX = currPosition.x;
         PositionChange();
-        flipSprite(oldPosX);
     }
    
 
@@ -96,7 +97,7 @@ public class Slimmer : mobBase
     }
 
     // A built in Unity collision detector. It will perform anything inside this function if the slime collides with something.
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         // If it collides with the player it will bounce off.
         if (collision.gameObject.tag == "Player")
@@ -111,7 +112,7 @@ public class Slimmer : mobBase
     // The slime can't see the player from meters away, it can only see
     // the player from alertRange units away. If the MC enters the alertRange,
     // the slime will begin attacking
-    void StateChange()
+    virtual public void StateChange()
     {
         if (distance <= alertRange && !playerSighted)
         {
@@ -119,19 +120,23 @@ public class Slimmer : mobBase
             currState = State.Chasing;
             flipSprite(-target.position.x);
         }
+        else
+        {
+            flipSprite(prevPosition.x);
+        }
         if (currHealth == 0)
         {
             // Oof
             Destroy(this.gameObject);
 
             // Split up
-            Instantiate(slimesplitter, transform.position + transform.forward * 2, transform.rotation);
-            Instantiate(slimesplitter, transform.position + transform.right * 2, transform.rotation);
+            Instantiate(slimeSplitter, transform.position + transform.forward * 2, transform.rotation);
+            Instantiate(slimeSplitter, transform.position + transform.right * 2, transform.rotation);
         }
     }
 
     // The function used to implement bounce
-    void bounce()
+    public void bounce()
     {
         // A separate timer for bouncing
         float bounce_time = 0;
@@ -150,13 +155,13 @@ public class Slimmer : mobBase
     }
     
     // Flip the sprite in relation to the position you give it.
-    void flipSprite(float PosX)
+    public void flipSprite(float PosX)
     {
-        if (currPosition.x > PosX)
+        if (transform.position.x > PosX && !MobSprite.flipX)
         {
             MobSprite.flipX = true;
         }
-        else
+        else if (transform.position.x < PosX && MobSprite.flipX)
         {
             MobSprite.flipX = false;
         }
