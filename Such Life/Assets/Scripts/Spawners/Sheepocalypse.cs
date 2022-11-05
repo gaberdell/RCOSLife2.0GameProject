@@ -2,26 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grass : MonoBehaviour
+public class Sheepocalypse : MonoBehaviour
 {
-    public GameObject GrassObj;
+    public GameObject SheepObj;
     private Vector2 spawnerPos;
-    public float patchsize;
+    private float gensize;
     public float timeDelay;
     private float time;
-
     // Start is called before the first frame update
     void Start()
     {
-        GrassObj = Resources.Load("Prefab/Grass") as GameObject;
+        SheepObj = Resources.Load("Prefab/ScuffedSheep") as GameObject;
         time = 29f;
-        timeDelay = 3f;
-        float genx = Random.Range(10f, 10f);
-        float geny = Random.Range(10f, 10f);
+        timeDelay = 10f;
+        float genx = Random.Range(-10f, 10f);
+        float geny = Random.Range(-10f, 10f);
         Vector2 temp = new Vector2(genx, geny);
         this.transform.position = temp;
         spawnerPos = this.transform.position;
-        patchsize = Random.Range(0f, 5f);
+        gensize = Random.Range(0f, 5f);
     }
 
     // Update is called once per frame
@@ -30,9 +29,9 @@ public class Grass : MonoBehaviour
         time = time + 1f * Time.deltaTime;
         if (time >= timeDelay)
         {
-            float x = Random.Range(-patchsize, patchsize);
-            float y = Random.Range(-patchsize, patchsize);
-            var growGrass = Instantiate(GrassObj, new Vector3(x + spawnerPos.x, y + spawnerPos.y, 0), Quaternion.identity);
+            float x = Random.Range(-gensize, gensize);
+            float y = Random.Range(-gensize, gensize);
+            var growGrass = Instantiate(SheepObj, new Vector3(x + spawnerPos.x, y + spawnerPos.y, 0), Quaternion.identity);
             time = 0;
         }
     }

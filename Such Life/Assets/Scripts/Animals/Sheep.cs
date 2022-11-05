@@ -53,20 +53,6 @@ public class Sheep : AnimalBase
         {
             time = 0f;
 
-            //If the Sheep is Hungry, it looks for the closest grass in its detection range
-            if (currState == State.Hungry)
-            {
-                food = findClosestObj("Grass");
-                newposition = food.transform.position;
-                navi.SetDestination(newposition);
-                float tempdist1 = Mathf.Round(position.sqrMagnitude * 100);
-                float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 100);
-                if(tempdist1 == tempdist2)
-                {
-                    Destroy(food);
-                    food = null;
-                }
-            }
 
             //If the sheep is idling, it has a 50% chance to start wandering
             if (currState == State.Idling)
@@ -82,6 +68,7 @@ public class Sheep : AnimalBase
             if (currState == State.Walking)
             {
                 PositionChange();
+                flipSprite();
                 int gen = Random.Range(0, 100);
                 if (gen > 70)
                 {
@@ -102,6 +89,7 @@ public class Sheep : AnimalBase
             //If the hunger is less than or equal to 30, it starts looking for grass
             if(hunger <= 30)
             {
+                navi.speed = walkspeed / 2;
                 touchGrass();
             }
             //If the hunger is 0, it starts dying
@@ -129,28 +117,43 @@ public class Sheep : AnimalBase
                 newposition = transform.position;
                 position = transform.position;
                 navi.SetDestination(newposition);
-                int gen = Random.Range(0, 100);
-                if(gen > 90)
-                {
-                    Follow();
-                }
             }
             //How the sheep follows the player
             else if(currState == State.Following)
             {
                 newposition.x = player.transform.position.x;
                 newposition.y = player.transform.position.y;
-                navi.speed = walkspeed*2;
+                navi.speed = walkspeed;
                 navi.SetDestination(newposition);
+                flipSprite();
             }
         }
         position = transform.position;
-        flipSprite();
+        
     }
 
     void touchGrass() //When the hunger is 0, this will trigger
     {
-        currState = State.Hungry;
+        food = findClosestObj("Grass");
+        if (food)
+        {
+            newposition = food.transform.position;
+            navi.SetDestination(newposition);
+            flipSprite();
+            float tempdist1 = Mathf.Round(position.sqrMagnitude * 10);
+            float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 10);
+            if (tempdist1 == tempdist2)
+            {
+                hunger += 20;
+                currHP += 10; //Eating food recovers 20 hunger and 10hp. WILL CHANGE
+                if (currHP > HPCap)
+                {
+                    currHP = HPCap;
+                }
+                Destroy(food);
+                food = null;
+            }
+        }
 
     }
 
