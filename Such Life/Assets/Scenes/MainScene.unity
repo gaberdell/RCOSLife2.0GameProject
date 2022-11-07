@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 81271280}
   - component: {fileID: 81271282}
   - component: {fileID: 81271281}
+  - component: {fileID: 81271283}
   m_Layer: 6
   m_Name: Small Chest
   m_TagString: Untagged
@@ -291,6 +292,19 @@ MonoBehaviour:
   inventorySize: 10
   primaryInvSystem:
     Inventory: []
+--- !u!114 &81271283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81271279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0f7c2141-6e45-4b04-b040-40841f373224
 --- !u!1 &82551550
 GameObject:
   m_ObjectHideFlags: 0
@@ -6210,6 +6224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 10
+  myData:
+    playerPos: {x: 0, y: 0, z: 0}
+    currentHealth: 0
 --- !u!1 &2138816255
 GameObject:
   m_ObjectHideFlags: 0
