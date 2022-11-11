@@ -24,7 +24,7 @@ public class Attack : MonoBehaviour
     {
         fire = playerControls.Player.Fire;
         fire.Enable();
-        fire.performed += Fire;
+        fire.performed += MainAttack;
     }
     private void OnDisable()
     {
@@ -32,7 +32,7 @@ public class Attack : MonoBehaviour
 
     }
 
-    public void Fire(InputAction.CallbackContext context)
+    public void MainAttack(InputAction.CallbackContext context)
     {
         Debug.Log("Attack input registered");
     }
