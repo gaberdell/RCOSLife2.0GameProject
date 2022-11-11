@@ -99,7 +99,7 @@ public class Sheep : AnimalBase
                 {
                     hunger = 0;
                 }
-                currHP = currHP - 3;
+                takeDamage(3);
             }
             //Hunger drains if its not 0
             else
@@ -145,11 +145,7 @@ public class Sheep : AnimalBase
             if (tempdist1 == tempdist2)
             {
                 hunger += 20;
-                currHP += 10; //Eating food recovers 20 hunger and 10hp. WILL CHANGE
-                if (currHP > HPCap)
-                {
-                    currHP = HPCap;
-                }
+                heal(10);
                 Destroy(food);
                 food = null;
             }

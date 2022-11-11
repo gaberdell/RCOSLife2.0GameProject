@@ -2355,7 +2355,11 @@ MonoBehaviour:
   target: {fileID: 237598776}
   monsterBody: {fileID: 0}
   agent: {fileID: 803139298}
-  slimesplitter: {fileID: 0}
+  targetLayerMobs:
+    serializedVersion: 2
+    m_Bits: 0
+  time_stop: 0
+  prevPosition: {x: 0, y: 0}
 --- !u!195 &803139298
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2457,6 +2461,9 @@ MonoBehaviour:
   target: {fileID: 0}
   monsterBody: {fileID: 0}
   agent: {fileID: 0}
+  targetLayerMobs:
+    serializedVersion: 2
+    m_Bits: 0
   explosionRange: 0
   explodeTimer: 0
   exploded: 0
@@ -2618,6 +2625,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_SortingOrder
       value: 1
