@@ -217,6 +217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MC
       objectReference: {fileID: 0}
+    - target: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -373,6 +377,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &984161875
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 984489666360563009, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_Name
+      value: Splody
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563009, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_TagString
+      value: Animal
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563012, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
 --- !u!1 &990696034
 GameObject:
   m_ObjectHideFlags: 0
@@ -7585,6 +7654,10 @@ PrefabInstance:
     - target: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_Name
       value: Slimmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+      propertyPath: m_TagString
+      value: Animal
       objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: player
