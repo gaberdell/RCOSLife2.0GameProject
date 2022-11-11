@@ -58,30 +58,81 @@ public class PlayerMovement : MouseFollow
         //Will now turn interactor towards cardinal direction of mouse.
         if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y > 0) /*N*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 180);
+            if (inputY < 0) {//If character is walking southwards/opposite of its intended direction while facing north/its intended direction, 
+                             //character is walking backwards.
+               anim.SetBool("isFacingForward", false); // If walking south, character is NOT facing forward/its intended direction.
+            }
+            else {
+               anim.SetBool("isFacingForward", true); //Else, character is facing forward/its intended direction.
+            }
         }
         if (mousePosition.x - body.position.x > 0.5 && mousePosition.y - body.position.y > 0.5) /*NE*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 135);
+            if (inputX < 0 && inputY < 0) {
+               anim.SetBool("isFacingForward", false); 
+            }
+            else {
+               anim.SetBool("isFacingForward", true); 
+            }
         }
         if (mousePosition.x - body.position.x > 0 && mousePosition.y - body.position.y > -0.5 && mousePosition.y - body.position.y < 0.5) /*E*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 90);
+            if (inputX < 0) {
+               anim.SetBool("isFacingForward", false); 
+            }
+            else {
+               anim.SetBool("isFacingForward", true); 
+            }
         }
         if (mousePosition.x - body.position.x > 0.5 && mousePosition.y - body.position.y < -0.5) /*SE*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 45);
+            if (inputX < 0 && inputY > 0) {
+               anim.SetBool("isFacingForward", false); 
+            }
+            else {
+               anim.SetBool("isFacingForward", true); 
+            }
         }
         if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y < 0) /*S*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 0);
+            if (inputY > 0) {
+               anim.SetBool("isFacingForward", false); 
+            }
+            else {
+               anim.SetBool("isFacingForward", true); 
+            }
         }
         if (mousePosition.x - body.position.x < -0.5 && mousePosition.y - body.position.y < -0.5) /*SW*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -45);
+            if (inputX > 0 && inputY > 0) {
+               anim.SetBool("isFacingForward", false); 
+            }
+            else {
+               anim.SetBool("isFacingForward", true); 
+            }
         }
         if (mousePosition.x - body.position.x < 0 && mousePosition.y - body.position.y > -0.5 && mousePosition.y - body.position.y < 0.5) /*W*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -90);
+            if (inputX > 0) {
+               anim.SetBool("isFacingForward", false); 
+            }
+            else {
+               anim.SetBool("isFacingForward", true); 
+            }
         }
         if (mousePosition.x - body.position.x < -0.5 && mousePosition.y - body.position.y > 0.5) /*NW*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, -135);
+            if (inputX > 0 && inputY < 0) {
+               anim.SetBool("isFacingForward", false); 
+            }
+            else {
+               anim.SetBool("isFacingForward", true); 
+            }
         }
         anim.SetFloat("MouseX", mousePosition.x - body.position.x);
         anim.SetFloat("MouseY", mousePosition.y - body.position.y);
+
+        
         
         
         
