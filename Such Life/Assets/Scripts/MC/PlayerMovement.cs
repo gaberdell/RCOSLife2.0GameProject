@@ -11,17 +11,29 @@ public class PlayerMovement : MouseFollow
     public Transform interactor; // Shows mouse position
     public Transform interactor_two; // Shows what user inputted
     public float walkSpeed;
-    public playerAction playerControls;
     public Vector2 direction;
 
     private float inputX;
     private float inputY;
 
+    public float teleportDistance;
+
+    public playerAction playerControls;
+    private InputAction teleport;
+
+
+    void Awake()
+    {
+        playerControls = new playerAction();
+        teleportDistance = 3;
+        
+    }
     // Update is called once per frame
     void Update() {
 
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
+        direction = playerControls.Player.Move.ReadValue<Vector2>();
+        inputX = direction.x;
+        inputY = direction.y;
 
         direction = new Vector2(inputX, inputY).normalized;
 
@@ -37,9 +49,11 @@ public class PlayerMovement : MouseFollow
             anim.SetFloat("LastVertical", Input.GetAxis("Vertical"));
         }
 
-        
+     
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+
 
         //Will now turn interactor towards cardinal direction of mouse.
         if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y > 0) /*N*/ {
@@ -105,13 +119,25 @@ public class PlayerMovement : MouseFollow
     void FixedUpdate() {  
         body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
     }
-    /*
+    
     private void OnEnable(){
         playerControls.Player.Enable();
+        teleport = playerControls.Player.Teleport;
+        teleport.Enable();
+        teleport.performed += TeleportFunct;
     }
     private void OnDisable(){
         playerControls.Player.Disable();
+        teleport.Disable();
 
     }
-    */
+
+    //combat movement functions
+
+    private void TeleportFunct(InputAction.CallbackContext context)
+    {
+        body.position = teleportDistance * direction + body.position;
+        Debug.Log("called teleport function");
+    }
+    
 }
