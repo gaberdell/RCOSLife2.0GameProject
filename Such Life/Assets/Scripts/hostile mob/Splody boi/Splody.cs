@@ -149,6 +149,8 @@ public class Splody : mobBase
     void explode()
     {
         //to be implemented; if any mob or the player is in the explosion range, it takes damage
+        //find and damage all entities in the explosion radius
+        Debug.Log(Physics2D.OverlapCircleAll(transform.position, explosionRange,targetLayerMobs));
         //Destroy the object without dropping anything.
         Destroy(gameObject);
         //to be implemented, add an explosion sprite

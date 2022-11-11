@@ -64,7 +64,7 @@ public class mobBase : MonoBehaviour
     {
         currState = State.Chasing;
     }
-        
+    public LayerMask targetLayerMobs;    
     /*void PositionChange()
     {
 
