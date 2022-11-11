@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Slimmer : mobBase
 {
-    private GameObject slimeSplitter;
+    public GameObject slimeSplitter = null;
     public float time_stop;
     public Vector2 prevPosition;
 
@@ -13,13 +13,13 @@ public class Slimmer : mobBase
     void Start()
     {
         target = GameObject.Find("MC").transform;
+        MobSprite = GetComponent<SpriteRenderer>();
 
         monsterBody = GetComponent<Rigidbody2D>();
         monsterBody.drag = 15f;
 
         maxHealth = 5;
         damage = 2;
-        currHealth = maxHealth;
         playerSighted = false;
         time_move = 3.0f;
         time_stop = 0.5f;
@@ -129,9 +129,12 @@ public class Slimmer : mobBase
             // Oof
             Destroy(this.gameObject);
 
-            // Split up
-            Instantiate(slimeSplitter, transform.position + transform.forward * 2, transform.rotation);
-            Instantiate(slimeSplitter, transform.position + transform.right * 2, transform.rotation);
+            if (slimeSplitter)
+            {
+                // Split up
+                Instantiate(slimeSplitter, transform.position + transform.forward * 2, transform.rotation);
+                Instantiate(slimeSplitter, transform.position + transform.right * 2, transform.rotation);
+            }
         }
     }
 
