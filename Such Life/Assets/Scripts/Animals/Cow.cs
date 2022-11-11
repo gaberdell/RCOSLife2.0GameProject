@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //Cows and sheep have similar behavior and stats
-public class Cow : Sheep
-{
+public class Cow : AnimalBase
+{   
+
     // Start is called before the first frame update
     void Start()
     {

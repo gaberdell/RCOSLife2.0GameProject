@@ -24,6 +24,7 @@ public class AnimalBase : MonoBehaviour
     public float hungerCap; //Max Hunger Value
     public float hunger; //Hunger of the animal
     public float hungerDrain; //How fast the hunger of the animal drains, by percentage per second
+    public int size; //Depending on the size, there are predetermined stats
 
     public Animator animate;
     public Vector2 position; //The current position of the animal in a Vector2 object
@@ -135,6 +136,21 @@ public class AnimalBase : MonoBehaviour
         else
         {
             aniSprite.flipX = true;
+        }
+    }
+
+    //A simple function that makes the animal take the specified amount of damage
+    public void takeDamage(int val)
+    {
+        currHP -= val;
+    }
+
+    public void heal(int val)
+    {
+        currHP += val;
+        if(currHP > HPCap)
+        {
+            currHP = HPCap;
         }
     }
 
