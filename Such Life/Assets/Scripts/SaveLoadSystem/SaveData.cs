@@ -15,11 +15,17 @@ using UnityEngine;
     */
 public class SaveData
 {
-    //public SerializableDictionary<string ChestSaveData> chestDictionaryData;
+    //keep track of item that the player picks up
+    public List<string> collectedItems;
+
+    public SerializableDictionary<string, ItemPickUpSaveData> activeItems;
+    public SerializableDictionary<string, ChestSaveData> chestDictionaryData;
 
     public SaveData()
     {
-        //chestDictionaryData = new SerializableDictionary<string, ChestSaveData>();
+        collectedItems = new List<string>();
+        activeItems = new SerializableDictionary<string, ItemPickUpSaveData>();
+        chestDictionaryData = new SerializableDictionary<string, ChestSaveData>();
 
     }
 }

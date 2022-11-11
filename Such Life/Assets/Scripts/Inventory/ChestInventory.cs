@@ -6,18 +6,34 @@ using UnityEngine.Events;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with slight modification */
 
+
+[RequireComponent(typeof(UniqueID))]
 public class ChestInventory : InventoryHolder, IInteractable
 {
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
     protected override void Awake()
     {
         base.Awake();
-        SaveGameManager.onLoadGame += LoadInventory;
+        SaveLoad.onLoadGame += LoadInventory;
+    }
+
+    private void Start()
+    {
+        var chestSaveData = new ChestSaveData(primaryInvSystem, transform.position, transform.rotation);
+        SaveGameManager.data.chestDictionaryData.Add(GetComponent<UniqueID>().ID, chestSaveData);
+
     }
 
     private void LoadInventory(SaveData data)
     {
         // Check the save data for this specific chest inventory, and if its exist, load it
+        //Maybe add in the chest manager of some sort to load all of the chest in the chest dictionary into the world 
+        if (data.chestDictionaryData.TryGetValue(GetComponent<UniqueID>().ID, out ChestSaveData chestData))
+        {
+            this.primaryInvSystem = chestData.invSystem;
+            this.transform.position = chestData.position;
+            this.transform.rotation = chestData.rotation;
+        }
     }
 
     public void Interact(Interactor interactor, out bool interactSuccessful)
@@ -27,6 +43,8 @@ public class ChestInventory : InventoryHolder, IInteractable
         interactSuccessful = true;
     }
 
+    //this method will be use for later if the player interact with the chest, they can't move until
+    //they close the chest
     public void EndInteraction()
     {
 
@@ -39,7 +57,6 @@ public struct ChestSaveData
 {
     public InventorySystem invSystem;
 
-    //not sure if this would work with 2D sapce. Gotta check it again
     public Vector3 position;
     public Quaternion rotation;
 

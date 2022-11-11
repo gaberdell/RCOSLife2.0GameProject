@@ -11,13 +11,13 @@ public class SaveGameTester : MonoBehaviour
     public void SaveGame()
     {
         //adjust so that the user can save their custom world name and be able to load that same world name instead of just "testFile"
-        //SaveGameManager.SaveGame("testFile");
+        //SaveLoad.SaveGame("testFile");
     }
 
     public void LoadGame()
     {
         //adjust so that the user can save their custom world name and be able to load that same world name instead of just "testFile"
-        //SaveGameManager.LoadGame("testFile");
+        //SaveLoad.LoadGame("testFile");
     }
 }
 
