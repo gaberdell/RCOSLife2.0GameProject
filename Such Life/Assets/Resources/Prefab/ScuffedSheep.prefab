@@ -99,8 +99,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.3
-  m_AngularDrag: 0.05
+  m_LinearDrag: 10
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   hungerCap: 0
   hunger: 0
   hungerDrain: 0
+  size: 0
   animate: {fileID: 0}
   position: {x: 0, y: 0}
   newposition: {x: 0, y: 0}

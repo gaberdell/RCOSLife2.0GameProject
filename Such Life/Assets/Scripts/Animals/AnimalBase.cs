@@ -37,7 +37,7 @@ public class AnimalBase : MonoBehaviour
     public RaycastHit hit;
     public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
-
+    public List<string> foodtypes; //What this animal will eat
 
     public NavMeshAgent navi; //Hey, Listen!
 
@@ -196,8 +196,8 @@ public class AnimalBase : MonoBehaviour
        
     void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (collision.gameObject.tag == "Player")
+        //If it is the player, it gets pushed. Will be changed to other entities in the future
+        if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
         { 
                 currState = State.Pushed;            
         }
@@ -210,5 +210,53 @@ public class AnimalBase : MonoBehaviour
             newposition = transform.position;
             currState = State.Idling;
         }
+    }
+
+    public float getDistance(GameObject thing)
+    {
+        return ((Vector2)thing.transform.position - position).sqrMagnitude;
+    }
+
+    
+    //Looks for closest food that the animal can eat
+    public void LookForFood(List<string> foods) 
+    {
+        float currentclosest = -1f;
+        foreach(var thing in foods) {
+            food = findClosestObj(thing);
+
+            
+            if (food)
+            {
+                if (currentclosest == -1f)
+                {
+                    currentclosest = getDistance(food);
+                }
+
+                if (getDistance(food) < currentclosest)
+                {
+                    currentclosest = getDistance(food);
+                    newposition = food.transform.position;
+                    navi.SetDestination(newposition);
+                    flipSprite();
+                    float tempdist1 = Mathf.Round(position.sqrMagnitude * 10);
+                    float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 10);
+                    if (tempdist1 == tempdist2)
+                    {
+                        hunger += 20;
+                        heal(10);
+                        Destroy(food);
+                        food = null;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+                
+            }
+        }
+        
+
     }
 }
