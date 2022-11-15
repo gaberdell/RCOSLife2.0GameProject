@@ -58,12 +58,11 @@ public class PlayerMovement : MouseFollow
         //Will now turn interactor towards cardinal direction of mouse.
         if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y > 0) /*N*/ {
             interactor_two.localRotation = Quaternion.Euler(0, 0, 180);
-            if (inputY < 0) {//If character is walking southwards/opposite of its intended direction while facing north/its intended direction, 
-                             //character is walking backwards.
-               anim.SetBool("isFacingForward", false); // If walking south, character is NOT facing forward/its intended direction.
+            if (inputY < 0) {//If character is walking southwards while facing north, character is walking backwards.
+               anim.SetBool("isFacingForward", false); // If walking south, character is NOT facing forward.
             }
             else {
-               anim.SetBool("isFacingForward", true); //Else, character is facing forward/its intended direction.
+               anim.SetBool("isFacingForward", true); //Else, character is facing forward.
             }
         }
         if (mousePosition.x - body.position.x > 0.5 && mousePosition.y - body.position.y > 0.5) /*NE*/ {
