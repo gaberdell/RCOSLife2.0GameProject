@@ -8,12 +8,16 @@ using UnityEngine.Events;
 
 public class PlayerInventoryHolder : InventoryHolder
 {
-    [SerializeField] protected int secondaryInvSize;
-    [SerializeField] protected InventorySystem secondaryInvSystem;
-
-    public InventorySystem SecondaryInventorySystem => secondaryInvSystem;
-    public static UnityAction<InventorySystem> OnPlayerBackpackDisplayRequested;
+    public static UnityAction OnPlayerInventoryChanged;
     public playerAction playerControl;
+
+
+    private void Start()
+    {
+        SaveGameManager.data.playerInventory = new InventorySaveData(primaryInvSystem);
+    }
+
+
 
     private void OnEnable()
     {
@@ -28,8 +32,19 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         base.Awake();
         playerControl = new playerAction();
-        secondaryInvSystem = new InventorySystem(secondaryInvSize);
     }
+
+    protected override void LoadInventory(SaveData data)
+    {
+        // Check the save data for player's inventory
+        if (data.playerInventory.InvSystem != null)
+        {
+            this.primaryInvSystem = data.playerInventory.InvSystem;
+            OnPlayerInventoryChanged?.Invoke();
+        }
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -37,7 +52,7 @@ public class PlayerInventoryHolder : InventoryHolder
         //fix it so the function use playerAction instead of key press on keyboard
         if (openInventoryKeyPressed)
         {
-            OnPlayerBackpackDisplayRequested?.Invoke(secondaryInvSystem);
+            OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, offset);
         }
     }
 
@@ -45,10 +60,6 @@ public class PlayerInventoryHolder : InventoryHolder
     {
         // check to see if the item has been successfully added to the player backpack
         if (primaryInvSystem.AddToInventory(data, amount))
-        {
-            return true;
-        }
-        else if (secondaryInvSystem.AddToInventory(data, amount))
         {
             return true;
         }

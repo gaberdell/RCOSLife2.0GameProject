@@ -292,6 +292,7 @@ MonoBehaviour:
   inventorySize: 10
   primaryInvSystem:
     Inventory: []
+  offset: 10
 --- !u!114 &81271283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +941,7 @@ GameObject:
   - component: {fileID: 490147627}
   - component: {fileID: 490147629}
   - component: {fileID: 490147628}
+  - component: {fileID: 490147630}
   m_Layer: 0
   m_Name: Potato (15)
   m_TagString: Untagged
@@ -976,6 +978,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &490147629
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -992,6 +998,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &490147630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490147626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 8c85c85e-0a2f-4bf2-b041-56bd60ac8fb2
 --- !u!1 &505156520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,6 +1817,7 @@ GameObject:
   - component: {fileID: 674890456}
   - component: {fileID: 674890458}
   - component: {fileID: 674890457}
+  - component: {fileID: 674890459}
   m_Layer: 0
   m_Name: Potato (6)
   m_TagString: Untagged
@@ -1834,6 +1854,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &674890458
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1850,6 +1874,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &674890459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674890455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: e936ce27-2859-4d99-ba89-419a2ef531aa
 --- !u!224 &695598534 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6558154751267419901, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
@@ -2112,6 +2149,7 @@ GameObject:
   - component: {fileID: 734232332}
   - component: {fileID: 734232334}
   - component: {fileID: 734232333}
+  - component: {fileID: 734232335}
   m_Layer: 0
   m_Name: Tomato
   m_TagString: Untagged
@@ -2148,6 +2186,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 1
   ItemData: {fileID: 11400000, guid: cb1c16a298c623e4bac0be87509dcfcc, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &734232334
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2164,6 +2206,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &734232335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734232331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 03ca2c00-3f6d-4504-a11a-f182f7c4d1fb
 --- !u!1 &735336035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2375,7 @@ GameObject:
   - component: {fileID: 791626950}
   - component: {fileID: 791626949}
   - component: {fileID: 791626948}
+  - component: {fileID: 791626951}
   m_Layer: 0
   m_Name: Potato
   m_TagString: Untagged
@@ -2341,6 +2397,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &791626949
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2372,6 +2432,19 @@ Transform:
   m_Father: {fileID: 214179116}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &791626951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 791626947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 1fd783ba-6399-4738-b1a5-3338a3e24c72
 --- !u!1 &805214578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,7 +2497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53321458011f95c48a8f3ab5f201b090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chestPanel: {fileID: 2020816862}
+  inventoryPanel: {fileID: 2020816862}
   playerBackpackPanel: {fileID: 2058732808}
 --- !u!1001 &855021080
 PrefabInstance:
@@ -2616,6 +2689,7 @@ GameObject:
   - component: {fileID: 871007685}
   - component: {fileID: 871007687}
   - component: {fileID: 871007686}
+  - component: {fileID: 871007688}
   m_Layer: 0
   m_Name: Potato (10)
   m_TagString: Untagged
@@ -2652,6 +2726,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &871007687
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2668,6 +2746,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &871007688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871007684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: e73e323a-cad2-4d2c-b9fd-e0c15c6ab086
 --- !u!114 &878672393 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -1632550367532491250, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
@@ -2690,6 +2781,7 @@ GameObject:
   - component: {fileID: 912749934}
   - component: {fileID: 912749936}
   - component: {fileID: 912749935}
+  - component: {fileID: 912749937}
   m_Layer: 0
   m_Name: Potato (1)
   m_TagString: Untagged
@@ -2726,6 +2818,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &912749936
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2742,6 +2838,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &912749937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912749933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 92b6d9ce-c3e8-4c17-a533-3718e20b45db
 --- !u!1 &998106287
 GameObject:
   m_ObjectHideFlags: 0
@@ -2753,6 +2862,7 @@ GameObject:
   - component: {fileID: 998106288}
   - component: {fileID: 998106290}
   - component: {fileID: 998106289}
+  - component: {fileID: 998106291}
   m_Layer: 0
   m_Name: Potato (4)
   m_TagString: Untagged
@@ -2789,6 +2899,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &998106290
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2805,6 +2919,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &998106291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998106287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 1bd13c62-342b-4d6b-b91f-48dba2d5edf2
 --- !u!1001 &1023971016
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2913,6 +3040,7 @@ GameObject:
   - component: {fileID: 1043062090}
   - component: {fileID: 1043062092}
   - component: {fileID: 1043062091}
+  - component: {fileID: 1043062093}
   m_Layer: 0
   m_Name: Potato (14)
   m_TagString: Untagged
@@ -2949,6 +3077,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1043062092
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2965,6 +3097,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1043062093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043062089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 076d3557-5db2-44db-b201-94210d9cff56
 --- !u!224 &1053480183 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6558154751267419901, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
@@ -3083,6 +3228,7 @@ GameObject:
   - component: {fileID: 1056187978}
   - component: {fileID: 1056187980}
   - component: {fileID: 1056187979}
+  - component: {fileID: 1056187981}
   m_Layer: 0
   m_Name: Tomato (4)
   m_TagString: Untagged
@@ -3119,6 +3265,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: cb1c16a298c623e4bac0be87509dcfcc, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1056187980
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3135,6 +3285,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1056187981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056187977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 19012adf-4b49-410b-beb4-9e480ca7a1ea
 --- !u!1 &1082497568
 GameObject:
   m_ObjectHideFlags: 0
@@ -3239,6 +3402,7 @@ GameObject:
   - component: {fileID: 1132327176}
   - component: {fileID: 1132327178}
   - component: {fileID: 1132327177}
+  - component: {fileID: 1132327179}
   m_Layer: 0
   m_Name: Potato (8)
   m_TagString: Untagged
@@ -3275,6 +3439,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1132327178
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3291,6 +3459,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1132327179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132327175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: d6cfa05f-1c6d-4ee7-a770-6d4487501f1d
 --- !u!224 &1176291880 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6558154751267419901, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
@@ -3312,6 +3493,7 @@ GameObject:
   - component: {fileID: 1216342919}
   - component: {fileID: 1216342921}
   - component: {fileID: 1216342920}
+  - component: {fileID: 1216342922}
   m_Layer: 0
   m_Name: Potato (2)
   m_TagString: Untagged
@@ -3348,6 +3530,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1216342921
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3364,6 +3550,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1216342922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216342918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 07db9251-6e03-4950-8cb7-da6a6f6ea403
 --- !u!114 &1244468386 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -1632550367532491250, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
@@ -3468,6 +3667,7 @@ GameObject:
   - component: {fileID: 1266292448}
   - component: {fileID: 1266292450}
   - component: {fileID: 1266292449}
+  - component: {fileID: 1266292451}
   m_Layer: 0
   m_Name: Tomato (1)
   m_TagString: Untagged
@@ -3504,6 +3704,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: cb1c16a298c623e4bac0be87509dcfcc, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1266292450
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3520,6 +3724,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1266292451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266292447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 65cd0901-bb67-4b62-8429-b3968f631666
 --- !u!224 &1271455232 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6558154751267419901, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
@@ -3541,6 +3758,7 @@ GameObject:
   - component: {fileID: 1301698234}
   - component: {fileID: 1301698236}
   - component: {fileID: 1301698235}
+  - component: {fileID: 1301698237}
   m_Layer: 0
   m_Name: Tomato (5)
   m_TagString: Untagged
@@ -3577,6 +3795,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: cb1c16a298c623e4bac0be87509dcfcc, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1301698236
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3593,6 +3815,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1301698237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301698233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 31ffa7fe-7008-45ea-9705-dee91501f3d1
 --- !u!1 &1304005534
 GameObject:
   m_ObjectHideFlags: 0
@@ -3861,6 +4096,7 @@ GameObject:
   - component: {fileID: 1346551444}
   - component: {fileID: 1346551446}
   - component: {fileID: 1346551445}
+  - component: {fileID: 1346551447}
   m_Layer: 0
   m_Name: Tomato (6)
   m_TagString: Untagged
@@ -3897,6 +4133,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: cb1c16a298c623e4bac0be87509dcfcc, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1346551446
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3913,6 +4153,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1346551447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346551443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 6bdd09e1-152b-4eed-ac73-2d748052485c
 --- !u!1 &1366580006
 GameObject:
   m_ObjectHideFlags: 0
@@ -4365,6 +4618,7 @@ GameObject:
   - component: {fileID: 1502377734}
   - component: {fileID: 1502377736}
   - component: {fileID: 1502377735}
+  - component: {fileID: 1502377737}
   m_Layer: 0
   m_Name: Potato (9)
   m_TagString: Untagged
@@ -4401,6 +4655,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1502377736
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4417,6 +4675,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1502377737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502377733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 68e337bc-80f1-4d8f-ad28-76195f35a972
 --- !u!1 &1599957789
 GameObject:
   m_ObjectHideFlags: 0
@@ -4575,6 +4846,7 @@ MonoBehaviour:
   inventorySize: 20
   primaryInvSystem:
     Inventory: []
+  offset: 10
 --- !u!114 &1632195500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4763,6 +5035,7 @@ GameObject:
   - component: {fileID: 1692662019}
   - component: {fileID: 1692662021}
   - component: {fileID: 1692662020}
+  - component: {fileID: 1692662022}
   m_Layer: 0
   m_Name: Potato (3)
   m_TagString: Untagged
@@ -4799,6 +5072,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1692662021
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4815,6 +5092,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1692662022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692662018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: c6050f05-813c-4ee4-90e7-240c89c495ab
 --- !u!1 &1695903726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4826,6 +5116,7 @@ GameObject:
   - component: {fileID: 1695903727}
   - component: {fileID: 1695903729}
   - component: {fileID: 1695903728}
+  - component: {fileID: 1695903730}
   m_Layer: 0
   m_Name: Tomato (3)
   m_TagString: Untagged
@@ -4862,6 +5153,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: cb1c16a298c623e4bac0be87509dcfcc, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1695903729
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4878,6 +5173,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1695903730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695903726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: f6ac271e-41ba-4aa3-9850-d6499fcf2159
 --- !u!1 &1733494118
 GameObject:
   m_ObjectHideFlags: 0
@@ -5053,6 +5361,7 @@ GameObject:
   - component: {fileID: 1747344507}
   - component: {fileID: 1747344509}
   - component: {fileID: 1747344508}
+  - component: {fileID: 1747344510}
   m_Layer: 0
   m_Name: Potato (16)
   m_TagString: Untagged
@@ -5089,6 +5398,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1747344509
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5105,6 +5418,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1747344510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747344506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0d3974b2-3a57-4d2e-b72e-274ca57cc018
 --- !u!1001 &1776704511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5811,6 +6137,7 @@ GameObject:
   - component: {fileID: 1921877461}
   - component: {fileID: 1921877463}
   - component: {fileID: 1921877462}
+  - component: {fileID: 1921877464}
   m_Layer: 0
   m_Name: Tomato (2)
   m_TagString: Untagged
@@ -5847,6 +6174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: cb1c16a298c623e4bac0be87509dcfcc, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1921877463
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5863,6 +6194,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1921877464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921877460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 3985dfab-5124-4bd5-8ea0-56bbe86cb9db
 --- !u!1 &1957466302
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,6 +6352,7 @@ GameObject:
   - component: {fileID: 1969414068}
   - component: {fileID: 1969414070}
   - component: {fileID: 1969414069}
+  - component: {fileID: 1969414071}
   m_Layer: 0
   m_Name: Potato (7)
   m_TagString: Untagged
@@ -6044,6 +6389,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &1969414070
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6060,6 +6409,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1969414071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969414067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0abbf69d-ab49-4294-b917-ade7ca579ddd
 --- !u!1001 &1991998309
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6395,6 +6757,7 @@ GameObject:
   - component: {fileID: 2021784273}
   - component: {fileID: 2021784275}
   - component: {fileID: 2021784274}
+  - component: {fileID: 2021784276}
   m_Layer: 0
   m_Name: Potato (5)
   m_TagString: Untagged
@@ -6431,6 +6794,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
   ItemData: {fileID: 11400000, guid: 2ca5604f6e3895c4ca8cc7530f0061f9, type: 2}
+  itemSaveData:
+    ItemData: {fileID: 0}
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!58 &2021784275
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6447,6 +6814,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2021784276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021784272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 4b19a657-db4f-4a3b-b783-4b64cf0957a0
 --- !u!1 &2038541018
 GameObject:
   m_ObjectHideFlags: 0
@@ -6884,6 +7264,10 @@ PrefabInstance:
     - target: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_Name
       value: MC
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495392231663070125, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: inventorySize
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3495392231663070125, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: secondaryInvSize

@@ -19,27 +19,27 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     private void Start()
     {
-        var chestSaveData = new ChestSaveData(primaryInvSystem, transform.position, transform.rotation);
+        var chestSaveData = new InventorySaveData(primaryInvSystem, transform.position, transform.rotation);
         SaveGameManager.data.chestDictionaryData.Add(GetComponent<UniqueID>().ID, chestSaveData);
 
     }
 
-    private void LoadInventory(SaveData data)
+    protected override void LoadInventory(SaveData data)
     {
         // Check the save data for this specific chest inventory, and if its exist, load it
         //Maybe add in the chest manager of some sort to load all of the chest in the chest dictionary into the world 
-        if (data.chestDictionaryData.TryGetValue(GetComponent<UniqueID>().ID, out ChestSaveData chestData))
+        if (data.chestDictionaryData.TryGetValue(GetComponent<UniqueID>().ID, out InventorySaveData chestData))
         {
-            this.primaryInvSystem = chestData.invSystem;
-            this.transform.position = chestData.position;
-            this.transform.rotation = chestData.rotation;
+            this.primaryInvSystem = chestData.InvSystem;
+            this.transform.position = chestData.Position;
+            this.transform.rotation = chestData.Rotation;
         }
     }
 
     public void Interact(Interactor interactor, out bool interactSuccessful)
     {
         // if any is listening out on this event (hence the ?), if yes, invoke it
-        OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem);
+        OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, 0);
         interactSuccessful = true;
     }
 
@@ -48,22 +48,5 @@ public class ChestInventory : InventoryHolder, IInteractable
     public void EndInteraction()
     {
 
-    }
-}
-
-
-[System.Serializable]
-public struct ChestSaveData
-{
-    public InventorySystem invSystem;
-
-    public Vector3 position;
-    public Quaternion rotation;
-
-    public ChestSaveData(InventorySystem _invSystem, Vector3 pos, Quaternion rot)
-    {
-        invSystem = _invSystem;
-        position = pos;
-        rotation = rot;
     }
 }

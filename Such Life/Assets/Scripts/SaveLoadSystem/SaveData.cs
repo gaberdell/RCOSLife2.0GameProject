@@ -19,14 +19,16 @@ public class SaveData
     public List<string> collectedItems;
 
     public SerializableDictionary<string, ItemPickUpSaveData> activeItems;
-    public SerializableDictionary<string, ChestSaveData> chestDictionaryData;
+    public SerializableDictionary<string, InventorySaveData> chestDictionaryData;
+
+    public InventorySaveData playerInventory;
 
     public SaveData()
     {
         collectedItems = new List<string>();
         activeItems = new SerializableDictionary<string, ItemPickUpSaveData>();
-        chestDictionaryData = new SerializableDictionary<string, ChestSaveData>();
-
+        chestDictionaryData = new SerializableDictionary<string, InventorySaveData>();
+        playerInventory = new InventorySaveData();
     }
 }
 
