@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
 
 public class InventoryUIController : MonoBehaviour
 {
-    public DynamicInventoryDisplay chestPanel;
+
+    [FormerlySerializedAs("chestPanel")] public DynamicInventoryDisplay inventoryPanel;
     public DynamicInventoryDisplay playerBackpackPanel;
 
     public playerAction playerControl;
@@ -16,7 +18,7 @@ public class InventoryUIController : MonoBehaviour
     private void Awake()
     {
         playerControl = new playerAction();
-        chestPanel.gameObject.SetActive(false);
+        inventoryPanel.gameObject.SetActive(false);
         playerBackpackPanel.gameObject.SetActive(false);
     }
 
@@ -24,21 +26,17 @@ public class InventoryUIController : MonoBehaviour
     {
         playerControl.Enable();
         InventoryHolder.OnDynamicInventoryDisplayRequested += ShowInventory;
-        PlayerInventoryHolder.OnPlayerBackpackDisplayRequested += ShowPlayerBackpack;
     }
 
     private void OnDisable()
     {
         playerControl.Disable();
         InventoryHolder.OnDynamicInventoryDisplayRequested -= ShowInventory;
-        PlayerInventoryHolder.OnPlayerBackpackDisplayRequested -= ShowPlayerBackpack;
     }
 
 
     // Change it so that the player can use mouse cursor to open up the chest if they are directly in front of them using the interact button or right click 
     // To open player's backpack, they have to press tab and to close it, either press tab or escape button
-
-    //this commented code block is currently broken
     
     public void CloseInventory()
     {
@@ -47,9 +45,9 @@ public class InventoryUIController : MonoBehaviour
         bool closeInventoryKeyPressed = playerControl.Player.CloseInventory.WasPressedThisFrame();
         //bool interactingKeyPressed = playerControl.Player.Interacting.WasPressedThisFrame();
 
-        if (closeInventoryKeyPressed && chestPanel.gameObject.activeInHierarchy)
+        if (closeInventoryKeyPressed && inventoryPanel.gameObject.activeInHierarchy)
         {
-            chestPanel.gameObject.SetActive(false);
+            inventoryPanel.gameObject.SetActive(false);
         }
 
         if (closeInventoryKeyPressed && playerBackpackPanel.gameObject.activeInHierarchy)
@@ -66,15 +64,9 @@ public class InventoryUIController : MonoBehaviour
         CloseInventory();
     }
     
-    void ShowInventory(InventorySystem inventoryToShow)
+    void ShowInventory(InventorySystem inventoryToShow, int offset)
     {
-        chestPanel.gameObject.SetActive(true);
-        chestPanel.RefreshDynamicInventory(inventoryToShow);
-    }
-
-    void ShowPlayerBackpack(InventorySystem inventoryToShow)
-    {
-        playerBackpackPanel.gameObject.SetActive(true);
-        playerBackpackPanel.RefreshDynamicInventory(inventoryToShow);
+        inventoryPanel.gameObject.SetActive(true);
+        inventoryPanel.RefreshDynamicInventory(inventoryToShow, offset);
     }
 }
