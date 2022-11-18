@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-// ############################################
-// #              USE INTERFACES              #
-// ############################################
-
-public class Slimmerer : Slimmer
+public class Slimmerer : mobBase
 {
+    public GameObject slimeSplitter = null;
+    public float time_stop;
+    public Vector2 prevPosition;
+
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.Find("MC").transform;
+        MobSprite = GetComponent<SpriteRenderer>();
 
         monsterBody = GetComponent<Rigidbody2D>();
         monsterBody.drag = 15f;
 
         maxHealth = 5;
         damage = 2;
-        currHealth = maxHealth;
         playerSighted = false;
         time_move = 3.0f;
         time_stop = 0.5f;
@@ -39,7 +39,7 @@ public class Slimmerer : Slimmer
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
-        currState = State.Chasing;
+        currState = State.Wander;
         currPosition = new Vector2(transform.position.x, transform.position.y);
         prevPosition = currPosition;
 
@@ -76,10 +76,43 @@ public class Slimmerer : Slimmer
         }
     }
 
+    // Wandering. The slime will walk in random directions
+    public void wander()
+    {
+        PositionChange();
+    }
+
+
+    // PositionChange() is a help function for wander(). It grabs random x and y values and puts them into
+    // an attriibute called currPosition. After SetDestination is called, the slime will go the location
+    // represented by currPosition
+    public override void PositionChange()
+    {
+        float posxmin = transform.position.x - 1.0f;
+        float posxmax = transform.position.x + 1.0f;
+        float posymin = transform.position.y - 1.0f;
+        float posymax = transform.position.y + 1.0f;
+
+        currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+    }
+
+    // A built in Unity collision detector. It will perform anything inside this function if the slime collides with something.
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        // If it collides with the player it will bounce off.
+        if (collision.gameObject.tag == "Player")
+        {
+            bounce();
+        }
+        // We don't want the slime to jump as it's bouncing back.
+        // Setting the time to zero resets the Update timer.
+        time = 0;
+    }
+
     // The slime can't see the player from meters away, it can only see
     // the player from alertRange units away. If the MC enters the alertRange,
     // the slime will begin attacking
-    public override void StateChange()
+    virtual public void StateChange()
     {
         if (distance <= alertRange && !playerSighted)
         {
@@ -90,6 +123,50 @@ public class Slimmerer : Slimmer
         else
         {
             flipSprite(prevPosition.x);
+        }
+        if (currHealth == 0)
+        {
+            // Oof
+            Destroy(this.gameObject);
+
+            if (slimeSplitter)
+            {
+                // Split up
+                Instantiate(slimeSplitter, transform.position + transform.forward * 2, transform.rotation);
+                Instantiate(slimeSplitter, transform.position + transform.right * 2, transform.rotation);
+            }
+        }
+    }
+
+    // The function used to implement bounce
+    public void bounce()
+    {
+        // A separate timer for bouncing
+        float bounce_time = 0;
+        // Knockback duration has to be fixed, otherwise the slime will drag itself back to
+        // the position it was at before it gets knocked back
+        while (knockbackDuration > bounce_time)
+        {
+            bounce_time += Time.deltaTime;
+            // knockDirect is the normal vector that specifies position. It's the same as "x hat" in calc
+            Vector2 knockDirect = (target.transform.position - transform.position).normalized;
+            // Apply force to the slime.
+            monsterBody.AddForce(-knockDirect * knockbackPower);
+        }
+        // Set the position of the slime to the place it just got knocked back to.
+        agent.SetDestination(transform.position);
+    }
+
+    // Flip the sprite in relation to the position you give it.
+    public void flipSprite(float PosX)
+    {
+        if (transform.position.x > PosX && !MobSprite.flipX)
+        {
+            MobSprite.flipX = true;
+        }
+        else if (transform.position.x < PosX && MobSprite.flipX)
+        {
+            MobSprite.flipX = false;
         }
     }
 

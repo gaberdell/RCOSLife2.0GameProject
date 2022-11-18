@@ -64,7 +64,16 @@ public class mobBase : MonoBehaviour
     {
         currState = State.Chasing;
     }
-    public LayerMask targetLayerMobs;    
+    public LayerMask targetLayerMobs;  
+    public int getHealth()
+    {
+        //gets the health
+        return currHealth;
+    }
+    public void damageSelf(int dmg)
+    {
+        currHealth -= dmg;
+    }
     /*void PositionChange()
     {
 
