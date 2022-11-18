@@ -24,6 +24,7 @@ public class AnimalBase : MonoBehaviour
     public float hungerCap; //Max Hunger Value
     public float hunger; //Hunger of the animal
     public float hungerDrain; //How fast the hunger of the animal drains, by percentage per second
+    public int size; //Depending on the size, there are predetermined stats
 
     public Animator animate;
     public Vector2 position; //The current position of the animal in a Vector2 object
@@ -36,7 +37,7 @@ public class AnimalBase : MonoBehaviour
     public RaycastHit hit;
     public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
-
+    public List<string> foodtypes; //What this animal will eat
 
     public NavMeshAgent navi; //Hey, Listen!
 
@@ -138,6 +139,21 @@ public class AnimalBase : MonoBehaviour
         }
     }
 
+    //A simple function that makes the animal take the specified amount of damage
+    public void takeDamage(int val)
+    {
+        currHP -= val;
+    }
+
+    public void heal(int val)
+    {
+        currHP += val;
+        if(currHP > HPCap)
+        {
+            currHP = HPCap;
+        }
+    }
+
     //This function finds the closest Object with the tag given
     public GameObject findClosestObj(string tag)
     {
@@ -180,8 +196,8 @@ public class AnimalBase : MonoBehaviour
        
     void OnCollisionEnter2D(Collision2D collision)
     {
-
-        if (collision.gameObject.tag == "Player")
+        //If it is the player, it gets pushed. Will be changed to other entities in the future
+        if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
         { 
                 currState = State.Pushed;            
         }
@@ -194,5 +210,53 @@ public class AnimalBase : MonoBehaviour
             newposition = transform.position;
             currState = State.Idling;
         }
+    }
+
+    public float getDistance(GameObject thing)
+    {
+        return ((Vector2)thing.transform.position - position).sqrMagnitude;
+    }
+
+    
+    //Looks for closest food that the animal can eat
+    public void LookForFood(List<string> foods) 
+    {
+        float currentclosest = -1f;
+        foreach(var thing in foods) {
+            food = findClosestObj(thing);
+
+            
+            if (food)
+            {
+                if (currentclosest == -1f)
+                {
+                    currentclosest = getDistance(food);
+                }
+
+                if (getDistance(food) < currentclosest)
+                {
+                    currentclosest = getDistance(food);
+                    newposition = food.transform.position;
+                    navi.SetDestination(newposition);
+                    flipSprite();
+                    float tempdist1 = Mathf.Round(position.sqrMagnitude * 10);
+                    float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 10);
+                    if (tempdist1 == tempdist2)
+                    {
+                        hunger += 20;
+                        heal(10);
+                        Destroy(food);
+                        food = null;
+                    }
+                }
+                else
+                {
+                    return;
+                }
+                
+            }
+        }
+        
+
     }
 }

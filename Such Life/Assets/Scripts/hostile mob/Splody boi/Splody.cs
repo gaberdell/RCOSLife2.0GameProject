@@ -148,14 +148,36 @@ public class Splody : mobBase
     }
     void explode()
     {
-        //to be implemented; if any mob or the player is in the explosion range, it takes damage
+        //if any mob or the player is in the explosion range, it takes damage
         //find and damage all entities in the explosion radius
-        Debug.Log(Physics2D.OverlapCircleAll(transform.position, explosionRange,targetLayerMobs));
-        //Destroy the object without dropping anything.
-        Destroy(gameObject);
-        //to be implemented, add an explosion sprite
-        //set the exploded value to true
-        exploded = true;
+        Collider2D[] mob_exploded = Physics2D.OverlapCircleAll(transform.position, explosionRange, targetLayerMobs);
+        Debug.Log("Mobs exploded: " + mob_exploded.Length);
+        List<GameObject> exploded_objects = new List<GameObject>();
+        for (int mob = 0; mob < mob_exploded.Length; mob++)
+        {
+
+            GameObject mob_obj = mob_exploded[mob].gameObject;
+            if (mob_obj.tag == "Player" || mob_obj.tag == "Animal")
+            {
+                
+                //check if the class of this object 
+                if (mob_obj.GetComponent<mobBase>()/*why doesn't this work?*/)
+                {
+                    //Damage the mobBase object
+                    mob_obj.GetComponent<mobBase>().damageSelf(damage);
+                    print(damage + " damage done to a mob of tag " + mob_obj.tag);
+                }
+                else { print("no damage done to a object of tag " + mob_obj.tag); }
+            }
+            //exploded_objects.damage_mob(damage);
+            //do we have a HP system yet?
+
+            //Destroy the object without dropping anything.
+            Destroy(gameObject);
+            //to be implemented, add an explosion sprite
+            //set the exploded value to true
+            exploded = true;
+        }
     }
     /*void bounce()
     {

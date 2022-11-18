@@ -33,6 +33,8 @@ public class Sheep : AnimalBase
         navi.updateRotation = false;
         navi.updateUpAxis = false;   
         food = null;
+        foodtypes = new List<string>();
+        foodtypes.Add("Grass");
     }
 
     // Update is called once per frame
@@ -90,7 +92,7 @@ public class Sheep : AnimalBase
             if(hunger <= 30)
             {
                 navi.speed = walkspeed / 2;
-                touchGrass();
+                LookForFood(foodtypes);
             }
             //If the hunger is 0, it starts dying
             if(hunger <= 0)
@@ -99,7 +101,7 @@ public class Sheep : AnimalBase
                 {
                     hunger = 0;
                 }
-                currHP = currHP - 3;
+                takeDamage(3);
             }
             //Hunger drains if its not 0
             else
@@ -130,31 +132,6 @@ public class Sheep : AnimalBase
         }
         position = transform.position;
         
-    }
-
-    void touchGrass() //When the hunger is 0, this will trigger
-    {
-        food = findClosestObj("Grass");
-        if (food)
-        {
-            newposition = food.transform.position;
-            navi.SetDestination(newposition);
-            flipSprite();
-            float tempdist1 = Mathf.Round(position.sqrMagnitude * 10);
-            float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 10);
-            if (tempdist1 == tempdist2)
-            {
-                hunger += 20;
-                currHP += 10; //Eating food recovers 20 hunger and 10hp. WILL CHANGE
-                if (currHP > HPCap)
-                {
-                    currHP = HPCap;
-                }
-                Destroy(food);
-                food = null;
-            }
-        }
-
     }
 
     void FixedUpdate()
