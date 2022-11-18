@@ -19,6 +19,7 @@ public class Slimmer : mobBase
         monsterBody.drag = 15f;
 
         maxHealth = 5;
+        currHealth = maxHealth;
         damage = 2;
         playerSighted = false;
         time_move = 3.0f;
