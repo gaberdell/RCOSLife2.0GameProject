@@ -26,12 +26,14 @@ public class InventoryUIController : MonoBehaviour
     {
         playerControl.Enable();
         InventoryHolder.OnDynamicInventoryDisplayRequested += ShowInventory;
+        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested += ShowPlayerInventory;
     }
 
     private void OnDisable()
     {
         playerControl.Disable();
         InventoryHolder.OnDynamicInventoryDisplayRequested -= ShowInventory;
+        PlayerInventoryHolder.OnPlayerInventoryDisplayRequested -= ShowPlayerInventory;
     }
 
 
@@ -41,9 +43,7 @@ public class InventoryUIController : MonoBehaviour
     public void CloseInventory()
     {
         //check to see if you press the key or not
-        //bool openInventoryKeyPressed = playerControl.Player.OpenInventory.WasPressedThisFrame();
         bool closeInventoryKeyPressed = playerControl.Player.CloseInventory.WasPressedThisFrame();
-        //bool interactingKeyPressed = playerControl.Player.Interacting.WasPressedThisFrame();
 
         if (closeInventoryKeyPressed && inventoryPanel.gameObject.activeInHierarchy)
         {
@@ -68,5 +68,11 @@ public class InventoryUIController : MonoBehaviour
     {
         inventoryPanel.gameObject.SetActive(true);
         inventoryPanel.RefreshDynamicInventory(inventoryToShow, offset);
+    }
+
+    void ShowPlayerInventory(InventorySystem inventoryToShow, int offset)
+    {
+        playerBackpackPanel.gameObject.SetActive(true);
+        playerBackpackPanel.RefreshDynamicInventory(inventoryToShow, offset);
     }
 }
