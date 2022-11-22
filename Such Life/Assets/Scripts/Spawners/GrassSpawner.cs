@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grass : SpawnerBase
+public class GrassSpawner : SpawnerBase
 {
     // Start is called before the first frame update
     void Start()
