@@ -19,20 +19,34 @@ public class PlayerMovement : MouseFollow
 
     public playerAction playerControls;
     private InputAction teleport;
+    public float teleportCooldown; //how long between you can use consecutive teleports (seconds)
+    public float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
+    public float teleportTime; //Time for last used teleport
+    public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
 
 
     void Awake()
     {
         playerControls = new playerAction();
         teleportDistance = 3;
-        
+        teleportCooldown = 8;
+        teleportTime = 0 - teleportCooldown; //allow you to use teleport as soon as you spawn in
+        teleportDelay = .5f;
+        canMove = true;
     }
     // Update is called once per frame
     void Update() {
-
-        direction = playerControls.Player.Move.ReadValue<Vector2>();
-        inputX = direction.x;
-        inputY = direction.y;
+        if (canMove == true)
+        {
+            direction = playerControls.Player.Move.ReadValue<Vector2>();
+            inputX = direction.x;
+            inputY = direction.y;
+        }
+        else
+        {
+            inputX = 0;
+            inputY = 0;
+        }
 
         direction = new Vector2(inputX, inputY).normalized;
 
@@ -152,13 +166,25 @@ public class PlayerMovement : MouseFollow
         if (inputX < 0 && inputY > 0) /*NW*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, -135);
         }
-        
+
+
+        if (canMove == false && Time.time > teleportTime + teleportDelay) /*allows the player to move again after teleporting*/
+        {
+            canMove = true;
+        }
     }
 
-    
+
         
-    void FixedUpdate() {  
-        body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
+    void FixedUpdate() {
+        if (canMove == true)
+        {
+            body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
+        }
+        else
+        {
+            body.velocity = new Vector2();
+        }
     }
     
     private void OnEnable(){
@@ -175,10 +201,23 @@ public class PlayerMovement : MouseFollow
 
     //combat movement functions
 
+
+    //this function teleports the player in the direction that they're moving. Currently binded to space
+    //after it is called there is a cooldown period when it cannot be used again and a delay where you cannot move after using it.
+    //currently does not check whether or not you are allowed to land at the spot where you teleport
     private void TeleportFunct(InputAction.CallbackContext context)
     {
-        body.position = teleportDistance * direction + body.position;
-        Debug.Log("called teleport function");
+        if (Time.time > teleportTime + teleportCooldown && canMove == true)
+        {
+            teleportTime = Time.time;
+            body.position = teleportDistance * direction + body.position;
+            Debug.Log("called teleport function");
+            canMove = false;
+        }
+        else
+        {
+            float timeRemaining = teleportCooldown - (Time.time - teleportTime);
+            Debug.Log("Cannot teleport: teleport is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
+        }
     }
-    
 }
