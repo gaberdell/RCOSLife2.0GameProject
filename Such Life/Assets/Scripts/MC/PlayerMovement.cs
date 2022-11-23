@@ -19,20 +19,30 @@ public class PlayerMovement : MouseFollow
 
     public playerAction playerControls;
     private InputAction teleport;
+    private InputAction dash;
     public float teleportCooldown; //how long between you can use consecutive teleports (seconds)
     public float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
     public float teleportTime; //Time for last used teleport
     public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
+    public float dashTime; //how long dash lasts
+    public float dashSpeed; //how fast the character is when he is dashing
+    public bool canDash; 
+    public bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
 
 
     void Awake()
     {
+        walkSpeed = 2;
+        dashSpeed = 5;
         playerControls = new playerAction();
         teleportDistance = 3;
         teleportCooldown = 8;
         teleportTime = 0 - teleportCooldown; //allow you to use teleport as soon as you spawn in
         teleportDelay = .5f;
         canMove = true;
+        canDash = true;
+        combatMove = false; 
+        dashTime = .2f;
     }
     // Update is called once per frame
     void Update() {
@@ -177,13 +187,16 @@ public class PlayerMovement : MouseFollow
 
         
     void FixedUpdate() {
-        if (canMove == true)
+        if (combatMove == false)
         {
-            body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
-        }
-        else
-        {
-            body.velocity = new Vector2();
+            if (canMove == true)
+            {
+                body.velocity = new Vector2(direction.x * walkSpeed, direction.y * walkSpeed);
+            }
+            else
+            {
+                body.velocity = new Vector2();
+            }
         }
     }
     
@@ -192,17 +205,21 @@ public class PlayerMovement : MouseFollow
         teleport = playerControls.Player.Teleport;
         teleport.Enable();
         teleport.performed += TeleportFunct;
+        dash = playerControls.Player.Dash;
+        dash.Enable();
+        dash.performed += DashFunct;
     }
     private void OnDisable(){
         playerControls.Player.Disable();
         teleport.Disable();
+        dash.Disable();
 
     }
 
     //combat movement functions
 
 
-    //this function teleports the player in the direction that they're moving. Currently binded to space
+    //this function teleports the player in the direction that they're moving. Currently binded to T
     //after it is called there is a cooldown period when it cannot be used again and a delay where you cannot move after using it.
     //currently does not check whether or not you are allowed to land at the spot where you teleport
     private void TeleportFunct(InputAction.CallbackContext context)
@@ -219,5 +236,25 @@ public class PlayerMovement : MouseFollow
             float timeRemaining = teleportCooldown - (Time.time - teleportTime);
             Debug.Log("Cannot teleport: teleport is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
         }
+    }
+
+    private void DashFunct(InputAction.CallbackContext context)
+    {
+        StartCoroutine(DashRoutine());
+    }
+
+    //coroutine which basically buffs the speed for a short time to dash
+    //currently binded to space
+    private IEnumerator DashRoutine()
+    {
+        Vector2 currentDirection = direction;
+        canDash = false;
+        combatMove = true;
+        Debug.Log("Called dash routine");
+        float StartDashTime = Time.time;
+        body.velocity = new Vector2(currentDirection.x * dashSpeed, currentDirection.y * dashSpeed);
+        yield return new WaitForSeconds(dashTime);
+        combatMove = false;
+        yield return null;
     }
 }

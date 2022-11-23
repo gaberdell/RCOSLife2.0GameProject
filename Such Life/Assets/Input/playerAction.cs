@@ -89,6 +89,15 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""c74e9384-7b9e-4edd-aa11-92b562f7f9a2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -348,11 +357,22 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7932ab57-a1e9-45e5-a39d-0414ffd6da06"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/t"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Teleport"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4de7968a-1999-4e25-9e11-b75b8289aed7"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -947,6 +967,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         m_Player_CloseInventory = m_Player.FindAction("CloseInventory", throwIfNotFound: true);
         m_Player_Interacting = m_Player.FindAction("Interacting", throwIfNotFound: true);
         m_Player_Teleport = m_Player.FindAction("Teleport", throwIfNotFound: true);
+        m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1025,6 +1046,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_CloseInventory;
     private readonly InputAction m_Player_Interacting;
     private readonly InputAction m_Player_Teleport;
+    private readonly InputAction m_Player_Dash;
     public struct PlayerActions
     {
         private @playerAction m_Wrapper;
@@ -1036,6 +1058,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         public InputAction @CloseInventory => m_Wrapper.m_Player_CloseInventory;
         public InputAction @Interacting => m_Wrapper.m_Player_Interacting;
         public InputAction @Teleport => m_Wrapper.m_Player_Teleport;
+        public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1066,6 +1089,9 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                 @Teleport.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleport;
                 @Teleport.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleport;
                 @Teleport.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleport;
+                @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1091,6 +1117,9 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                 @Teleport.started += instance.OnTeleport;
                 @Teleport.performed += instance.OnTeleport;
                 @Teleport.canceled += instance.OnTeleport;
+                @Dash.started += instance.OnDash;
+                @Dash.performed += instance.OnDash;
+                @Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -1254,6 +1283,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         void OnCloseInventory(InputAction.CallbackContext context);
         void OnInteracting(InputAction.CallbackContext context);
         void OnTeleport(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
