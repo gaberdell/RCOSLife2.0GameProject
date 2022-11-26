@@ -22,7 +22,7 @@ public class PlayerMovement : MouseFollow
     private InputAction dash;
     public float teleportCooldown; //how long between you can use consecutive teleports (seconds)
     public float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
-    public float teleportTime; //Time for last used teleport
+    public float lastTeleportUsed; //Time for last used teleport
     public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
     public float dashTime; //how long dash lasts
     public float dashSpeed; //how fast the character is when he is dashing
@@ -39,7 +39,7 @@ public class PlayerMovement : MouseFollow
         playerControls = new playerAction();
         teleportDistance = 3;
         teleportCooldown = 8;
-        teleportTime = 0 - teleportCooldown; //allow you to use teleport as soon as you spawn in
+        lastTeleportUsed = 0 - teleportCooldown; //allow you to use teleport as soon as you spawn in
         teleportDelay = .5f;
         canMove = true;
         canDash = true;
@@ -182,7 +182,7 @@ public class PlayerMovement : MouseFollow
         }
 
 
-        if (canMove == false && Time.time > teleportTime + teleportDelay) /*allows the player to move again after teleporting*/
+        if (canMove == false && Time.time > lastTeleportUsed + teleportDelay) /*allows the player to move again after teleporting*/
         {
             canMove = true;
         }
@@ -228,16 +228,16 @@ public class PlayerMovement : MouseFollow
     //currently does not check whether or not you are allowed to land at the spot where you teleport
     private void TeleportFunct(InputAction.CallbackContext context)
     {
-        if (Time.time > teleportTime + teleportCooldown && canMove == true)
+        if (Time.time > lastTeleportUsed + teleportCooldown && canMove == true)
         {
-            teleportTime = Time.time;
+            lastTeleportUsed = Time.time;
             body.position = teleportDistance * direction + body.position;
             Debug.Log("called teleport function");
             canMove = false;
         }
         else
         {
-            float timeRemaining = teleportCooldown - (Time.time - teleportTime);
+            float timeRemaining = teleportCooldown - (Time.time - lastTeleportUsed);
             Debug.Log("Cannot teleport: teleport is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
         }
     }
