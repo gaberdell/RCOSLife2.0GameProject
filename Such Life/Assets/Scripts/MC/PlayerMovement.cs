@@ -26,6 +26,8 @@ public class PlayerMovement : MouseFollow
     public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
     public float dashTime; //how long dash lasts
     public float dashSpeed; //how fast the character is when he is dashing
+    public float dashCooldown;
+    public float lastDashUsed; //Time for last used dash
     public bool canDash; 
     public bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
 
@@ -43,6 +45,8 @@ public class PlayerMovement : MouseFollow
         canDash = true;
         combatMove = false; 
         dashTime = .2f;
+        dashCooldown = 4;
+        lastDashUsed = 0 - dashCooldown;
     }
     // Update is called once per frame
     void Update() {
@@ -247,14 +251,23 @@ public class PlayerMovement : MouseFollow
     //currently binded to space
     private IEnumerator DashRoutine()
     {
-        Vector2 currentDirection = direction;
-        canDash = false;
-        combatMove = true;
-        Debug.Log("Called dash routine");
-        float StartDashTime = Time.time;
-        body.velocity = new Vector2(currentDirection.x * dashSpeed, currentDirection.y * dashSpeed);
-        yield return new WaitForSeconds(dashTime);
-        combatMove = false;
-        yield return null;
+        if (Time.time > lastDashUsed + dashCooldown && canMove == true)
+        {
+            lastDashUsed = Time.time;
+            Vector2 currentDirection = direction;
+            canDash = false;
+            combatMove = true;
+            Debug.Log("Called dash routine");
+            float StartDashTime = Time.time;
+            body.velocity = new Vector2(currentDirection.x * dashSpeed, currentDirection.y * dashSpeed);
+            yield return new WaitForSeconds(dashTime);
+            combatMove = false;
+            yield return null;
+        }
+        else
+        {
+            float timeRemaining = dashCooldown - (Time.time - lastDashUsed);
+            Debug.Log("Cannot dash: dash is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
+        }
     }
 }
