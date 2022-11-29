@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 /* class represent the slots in the player's backpack and any other openable items */
-/* Codes provided by: Dan Pos - Game Dev Tutorials! */
+/* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
 public class DynamicInventoryDisplay : InventoryDisplay
 {
     // for other class to access - Maybe a merchant (will use dynamic inventory display) have other
@@ -17,15 +17,20 @@ public class DynamicInventoryDisplay : InventoryDisplay
         base.Start();
     }
 
-    public void RefreshDynamicInventory(InventorySystem inventoryToShow) 
+    public void RefreshDynamicInventory(InventorySystem inventoryToShow, int offset) 
     {
         //clear out slots, update and assign slots 
         ClearSlots();
         inventorySystem = inventoryToShow;
-        AssignSlot(inventoryToShow);
+        if(inventorySystem != null)
+        {
+            inventorySystem.OnInventorySlotChanged += UpdateSlot;
+        }
+
+        AssignSlot(inventoryToShow, offset);
     }
 
-    public override void AssignSlot(InventorySystem inventoryToShow)
+    public override void AssignSlot(InventorySystem inventoryToShow, int offset)
     {
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
 
@@ -35,8 +40,9 @@ public class DynamicInventoryDisplay : InventoryDisplay
             return;
         }
 
+
         //create and pair the inventory slot
-        for(int i = 0; i < inventoryToShow.InventorySize; i++)
+        for(int i = offset; i < inventoryToShow.InventorySize; i++)
         {
             var uiSlot = Instantiate(slotPrefab, transform);
             slotDictionary.Add(uiSlot, inventoryToShow.InventorySlots[i]);
@@ -56,6 +62,14 @@ public class DynamicInventoryDisplay : InventoryDisplay
         if(slotDictionary != null)
         {
             slotDictionary.Clear();
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (inventorySystem != null)
+        {
+            inventorySystem.OnInventorySlotChanged -= UpdateSlot;
         }
     }
 }
