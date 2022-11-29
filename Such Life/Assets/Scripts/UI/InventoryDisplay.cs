@@ -23,7 +23,7 @@ public abstract class InventoryDisplay : MonoBehaviour
 
     }
 
-    public abstract void AssignSlot(InventorySystem invToDisplay); //to be implement in child classes
+    public abstract void AssignSlot(InventorySystem invToDisplay, int offset); //to be implement in child classes
 
     protected virtual void UpdateSlot(InventorySlot updatedSlot)
     {
