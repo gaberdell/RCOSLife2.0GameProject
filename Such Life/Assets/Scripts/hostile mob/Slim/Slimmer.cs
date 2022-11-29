@@ -125,7 +125,7 @@ public class Slimmer : mobBase
         {
             flipSprite(prevPosition.x);
         }
-        if (currHealth == 0)
+        if (currHealth <= 0)
         {
             // Oof
             Destroy(this.gameObject);
