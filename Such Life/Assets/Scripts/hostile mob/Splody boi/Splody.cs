@@ -27,7 +27,8 @@ public class Splody : mobBase
         currPosition = new Vector2(transform.position.x, transform.position.y);
 
         maxHealth = 5;
-        damage = 2;
+        //for testing purposes:
+        damage = 5;
         currHealth = maxHealth;
         playerSighted = false;
         time_move = 3.0f;
@@ -161,17 +162,20 @@ public class Splody : mobBase
             {
                 
                 //check if the class of this object 
-                if (mob_obj.GetComponent<mobBase>()/*why doesn't this work?*/)
+                if (mob_obj.GetComponent<mobBase>())
                 {
                     //Damage the mobBase object
                     mob_obj.GetComponent<mobBase>().damageSelf(damage);
-                    print(damage + " damage done to a mob of tag " + mob_obj.tag);
+                }
+                else if (mob_obj.GetComponent<AnimalBase>())
+                {
+                    mob_obj.GetComponent<AnimalBase>().currHP -= damage;
                 }
                 else { print("no damage done to a object of tag " + mob_obj.tag); }
             }
             //exploded_objects.damage_mob(damage);
             //do we have a HP system yet?
-
+            
             //Destroy the object without dropping anything.
             Destroy(gameObject);
             //to be implemented, add an explosion sprite
