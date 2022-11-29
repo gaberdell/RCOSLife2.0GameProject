@@ -17,36 +17,55 @@ public class PlayerMovement : MouseFollow
 
     public float teleportDistance;
 
+    //for new input system
+    //look in playerControls in input folder to change bindings
     public playerAction playerControls;
     private InputAction teleport;
     private InputAction dash;
+    private InputAction roll;
+
     public float teleportCooldown; //how long between you can use consecutive teleports (seconds)
     public float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
     public float lastTeleportUsed; //Time for last used teleport
-    public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
+
     public float dashTime; //how long dash lasts
     public float dashSpeed; //how fast the character is when he is dashing
-    public float dashCooldown;
+    public float dashCooldown; //cooldown for dash
     public float lastDashUsed; //Time for last used dash
-    public bool canDash; 
+
+    public float rollTime; //same variables as dash but for roll
+    public float rollSpeed;
+    public float rollCooldown;
+    public float lastRollUsed;
+
     public bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
+    public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
+
 
 
     void Awake()
     {
         walkSpeed = 2;
-        dashSpeed = 5;
+
         playerControls = new playerAction();
+
         teleportDistance = 3;
         teleportCooldown = 8;
         lastTeleportUsed = 0 - teleportCooldown; //allow you to use teleport as soon as you spawn in
         teleportDelay = .5f;
+
         canMove = true;
-        canDash = true;
-        combatMove = false; 
+        combatMove = false;
+
+        dashSpeed = 10;
         dashTime = .2f;
         dashCooldown = 4;
         lastDashUsed = 0 - dashCooldown;
+
+        rollSpeed = 5;
+        rollTime = .4f;
+        rollCooldown = 4;
+        lastRollUsed = 0 - rollCooldown;
     }
     // Update is called once per frame
     void Update() {
@@ -206,12 +225,18 @@ public class PlayerMovement : MouseFollow
     
     private void OnEnable(){
         playerControls.Player.Enable();
+
         teleport = playerControls.Player.Teleport;
         teleport.Enable();
         teleport.performed += TeleportFunct;
+
         dash = playerControls.Player.Dash;
         dash.Enable();
         dash.performed += DashFunct;
+
+        roll = playerControls.Player.Roll;
+        roll.Enable();
+        roll.performed += RollFunct;
     }
     private void OnDisable(){
         playerControls.Player.Disable();
@@ -247,18 +272,17 @@ public class PlayerMovement : MouseFollow
         StartCoroutine(DashRoutine());
     }
 
-    //coroutine which basically buffs the speed for a short time to dash
-    //currently binded to space
+    //coroutine which is basically the same as dash but slower
+    //currently binded to f
     private IEnumerator DashRoutine()
     {
         if (Time.time > lastDashUsed + dashCooldown && canMove == true)
         {
+            //need roll animation
             lastDashUsed = Time.time;
             Vector2 currentDirection = direction;
-            canDash = false;
             combatMove = true;
             Debug.Log("Called dash routine");
-            float StartDashTime = Time.time;
             body.velocity = new Vector2(currentDirection.x * dashSpeed, currentDirection.y * dashSpeed);
             yield return new WaitForSeconds(dashTime);
             combatMove = false;
@@ -268,6 +292,32 @@ public class PlayerMovement : MouseFollow
         {
             float timeRemaining = dashCooldown - (Time.time - lastDashUsed);
             Debug.Log("Cannot dash: dash is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
+        }
+    }
+
+    private void RollFunct(InputAction.CallbackContext context)
+    {
+        StartCoroutine(RollRoutine());
+    }
+
+    //binded to r
+    private IEnumerator RollRoutine()
+    {
+        if (Time.time > lastRollUsed + rollCooldown && canMove == true)
+        {
+            lastRollUsed = Time.time;
+            Vector2 currentDirection = direction;
+            combatMove = true;
+            Debug.Log("Called roll routine");
+            body.velocity = new Vector2(currentDirection.x * rollSpeed, currentDirection.y * rollSpeed);
+            yield return new WaitForSeconds(rollTime);
+            combatMove = false;
+            yield return null;
+        }
+        else
+        {
+            float timeRemaining = rollCooldown - (Time.time - lastRollUsed);
+            Debug.Log("Cannot roll: roll is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
         }
     }
 }
