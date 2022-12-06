@@ -238,16 +238,7 @@ public class AnimalBase : MonoBehaviour
                     currentclosest = getDistance(food);
                     newposition = food.transform.position;
                     navi.SetDestination(newposition);
-                    flipSprite();
-                    float tempdist1 = Mathf.Round(position.sqrMagnitude * 10);
-                    float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 10);
-                    if (tempdist1 == tempdist2)
-                    {
-                        hunger += 20;
-                        heal(10);
-                        Destroy(food);
-                        food = null;
-                    }
+                    
                 }
                 else
                 {

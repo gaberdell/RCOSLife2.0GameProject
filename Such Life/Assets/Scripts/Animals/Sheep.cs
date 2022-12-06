@@ -41,13 +41,14 @@ public class Sheep : AnimalBase
     void Update()
     {
         //If the sheep has 0HP, it dies
-        if(currHP <= 0)
+        if (currHP <= 0)
         {
             currHP = 0;
             currState = State.Dying;
             aniSprite.flipY = true; //Temporary death effect. It flips upside-down
         }
 
+        else { 
         //This part of the Update doesn't work by frame.
         //It works on a timer defined by timeDelay
         time = time + 1f * Time.deltaTime;
@@ -77,9 +78,9 @@ public class Sheep : AnimalBase
                     Idle();
                 }
             }
-            
+
             //If the mob is following something, it has a 10% chance to stop following
-            if(currState == State.Following)
+            if (currState == State.Following)
             {
                 int gen = Random.Range(0, 100);
                 if (gen > 90)
@@ -89,15 +90,15 @@ public class Sheep : AnimalBase
             }
 
             //If the hunger is less than or equal to 30, it starts looking for grass
-            if(hunger <= 30)
+            if (hunger <= 30)
             {
                 navi.speed = walkspeed / 2;
                 LookForFood(foodtypes);
             }
             //If the hunger is 0, it starts dying
-            if(hunger <= 0)
+            if (hunger <= 0)
             {
-                if(hunger < 0)
+                if (hunger < 0)
                 {
                     hunger = 0;
                 }
@@ -112,26 +113,44 @@ public class Sheep : AnimalBase
 
         //While the timeDelay isn't met
         else
-        {   
-            //If the sheep is being pushed, it stops resisting... will be changed 
-            if (currState == State.Pushed)
-            {
-                newposition = transform.position;
-                position = transform.position;
-                navi.SetDestination(newposition);
-            }
-            //How the sheep follows the player
-            else if(currState == State.Following)
-            {
-                newposition.x = player.transform.position.x;
-                newposition.y = player.transform.position.y;
-                navi.speed = walkspeed;
-                navi.SetDestination(newposition);
-                flipSprite();
-            }
+        {
+                if (food == null)
+                {
+                    //If the sheep is being pushed, it stops resisting... will be changed 
+                    if (currState == State.Pushed)
+                    {
+                        newposition = transform.position;
+                        position = transform.position;
+                        navi.SetDestination(newposition);
+                    }
+                    //How the sheep follows the player
+                    else if (currState == State.Following)
+                    {
+                        newposition.x = player.transform.position.x;
+                        newposition.y = player.transform.position.y;
+                        navi.speed = walkspeed;
+                        navi.SetDestination(newposition);
+                        flipSprite();
+                    }
+                }
+                else //There was a bug here. keeping this here for now
+                {
+                    newposition = food.transform.position;
+                    navi.SetDestination(newposition);
+                    flipSprite();
+                    float tempdist1 = Mathf.Round(position.sqrMagnitude * 10);
+                    float tempdist2 = Mathf.Round(newposition.sqrMagnitude * 10);
+                    if (tempdist1 == tempdist2)
+                    {
+                        hunger += 20;
+                        heal(10);
+                        Destroy(food);
+                        food = null;
+                    }
+                }
         }
         position = transform.position;
-        
+    }
     }
 
     void FixedUpdate()
