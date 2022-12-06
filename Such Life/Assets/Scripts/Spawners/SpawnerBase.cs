@@ -10,7 +10,7 @@ public class SpawnerBase : MonoBehaviour
     public float spawnsize;
     public float timeDelay;
     protected float time;
-    protected List<string> type; //The type of spawner it is, land, water, etc.
+    protected List<string> type = new List<string>(); //The type of spawner it is, land, water, etc.
 
     // Update is called once per frame
     void Update()
