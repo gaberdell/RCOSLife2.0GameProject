@@ -10,6 +10,7 @@ public class InventoryUIController : MonoBehaviour
 {
 
     [FormerlySerializedAs("chestPanel")] public DynamicInventoryDisplay inventoryPanel;
+    public GameObject dynamicText;
     public DynamicInventoryDisplay playerBackpackPanel;
 
     public playerAction playerControl;
@@ -18,6 +19,7 @@ public class InventoryUIController : MonoBehaviour
     private void Awake()
     {
         playerControl = new playerAction();
+        dynamicText.SetActive(false);
         inventoryPanel.gameObject.SetActive(false);
         playerBackpackPanel.gameObject.SetActive(false);
     }
@@ -47,6 +49,7 @@ public class InventoryUIController : MonoBehaviour
 
         if (closeInventoryKeyPressed && inventoryPanel.gameObject.activeInHierarchy)
         {
+            dynamicText.SetActive(false);
             inventoryPanel.gameObject.SetActive(false);
         }
 

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with slight modification */
 
@@ -10,6 +11,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(UniqueID))]
 public class ChestInventory : InventoryHolder, IInteractable
 {
+    public GameObject DynText;
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
     protected override void Awake()
     {
@@ -40,6 +42,9 @@ public class ChestInventory : InventoryHolder, IInteractable
     {
         // if any is listening out on this event (hence the ?), if yes, invoke it
         OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, 0);
+        DynText.SetActive(false);
+        DynText.SetActive(true);
+        DynText.GetComponent<Text>().text = this.name.ToString();
         interactSuccessful = true;
     }
 
