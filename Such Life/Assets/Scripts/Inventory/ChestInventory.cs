@@ -50,8 +50,10 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     //this method will be use for later if the player interact with the chest, they can't move until
     //they close the chest
+    
     public void EndInteraction()
     {
 
     }
+    
 }
