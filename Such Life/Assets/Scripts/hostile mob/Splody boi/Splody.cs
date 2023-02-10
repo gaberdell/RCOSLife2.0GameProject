@@ -154,27 +154,28 @@ public class Splody : mobBase
         Collider2D[] mob_exploded = Physics2D.OverlapCircleAll(transform.position, explosionRange, targetLayerMobs);
         Debug.Log("Mobs exploded: " + mob_exploded.Length);
         List<GameObject> exploded_objects = new List<GameObject>();
+        //loop over every mob object:
         for (int mob = 0; mob < mob_exploded.Length; mob++)
         {
-
             GameObject mob_obj = mob_exploded[mob].gameObject;
-            if (mob_obj.tag == "Player" || mob_obj.tag == "Animal")
+            if (mob_obj.CompareTag("Player") || mob_obj.CompareTag("Animal"))
             {
                 
-                //check if the class of this object 
+                //check if the object has a mobBase class 
                 if (mob_obj.GetComponent<mobBase>())
                 {
-                    //Damage the mobBase object
+                    //Damage the object's mobBase (decrease the mobBase's HP) 
                     mob_obj.GetComponent<mobBase>().damageSelf(damage);
                 }
+                //samething for an AnimalBase object
                 else if (mob_obj.GetComponent<AnimalBase>())
                 {
+                    //decrease the AnimalBase's HP
                     mob_obj.GetComponent<AnimalBase>().currHP -= damage;
                 }
-                else { print("no damage done to a object of tag " + mob_obj.tag); }
+                //debugging print:
+                //else { print("no damage done to a object of tag " + mob_obj.tag); }
             }
-            //exploded_objects.damage_mob(damage);
-            //do we have a HP system yet?
             
             //Destroy the object without dropping anything.
             Destroy(gameObject);
