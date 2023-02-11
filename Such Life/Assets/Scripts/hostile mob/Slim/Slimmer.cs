@@ -62,6 +62,15 @@ public class Slimmer : mobBase
 
             if (currState == State.Chasing)
             {
+                if(agent.remainingDistance > 1.5*distance){
+                    // if there's a wall to jump over, jump over it. 
+                    // for now, it's just teleporting in case the enemy gets stuck in a cage or smth
+                    // actually this AI is a bit nuts, I should change it later 
+
+                    /*float aaaaa = 0.5f * (target.position.x-currPosition.x);
+                    float hhhhh = 0.5f * (target.position.y-currPosition.y);
+                    agent.Move(new Vector3(aaaaa,hhhhh,0.0f));*/
+                }
                 agent.SetDestination(target.position);
             }
             else if (currState == State.Wander)
@@ -156,6 +165,10 @@ public class Slimmer : mobBase
         }
         // Set the position of the slime to the place it just got knocked back to.
         agent.SetDestination(transform.position);
+    }
+
+    public void fjfjfj(){
+        // Don't know why I created this.
     }
     
     // Flip the sprite in relation to the position you give it.
