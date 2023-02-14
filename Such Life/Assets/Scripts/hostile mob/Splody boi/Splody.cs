@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Splody : mobBase
 {
+    public Animator spanim;
     [SerializeField]
     public int explosionRange;
     // Start is called before the first frame update
@@ -56,6 +57,7 @@ public class Splody : mobBase
         agent.acceleration = 200;
         if (currState == State.Chasing)
         {
+            spanim.SetBool("Attacking", false);
             chasing(distance);
         }
         else if (currState == State.Wander)
@@ -67,6 +69,7 @@ public class Splody : mobBase
         }
         else if (currState == State.Attacking)
         {
+            spanim.SetBool("Attacking", true);
             chargeExplosion();
         }
         
@@ -117,11 +120,15 @@ public class Splody : mobBase
     }
     void chargeExplosion()
     {
-        if(explodeTimer <= 0) {
+        if(!exploded&&explodeTimer <= 0) {
             explode();
         }
-        else {  
-            explodeTimer -= Time.deltaTime; 
+        else if(!exploded) {  
+            explodeTimer -= Time.deltaTime;
+        }
+        else
+        {
+            Explosion_step();
         }
     }
     void StateChange()
@@ -160,7 +167,7 @@ public class Splody : mobBase
             GameObject mob_obj = mob_exploded[mob].gameObject;
             if (mob_obj.CompareTag("Player") || mob_obj.CompareTag("Animal"))
             {
-                
+
                 //check if the object has a mobBase class 
                 if (mob_obj.GetComponent<mobBase>())
                 {
@@ -176,12 +183,24 @@ public class Splody : mobBase
                 //debugging print:
                 //else { print("no damage done to a object of tag " + mob_obj.tag); }
             }
-            
-            //Destroy the object without dropping anything.
-            Destroy(gameObject);
+
+            }
+            spanim.SetTrigger("IsDead");
             //to be implemented, add an explosion sprite
             //set the exploded value to true
+            explodeTimer = 1f;
+            
             exploded = true;
+            
+            
+        
+    }
+    void Explosion_step() {
+        explodeTimer -= Time.deltaTime;
+        if (explodeTimer <= 0)
+        {
+            //Destroy the object without dropping anything
+            Destroy(gameObject);
         }
     }
     /*void bounce()
