@@ -188,16 +188,13 @@ public class Splody : mobBase
             spanim.SetTrigger("IsDead");
             //to be implemented, add an explosion sprite
             //set the exploded value to true
-            explodeTimer = 1f;
-            
             exploded = true;
             
             
         
     }
     void Explosion_step() {
-        explodeTimer -= Time.deltaTime;
-        if (explodeTimer <= 0)
+        if (spanim.GetCurrentAnimatorStateInfo(0).IsName("Oof") && spanim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
         {
             //Destroy the object without dropping anything
             Destroy(gameObject);
