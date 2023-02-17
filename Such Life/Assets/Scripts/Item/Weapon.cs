@@ -6,7 +6,7 @@ public class Weapon {//Nothing gets assigned until a specific type of weapon cal
     float attackSpeed; //Number of attacks per second
     //Suggestion: implement cap?
     float armorPenetration; //Percentage of armor ignored
-    float critDamage = 1.25; //Multiplier of the damage if crit is landed, weapon should add to that percentage
+    double critDamage = 1.25; //Multiplier of the damage if crit is landed, weapon should add to that percentage
     float critChance = 0; //Percent chance to crit, weapon should add to this chance
     //string material; //Do not know how the specific weapons will inherit the class
     float weight; //How heavy the weapon, impacts how much player holds in inventory
