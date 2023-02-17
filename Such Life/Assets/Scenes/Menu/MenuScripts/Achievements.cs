@@ -10,14 +10,15 @@ public class Achievements : MonoBehaviour
     {
         public string name;
         public string description;
-        public bool has;
+        public bool isObtained;
     }
 
-    public Dictionary<string, Achievement> tracker = new Dictionary<string, Achievement> {
+    public Dictionary<string, Achievement> tracker = new Dictionary<string, Achievement> 
+    {
         // insert achievements here, initialize to false
-        {"Play the game!", new Achievement {name="Play the game!", description="TBD", has=true }  },
-        {"Vanquish a Slimmer!", new Achievement {name="Vaniquish a Slimmer!", description="TBD", has=false }  },
-        {"Test Achievement", new Achievement{name="Test Achievement", description="TBD", has=false } }
+        {"Play the game!", new Achievement {name="Play the game!", description="TBD", isObtained=true }  },
+        {"Vanquish a Slimmer!", new Achievement {name="Vaniquish a Slimmer!", description="TBD", isObtained=false }  },
+        {"Test Achievement", new Achievement{name="Test Achievement", description="TBD", isObtained=false } }
     };
     public GameObject textPrefab;
     public Transform content;
@@ -26,24 +27,43 @@ public class Achievements : MonoBehaviour
     {
         if (tracker.ContainsKey(request))
         {
-            tracker[request].has = true;
+            tracker[request].isObtained = true;
         }
     }
-
+    
     // Start is called before the first frame update
     void Start()
     {
-        // Instantiate the text prefab once
-        GameObject newText = Instantiate(textPrefab, content);
-
-        // Get the text component of the new text object
-        Text textComponent = newText.GetComponent<Text>();
-
-        // initializes the Dictionary which tracks whether the player has an achievement
+        // initializes the Dictionary which tracks whether the player isObtained an achievement
         // a separate Dictionary can be made to track the associated description,
         // or this one can be expanded.
+        float yPos = 0;
         foreach (KeyValuePair<string, Achievement> kvp in tracker) {
-            textComponent.text += kvp.Key + '\n';
+            // Instantiate the text prefab
+            GameObject achievementTextObject = Instantiate(textPrefab, content);
+
+            // Get the Text component from the instantiated prefab
+            Text textComponent = achievementTextObject.GetComponent<Text>();
+
+            // Set the text of the Text component to the achievement name
+            textComponent.text = kvp.Value.name;
+
+            // Set the color of the Text component based on the isObtained property of the achievement
+            if (kvp.Value.isObtained)
+            {
+                textComponent.color = Color.green;
+            }
+            else
+            {
+                textComponent.color = Color.red;
+            }
+
+            // Position the text object below the previous one
+            Vector3 position = achievementTextObject.transform.position;
+            position.y -= (textComponent.preferredHeight + yPos);
+            achievementTextObject.transform.position = position;
+            yPos += 30f;
         }
     }
+
 }
