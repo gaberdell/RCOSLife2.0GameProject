@@ -38,24 +38,31 @@ public class Settings : MonoBehaviour
     public AudioMixer audioMixer;
     public TMPro.TMP_Dropdown resolutionDropdown;
     public Slider volumeSlider;
-    float currentVolume;
+    public Slider brightnessSlider;
     Resolution[] resolutions;
 
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
-        currentVolume = volume;
+        PlayerPrefs.SetFloat("VolumePreference", volume);
+    }
+
+    public void SetBrightness(float brightness)
+    {
+        PlayerPrefs.SetFloat("BrightnessPreference", brightness);
     }
 
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
     }
 
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
     }
 
     public void ExitGame()
@@ -65,38 +72,14 @@ public class Settings : MonoBehaviour
 
     public void SaveSettings()
     {
-        PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
-        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
-        PlayerPrefs.SetFloat("VolumePreference", currentVolume);
+         
     }
 
     public void LoadSettings(int currentResolutionIndex)
     {
-        if (PlayerPrefs.HasKey("ResolutionPreference"))
-        {
-            resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference");
-        }
-        else
-        {
-            resolutionDropdown.value = currentResolutionIndex;
-        }
-
-        if (PlayerPrefs.HasKey("FullscreenPreference"))
-        {
-            Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference"));
-        }
-        else
-        {
-            Screen.fullScreen = true;
-        }
-
-        if (PlayerPrefs.HasKey("VolumePreference"))
-        {
-            volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference");
-        }
-        else
-        {
-            volumeSlider.value = 0.5F;
-        }
+        resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference", currentResolutionIndex);
+        Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference", 1));
+        volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference", 0.0f);
+        brightnessSlider.value = PlayerPrefs.GetFloat("BrightnessPreference", 0.0f);
     }
 }
