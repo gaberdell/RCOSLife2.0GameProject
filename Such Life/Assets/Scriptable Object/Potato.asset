@@ -18,3 +18,7 @@ MonoBehaviour:
   Icon: {fileID: -6137242429100743368, guid: 15cd4fb3ad94c264ea503f760f3f15ff, type: 3}
   MaxStackSize: 1
   Type: 
+  placeable: 1
+  colliderType: circle
+  boxColliderSize: {x: 2, y: 2}
+  circleColliderRadius: 0.5

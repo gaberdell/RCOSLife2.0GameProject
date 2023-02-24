@@ -15,6 +15,11 @@ public class ItemPickUp : MonoBehaviour
     [SerializeField] private ItemPickUpSaveData itemSaveData;
     private string id;
 
+    // items can only be picked up if it's 2s after being created, freezetime set to 2s initially
+    public float freezetime = 2f;
+    private float freezecount;
+    public bool freeze = false;
+
     private void Awake()
     {
         id = GetComponent<UniqueID>().ID;
@@ -24,6 +29,10 @@ public class ItemPickUp : MonoBehaviour
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.isTrigger = true;
         myCollider.radius = pickUpRadius;
+
+        freeze = true;
+        Debug.Log("item freezed");
+        freezecount = freezetime;
     }
 
     private void LoadGame(SaveData data)
@@ -53,7 +62,7 @@ public class ItemPickUp : MonoBehaviour
         //adjust this function slightly when start to implement player and chest inventory
         var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
         
-        if (!inventory) return;
+        if (!inventory || (freeze)) return;
 
         if (inventory.AddToInventory(ItemData, 1))
         {
@@ -61,8 +70,17 @@ public class ItemPickUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-}
 
+    void Update()
+    {
+        freezecount -= Time.deltaTime;
+        if (freezecount <= 0f && freeze)
+        {
+            freeze = false;
+            Debug.Log("item unfreezed");
+        }
+    }
+}
 
 [System.Serializable]
 public struct ItemPickUpSaveData

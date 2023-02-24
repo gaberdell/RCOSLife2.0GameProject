@@ -7,12 +7,12 @@ public class MouseFollow : MonoBehaviour
 {
     public Vector3 mousePosition;
     public float cursorSpeed = 5f;
-    public Rigidbody2D body;
+    public Rigidbody2D mouseBody;
     public Vector2 pos = new Vector2(0,0);
 
     // Update is called once per frame
     void Start() {
-        body = GetComponent<Rigidbody2D>();
+        mouseBody = GetComponent<Rigidbody2D>();
     }
 
     void Update() 
@@ -22,9 +22,9 @@ public class MouseFollow : MonoBehaviour
         pos = Vector2.Lerp(transform.position, mousePosition, cursorSpeed);
     }
 
-    void FixedUpdate() {
+    void FixedUpdate() { 
     
-        body.MovePosition(mousePosition);
+        mouseBody.MovePosition(mousePosition);
 
 
 
