@@ -15,7 +15,8 @@ public class weaponParent : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        charRenderer = gameObject.GetComponent<SpriteRenderer>();
+        weaponRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -40,11 +41,13 @@ public class weaponParent : MonoBehaviour
             weaponRenderer.sortingOrder = charRenderer.sortingOrder + 1;
         }
 
+    }
+
 
     public void Attack() {
         if(attackBlocked)
             return;
-        animmator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
         attackBlocked = true;
         StartCoroutine(DelayAttack());
     }
@@ -54,5 +57,6 @@ public class weaponParent : MonoBehaviour
         attackBlocked = false;
     }
 
-    }
+
+    
 }
