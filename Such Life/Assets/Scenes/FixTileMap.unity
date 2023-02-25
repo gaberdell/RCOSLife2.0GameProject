@@ -269,6 +269,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5611377554060918271, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7887569298735229455, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
 --- !u!1 &144064680
@@ -400,7 +408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 984489666360563012, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
       propertyPath: m_RootOrder
@@ -489,6 +497,7 @@ GameObject:
   - component: {fileID: 990696037}
   - component: {fileID: 990696036}
   - component: {fileID: 990696039}
+  - component: {fileID: 990696040}
   m_Layer: 0
   m_Name: Tilemap_rocks
   m_TagString: Untagged
@@ -517,10 +526,10 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 990696034}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1389,9 +1398,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
-  m_Area: 2
+  m_Area: 3
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!114 &990696040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990696034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75533bbab2d5ebd4fbb1dd54eb1b6788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1133861928
 GameObject:
   m_ObjectHideFlags: 0
@@ -7522,10 +7543,10 @@ TilemapCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377112262}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -8132,6 +8153,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Animal
       objectReference: {fileID: 0}
+    - target: {fileID: 2637762365785888350, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: player
       value: 
@@ -8218,6 +8243,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1341382719}
+    - target: {fileID: 3378957361569544660, guid: 12696d90e30338c4c99ff9e3e0701117, type: 3}
+      propertyPath: m_SortingOrder
+      value: 99
+      objectReference: {fileID: 0}
     - target: {fileID: 3378957361569544661, guid: 12696d90e30338c4c99ff9e3e0701117, type: 3}
       propertyPath: m_RootOrder
       value: 5
