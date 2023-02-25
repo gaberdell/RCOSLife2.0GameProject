@@ -159,32 +159,27 @@ public class Splody : mobBase
         //if any mob or the player is in the explosion range, it takes damage
         //find and damage all entities in the explosion radius
         Collider2D[] mob_exploded = Physics2D.OverlapCircleAll(transform.position, explosionRange, targetLayerMobs);
-        Debug.Log("Mobs exploded: " + mob_exploded.Length);
-        List<GameObject> exploded_objects = new List<GameObject>();
         //loop over every mob object:
-        for (int mob = 0; mob < mob_exploded.Length; mob++)
-        {
+        for (int mob = 0; mob < mob_exploded.Length; mob++){
             GameObject mob_obj = mob_exploded[mob].gameObject;
-            if (mob_obj.CompareTag("Player") || mob_obj.CompareTag("Animal"))
+
+
+          //check if the object has a mobBase class 
+          if (mob_obj.GetComponent<mobBase>())
             {
-
-                //check if the object has a mobBase class 
-                if (mob_obj.GetComponent<mobBase>())
-                {
-                    //Damage the object's mobBase (decrease the mobBase's HP) 
-                    mob_obj.GetComponent<mobBase>().damageSelf(damage);
-                }
-                //samething for an AnimalBase object
-                else if (mob_obj.GetComponent<AnimalBase>())
-                {
-                    //decrease the AnimalBase's HP
-                    mob_obj.GetComponent<AnimalBase>().currHP -= damage;
-                }
-                //debugging print:
-                //else { print("no damage done to a object of tag " + mob_obj.tag); }
+            if (mob_obj.GetComponent<Splody>()) {
+                mob_obj.GetComponent<Splody>().explode();
             }
-
+            else{
+              //Damage the object's mobBase (decrease the mobBase's HP) 
+              mob_obj.GetComponent<mobBase>().damageSelf(damage); }
             }
+            //samething for an AnimalBase object
+          else if (mob_obj.GetComponent<AnimalBase>()){
+                //decrease the AnimalBase's HP
+                mob_obj.GetComponent<AnimalBase>().currHP -= damage;
+          }
+        }
             spanim.SetTrigger("IsDead");
             //to be implemented, add an explosion sprite
             //set the exploded value to true
