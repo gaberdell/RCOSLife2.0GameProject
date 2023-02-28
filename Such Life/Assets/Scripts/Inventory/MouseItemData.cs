@@ -12,10 +12,18 @@ public class MouseItemData : MonoBehaviour
     public Image ItemSprite;
     public TextMeshProUGUI ItemCount;
     public InventorySlot AssignedInventorySlot;
+
+    private Transform _playerTransform;
+    public float _dropOffset = 3f;
+
     private void Awake()
     {
         ItemSprite.color = Color.clear;
+        ItemSprite.preserveAspect = true;
         ItemCount.text = "";
+
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        if(_playerTransform == null) Debug.Log("Player not found");
     }
 
     public void UpdateMouseSlot(InventorySlot invSlot)
@@ -35,7 +43,12 @@ public class MouseItemData : MonoBehaviour
             transform.position = Mouse.current.position.ReadValue();
             if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
-                //ClearSlot();
+                Debug.Log("Cheese");
+                if(AssignedInventorySlot.ItemData.ItemPrefab != null){
+                    Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, _playerTransform.position + _playerTransform.forward * _dropOffset,Quaternion.identity);
+                    Debug.Log("Crackers");
+                }
+                ClearSlot();
                 // To-do: Drop item on the ground instead of delete it
             }
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-
+using UnityEditor;
 
 
 [CreateAssetMenu (menuName = "Inventory System / Item Database")]
@@ -44,13 +44,16 @@ public class Database : ScriptableObject
                 tempIndex++;
                 itemDatabase.Add(itemToAdd);
             }
+            if (itemToAdd) EditorUtility.SetDirty(itemToAdd);
         }
 
         //prevent changing item's ID if there is another save files
         foreach (var item in hasIDNotInRange)
         {
             itemDatabase.Add(item);
+            if (item) EditorUtility.SetDirty(item);
         }
+        AssetDatabase.SaveAssets();
     }
 
 

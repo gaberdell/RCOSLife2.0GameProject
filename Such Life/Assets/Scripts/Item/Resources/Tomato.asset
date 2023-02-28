@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59db689eec632fd49aec25f9cd9a13ae, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  ID: 0
+  ID: 1
   DisplayName: Tomato
   Description: 'Red, juicy.... fruit.... hmmmm I thought it was a vegetable. '
   Icon: {fileID: 2134584563556110807, guid: 15cd4fb3ad94c264ea503f760f3f15ff, type: 3}
