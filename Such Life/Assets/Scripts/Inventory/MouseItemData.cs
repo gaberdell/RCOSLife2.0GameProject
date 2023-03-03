@@ -35,7 +35,7 @@ public class MouseItemData : MonoBehaviour
             transform.position = Mouse.current.position.ReadValue();
             if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
-                ClearSlot();
+                //ClearSlot();
                 // To-do: Drop item on the ground instead of delete it
             }
 
