@@ -14,7 +14,21 @@ public class NavMeshSlowDown : MonoBehaviour{
         float CostModifier = NavMesh.GetAreaCost(mod.area);
         Rigidbody2D agent = other.gameObject.GetComponent<Rigidbody2D>();
         agent.velocity /= CostModifier;
-        Debug.Log("hi mom");
+       
+    }
+    private void OnTriggerEnter2D(Collider2D col){
+        float CostModifier = NavMesh.GetAreaCost(mod.area);
+        Debug.Log("Enter");
+        if(col.gameObject.tag == "Player"){
+            col.gameObject.GetComponent<PlayerMovement>().walkSpeed /= CostModifier;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D col){
+        float CostModifier = NavMesh.GetAreaCost(mod.area);
+        Debug.Log("Exit");
+        if(col.gameObject.tag == "Player"){
+            col.gameObject.GetComponent<PlayerMovement>().walkSpeed *= CostModifier;
+        }
     }
     private void OnCollisionExit2D(Collision2D other){
         float CostModifier = NavMesh.GetAreaCost(mod.area);
