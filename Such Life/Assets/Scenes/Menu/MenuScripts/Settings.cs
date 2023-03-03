@@ -37,6 +37,7 @@ public class Settings : MonoBehaviour
 
     public AudioMixer audioMixer;
     public TMPro.TMP_Dropdown resolutionDropdown;
+    public TMPro.TMP_Dropdown graphicsQualityDropdown;
     public Slider volumeSlider;
     public Slider brightnessSlider;
     Resolution[] resolutions;
@@ -55,7 +56,7 @@ public class Settings : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
-        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(Screen.fullScreen));
+        PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(isFullscreen));
     }
 
     public void SetResolution(int resolutionIndex)
@@ -63,6 +64,12 @@ public class Settings : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
+    }
+
+    public void SetGrpahicsQuality(int index)
+    {
+        QualitySettings.SetQualityLevel(index);
+        PlayerPrefs.SetInt("GraphicsQualityPreference", index);
     }
 
     public void ExitGame()
@@ -78,8 +85,10 @@ public class Settings : MonoBehaviour
     public void LoadSettings(int currentResolutionIndex)
     {
         resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference", currentResolutionIndex);
-        Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference", 1));
+        Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference", 0));
         volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference", 0.0f);
         brightnessSlider.value = PlayerPrefs.GetFloat("BrightnessPreference", 0.0f);
+        QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("GraphicsQualityPreference", 5));
+        graphicsQualityDropdown.value = PlayerPrefs.GetInt("GraphicsQualityPreference", 5);
     }
 }
