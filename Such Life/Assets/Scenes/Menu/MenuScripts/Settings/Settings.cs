@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.Rendering.PostProcessing;
 
 /* Class used to support the implementation of a graphical settings menu.
  * 
@@ -34,23 +35,12 @@ public class Settings : MonoBehaviour
         LoadSettings(currentResolutionIndex);
     }
 
-
     public AudioMixer audioMixer;
-    public TMPro.TMP_Dropdown resolutionDropdown;
-    public TMPro.TMP_Dropdown graphicsQualityDropdown;
     public Slider volumeSlider;
-    public Slider brightnessSlider;
-    Resolution[] resolutions;
-
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("Volume", volume);
         PlayerPrefs.SetFloat("VolumePreference", volume);
-    }
-
-    public void SetBrightness(float brightness)
-    {
-        PlayerPrefs.SetFloat("BrightnessPreference", brightness);
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -59,6 +49,9 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetInt("FullscreenPreference", Convert.ToInt32(isFullscreen));
     }
 
+    Resolution[] resolutions;
+    public TMPro.TMP_Dropdown graphicsQualityDropdown;
+    public TMPro.TMP_Dropdown resolutionDropdown;
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
@@ -87,7 +80,6 @@ public class Settings : MonoBehaviour
         resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference", currentResolutionIndex);
         Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.GetInt("FullscreenPreference", 0));
         volumeSlider.value = PlayerPrefs.GetFloat("VolumePreference", 0.0f);
-        brightnessSlider.value = PlayerPrefs.GetFloat("BrightnessPreference", 0.0f);
         QualitySettings.SetQualityLevel(PlayerPrefs.GetInt("GraphicsQualityPreference", 5));
         graphicsQualityDropdown.value = PlayerPrefs.GetInt("GraphicsQualityPreference", 5);
     }
