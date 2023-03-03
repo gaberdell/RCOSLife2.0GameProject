@@ -10,8 +10,10 @@ public class weaponParent : MonoBehaviour
     public Vector2 PointerPosition {get; set; }
 
     public Animator animator;
-    public float delay = 0.3f;
+    public float delay = 0.1f;
     private bool attackBlocked;
+
+    public bool isAttacking { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class weaponParent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
+        Vector2 direction = (PointerPosition + (Vector2)transform.position).normalized;
         transform.right = direction;
 
         Vector2 scale = transform.localScale;
@@ -43,11 +45,14 @@ public class weaponParent : MonoBehaviour
 
     }
 
-
+    public void resetIsAttacking() {
+        isAttacking = false;
+    }
     public void Attack() {
         if(attackBlocked)
             return;
         animator.SetTrigger("Attack");
+        isAttacking = true;
         attackBlocked = true;
         StartCoroutine(DelayAttack());
     }
