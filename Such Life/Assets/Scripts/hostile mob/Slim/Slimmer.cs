@@ -109,6 +109,7 @@ public class Slimmer : mobBase
     // A built in Unity collision detector. It will perform anything inside this function if the slime collides with something.
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log("collision");
         // If it collides with the player it will bounce off.
         if (collision.gameObject.tag == "Player")
         {

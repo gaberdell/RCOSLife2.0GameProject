@@ -13,8 +13,8 @@ NavMeshProjectSettings:
     cost: 2
   - name: Climb
     cost: 4
-  - name: 
-    cost: 1
+  - name: Swim
+    cost: 8
   - name: 
     cost: 1
   - name: 

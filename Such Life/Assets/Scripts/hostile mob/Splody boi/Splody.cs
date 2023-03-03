@@ -191,6 +191,7 @@ public class Splody : mobBase
     void Explosion_step() {
         if (spanim.GetCurrentAnimatorStateInfo(0).IsName("Oof") && spanim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
         {
+             Debug.Log("dead");
             //Destroy the object without dropping anything
             Destroy(gameObject);
         }
