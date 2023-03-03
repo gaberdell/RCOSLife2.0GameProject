@@ -12,6 +12,9 @@ using UnityEngine.UI;
 public class ChestInventory : InventoryHolder, IInteractable
 {
     public GameObject DynText;
+    public GameObject spriteChild;
+    private SpriteRenderer localRenderer;
+    public Sprite[] chestSprites;
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
     protected override void Awake()
     {
@@ -23,7 +26,7 @@ public class ChestInventory : InventoryHolder, IInteractable
     {
         var chestSaveData = new InventorySaveData(primaryInvSystem, transform.position, transform.rotation);
         SaveGameManager.data.chestDictionaryData.Add(GetComponent<UniqueID>().ID, chestSaveData);
-
+        localRenderer = spriteChild.GetComponent<SpriteRenderer>();
     }
 
     protected override void LoadInventory(SaveData data)
@@ -54,6 +57,17 @@ public class ChestInventory : InventoryHolder, IInteractable
     public void EndInteraction()
     {
 
+    }
+
+    public void Update()
+    {
+        if(DynText.activeInHierarchy && DynText.GetComponent<Text>().text == this.name.ToString()){
+            localRenderer.sprite = chestSprites[1];
+            //Add functionality for Overfilled chest
+        }
+        else{
+            localRenderer.sprite = chestSprites[0];
+        }
     }
     
 }
