@@ -7,6 +7,7 @@ public class Duck : AnimalBase
     // Start is called before the first frame update
     void Start()
     {
+        //status initialization
         HPCap = 45f;
         currHP = HPCap;
         currMaxSpeed = 0;
@@ -18,6 +19,20 @@ public class Duck : AnimalBase
         hunger = 100f;
         hungerDrain = 0.1f;
         hungerCap = 100f;
+        //position and time initialization
+        position = new Vector2(transform.position.x, transform.position.y);
+        newposition = position;
+        time = 0f;
+        timeDelay = 1f;
+        //object initialization
+        player = GameObject.Find("MC");
+        aniSprite = GetComponent<SpriteRenderer>();
+        navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        navi.updateRotation = false;
+        navi.updateUpAxis = false;
+        food = null;
+        foodtypes = new List<string>();
+        foodtypes.Add("Grass");
     }
 
     // Update is called once per frame
@@ -39,7 +54,7 @@ public class Duck : AnimalBase
                 time = 0f;
 
 
-                //If the Cow is idling, it has a 50% chance to start wandering
+                //If the duck is idling, it has a 50% chance to start wandering
                 if (currState == State.Idling)
                 {
                     int gen = Random.Range(0, 100);
@@ -49,7 +64,7 @@ public class Duck : AnimalBase
                     }
                 }
 
-                //If the Cow is wandering, it has a 10% chance of stopping.
+                //If the duck is wandering, it has a 10% chance of stopping.
                 if (currState == State.Walking)
                 {
                     PositionChange();
