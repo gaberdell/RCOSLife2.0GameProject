@@ -14,7 +14,7 @@ public class MouseItemData : MonoBehaviour
     public InventorySlot AssignedInventorySlot;
 
     private Transform _playerTransform;
-    public float _dropOffset = 3f;
+    private Camera my_cam;
 
     private void Awake()
     {
@@ -23,6 +23,7 @@ public class MouseItemData : MonoBehaviour
         ItemCount.text = "";
 
         _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        my_cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         if(_playerTransform == null) Debug.Log("Player not found");
     }
 
@@ -43,13 +44,15 @@ public class MouseItemData : MonoBehaviour
             transform.position = Mouse.current.position.ReadValue();
             if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
-                Debug.Log("Cheese");
                 if(AssignedInventorySlot.ItemData.ItemPrefab != null){
-                    Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, _playerTransform.position + _playerTransform.forward * _dropOffset,Quaternion.identity);
-                    Debug.Log("Crackers");
+                    Vector3 newPos = my_cam.ScreenToWorldPoint(Input.mousePosition);
+                    newPos.z = 0.0f;
+                    GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
+                    Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
+                    secret_collider.enabled = false;
+                    secret_collider.enabled = true;
                 }
                 ClearSlot();
-                // To-do: Drop item on the ground instead of delete it
             }
 
         }
