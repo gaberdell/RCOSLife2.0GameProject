@@ -9,9 +9,6 @@ using UnityEngine.InputSystem;
 
 public class HitEmHard : MonoBehaviour
 {
-    [SerializeField]
-    private InputActionReference hit;
-
     public playerAction playerControls;
     private InputAction attack;
 
@@ -22,7 +19,6 @@ public class HitEmHard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         playerControls = new playerAction();
     }
 
@@ -36,10 +32,7 @@ public class HitEmHard : MonoBehaviour
         wparent.Attack();
     }
 
-
-
     private void onEnable() {
-        attack.action.performed += PerformAttack;
         playerControls.Player.Enable();
         attack = playerControls.Player.Attack;
         attack.Enable();
@@ -47,7 +40,6 @@ public class HitEmHard : MonoBehaviour
     }
 
     private void onDisable() {
-        attack.action.performed -= PerformAttack;
         playerControls.Player.Disable();
         attack.Disable();
     }
