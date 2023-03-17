@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class weaponParent : MonoBehaviour
 {
-
     public SpriteRenderer charRenderer, weaponRenderer;
 
     public Vector2 PointerPosition {get; set; }
 
-    public Animator animator;
+    public Animator anim;
     public float delay = 0.1f;
     private bool attackBlocked;
 
@@ -19,6 +18,7 @@ public class weaponParent : MonoBehaviour
     {
         charRenderer = gameObject.GetComponent<SpriteRenderer>();
         weaponRenderer = gameObject.GetComponent<SpriteRenderer>();
+        anim.SetBool("Exists", true);
     }
 
     // Update is called once per frame
@@ -43,15 +43,18 @@ public class weaponParent : MonoBehaviour
             weaponRenderer.sortingOrder = charRenderer.sortingOrder + 1;
         }
 
+        Attack();
+        
+
     }
 
     public void resetIsAttacking() {
         isAttacking = false;
     }
     public void Attack() {
-        if(attackBlocked)
+        if(isAttacking == true)
             return;
-        animator.SetTrigger("Attack");
+        anim.SetTrigger("Attack");
         isAttacking = true;
         attackBlocked = true;
         StartCoroutine(DelayAttack());

@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charRenderer: {fileID: 2123152891}
   weaponRenderer: {fileID: 2336850}
-  animator: {fileID: 1544567803}
+  anim: {fileID: 1544567803}
   delay: 0.1
 --- !u!212 &2336850
 SpriteRenderer:
@@ -523,6 +523,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e414933a6726f84ca791ba674443f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attack:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  wparent: {fileID: 0}
+  animation_go: 1
 --- !u!212 &2123152891 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}

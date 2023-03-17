@@ -11,14 +11,17 @@ using UnityEngine.InputSystem;
 public class HitEmHard : MonoBehaviour
 {
    public playerAction playerControls;
-   private InputAction attack;
+   public InputAction attack;
 
-   private weaponParent wparent;
+   public weaponParent wparent;
+
+   public bool animation_go;
 
     // Start is called before the first frame update
     void Start()
     {
         playerControls = new playerAction();
+        
     }
 
     // Update is called once per frame
