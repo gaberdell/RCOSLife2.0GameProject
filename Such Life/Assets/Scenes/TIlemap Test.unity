@@ -2738,8 +2738,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1706496984, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495392231663070125, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5611377554060918271, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
@@ -6284,7 +6296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousePosition: {x: 0, y: 0, z: 0}
   cursorSpeed: 5
-  body: {fileID: 0}
+  mouseBody: {fileID: 0}
   pos: {x: 0, y: 0}
 --- !u!50 &1919573957
 Rigidbody2D:
