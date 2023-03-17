@@ -17,7 +17,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
         base.Start();
     }
 
-    public void RefreshDynamicInventory(InventorySystem inventoryToShow) 
+    public void RefreshDynamicInventory(InventorySystem inventoryToShow, int offset) 
     {
         //clear out slots, update and assign slots 
         ClearSlots();
@@ -27,10 +27,10 @@ public class DynamicInventoryDisplay : InventoryDisplay
             inventorySystem.OnInventorySlotChanged += UpdateSlot;
         }
 
-        AssignSlot(inventoryToShow);
+        AssignSlot(inventoryToShow, offset);
     }
 
-    public override void AssignSlot(InventorySystem inventoryToShow)
+    public override void AssignSlot(InventorySystem inventoryToShow, int offset)
     {
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
 
@@ -42,7 +42,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
 
 
         //create and pair the inventory slot
-        for(int i = 0; i < inventoryToShow.InventorySize; i++)
+        for(int i = offset; i < inventoryToShow.InventorySize; i++)
         {
             var uiSlot = Instantiate(slotPrefab, transform);
             slotDictionary.Add(uiSlot, inventoryToShow.InventorySlots[i]);
