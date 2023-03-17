@@ -2504,7 +2504,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: 63ca3c65ee2ab4bd0b0e3c0c9b4a6d4a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fa6e1cc0816995e43a1c30d6c97b4027, type: 2}
 --- !u!4 &1378272459
 Transform:
   m_ObjectHideFlags: 0
@@ -2530,6 +2530,8 @@ GameObject:
   - component: {fileID: 1554407410}
   - component: {fileID: 1554407409}
   - component: {fileID: 1554407408}
+  - component: {fileID: 1554407411}
+  - component: {fileID: 1554407412}
   m_Layer: 0
   m_Name: Duck
   m_TagString: Animal
@@ -2624,6 +2626,64 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554407411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554407407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb3dc5a9ef48114e8bac39c3096a7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currState: 0
+  awareness: 0
+  walkspeed: 0
+  runspeed: 0
+  animal: {fileID: 1554407412}
+  HPCap: 0
+  currHP: 0
+  currMaxSpeed: 0
+  currSpeed: 0
+  weight: 0
+  hungerCap: 0
+  hunger: 0
+  hungerDrain: 0
+  size: 0
+  animate: {fileID: 0}
+  position: {x: 0, y: 0}
+  newposition: {x: 0, y: 0}
+  time: 0
+  timeDelay: 0
+  reached: 0
+  player: {fileID: 998963367}
+  aniSprite: {fileID: 0}
+  food: {fileID: 5844161352200464370, guid: 8d613bd87e93f57459bd7577328cafaf, type: 3}
+  foodtypes: []
+  navi: {fileID: 1554407408}
+--- !u!50 &1554407412
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554407407}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1813457449
 PrefabInstance:
   m_ObjectHideFlags: 0
