@@ -130,6 +130,10 @@ public class Duck : AnimalBase
                     newposition = transform.position;
                     position = transform.position;
                     navi.SetDestination(newposition);
+                    //turn off collision
+
+                    //slide for 1s until the duck's colider no longer intercts rocks
+
                 }
                 //How the duck follows the player
                 else if (currState == State.Following)
