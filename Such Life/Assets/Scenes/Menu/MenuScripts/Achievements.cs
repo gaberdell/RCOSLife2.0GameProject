@@ -60,9 +60,9 @@ public class Achievements : MonoBehaviour
 
             // Position the text object below the previous one
             Vector3 position = achievementTextObject.transform.position;
-            position.y -= (textComponent.preferredHeight + yPos);
+            position.y -= yPos;
             achievementTextObject.transform.position = position;
-            yPos += 30f;
+            yPos += 10f;
         }
     }
 
