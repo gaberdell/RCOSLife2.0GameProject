@@ -5,6 +5,12 @@ using UnityEngine;
 public class Duck : AnimalBase
 {
     // Start is called before the first frame update
+    private Collider2D dc;
+    private bool flying;
+    private bool dead;
+    private float fly_x;
+    private float fly_y;
+    private float fly_time;
     void Start()
     {
         //status initialization
@@ -34,6 +40,10 @@ public class Duck : AnimalBase
         food = null;
         foodtypes = new List<string>();
         foodtypes.Add("Grass");
+        //collider stuff
+        dc = GetComponent<BoxCollider2D>();
+        //set inital internal varibles
+        dead = false;
     }
 
     // Update is called once per frame
@@ -44,9 +54,30 @@ public class Duck : AnimalBase
             {
                 currHP = 0;
                 currState = State.Dying;
-                aniSprite.flipY = true; //Temporary death effect. It flips upside-down
+                dead = true;
+                aniSprite.flipY = dead; //Temporary death effect. It flips upside-down
             }
-
+            //if the flying boolean is maked,
+            if (flying)
+            {
+            //slide for 1s until the duck's colider no longer intercts rocks
+            print("flying...");
+            dc.enabled = false;
+            if (fly_time < 0) {
+                dc.enabled = true;
+                if (dc.IsTouchingLayers()) {
+                    dc.enabled = false;
+                    animal.velocity = new Vector2(fly_x, fly_y);
+                } else
+                {
+                    flying = false;
+                }
+            } else
+            {
+                fly_time -= Time.deltaTime;
+                animal.velocity = new Vector2(fly_x, fly_y);
+            }
+            }
             //This part of the Update doesn't work by frame.
             //It works on a timer defined by timeDelay
             time = time + 1f * Time.deltaTime;
@@ -130,10 +161,15 @@ public class Duck : AnimalBase
                     newposition = transform.position;
                     position = transform.position;
                     navi.SetDestination(newposition);
+                    if (!dead) { 
                     //turn off collision
-
-                    //slide for 1s until the duck's colider no longer intercts rocks
-
+                    dc.enabled = false;
+                    //mark the flying boolean
+                    flying = true;
+                    fly_x = animal.velocity.x*3f;
+                    fly_y = animal.velocity.y*3f;
+                    fly_time = 1f;
+                    }
                 }
                 //How the duck follows the player
                 else if (currState == State.Following)
