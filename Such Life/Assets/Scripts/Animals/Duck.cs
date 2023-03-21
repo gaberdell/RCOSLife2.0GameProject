@@ -17,7 +17,7 @@ public class Duck : AnimalBase
         currState = State.Idling;
         hungerCap = 100f;
         hunger = 100f;
-        hungerDrain = 0.1f;
+        hungerDrain = 0.05f;
         hungerCap = 100f;
         //position and time initialization
         position = new Vector2(transform.position.x, transform.position.y);
@@ -26,6 +26,7 @@ public class Duck : AnimalBase
         timeDelay = 1f;
         //object initialization
         player = GameObject.Find("MC");
+        animate = GetComponent<Animator>();
         aniSprite = GetComponent<SpriteRenderer>();
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         navi.updateRotation = false;
@@ -106,10 +107,33 @@ public class Duck : AnimalBase
             //While the timeDelay isn't met
             else
             {
+            //if the duck detects a non-null food, it will try to eat it. 
+            if(food!=null && hunger < hungerCap - 20)
+            {
+                newposition = food.transform.position;
+                float tempdist1 = position.sqrMagnitude;
+                float tempdist2 = newposition.sqrMagnitude;
+                //it will succeed in eating if the food is less than 0.05 units away from the food.
+                if ((tempdist1 - tempdist2) < 0.05f){
+                    animate.SetTrigger("Eating");
+                    hunger += 20;
+                    heal(10);
+                    Destroy(food);
+                    food = null;
+                }
+            }
+            else {
                 //If the duck is being pushed, it flies away. It doesn't fly as far away if the player has food. 
                 if (currState == State.Pushed)
                 {
-                    //to be implemented.
+                    //temp code, to be implemented.
+                    newposition = transform.position;
+                    position = transform.position;
+                    navi.SetDestination(newposition);
+                    //turn off collision
+
+                    //slide for 1s until the duck's colider no longer intercts rocks
+
                 }
                 //How the duck follows the player
                 else if (currState == State.Following)
@@ -122,6 +146,6 @@ public class Duck : AnimalBase
                 }
             }
             position = transform.position;
-
+            }
         }
     }
