@@ -30,3 +30,4 @@ public class InventoryItemData : ScriptableObject
     public GameObject ItemPrefab;
 
 }
+

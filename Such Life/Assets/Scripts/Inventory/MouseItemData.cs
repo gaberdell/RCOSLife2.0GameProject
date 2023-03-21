@@ -47,15 +47,29 @@ public class MouseItemData : MonoBehaviour
                 if(AssignedInventorySlot.ItemData.ItemPrefab != null){
                     Vector3 newPos = my_cam.ScreenToWorldPoint(Input.mousePosition);
                     newPos.z = 0.0f;
-                    GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
-                    Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
-                    secret_collider.enabled = false;
-                    secret_collider.enabled = true;
+                    Vector3 originPos = newPos;
+                    for(int i = 0; i < AssignedInventorySlot.StackSize; i++){
+                        AssignedInventorySlot.ItemData.ItemPrefab.GetComponent<UniqueID>().forceValidate();
+                        GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
+                        Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
+                        secret_collider.enabled = false;
+                        secret_collider.enabled = true;
+                        //newPos = newPosShift(originPos);
+                    }
                 }
                 ClearSlot();
             }
 
         }
+    }
+
+    public Vector3 newPosShift(Vector3 newPos){
+        float randomChoice = Random.Range(-0.04f, 0.04f);
+
+        newPos.x += randomChoice;
+        randomChoice = Random.Range(-0.02f, 0.02f);
+        newPos.y += randomChoice;
+        return newPos;
     }
 
     public void ClearSlot()
