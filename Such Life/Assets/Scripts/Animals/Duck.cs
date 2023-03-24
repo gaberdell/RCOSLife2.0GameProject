@@ -49,19 +49,18 @@ public class Duck : AnimalBase
     // Update is called once per frame
     void Update()
     {
-            //If the Duck has 0HP, it dies
-            if (currHP <= 0)
-            {
-                currHP = 0;
-                currState = State.Dying;
-                dead = true;
-                aniSprite.flipY = dead; //Temporary death effect. It flips upside-down
-            }
-            //if the flying boolean is maked,
-            if (flying)
-            {
-            //slide for 1s until the duck's colider no longer intercts rocks
-            print("flying...");
+        //If the Duck has 0HP, it dies
+        if (currHP <= 0)
+        {
+            currHP = 0;
+            currState = State.Dying;
+            dead = true;
+            aniSprite.flipY = dead; //Temporary death effect. It flips upside-down
+        }
+        //if the flying boolean is maked,
+        animate.SetBool("Flying", flying);
+        if (flying){
+            //slide for 1s until the duck's colider no longer intercts other things.
             dc.enabled = false;
             if (fly_time < 0) {
                 dc.enabled = true;
@@ -162,13 +161,14 @@ public class Duck : AnimalBase
                     position = transform.position;
                     navi.SetDestination(newposition);
                     if (!dead) { 
-                    //turn off collision
-                    dc.enabled = false;
-                    //mark the flying boolean
-                    flying = true;
-                    fly_x = animal.velocity.x*3f;
-                    fly_y = animal.velocity.y*3f;
-                    fly_time = 1f;
+                        //turn off collision
+                        dc.enabled = false;
+                        //mark the flying boolean
+                        animate.SetBool("Flying", true);
+                        flying = true;
+                        fly_x = animal.velocity.x*3f;
+                        fly_y = animal.velocity.y*3f;
+                        fly_time = 1f;
                     }
                 }
                 //How the duck follows the player
