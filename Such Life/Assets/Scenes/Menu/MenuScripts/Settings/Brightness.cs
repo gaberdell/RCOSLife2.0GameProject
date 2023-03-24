@@ -15,7 +15,7 @@ public class Brightness : MonoBehaviour
     void Start()
     {
         brightness.TryGetSettings(out exposure);
-        brightnessSlider.value = PlayerPrefs.GetFloat("BrightnessPreference", 0.0f);
+        brightnessSlider.value = PlayerPrefs.GetFloat("BrightnessPreference", 1.00f);
     }
 
     public void SetBrightness(float value)
