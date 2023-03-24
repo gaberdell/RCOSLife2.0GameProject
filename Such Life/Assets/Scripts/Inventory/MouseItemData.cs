@@ -47,15 +47,15 @@ public class MouseItemData : MonoBehaviour
                 if(AssignedInventorySlot.ItemData.ItemPrefab != null){
                     Vector3 newPos = my_cam.ScreenToWorldPoint(Input.mousePosition);
                     newPos.z = 0.0f;
-                    Vector3 originPos = newPos;
-                    for(int i = 0; i < AssignedInventorySlot.StackSize; i++){
-                        AssignedInventorySlot.ItemData.ItemPrefab.GetComponent<UniqueID>().forceValidate();
-                        GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
-                        Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
-                        secret_collider.enabled = false;
-                        secret_collider.enabled = true;
-                        //newPos = newPosShift(originPos);
+                    for(int i = 0; i < AssignedInventorySlot.StackSize-1; i++){
+                        if(i%2 == 0){
+                            Instanter(AssignedInventorySlot,newPosShift(newPos,true));
+                        }
+                        else{
+                            Instanter(AssignedInventorySlot,newPosShift(newPos,false));
+                        }
                     }
+                    Instanter(AssignedInventorySlot,newPos);
                 }
                 ClearSlot();
             }
@@ -63,13 +63,22 @@ public class MouseItemData : MonoBehaviour
         }
     }
 
-    public Vector3 newPosShift(Vector3 newPos){
-        float randomChoice = Random.Range(-0.04f, 0.04f);
+    private void Instanter(InventorySlot AssignedInventorySlot, Vector3 newPos){
+        AssignedInventorySlot.ItemData.ItemPrefab.GetComponent<UniqueID>().forceValidate();
+        GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
+        Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
+        secret_collider.enabled = false;
+        secret_collider.enabled = true;
+    }
 
-        newPos.x += randomChoice;
-        randomChoice = Random.Range(-0.02f, 0.02f);
-        newPos.y += randomChoice;
-        return newPos;
+    public Vector3 newPosShift(Vector3 Pos, bool doNegative){
+        Vector3 nextPos = new Vector3(Pos.x, Pos.y,0.0f);
+        float randomChoice = Random.Range(0.3f,0.4f);
+        if(doNegative){
+            randomChoice = Random.Range(-0.4f,-0.3f);
+        }
+        nextPos.x += randomChoice;
+        return nextPos;
     }
 
     public void ClearSlot()
