@@ -234,7 +234,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1879878446}
-  - {fileID: 701661473}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -352,6 +351,8 @@ GameObject:
   - component: {fileID: 701661478}
   - component: {fileID: 701661480}
   - component: {fileID: 701661479}
+  - component: {fileID: 701661481}
+  - component: {fileID: 701661482}
   m_Layer: 0
   m_Name: Tilemap_rock
   m_TagString: Untagged
@@ -366,12 +367,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701661472}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.38669991, y: -0.096200004, z: 0}
-  m_LocalScale: {x: 0.88654, y: 0.9497154, z: 1}
+  m_LocalRotation: {x: -0, y: 0.0032753395, z: -0, w: 0.99999464}
+  m_LocalPosition: {x: -0.84315443, y: 0.21519367, z: 0.021301813}
+  m_LocalScale: {x: 0.7751433, y: 0.95814705, z: 1}
   m_Children: []
-  m_Father: {fileID: 414790857}
-  m_RootOrder: 1
+  m_Father: {fileID: 1879878446}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &701661474
 TilemapRenderer:
@@ -1964,7 +1965,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701661472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -1990,7 +1991,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701661472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2022,7 +2023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
-  m_Area: 1
+  m_Area: 3
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
 --- !u!61 &701661479
@@ -2032,10 +2033,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701661472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 3.9239526, y: -8.415308}
@@ -2058,7 +2059,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701661472}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -2077,6 +2078,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.6835537, y: 5.690799}
   m_EdgeRadius: 0
+--- !u!114 &701661481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701661472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75533bbab2d5ebd4fbb1dd54eb1b6788, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!19719996 &701661482
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701661472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
 --- !u!1 &730515633
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,7 +2315,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &803139293
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2491,9 +2520,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_UseGeometry: 0
-  m_OverrideByGrid: 1
+  m_OverrideByGrid: 0
   m_UseMeshPrefab: {fileID: 0}
-  m_CompressBounds: 1
+  m_CompressBounds: 0
   m_OverrideVector: {x: 1, y: 1, z: 1}
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -2536,7 +2565,7 @@ GameObject:
   - component: {fileID: 1554407414}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Animal
+  m_TagString: CanFly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2602,7 +2631,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 99
   m_Sprite: {fileID: 21300000, guid: e07d93efcd6684a438c96cec211502b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2746,9 +2775,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 724269156444419255, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 3495392231663070125, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_Enabled
@@ -2845,7 +2878,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.0032753395, z: -0, w: 0.99999464}
   m_LocalPosition: {x: 0.57774925, y: -0.30949998, z: -0.014984373}
   m_LocalScale: {x: 1.1437173, y: 0.9912, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 701661473}
   m_Father: {fileID: 414790857}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -0.375, z: 0}
@@ -6394,6 +6428,10 @@ PrefabInstance:
     - target: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_Name
       value: Slimmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: player
