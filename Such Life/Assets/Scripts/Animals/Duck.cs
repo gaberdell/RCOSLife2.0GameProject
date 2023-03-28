@@ -11,6 +11,8 @@ public class Duck : AnimalBase
     private float fly_x;
     private float fly_y;
     private float fly_time;
+    private GameObject self;
+    int stored;
     void Start()
     {
         //status initialization
@@ -35,12 +37,14 @@ public class Duck : AnimalBase
         animate = GetComponent<Animator>();
         aniSprite = GetComponent<SpriteRenderer>();
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        self = navi.gameObject;
         navi.updateRotation = false;
         navi.updateUpAxis = false;
         food = null;
         foodtypes = new List<string>();
         foodtypes.Add("Grass");
         //collider stuff
+        stored = self.layer;
         dc = GetComponent<BoxCollider2D>();
         //set inital internal varibles
         dead = false;
@@ -60,16 +64,17 @@ public class Duck : AnimalBase
         //if the flying boolean is maked,
         animate.SetBool("Flying", flying);
         if (flying){
+            dc.isTrigger = true;
             //slide for 1s until the duck's colider no longer intercts other things.
-            dc.enabled = false;
             if (fly_time < 0) {
-                dc.enabled = true;
                 if (dc.IsTouchingLayers()) {
-                    dc.enabled = false;
                     animal.velocity = new Vector2(fly_x, fly_y);
                 } else
                 {
+                    dc.enabled = true;
                     flying = false;
+                    dc.isTrigger = false;
+                    self.layer = stored;
                 }
             } else
             {
@@ -160,14 +165,14 @@ public class Duck : AnimalBase
                     newposition = transform.position;
                     position = transform.position;
                     navi.SetDestination(newposition);
-                    if (!dead) { 
-                        //turn off collision
-                        dc.enabled = false;
+                    if (!dead) {
+                        self.layer = LayerMask.NameToLayer("Flying");
+                        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Default"));
                         //mark the flying boolean
                         animate.SetBool("Flying", true);
                         flying = true;
-                        fly_x = animal.velocity.x*3f;
-                        fly_y = animal.velocity.y*3f;
+                        fly_x = animal.velocity.x*2f;
+                        fly_y = animal.velocity.y*2f;
                         fly_time = 1f;
                     }
                 }
