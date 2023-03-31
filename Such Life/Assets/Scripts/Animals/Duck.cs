@@ -75,7 +75,7 @@ public class Duck : AnimalBase
                 self.layer = LayerMask.NameToLayer("Flying");
             } else
             {
-                if (dc.IsTouchingLayers(LayerMask.NameToLayer("Default")) | dc.IsTouchingLayers(LayerMask.NameToLayer("Animal"))|(fly_time - Time.deltaTime)<0)
+                if (dc.IsTouchingLayers(LayerMask.NameToLayer("Default")) | dc.IsTouchingLayers(LayerMask.NameToLayer("Animal"))|(fly_time - Time.deltaTime)>0)
                 {
                     fly_time -= Time.deltaTime;
                 }
