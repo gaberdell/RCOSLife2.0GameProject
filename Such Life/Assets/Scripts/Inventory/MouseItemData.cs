@@ -97,6 +97,7 @@ public class MouseItemData : MonoBehaviour
         eventDataCurrentPosition.position = Mouse.current.position.ReadValue();
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        Debug.Log("Wow!");
         return results.Count > 0;
     }
 
