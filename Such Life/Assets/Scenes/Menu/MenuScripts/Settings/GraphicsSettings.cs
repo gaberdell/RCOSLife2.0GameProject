@@ -13,7 +13,7 @@ public class GraphicsSettings : MonoBehaviour
     public TMPro.TMP_Dropdown graphicsQualityDropdown;
 
     public TMPro.TMP_Dropdown resolutionDropdown;
-    UnityEngine.Resolution[] resolutions;
+    public UnityEngine.Resolution[] resolutions;
 
 
     // Start is called before the first frame update
@@ -59,10 +59,9 @@ public class GraphicsSettings : MonoBehaviour
         resolutionDropdown.value = PlayerPrefs.GetInt("ResolutionPreference", currentResolutionIndex);
     }
 
-    public void SetResolution(int resolutionIndex)
+    public void SetResolution(int index)
     {
-        UnityEngine.Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Screen.SetResolution(resolutions[index].width, resolutions[index].height, Screen.fullScreen);
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
     }
 
