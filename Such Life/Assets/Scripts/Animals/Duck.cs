@@ -48,6 +48,9 @@ public class Duck : AnimalBase
         dc = GetComponent<BoxCollider2D>();
         //set inital internal varibles
         dead = false;
+        //collision layers
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Default"));
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Animal"));
     }
 
     // Update is called once per frame
@@ -64,17 +67,17 @@ public class Duck : AnimalBase
         //if the flying boolean is maked,
         animate.SetBool("Flying", flying);
         if (flying){
-            dc.isTrigger = true;
             //slide for 1s until the duck's colider no longer intercts other things.
-            if (fly_time < 0) {
-                if (dc.IsTouchingLayers()) {
+            if (fly_time < 0f) {
+                dc.isTrigger = true;
+                self.layer = stored;
+                if (dc.IsTouchingLayers(LayerMask.NameToLayer("Default"))| dc.IsTouchingLayers(LayerMask.NameToLayer("Animal"))) {
                     animal.velocity = new Vector2(fly_x, fly_y);
+                    self.layer = LayerMask.NameToLayer("Flying");
                 } else
                 {
-                    dc.enabled = true;
-                    flying = false;
                     dc.isTrigger = false;
-                    self.layer = stored;
+                    flying = false;
                 }
             } else
             {
@@ -167,12 +170,13 @@ public class Duck : AnimalBase
                     navi.SetDestination(newposition);
                     if (!dead) {
                         self.layer = LayerMask.NameToLayer("Flying");
-                        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Default"));
                         //mark the flying boolean
                         animate.SetBool("Flying", true);
                         flying = true;
-                        fly_x = animal.velocity.x*2f;
-                        fly_y = animal.velocity.y*2f;
+                        float fly_x_temp = animal.velocity.x;
+                        float fly_y_temp = animal.velocity.y;
+                        fly_x = 5*fly_x_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
+                        fly_y = 5*fly_y_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
                         fly_time = 1f;
                     }
                 }
