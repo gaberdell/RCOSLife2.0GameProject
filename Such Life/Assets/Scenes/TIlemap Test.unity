@@ -2025,7 +2025,7 @@ MonoBehaviour:
   m_OverrideArea: 1
   m_Area: 3
   m_IgnoreFromBuild: 0
-  m_AffectedAgents: ffffffff
+  m_AffectedAgents: 00000000
 --- !u!61 &701661479
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2100,7 +2100,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2565,7 +2565,7 @@ GameObject:
   - component: {fileID: 1554407414}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: CanFly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2578,7 +2578,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554407407}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: -334000983
   m_Radius: 0.32
   m_Speed: 3.5
   m_Acceleration: 8
@@ -6432,6 +6432,10 @@ PrefabInstance:
     - target: {fileID: 2637762365785888349, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2637762365785888350, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 2637762365785888352, guid: e9421c8aa7791bc4e98957c22786dbb8, type: 3}
       propertyPath: player
