@@ -49,8 +49,8 @@ public class Duck : AnimalBase
         //set inital internal varibles
         dead = false;
         //collision layers
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Default"));
-        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Animal"));
+        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Default"));
+        //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Flying"), LayerMask.NameToLayer("Entities"));
     }
 
     // Update is called once per frame
@@ -69,18 +69,25 @@ public class Duck : AnimalBase
         if (flying){
             //slide for 1s until the duck's colider no longer intercts other things.
             if (fly_time < 0f) {
-                dc.isTrigger = true;
-                self.layer = stored;
-                animal.velocity = new Vector2(fly_x, fly_y);
-                self.layer = LayerMask.NameToLayer("Flying");
+                if (!dc.IsTouchingLayers() | (fly_time - Time.deltaTime) > 0)
+                {
+                    self.layer = stored;
+                    flying = false;
+                    dc.isTrigger = false;
+                    currState = State.Idling;
+                }
             } else
             {
-                if (!(dc.IsTouchingLayers(LayerMask.NameToLayer("Default")) | dc.IsTouchingLayers(LayerMask.NameToLayer("Animal")))|(fly_time - Time.deltaTime)>0)
+                if (!dc.IsTouchingLayers()|(fly_time - Time.deltaTime)>0)
                 {
                     fly_time -= Time.deltaTime;
                 }
                 animal.velocity = new Vector2(fly_x, fly_y);
                 print(fly_time);
+                if(dc.IsTouchingLayers())
+                {
+                    print("On object");
+                }
             }
             }
             //This part of the Update doesn't work by frame.
@@ -170,12 +177,16 @@ public class Duck : AnimalBase
                         self.layer = LayerMask.NameToLayer("Flying");
                         //mark the flying boolean
                         animate.SetBool("Flying", true);
+                        if (!flying) { 
+                            fly_time = 1f;
+                        }
                         flying = true;
+                        dc.isTrigger = true;
                         float fly_x_temp = animal.velocity.x;
                         float fly_y_temp = animal.velocity.y;
                         fly_x = 5*fly_x_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
                         fly_y = 5*fly_y_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
-                        fly_time = 1f;
+                        
                     }
                 }
                 //How the duck follows the player
