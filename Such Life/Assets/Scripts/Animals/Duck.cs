@@ -71,17 +71,14 @@ public class Duck : AnimalBase
             if (fly_time < 0f) {
                 dc.isTrigger = true;
                 self.layer = stored;
-                if (dc.IsTouchingLayers(LayerMask.NameToLayer("Default"))| dc.IsTouchingLayers(LayerMask.NameToLayer("Animal"))) {
-                    animal.velocity = new Vector2(fly_x, fly_y);
-                    self.layer = LayerMask.NameToLayer("Flying");
-                } else
-                {
-                    dc.isTrigger = false;
-                    flying = false;
-                }
+                animal.velocity = new Vector2(fly_x, fly_y);
+                self.layer = LayerMask.NameToLayer("Flying");
             } else
             {
-                fly_time -= Time.deltaTime;
+                if (dc.IsTouchingLayers(LayerMask.NameToLayer("Default")) | dc.IsTouchingLayers(LayerMask.NameToLayer("Animal"))|(fly_time - Time.deltaTime)<0)
+                {
+                    fly_time -= Time.deltaTime;
+                }
                 animal.velocity = new Vector2(fly_x, fly_y);
             }
             }
