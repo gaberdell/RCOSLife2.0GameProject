@@ -48,3 +48,6 @@ TagManager:
   - name: Cursor
     uniqueID: 3008680869
     locked: 0
+  - name: Infobox
+    uniqueID: 2069794067
+    locked: 0
