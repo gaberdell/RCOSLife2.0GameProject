@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4456618564279948727}
   - component: {fileID: 1898254487548077814}
   - component: {fileID: 4352707675539783962}
-  - component: {fileID: 8277323925330685747}
   m_Layer: 5
   m_Name: screen
   m_TagString: Untagged
@@ -26,7 +25,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661763936957407691}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -76,17 +75,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!210 &8277323925330685747
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 661763936957407691}
-  m_Enabled: 1
-  m_SortingLayerID: 2069794067
-  m_SortingLayer: 2
-  m_SortingOrder: 1
 --- !u!1 &5205706308249379171
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +89,6 @@ GameObject:
   - component: {fileID: 3874460977690871034}
   - component: {fileID: 4822417810157312240}
   - component: {fileID: 464511510707917922}
-  - component: {fileID: 2930864805922772412}
   m_Layer: 5
   m_Name: MouseOver
   m_TagString: MouseTag
@@ -228,17 +215,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!210 &2930864805922772412
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5205706308249379171}
-  m_Enabled: 1
-  m_SortingLayerID: 2069794067
-  m_SortingLayer: 2
-  m_SortingOrder: 0
 --- !u!1 &5372549813565794585
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,6 +301,7 @@ GameObject:
   - component: {fileID: 521545518111675695}
   - component: {fileID: 180434151868422256}
   - component: {fileID: 155109355050439632}
+  - component: {fileID: 2125005555769839430}
   m_Layer: 5
   m_Name: ItemDescrip
   m_TagString: Untagged
@@ -448,6 +425,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2125005555769839430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235459082998168843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06d6d4738588e42e1a4adc1e0b1f9b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myText: {fileID: 155109355050439632}
 --- !u!1 &6441792115142883098
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,18 +598,6 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3874460977690871034}
-          m_TargetAssemblyTypeName: MouseOver, Assembly-CSharp
-          m_MethodName: TooltipOn
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 5205706308249379171}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -648,18 +626,6 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3874460977690871034}
-          m_TargetAssemblyTypeName: MouseOver, Assembly-CSharp
-          m_MethodName: TooltipOff
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
         - m_Target: {fileID: 5205706308249379171}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -829,6 +795,7 @@ GameObject:
   - component: {fileID: 8149263187673080381}
   - component: {fileID: 5706101595606536364}
   - component: {fileID: 886722213013693593}
+  - component: {fileID: 3627354662445631234}
   m_Layer: 5
   m_Name: ItemName
   m_TagString: BoxTag
@@ -952,3 +919,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &3627354662445631234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7465921773034138458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f2dc19a834f40f2b1e4ee1d49ba55b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myText: {fileID: 886722213013693593}
