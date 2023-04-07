@@ -12,8 +12,8 @@ public class weaponParent : MonoBehaviour
     public Animator anim;
 
     public playerAction controls;
-    private InputAction attack;
-    private int delay = 1;
+    public InputAction attack;
+    public float delay;
     int i = 0;
     // Start is called before the first frame update
     void Start()
@@ -21,8 +21,6 @@ public class weaponParent : MonoBehaviour
         charRenderer = gameObject.GetComponent<SpriteRenderer>();
         weaponRenderer = gameObject.GetComponent<SpriteRenderer>();
         controls = new playerAction();
-        anim.SetBool("Exists", true);
-        anim.SetBool("IHit", false);
     }
 
     // Update is called once per frame
@@ -51,31 +49,13 @@ public class weaponParent : MonoBehaviour
 
     }
 
-    public void AttackFunct(InputAction.CallbackContext context){
-        if(context.started){
-            anim.SetTrigger("Attack");
-            Debug.Log("Attacked the Enemy");
-        }
-        if(context.canceled){
-            StartCoroutine(dee_delay());
-            anim.SetBool("IHit", true);
-        }
+    public void AttackFunct(){
+        anim.SetTrigger("Attack");
+        StartCoroutine(DelayAttack());
     }
 
-    private IEnumerator dee_delay(){
+    private IEnumerator DelayAttack(){
         yield return new WaitForSeconds(delay);
-    }
-
-    private void onEnable(){
-        attack = controls.Player.Attacking;
-        controls.Player.Enable();
-        attack.Enable();
-        attack.performed += AttackFunct;
-    }
-
-    private void onDisable(){
-        controls.Player.Disable();
-        attack.Disable();
     }
 
     

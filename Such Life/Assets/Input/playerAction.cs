@@ -109,9 +109,9 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Attacking"",
+                    ""name"": ""Attack"",
                     ""type"": ""Button"",
-                    ""id"": ""2e79ef9c-5cf8-4815-ad94-c3f7152f31d5"",
+                    ""id"": ""53d20c1f-faa7-4eb6-800c-71e9ee512f9e"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -407,12 +407,12 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d1a02202-7730-4902-a47f-0f4d791bc8ab"",
+                    ""id"": ""332d13db-4bac-48a9-b33f-0c5f1e834883"",
                     ""path"": ""<Keyboard>/v"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;XR"",
-                    ""action"": ""Attacking"",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1009,7 +1009,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         m_Player_Teleport = m_Player.FindAction("Teleport", throwIfNotFound: true);
         m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
         m_Player_Roll = m_Player.FindAction("Roll", throwIfNotFound: true);
-        m_Player_Attacking = m_Player.FindAction("Attacking", throwIfNotFound: true);
+        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1090,7 +1090,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Teleport;
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Roll;
-    private readonly InputAction m_Player_Attacking;
+    private readonly InputAction m_Player_Attack;
     public struct PlayerActions
     {
         private @playerAction m_Wrapper;
@@ -1104,7 +1104,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         public InputAction @Teleport => m_Wrapper.m_Player_Teleport;
         public InputAction @Dash => m_Wrapper.m_Player_Dash;
         public InputAction @Roll => m_Wrapper.m_Player_Roll;
-        public InputAction @Attacking => m_Wrapper.m_Player_Attacking;
+        public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1141,9 +1141,9 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                 @Roll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
                 @Roll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
                 @Roll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
-                @Attacking.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttacking;
-                @Attacking.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttacking;
-                @Attacking.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttacking;
+                @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -1175,9 +1175,9 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                 @Roll.started += instance.OnRoll;
                 @Roll.performed += instance.OnRoll;
                 @Roll.canceled += instance.OnRoll;
-                @Attacking.started += instance.OnAttacking;
-                @Attacking.performed += instance.OnAttacking;
-                @Attacking.canceled += instance.OnAttacking;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -1343,7 +1343,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         void OnTeleport(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
-        void OnAttacking(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

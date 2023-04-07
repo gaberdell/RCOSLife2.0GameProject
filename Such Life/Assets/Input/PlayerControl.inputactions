@@ -87,9 +87,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attacking",
+                    "name": "Attack",
                     "type": "Button",
-                    "id": "2e79ef9c-5cf8-4815-ad94-c3f7152f31d5",
+                    "id": "53d20c1f-faa7-4eb6-800c-71e9ee512f9e",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -385,12 +385,12 @@
                 },
                 {
                     "name": "",
-                    "id": "d1a02202-7730-4902-a47f-0f4d791bc8ab",
+                    "id": "332d13db-4bac-48a9-b33f-0c5f1e834883",
                     "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch;XR",
-                    "action": "Attacking",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
