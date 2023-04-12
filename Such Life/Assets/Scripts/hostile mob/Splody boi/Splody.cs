@@ -11,6 +11,8 @@ public class Splody : mobBase
     // Start is called before the first frame update
     [SerializeField] double explodeTimer;
     [SerializeField] bool exploded;
+    public float prevX;
+    public float prevY;
     void Start()
     {
         monsterBody = GetComponent<Rigidbody2D>();
@@ -26,7 +28,8 @@ public class Splody : mobBase
 
         currState = State.Wander;
         currPosition = new Vector2(transform.position.x, transform.position.y);
-
+        prevX = 0;
+        prevY = 0;
         maxHealth = 5;
         //for testing purposes:
         damage = 5;
@@ -47,6 +50,8 @@ public class Splody : mobBase
     // Update is called once per frame
     void Update()
     {
+        prevX = currPosition.x;
+        prevY = currPosition.y;
         target = GameObject.Find("MC").transform;
         time += 1f * Time.deltaTime;
         distance = Vector2.Distance(target.position, currPosition);
@@ -72,7 +77,22 @@ public class Splody : mobBase
             spanim.SetBool("Attacking", true);
             chargeExplosion();
         }
-        
+        if (currPosition.x > prevX + prevY/2.4f)
+        {
+            spanim.SetFloat("Xvel", 1);
+        }
+        if (currPosition.x < prevX - prevY / 2.4f)
+        {
+            spanim.SetFloat("Xvel", -1);
+        }
+        if (currPosition.y > prevY + prevX / 2.4f)
+        {
+            spanim.SetFloat("Yvel", 1);
+        }
+        if (currPosition.y < prevY - prevX / 2.4f)
+        {
+            spanim.SetFloat("Yvel", -1);
+        }
         //If and only if the agent active and is on a NavMesh, it should set the agent's destination.
         //
         if (!exploded) {
