@@ -1154,6 +1154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 180662426}
+  - component: {fileID: 180662427}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -1181,6 +1182,32 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &180662427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180662425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f51be74a657127446a9eee0577435161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 1758732616}
+  - {fileID: 2103593722}
+  - {fileID: 575585217}
+  - {fileID: 2025053252}
+  - {fileID: 657807782}
+  - {fileID: 1964931298}
+  buttons:
+  - {fileID: 1390494589}
+  - {fileID: 212476363}
+  - {fileID: 2015189823}
+  - {fileID: 1092912790}
+  - {fileID: 1546394211}
+  - {fileID: 1621377148}
 --- !u!1 &189209299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1357,7 @@ GameObject:
   - component: {fileID: 212476364}
   - component: {fileID: 212476363}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveLeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1353,8 +1380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 150, y: 65}
+  m_AnchoredPosition: {x: 192.90512, y: 0}
+  m_SizeDelta: {x: 235.81, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212476363
 MonoBehaviour:
@@ -1399,7 +1426,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 212476364}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180662427}
+        m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
+        m_MethodName: toggle_input
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &212476364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3165,7 +3204,7 @@ GameObject:
   - component: {fileID: 575585218}
   - component: {fileID: 575585217}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveDownText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3770,7 +3809,7 @@ GameObject:
   - component: {fileID: 657807783}
   - component: {fileID: 657807782}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: PrimaryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3815,7 +3854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack
+  m_text: Primary
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7935,7 +7974,7 @@ GameObject:
   - component: {fileID: 1092912791}
   - component: {fileID: 1092912790}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveRightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7958,8 +7997,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 150, y: 65}
+  m_AnchoredPosition: {x: 192.905, y: 0}
+  m_SizeDelta: {x: 235.81, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1092912790
 MonoBehaviour:
@@ -8004,7 +8043,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1092912791}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180662427}
+        m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
+        m_MethodName: toggle_input
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1092912791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9696,7 +9747,7 @@ GameObject:
   - component: {fileID: 1390494590}
   - component: {fileID: 1390494589}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveUpButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9719,8 +9770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 150, y: 65}
+  m_AnchoredPosition: {x: 192.90512, y: 0}
+  m_SizeDelta: {x: 235.81, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390494589
 MonoBehaviour:
@@ -9765,7 +9816,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1390494590}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180662427}
+        m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
+        m_MethodName: toggle_input
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1390494590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11375,7 +11438,7 @@ GameObject:
   - component: {fileID: 1546394212}
   - component: {fileID: 1546394211}
   m_Layer: 5
-  m_Name: Button
+  m_Name: PrimaryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11398,8 +11461,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 150, y: 65}
+  m_AnchoredPosition: {x: 166, y: 0}
+  m_SizeDelta: {x: 235.81, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1546394211
 MonoBehaviour:
@@ -11444,7 +11507,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1546394212}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180662427}
+        m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
+        m_MethodName: toggle_input
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1546394212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12075,7 +12150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1615965312}
   m_Layer: 5
-  m_Name: Attack
+  m_Name: Primary
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12115,7 +12190,7 @@ GameObject:
   - component: {fileID: 1621377149}
   - component: {fileID: 1621377148}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Skill 1 Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12138,8 +12213,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 150, y: 65}
+  m_AnchoredPosition: {x: 166, y: 0}
+  m_SizeDelta: {x: 235.81, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621377148
 MonoBehaviour:
@@ -12184,7 +12259,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1621377149}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180662427}
+        m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
+        m_MethodName: toggle_input
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1621377149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13772,7 +13859,7 @@ GameObject:
   - component: {fileID: 1758732617}
   - component: {fileID: 1758732616}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveUpText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14918,7 +15005,7 @@ GameObject:
   - component: {fileID: 1964931299}
   - component: {fileID: 1964931298}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Skill 1 Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15748,7 +15835,7 @@ GameObject:
   - component: {fileID: 2015189824}
   - component: {fileID: 2015189823}
   m_Layer: 5
-  m_Name: Button
+  m_Name: MoveDownButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15771,8 +15858,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 150, y: 65}
+  m_AnchoredPosition: {x: 192.90512, y: 0}
+  m_SizeDelta: {x: 235.81, y: 65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015189823
 MonoBehaviour:
@@ -15817,7 +15904,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2015189824}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 180662427}
+        m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
+        m_MethodName: toggle_input
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2015189824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16002,7 +16101,7 @@ GameObject:
   - component: {fileID: 2025053253}
   - component: {fileID: 2025053252}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveRightText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16298,7 +16397,7 @@ GameObject:
   - component: {fileID: 2103593723}
   - component: {fileID: 2103593722}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: MoveLeftText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
