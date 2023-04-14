@@ -15,6 +15,6 @@ public class DescripChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myText.text = gameObject.transform.parent.gameObject.GetComponent<MouseOver>().ItemDescrip;
+        myText.text = gameObject.transform.parent.gameObject.GetComponent<mouseBoxFollow>().ItemDescrip;
     }
 }

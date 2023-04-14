@@ -15,6 +15,6 @@ public class NameChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myText.text = gameObject.transform.parent.gameObject.GetComponent<MouseOver>().ItemName;
+        myText.text = gameObject.transform.parent.gameObject.GetComponent<mouseBoxFollow>().ItemName;
     }
 }
