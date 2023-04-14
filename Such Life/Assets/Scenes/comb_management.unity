@@ -173,14 +173,22 @@ MonoBehaviour:
   anim: {fileID: 1544567803}
   attack:
     m_Name: Attack
-    m_Type: 0
-    m_ExpectedControlType: 
+    m_Type: 1
+    m_ExpectedControlType: Button
     m_Id: e77d2299-a79d-4bb3-9387-ad228af1b6bd
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  delay: 3
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 21aa5722-989b-4ab4-8db2-5296f07dc88b
+      m_Path: <Keyboard>/c
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Attack
+      m_Flags: 0
+    m_Flags: 1
+  delay: 0
 --- !u!212 &2336850
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -294,6 +302,42 @@ PrefabInstance:
     - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: 0bbb5f4f-1831-4b28-9cd8-0a397e0e99bf
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: c74e9384-7b9e-4edd-aa11-92b562f7f9a2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionId
+      value: bef009de-33f1-477f-8743-a4d225179b0f
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionId
+      value: 53d20c1f-faa7-4eb6-800c-71e9ee512f9e
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player/Teleport[/Keyboard/t]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player/Dash[/Keyboard/f]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: Player/Roll[/Keyboard/r]
+      objectReference: {fileID: 0}
+    - target: {fileID: 5642498061771927945, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[19].m_ActionName
+      value: Player/Attack[/Keyboard/v]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
@@ -1044,19 +1088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e414933a6726f84ca791ba674443f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2123152885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123152883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa7bb508a8a1eb47bd05d18ad90edf1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: -2192049993299251167, guid: 168803ef6470e4c43829505cf53c60fc, type: 3}
 --- !u!212 &2123152891 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
@@ -1113,7 +1144,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 720, y: 134}
+  m_AnchoredPosition: {x: 661, y: 131}
   m_SizeDelta: {x: 52, y: 9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2139362211
