@@ -7,6 +7,8 @@ using System;
 
 public class KeyBindScript : MonoBehaviour
 {
+    // syntax of key must match exactly what each text in the texts array below is
+    // order does not necessarily matter
     private Dictionary<string, KeyCode> defaultKeyBinds = new Dictionary<string, KeyCode> {
         {"Move Up", KeyCode.W},
         {"Move Left", KeyCode.A},
@@ -59,7 +61,6 @@ public class KeyBindScript : MonoBehaviour
                     // get the player's input 
                     if (Input.GetKeyDown(keyCode) && !inputs.Contains(keyCode))
                     {
-                        Debug.Log(keyCode.ToString());
                         inputs.Add(keyCode);
                         if (keyCode != KeyCode.RightShift && keyCode != KeyCode.LeftShift &&
                             keyCode != KeyCode.RightControl && keyCode != KeyCode.LeftControl &&
@@ -101,9 +102,28 @@ public class KeyBindScript : MonoBehaviour
 
     public void toggle_input(int i)
     {
-        Debug.Log("toggled");
         waitingForInput = true;
         index = i;
+    }
+
+    public void restore_default_settings()
+    {
+        if (texts.Length == buttons.Length)
+        {
+            for (int i = 0; i < texts.Length; i++)
+            {
+                TextMeshProUGUI text = texts[i];
+                Button button = buttons[i];
+                TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+                
+                string keyBind = defaultKeyBinds[text.text].ToString();
+                buttonText.text = keyBind;
+                PlayerPrefs.SetString(text.text, keyBind);
+
+                // TODOL add code to actually change the input values
+                // i.e if movement key bind are changed it should change in-game
+            }
+        }
     }
 
 }
