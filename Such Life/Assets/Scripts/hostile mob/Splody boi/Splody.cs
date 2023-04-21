@@ -63,6 +63,30 @@ public class Splody : mobBase
         {
             spanim.SetBool("Attacking", false);
             chasing(distance);
+            if (target.position.x - currPosition.x > 2f && Mathf.Abs(currPosition.x - target.position.x) > Mathf.Abs(currPosition.y - target.position.y) * 0.4f)
+            {
+                spanim.SetFloat("Xvel", 1f);
+            }
+            else if (target.position.x - currPosition.x  < -2f && Mathf.Abs(currPosition.x - target.position.x) > Mathf.Abs(currPosition.y - target.position.y) * 0.4f)
+            {
+                spanim.SetFloat("Xvel", -1f);
+            }
+            else
+            {
+                spanim.SetFloat("Xvel", 0f);
+            }
+            if (target.position.y - currPosition.y > 2f && Mathf.Abs(currPosition.y - target.position.y) > Mathf.Abs(currPosition.x - target.position.x) * 0.4f)
+            {
+                spanim.SetFloat("Yvel", 1f);
+            }
+            else if (target.position.y -currPosition.y < -2f && Mathf.Abs(currPosition.y - target.position.y) > Mathf.Abs(currPosition.x - target.position.x) * 0.4f)
+            {
+                spanim.SetFloat("Yvel", -1f);
+            }
+            else
+            {
+                spanim.SetFloat("Yvel", 0f);
+            }
         }
         else if (currState == State.Wander)
         {   
@@ -70,34 +94,35 @@ public class Splody : mobBase
                 wander();
                 time = 0;
             }
+            if (currPosition.x - prevX > 0.001f && Mathf.Abs(currPosition.x - prevX) > Mathf.Abs(currPosition.y - prevY) * 0.4f)
+            {
+                spanim.SetFloat("Xvel", 1f);
+            }
+            else if (currPosition.x - prevX < -0.001f && Mathf.Abs(currPosition.x - prevX) > Mathf.Abs(currPosition.y - prevY) * 0.4f)
+            {
+                spanim.SetFloat("Xvel", -1f);
+            }
+            else
+            {
+                spanim.SetFloat("Xvel", 0f);
+            }
+            if (currPosition.y - prevY > 0.001f && Mathf.Abs(currPosition.y - prevY) > Mathf.Abs(currPosition.x - prevX) * 0.4f)
+            {
+                spanim.SetFloat("Yvel", 1f);
+            }
+            else if (currPosition.y - prevY < -0.001f && Mathf.Abs(currPosition.y - prevY) > Mathf.Abs(currPosition.x - prevX) * 0.4f)
+            {
+                spanim.SetFloat("Yvel", -1f);
+            }
+            else
+            {
+                spanim.SetFloat("Yvel", 0f);
+            }
         }
         else if (currState == State.Attacking)
         {
             spanim.SetBool("Attacking", true);
             chargeExplosion();
-        }
-        if (currPosition.x - prevX > 0.001f && Mathf.Abs(currPosition.x - prevX) > Mathf.Abs(currPosition.y - prevY) * 0.4f)
-        {
-            spanim.SetFloat("Xvel", 1f);
-        }
-        else if (currPosition.x - prevX < -0.001f && Mathf.Abs(currPosition.x - prevX) > Mathf.Abs(currPosition.y - prevY) * 0.4f)
-        {
-            spanim.SetFloat("Xvel", -1f);
-        }
-        else {
-            spanim.SetFloat("Xvel", 0f);
-        }
-        if (currPosition.y-prevY > 0.001f && Mathf.Abs(currPosition.y - prevY) > Mathf.Abs(currPosition.x - prevX) * 0.4f)
-        {
-            spanim.SetFloat("Yvel", 1f);
-        }
-        else if (currPosition.y-prevY < -0.001f && Mathf.Abs(currPosition.y - prevY) > Mathf.Abs(currPosition.x - prevX) * 0.4f)
-        {
-            spanim.SetFloat("Yvel", -1f);
-        }
-        else
-        {
-            spanim.SetFloat("Yvel", 0f);
         }
         //If and only if the agent active and is on a NavMesh, it should set the agent's destination.
         //
