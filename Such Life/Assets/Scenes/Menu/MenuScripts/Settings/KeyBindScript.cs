@@ -18,6 +18,8 @@ public class KeyBindScript : MonoBehaviour
         {"Skill 1", KeyCode.R}
     };
 
+    private Dictionary<string, KeyCode> currentKeyBinds = new Dictionary<string, KeyCode> {};
+
     public TextMeshProUGUI[] texts;
     public Button[] buttons;
 
@@ -39,6 +41,9 @@ public class KeyBindScript : MonoBehaviour
 
                 // Update the text of the Text component
                 buttonText.text = PlayerPrefs.GetString(text.text, defaultKeyBinds[text.text].ToString());
+
+                // intialize the dictionary of the player's current key bindings
+                currentKeyBinds[text.text] = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString(text.text, defaultKeyBinds[text.text].ToString()));
             }
         }
         else
@@ -93,6 +98,29 @@ public class KeyBindScript : MonoBehaviour
                     finishInput = false;
                     inputs.Clear();
 
+                    // if the keybind alrady exists
+                    var uniqueValues = new HashSet<KeyCode>();
+                    var duplicates = new List<string>();
+
+                    foreach (var kvp in currentKeyBinds)
+                    {
+                        if (!uniqueValues.Add(kvp.Value))
+                        {
+                            duplicates.Add(kvp.Key);
+                            break;
+                        }
+                    }
+                    
+                    if (duplicates.Count != 0)
+                    {
+                        for (int i = 0; i < texts.Length; i++) {
+                            if (texts[i].text == duplicates[0])
+                            {
+                                buttons[i].GetComponentInChildren<TextMeshProUGUI>().color = Color.red;
+                                break;
+                            }
+                        }
+                    }
                     // TODO: add code to actually change the input values
                     // i.e if movement key bind are changed it should change in-game
                 }
