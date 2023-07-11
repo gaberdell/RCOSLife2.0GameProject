@@ -1,28 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class weaponParent : MonoBehaviour
 {
-
     public SpriteRenderer charRenderer, weaponRenderer;
 
     public Vector2 PointerPosition {get; set; }
 
-    public Animator animator;
-    public float delay = 0.3f;
-    private bool attackBlocked;
+    public Animator anim;
+
+    public playerAction controls;
+    public InputAction attack;
+    public float delay;
+    int i = 0;
     // Start is called before the first frame update
     void Start()
     {
         charRenderer = gameObject.GetComponent<SpriteRenderer>();
         weaponRenderer = gameObject.GetComponent<SpriteRenderer>();
+        controls = new playerAction();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 direction = (PointerPosition - (Vector2)transform.position).normalized;
+        Vector2 direction = (PointerPosition + (Vector2)transform.position).normalized;
         transform.right = direction;
 
         Vector2 scale = transform.localScale;
@@ -40,23 +44,19 @@ public class weaponParent : MonoBehaviour
         else {
             weaponRenderer.sortingOrder = charRenderer.sortingOrder + 1;
         }
+        
+
 
     }
 
-
-    public void Attack() {
-        if(attackBlocked)
-            return;
-        animator.SetTrigger("Attack");
-        attackBlocked = true;
+    public void AttackFunct(){
+        anim.SetTrigger("Attack");
         StartCoroutine(DelayAttack());
     }
 
-    private IEnumerator DelayAttack() {
+    private IEnumerator DelayAttack(){
         yield return new WaitForSeconds(delay);
-        attackBlocked = false;
     }
-
 
     
 }
