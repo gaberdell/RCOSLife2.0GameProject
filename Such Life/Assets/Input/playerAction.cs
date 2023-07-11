@@ -107,15 +107,6 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""53d20c1f-faa7-4eb6-800c-71e9ee512f9e"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -407,11 +398,11 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""332d13db-4bac-48a9-b33f-0c5f1e834883"",
-                    ""path"": ""<Keyboard>/v"",
+                    ""id"": ""d1a02202-7730-4902-a47f-0f4d791bc8ab"",
+                    ""path"": ""<Keyboard>/c"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": ""Keyboard&Mouse;Gamepad;Touch;XR"",
                     ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
