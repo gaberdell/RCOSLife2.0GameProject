@@ -20,7 +20,7 @@ public class MouseFollow : MonoBehaviour
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        wparent.PointerPosition = mousePosition;
+        //wparent.PointerPosition = mousePosition;
         pos = Vector2.Lerp(transform.position, mousePosition, cursorSpeed);
     }
 
