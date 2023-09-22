@@ -22,7 +22,11 @@ public class HitEmHard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void PerformAttack(InputAction.CallbackContext obj) {
+        wparent.Attack();
     }
 
     private void PerformAttack(InputAction.CallbackContext obj) {
