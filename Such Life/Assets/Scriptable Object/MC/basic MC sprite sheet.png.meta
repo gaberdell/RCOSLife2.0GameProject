@@ -1,0 +1,972 @@
+fileFormatVersion: 2
+guid: dbf1b0888a0d2024da538ac86a536245
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4285985039666438381
+    second: basic MC sprite sheet_0
+  - first:
+      213: 482423798910467140
+    second: basic MC sprite sheet_1
+  - first:
+      213: -6783949551839101109
+    second: basic MC sprite sheet_2
+  - first:
+      213: -6300526043929856609
+    second: basic MC sprite sheet_3
+  - first:
+      213: 4727049699548474238
+    second: basic MC sprite sheet_4
+  - first:
+      213: 959517401201664103
+    second: basic MC sprite sheet_5
+  - first:
+      213: -7294313081828249080
+    second: basic MC sprite sheet_6
+  - first:
+      213: -5157208487745293455
+    second: basic MC sprite sheet_7
+  - first:
+      213: -7661707468874643834
+    second: basic MC sprite sheet_8
+  - first:
+      213: -5596215821686319211
+    second: basic MC sprite sheet_9
+  - first:
+      213: 4143416736356355414
+    second: basic MC sprite sheet_10
+  - first:
+      213: 8295853677901399531
+    second: basic MC sprite sheet_11
+  - first:
+      213: 5630720527227774776
+    second: basic MC sprite sheet_12
+  - first:
+      213: 6712270403742860433
+    second: basic MC sprite sheet_13
+  - first:
+      213: -5415205324233562974
+    second: basic MC sprite sheet_14
+  - first:
+      213: 9221562821473151823
+    second: basic MC sprite sheet_15
+  - first:
+      213: -4022440958186020982
+    second: basic MC sprite sheet_16
+  - first:
+      213: -233662831907349582
+    second: basic MC sprite sheet_17
+  - first:
+      213: 24874561407574024
+    second: basic MC sprite sheet_18
+  - first:
+      213: -9087736735535923364
+    second: basic MC sprite sheet_19
+  - first:
+      213: -6279488762114418617
+    second: basic MC sprite sheet_20
+  - first:
+      213: -1746031337100755150
+    second: basic MC sprite sheet_21
+  - first:
+      213: -5639514509433661109
+    second: basic MC sprite sheet_22
+  - first:
+      213: 3067589348456946330
+    second: basic MC sprite sheet_23
+  - first:
+      213: 967918163175161291
+    second: basic MC sprite sheet_24
+  - first:
+      213: 1629633166019876370
+    second: basic MC sprite sheet_25
+  - first:
+      213: -7704788307098357502
+    second: basic MC sprite sheet_26
+  - first:
+      213: 3701401894071210234
+    second: basic MC sprite sheet_27
+  - first:
+      213: -6462300526085970437
+    second: basic MC sprite sheet_28
+  - first:
+      213: 3826636572330400779
+    second: basic MC sprite sheet_29
+  - first:
+      213: 7185554446434884378
+    second: basic MC sprite sheet_30
+  - first:
+      213: 2950078812059687104
+    second: basic MC sprite sheet_31
+  - first:
+      213: 2251689514721284698
+    second: basic MC sprite sheet_32
+  - first:
+      213: -1941279317837789992
+    second: basic MC sprite sheet_33
+  - first:
+      213: 4031844110543660569
+    second: basic MC sprite sheet_34
+  - first:
+      213: 3854187982678040234
+    second: basic MC sprite sheet_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: basic MC sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 244
+        width: 29
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de0e4f97fa0ea7b30800000000000000
+      internalID: 4285985039666438381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 243
+        width: 29
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44cb04d93e9e1b600800000000000000
+      internalID: 482423798910467140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 242
+        width: 29
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fb57453d19ad1a0800000000000000
+      internalID: -6783949551839101109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 243
+        width: 29
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95b675d1f80098a0800000000000000
+      internalID: -6300526043929856609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_4
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 247
+        width: 33
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7b243128aad99140800000000000000
+      internalID: 4727049699548474238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_5
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 246
+        width: 33
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7606e6e1ef3e05d00800000000000000
+      internalID: 959517401201664103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_6
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 246
+        width: 33
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802742526e465ca90800000000000000
+      internalID: -7294313081828249080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_7
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 245
+        width: 33
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173ff47543aed68b0800000000000000
+      internalID: -5157208487745293455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_8
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 164
+        width: 32
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68605c886a52ca590800000000000000
+      internalID: -7661707468874643834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 163
+        width: 30
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59757f53c5f3652b0800000000000000
+      internalID: -5596215821686319211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_10
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 164
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65dcde6a19f508930800000000000000
+      internalID: 4143416736356355414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_11
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 163
+        width: 29
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be54eeb77fac02370800000000000000
+      internalID: 8295853677901399531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_12
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 162
+        width: 33
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83769e69c76542e40800000000000000
+      internalID: 5630720527227774776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_13
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 163
+        width: 33
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 194067b7e56c62d50800000000000000
+      internalID: 6712270403742860433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_14
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 164
+        width: 29
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a42147d27359d4b0800000000000000
+      internalID: -5415205324233562974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_15
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 165
+        width: 29
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b2bd7378299ff70800000000000000
+      internalID: 9221562821473151823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_16
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 164
+        width: 30
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8f1755a24b6d28c0800000000000000
+      internalID: -4022440958186020982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_17
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 165
+        width: 32
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb53f274ecd1ccf0800000000000000
+      internalID: -233662831907349582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 92
+        width: 21
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80064a4284f585000800000000000000
+      internalID: 24874561407574024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_19
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 92
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5ffc12869fd1e180800000000000000
+      internalID: -9087736735535923364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_20
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 93
+        width: 24
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 748dc13bd36cad8a0800000000000000
+      internalID: -6279488762114418617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_21
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 92
+        width: 31
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fb861ffb9d4c7e0800000000000000
+      internalID: -1746031337100755150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_22
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 92
+        width: 21
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b499b8fde6b6cb1b0800000000000000
+      internalID: -5639514509433661109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_23
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 92
+        width: 21
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9a5c877244429a20800000000000000
+      internalID: 3067589348456946330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_24
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 92
+        width: 31
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd34bfe07cbe6d00800000000000000
+      internalID: 967918163175161291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_25
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 93
+        width: 24
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2165fc6fabe9d9610800000000000000
+      internalID: 1629633166019876370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_26
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 92
+        width: 29
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201b1dd3bd7131590800000000000000
+      internalID: -7704788307098357502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_27
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 92
+        width: 21
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0921b69650e5330800000000000000
+      internalID: 3701401894071210234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_28
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 5
+        width: 31
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf563d609eb4156a0800000000000000
+      internalID: -6462300526085970437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_29
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 4
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c954a20b1fa1530800000000000000
+      internalID: 3826636572330400779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_30
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 4
+        width: 31
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1bdaf5c2b738b360800000000000000
+      internalID: 7185554446434884378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_31
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 5
+        width: 35
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c85934ac09c0f820800000000000000
+      internalID: 2950078812059687104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_32
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 6
+        width: 35
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a521f650fab9f3f10800000000000000
+      internalID: 2251689514721284698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_33
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 5
+        width: 31
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d4477aeeb03f05e0800000000000000
+      internalID: -1941279317837789992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_34
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 5
+        width: 31
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 916a4be5bdcf3f730800000000000000
+      internalID: 4031844110543660569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: basic MC sprite sheet_35
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 6
+        width: 31
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae9a15cc83dc7530800000000000000
+      internalID: 3854187982678040234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
