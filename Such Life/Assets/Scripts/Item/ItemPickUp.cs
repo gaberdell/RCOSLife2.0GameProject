@@ -61,13 +61,20 @@ public class ItemPickUp : MonoBehaviour
     {
         //adjust this function slightly when start to implement player and chest inventory
         var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
-        
-        if (!inventory || (freeze)) return;
-
-        if (inventory.AddToInventory(ItemData, 1))
-        {
-            SaveGameManager.data.collectedItems.Add(id);
-            Destroy(this.gameObject);
+        var chest = other.transform.GetComponent<ChestInventory>();
+        if ((!inventory && !chest) || (freeze)) return;
+        if(chest){
+            if(chest.PrimaryInventorySystem.AddToInventory(ItemData,1)){
+                SaveGameManager.data.collectedItems.Add(id);
+                Destroy(this.gameObject);
+            }
+        }
+        else if(inventory){
+            if (inventory.AddToInventory(ItemData, 1))
+            {
+                SaveGameManager.data.collectedItems.Add(id);
+                Destroy(this.gameObject);
+            }
         }
     }
 

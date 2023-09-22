@@ -5,43 +5,48 @@ TagManager:
   serializedVersion: 2
   tags:
   - Animal
+  - Grass
+  - CanFly
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Post Processing
+  -
   - Water
   - UI
   - Interactable
-  - 
-  - 
+  -
+  - Flying
   - Entities
   - Background
   - Cursor
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Cursor
     uniqueID: 3008680869
+    locked: 0
+  - name: Infobox
+    uniqueID: 2069794067
     locked: 0

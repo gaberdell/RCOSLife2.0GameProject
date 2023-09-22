@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
-
-
 public class HitEmHard : MonoBehaviour
 {
     public playerAction playerControls;
@@ -31,6 +28,12 @@ public class HitEmHard : MonoBehaviour
     private void PerformAttack(InputAction.CallbackContext obj) {
         wparent.Attack();
     }
+
+    private void PerformAttack(InputAction.CallbackContext obj) {
+     //   wparent.Attack();
+    }
+
+
 
     private void onEnable() {
         playerControls.Player.Enable();

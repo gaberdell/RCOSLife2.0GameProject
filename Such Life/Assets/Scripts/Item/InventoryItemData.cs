@@ -19,6 +19,7 @@ public class InventoryItemData : ScriptableObject
     public Sprite Icon;
     public int MaxStackSize;
     public string Type;
+    public int GoldValue; //For the shop
 
     public bool placeable;
 
@@ -26,6 +27,6 @@ public class InventoryItemData : ScriptableObject
     public Vector2 boxColliderSize = new Vector2(2f, 2f); // box collider initialized to 2x2
     public float circleColliderRadius;
 
-
+    public GameObject ItemPrefab;
 
 }

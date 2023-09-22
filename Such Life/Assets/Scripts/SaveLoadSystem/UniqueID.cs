@@ -14,6 +14,10 @@ public class UniqueID : MonoBehaviour
 
     public string ID => _id;
 
+    public void forceValidate(){
+        OnValidate();
+    }
+
     private void OnValidate()
     {
         //if the database contains the id, generate a new one, or else add the id into the database
