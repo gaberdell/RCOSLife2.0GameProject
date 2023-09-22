@@ -10,6 +10,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
     // for other class to access - Maybe a merchant (will use dynamic inventory display) have other
     // function for the inventory that the chest don't but merchant still want to access this variable
     [SerializeField] protected InventorySlot_UI slotPrefab;
+    public GameObject dynamicText;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -49,6 +50,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
             uiSlot.Init(inventoryToShow.InventorySlots[i]);
             uiSlot.UpdateUISlot();
         }
+        dynamicText.GetComponent<DynamicTextControl>().GrabCorners();
     }
 
     private void ClearSlots()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
 
-[System.Serializable]
+[System.Serializable] //So can be seen in the inspector
 
 public class InventorySlot
 {

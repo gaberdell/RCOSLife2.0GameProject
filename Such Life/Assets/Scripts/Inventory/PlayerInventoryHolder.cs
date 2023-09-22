@@ -12,6 +12,8 @@ public class PlayerInventoryHolder : InventoryHolder
     public playerAction playerControl;
 
 
+    public static UnityAction<InventorySystem, int> OnPlayerInventoryDisplayRequested;
+
     private void Start()
     {
         SaveGameManager.data.playerInventory = new InventorySaveData(primaryInvSystem);
@@ -52,7 +54,7 @@ public class PlayerInventoryHolder : InventoryHolder
         //fix it so the function use playerAction instead of key press on keyboard
         if (openInventoryKeyPressed)
         {
-            OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, offset);
+            OnPlayerInventoryDisplayRequested?.Invoke(primaryInvSystem, offset);
         }
     }
 

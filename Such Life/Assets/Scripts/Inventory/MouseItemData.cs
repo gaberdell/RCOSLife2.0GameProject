@@ -12,10 +12,19 @@ public class MouseItemData : MonoBehaviour
     public Image ItemSprite;
     public TextMeshProUGUI ItemCount;
     public InventorySlot AssignedInventorySlot;
+
+    private Transform _playerTransform;
+    private Camera my_cam;
+
     private void Awake()
     {
         ItemSprite.color = Color.clear;
+        ItemSprite.preserveAspect = true;
         ItemCount.text = "";
+
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        my_cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        if(_playerTransform == null) Debug.Log("Player not found");
     }
 
     public void UpdateMouseSlot(InventorySlot invSlot)
@@ -35,11 +44,41 @@ public class MouseItemData : MonoBehaviour
             transform.position = Mouse.current.position.ReadValue();
             if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
             {
-                //ClearSlot();
-                // To-do: Drop item on the ground instead of delete it
+                if(AssignedInventorySlot.ItemData.ItemPrefab != null){
+                    Vector3 newPos = my_cam.ScreenToWorldPoint(Input.mousePosition);
+                    newPos.z = 0.0f;
+                    for(int i = 0; i < AssignedInventorySlot.StackSize-1; i++){
+                        if(i%2 == 0){
+                            Instanter(AssignedInventorySlot,newPosShift(newPos,true));
+                        }
+                        else{
+                            Instanter(AssignedInventorySlot,newPosShift(newPos,false));
+                        }
+                    }
+                    Instanter(AssignedInventorySlot,newPos);
+                }
+                ClearSlot();
             }
 
         }
+    }
+
+    private void Instanter(InventorySlot AssignedInventorySlot, Vector3 newPos){
+        AssignedInventorySlot.ItemData.ItemPrefab.GetComponent<UniqueID>().forceValidate();
+        GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
+        Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
+        secret_collider.enabled = false;
+        secret_collider.enabled = true;
+    }
+
+    public Vector3 newPosShift(Vector3 Pos, bool doNegative){
+        Vector3 nextPos = new Vector3(Pos.x, Pos.y,0.0f);
+        float randomChoice = Random.Range(0.3f,0.4f);
+        if(doNegative){
+            randomChoice = Random.Range(-0.4f,-0.3f);
+        }
+        nextPos.x += randomChoice;
+        return nextPos;
     }
 
     public void ClearSlot()
@@ -58,6 +97,7 @@ public class MouseItemData : MonoBehaviour
         eventDataCurrentPosition.position = Mouse.current.position.ReadValue();
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        Debug.Log("Wow!");
         return results.Count > 0;
     }
 

@@ -16,9 +16,18 @@ MonoBehaviour:
   DisplayName: Potato
   Description: A starchy vegetable that can be turn into a magical clear liquid.
   Icon: {fileID: -6137242429100743368, guid: 15cd4fb3ad94c264ea503f760f3f15ff, type: 3}
-  MaxStackSize: 1
+  MaxStackSize: 2
   Type: 
+<<<<<<< HEAD:Such Life/Assets/Scripts/Item/Resources/Potato.asset
+  GoldValue: 0
+  placeable: 1
+  colliderType: circle
+  boxColliderSize: {x: 2, y: 2}
+  circleColliderRadius: 0.35
+  ItemPrefab: {fileID: 2921799629105317106, guid: 023be2e9fd60145419d625a50408d39a, type: 3}
+=======
   placeable: 1
   colliderType: circle
   boxColliderSize: {x: 2, y: 2}
   circleColliderRadius: 0.5
+>>>>>>> main:Such Life/Assets/Scriptable Object/Potato.asset
