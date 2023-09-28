@@ -18,16 +18,9 @@ MonoBehaviour:
   Icon: {fileID: 2134584563556110807, guid: 15cd4fb3ad94c264ea503f760f3f15ff, type: 3}
   MaxStackSize: 5
   Type: 
-<<<<<<< HEAD:Such Life/Assets/Scripts/Item/Resources/Tomato.asset
   GoldValue: 0
   placeable: 0
   colliderType: circle
   boxColliderSize: {x: 2, y: 2}
   circleColliderRadius: 0.4
   ItemPrefab: {fileID: 8602753799084525264, guid: c7b5be1758ce64a0c8c8dbcb250bd69a, type: 3}
-=======
-  placeable: 0
-  colliderType: circle
-  boxColliderSize: {x: 2, y: 2}
-  circleColliderRadius: 0.5
->>>>>>> main:Such Life/Assets/Scriptable Object/Tomato.asset

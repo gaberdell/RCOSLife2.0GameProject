@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCBase : MonoBehaviour
 {
-    public string name; //The name of the NPC
+    public string NPCName; //The name of the NPC
     public enum State { Idling, Walking, Running, Panicking, Dying, Following } //States that the NPC can be in
     public State currState = State.Idling;
 
@@ -30,7 +30,7 @@ public class NPCBase : MonoBehaviour
 
     public string getName() //returns the name of the NPC
     {
-        return name;
+        return NPCName;
     }
 
     public string getOccupation()
