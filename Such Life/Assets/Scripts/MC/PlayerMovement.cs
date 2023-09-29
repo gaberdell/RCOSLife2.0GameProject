@@ -23,7 +23,6 @@ public class PlayerMovement : MouseFollow
     private InputAction teleport;
     private InputAction dash;
     private InputAction roll;
-
     public float teleportCooldown; //how long between you can use consecutive teleports (seconds)
     public float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
     public float lastTeleportUsed; //Time for last used teleport
@@ -40,7 +39,9 @@ public class PlayerMovement : MouseFollow
 
     public bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
     public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
-
+    public GameObject attackPoint;
+    public float radius;
+    public LayerMask enemies;
 
 
     void Awake()
@@ -86,8 +87,6 @@ public class PlayerMovement : MouseFollow
         anim.SetFloat("Horizontal", inputX);
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
-
-        
         //give the game info of the direction that the player is facing (for interaction feature later)
     
         if(Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical") == -1) {
@@ -205,8 +204,20 @@ public class PlayerMovement : MouseFollow
         {
             canMove = true;
         }
+        // if(Input.GetMouseButtonDown(0)){
+        //     anim.SetBool("Attack", true);
+        // }
+        // else{
+        //     anim.SetBool("Attack", false);
+        // }
     }
-
+    
+    // public void Attack(){
+    //     Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.Transform.position,radius,enemies);
+    //     foreach (Collider2D enemyGameobject in enemy){
+    //         Debug.Log("Hit an Enemy);
+    //     }
+    // }
 
         
     void FixedUpdate() {
