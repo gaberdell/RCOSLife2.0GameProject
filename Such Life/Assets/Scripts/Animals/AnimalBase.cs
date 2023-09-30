@@ -158,38 +158,31 @@ public class AnimalBase : MonoBehaviour
     public GameObject findClosestObj(string tag)
     {
         GameObject[] things; 
+        //Get all the objects with the given tag in the scene
         //When no object with the tag is found, Unity returns an Error
-        try
-        {
-            //Get all the objects with the given tag in the scene
+        try {
             things = GameObject.FindGameObjectsWithTag(tag);
-            GameObject closest = null;
-            float distance = Mathf.Infinity;
+        } catch {
+            return null;
+        }
+        
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
 
-            //Loop through the list and compare their distances to the Animal
-            foreach(GameObject thing in things)
-            {
-                Vector2 diff = (Vector2)thing.transform.position - position;
-                float curDistance = diff.sqrMagnitude;
+        //Loop through the list and compare their distances to the Animal
+        foreach(GameObject thing in things) {
+            Vector2 diff = (Vector2)thing.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
 
-                if (curDistance < distance)
-                {
-                    closest = thing;
-                    distance = curDistance;
-                }
-               }
-            if (distance <= awareness)
-            {
-                return closest;
-            }
-            else
-            {
-                return null;
+            if (curDistance < distance) {
+                closest = thing;
+                distance = curDistance;
             }
         }
-            //If an error is returned, return NULL
-             catch
-        {
+
+        if (distance <= awareness) {
+            return closest;
+        } else {
             return null;
         }
     }
@@ -224,30 +217,20 @@ public class AnimalBase : MonoBehaviour
         float currentclosest = -1f;
         foreach(var thing in foods) {
             food = findClosestObj(thing);
-
             
-            if (food)
-            {
-                if (currentclosest == -1f)
-                {
+            if (food) {
+                if (currentclosest == -1f) {
                     currentclosest = getDistance(food);
                 }
 
-                if (getDistance(food) < currentclosest)
-                {
+                if (getDistance(food) < currentclosest) {
                     currentclosest = getDistance(food);
                     newposition = food.transform.position;
                     navi.SetDestination(newposition);
-                    
-                }
-                else
-                {
+                } else {
                     return;
                 }
-                
             }
         }
-        
-
     }
 }
