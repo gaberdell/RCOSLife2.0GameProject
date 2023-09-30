@@ -11,15 +11,29 @@ using UnityEngine.UI;
 [RequireComponent(typeof(UniqueID))]
 public class ChestInventory : InventoryHolder, IInteractable
 {
-    public GameObject DynText;
+    public GameObject DynTextObject;
     public GameObject spriteChild;
     private SpriteRenderer localRenderer;
     public Sprite[] chestSprites;
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
+
+    private bool isOpen = false;
+    private Text DynText;
+
     protected override void Awake()
     {
         base.Awake();
         SaveLoad.onLoadGame += LoadInventory;
+    }
+
+    private void OnEnable()
+    {
+        EventManager.closeInventoryUIEvent += CloseChest;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.closeInventoryUIEvent -= CloseChest;
     }
 
     private void Start()
@@ -27,6 +41,8 @@ public class ChestInventory : InventoryHolder, IInteractable
         var chestSaveData = new InventorySaveData(primaryInvSystem, transform.position, transform.rotation);
         SaveGameManager.data.chestDictionaryData.Add(GetComponent<UniqueID>().ID, chestSaveData);
         localRenderer = spriteChild.GetComponent<SpriteRenderer>();
+
+        DynText = DynTextObject.GetComponent<Text>();
     }
 
     protected override void LoadInventory(SaveData data)
@@ -35,20 +51,36 @@ public class ChestInventory : InventoryHolder, IInteractable
         //Maybe add in the chest manager of some sort to load all of the chest in the chest dictionary into the world 
         if (data.chestDictionaryData.TryGetValue(GetComponent<UniqueID>().ID, out InventorySaveData chestData))
         {
-            this.primaryInvSystem = chestData.InvSystem;
-            this.transform.position = chestData.Position;
-            this.transform.rotation = chestData.Rotation;
+            //Inherits these from InventoryHolder
+            primaryInvSystem = chestData.InvSystem;
+            transform.position = chestData.Position;
+            transform.rotation = chestData.Rotation;
         }
     }
 
     public void Interact(Interactor interactor, out bool interactSuccessful)
     {
         // if any is listening out on this event (hence the ?), if yes, invoke it
-        OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, 0);
-        DynText.SetActive(false);
-        DynText.SetActive(true);
-        DynText.GetComponent<Text>().text = this.name.ToString();
+        if (isOpen == false)
+        {
+            OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, 0);
+
+            DynTextObject.SetActive(true);
+            //Name is also inherited
+            DynText.text = name;
+            isOpen = true;
+        }
+        else
+        {
+            EventManager.CloseInventoryUI(false);
+        }
         interactSuccessful = true;
+    }
+
+
+    private void CloseChest(bool _)
+    {
+        isOpen = false;
     }
 
     //this method will be use for later if the player interact with the chest, they can't move until
@@ -61,7 +93,8 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     public void Update()
     {
-        if(DynText.activeInHierarchy && DynText.GetComponent<Text>().text == this.name.ToString()){
+        if(isOpen)
+        {
             localRenderer.sprite = chestSprites[1];
             //Add functionality for Overfilled chest
         }

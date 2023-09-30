@@ -38,8 +38,7 @@ public class Interactor : MonoBehaviour
         var collider = Physics2D.OverlapCircleAll(InteractionPoint.position, InteractionPointRadius, InteractionLayer);
 
         //check this again to see if it's WasPerformedThisFrame or WasPressedThisFrame
-        bool interactingKeyPressed = playerControl.Player.Interacting.WasPressedThisFrame();
-
+        bool interactingKeyPressed = playerControl.Player.Interacting.WasPerformedThisFrame();
         if (interactingKeyPressed)
         {
             //Codes to be test (If there are no interactable items around, player can't call startInteracting method)

@@ -388,7 +388,7 @@ MonoBehaviour:
   primaryInvSystem:
     Inventory: []
   offset: 10
-  DynText: {fileID: 1451508971}
+  DynTextObject: {fileID: 1451508971}
   spriteChild: {fileID: 1025332294}
   chestSprites:
   - {fileID: 21300000, guid: d52b7b04153a04a2aa951c4c439b857b, type: 3}
@@ -5852,7 +5852,7 @@ MonoBehaviour:
   primaryInvSystem:
     Inventory: []
   offset: 10
-  DynText: {fileID: 1451508971}
+  DynTextObject: {fileID: 1451508971}
   spriteChild: {fileID: 281221418}
   chestSprites:
   - {fileID: 21300000, guid: d52b7b04153a04a2aa951c4c439b857b, type: 3}
