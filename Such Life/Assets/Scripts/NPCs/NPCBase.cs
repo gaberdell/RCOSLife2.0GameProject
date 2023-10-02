@@ -16,18 +16,6 @@ public class NPCBase : MonoBehaviour
     public float HPCap; //Max Health
     public float currHP; //Current HP of the NPC
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public string getName() //returns the name of the NPC
     {
         return NPCName;

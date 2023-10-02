@@ -9,8 +9,8 @@ public class BuildingBase : MonoBehaviour
     // base class for all buildings
 
     // basic info
-    public string name;
-    public string tag;
+    public new string name;
+    public new string tag;
     public int ID;
     public Vector2 position;
     
