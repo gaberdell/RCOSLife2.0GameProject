@@ -4031,7 +4031,7 @@ GameObject:
   - component: {fileID: 903774413}
   m_Layer: 0
   m_Name: Duck
-  m_TagString: Untagged
+  m_TagString: CanFly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8715,9 +8715,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1761175229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6287c3668e57954692c31960531e062, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ac95cf43464197478536e611154e265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currState: 0
+  awareness: 0
+  walkspeed: 0
+  runspeed: 0
+  animal: {fileID: 0}
+  HPCap: 0
+  currHP: 0
+  currMaxSpeed: 0
+  currSpeed: 0
+  weight: 0
+  hungerCap: 0
+  hunger: 0
+  hungerDrain: 0
+  size: 0
+  animate: {fileID: 0}
+  position: {x: 0, y: 0}
+  newposition: {x: 0, y: 0}
+  time: 0
+  timeDelay: 0
+  reached: 0
+  player: {fileID: 0}
+  aniSprite: {fileID: 0}
+  food: {fileID: 0}
+  foodtypes: []
+  navi: {fileID: 0}
 --- !u!50 &1761175231
 Rigidbody2D:
   serializedVersion: 4

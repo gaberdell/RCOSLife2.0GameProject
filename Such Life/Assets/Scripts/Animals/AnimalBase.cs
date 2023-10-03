@@ -212,25 +212,15 @@ public class AnimalBase : MonoBehaviour
 
     
     //Looks for closest food that the animal can eat
-    public void LookForFood(List<string> foods) 
-    {
-        float currentclosest = -1f;
+    public void LookForFood(List<string> foods) {
+        float currentclosest = Mathf.Infinity;
         foreach(var thing in foods) {
             food = findClosestObj(thing);
-            
-            if (food) {
-                if (currentclosest == -1f) {
-                    currentclosest = getDistance(food);
-                }
-
-                if (getDistance(food) < currentclosest) {
-                    currentclosest = getDistance(food);
-                    newposition = food.transform.position;
-                    navi.SetDestination(newposition);
-                } else {
-                    return;
-                }
+            if (food && getDistance(food) < currentclosest) {
+                currentclosest = getDistance(food);
             }
         }
+        newposition = food.transform.position;
+        navi.SetDestination(newposition);
     }
 }
