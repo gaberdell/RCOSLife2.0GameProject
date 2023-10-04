@@ -1,8 +1,10 @@
 {
-    "name": "EventManager",
+    "name": "InventoryAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:dc482bc0d787d9c42b05777e15487cf1"
+        "GUID:6ad8d8ad037a4ff4294daef6a790561a",
+        "GUID:dc482bc0d787d9c42b05777e15487cf1",
+        "GUID:94251034ecb32dc4ba4d58cdee6b0a40"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

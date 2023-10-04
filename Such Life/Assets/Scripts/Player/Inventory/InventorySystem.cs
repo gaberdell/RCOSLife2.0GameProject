@@ -7,7 +7,7 @@ using System.Linq;
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
 
 [System.Serializable]
-public class InventorySystem
+public class InventorySystem : MonoBehaviour, IInventorySystem
 {
     [SerializeField] private List<InventorySlot> Inventory;
 
@@ -18,7 +18,17 @@ public class InventorySystem
 
 
     //event that activate when we add an item into our inventory 
-    public UnityAction<InventorySlot> OnInventorySlotChanged;
+    
+
+    private void OnEnable()
+    {
+        EventManager.updateInventorySlot += OnInventorySlotChanged;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.updateInventorySlot -= OnInventorySlotChanged;
+    }
 
     /* Constructor */
     public InventorySystem(int size)
@@ -34,6 +44,14 @@ public class InventorySystem
     }
 
 
+    public void OnInventorySlotChanged(IInventorySystem inventorySystem, IInventorySlot inventorySlot)
+    {
+        if ( inventorySystem == (IInventorySlot) this)
+        {
+            Debug.Log("Sussus Mongus");
+        }
+    }
+
     public bool AddToInventory(InventoryItemData itemToAdd, int amountToAdd)
     {
         //if item exist in inventory
@@ -46,7 +64,8 @@ public class InventorySystem
                 if (emptySlot.IsEnoughSpaceInStack(amountToAdd))
                 {
                     emptySlot.AddToStack(amountToAdd);
-                    OnInventorySlotChanged?.Invoke(emptySlot);
+                    //OnInventorySlotChanged?.Invoke(emptySlot);
+                    EventManager.UpdateInventorySlot(this, emptySlot);
                     return true;
                 }
             }
@@ -59,7 +78,8 @@ public class InventorySystem
             {
                 //add item into available slot
                 freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
-                OnInventorySlotChanged?.Invoke(freeSlot);
+                //OnInventorySlotChanged?.Invoke(freeSlot);
+                EventManager.UpdateInventorySlot(this, freeSlot);
                 return true;
             }
             /* implement such that to only take what can fill the stack and check for another free slot 

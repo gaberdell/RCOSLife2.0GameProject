@@ -6,7 +6,7 @@ using UnityEngine;
 
 [System.Serializable] //So can be seen in the inspector
 
-public class InventorySlot
+public class InventorySlot : IInventorySlot
 {
     [SerializeField] private InventoryItemData itemData; //Reference to the item
     [SerializeField] private int stackSize; // current stack size of an item

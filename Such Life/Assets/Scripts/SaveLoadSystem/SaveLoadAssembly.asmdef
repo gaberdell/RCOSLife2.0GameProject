@@ -1,8 +1,8 @@
 {
-    "name": "EventManager",
+    "name": "SaveLoadAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:dc482bc0d787d9c42b05777e15487cf1"
+        "GUID:41bf26cae87c1fc4c82ce88ab420d770"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

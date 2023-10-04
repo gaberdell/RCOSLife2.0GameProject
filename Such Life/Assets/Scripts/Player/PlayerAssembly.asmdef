@@ -1,8 +1,9 @@
 {
-    "name": "EventManager",
+    "name": "PlayerAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:dc482bc0d787d9c42b05777e15487cf1"
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:94251034ecb32dc4ba4d58cdee6b0a40"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
