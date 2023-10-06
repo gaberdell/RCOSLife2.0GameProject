@@ -18,7 +18,7 @@ public class Blacksmith : NPCBase
         Hostile = Hostility.Peaceful;
         Sprite = GetComponent<SpriteRenderer>();
         dialogue.Add("Temporary1", "Hello");
-
+        navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
 
     }
 

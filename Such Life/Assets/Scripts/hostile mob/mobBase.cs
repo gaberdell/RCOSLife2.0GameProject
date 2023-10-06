@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mobBase : EntityMovement
+public class mobBase : EntityBase
 {
 
     //Some common feature for enemies

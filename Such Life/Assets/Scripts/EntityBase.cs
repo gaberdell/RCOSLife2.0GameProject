@@ -7,7 +7,7 @@ using UnityEngine.AI;
  *  As a virtual method, it can be overrided anytime
  */
 
-public abstract class EntityMovement : MonoBehaviour
+public abstract class EntityBase : MonoBehaviour
 {
 
     public float currMaxSpeed; //Current possible max speed

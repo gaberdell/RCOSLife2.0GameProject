@@ -7,7 +7,7 @@ using UnityEngine.AI;
  * Implements basic things that all NPCS should have.
  */
 
-public class NPCBase : EntityMovement
+public class NPCBase : EntityBase
 {
     public string NPCName; //The name of the NPC
     public enum State { Idling, Walking, Running, Panicking, Dying, Following, Sleeping } //States that the NPC can be in

@@ -7,7 +7,7 @@ using UnityEngine.AI;
  * This is the base for all animal AI
  * This class does not implement AI for any specific animal
 */
-public class AnimalBase : EntityMovement
+public class AnimalBase : EntityBase
 {   
     //The State and Stats of animal
     public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Pushed } //The different states the animal can be in
