@@ -33,10 +33,9 @@ public class AnimalBase : EntityMovement
     public bool reached; //Determines if the animal has reached its destination
     public GameObject player;
     public RaycastHit hit;
-    public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
-
+    public List<string> drops; //What the animal will drop when it dies
     
     public string  getAnimal()
     {
@@ -90,24 +89,7 @@ public class AnimalBase : EntityMovement
         return currSpeed;
     }
 
-    //This function flips the sprite of the animal.
-    //This may be removed in the future when animations are added.
-   public void flipSprite()
-    {
-        Vector2 direction = newposition - position; 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //flip sprites based on the direction of the target and "this"
-        if (angle >= 90 || angle <= -90)
-        {
-            //face left
-            aniSprite.flipX = false;
 
-        }
-        else
-        {
-            aniSprite.flipX = true;
-        }
-    }
 
     //A simple function that makes the animal take the specified amount of damage
     public void takeDamage(int val)

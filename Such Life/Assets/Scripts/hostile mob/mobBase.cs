@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mobBase : MonoBehaviour
+public class mobBase : EntityMovement
 {
 
     //Some common feature for enemies
@@ -30,20 +30,8 @@ public class mobBase : MonoBehaviour
     public GameObject player;
     // public Vector2 newPosition;
 
-    public SpriteRenderer MobSprite;
     public Transform target;
     public Rigidbody2D monsterBody;
-    public UnityEngine.AI.NavMeshAgent agent;
-
-    virtual public void PositionChange()
-    {
-        float posxmin = transform.position.x - 5.0f;
-        float posxmax = transform.position.x + 5.0f;
-        float posymin = transform.position.y - 5.0f;
-        float posymax = transform.position.y + 5.0f;
-
-        currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
-    }
 
     public string GetMob() //Returns the Mob Type
     {
@@ -73,6 +61,11 @@ public class mobBase : MonoBehaviour
     public void damageSelf(int dmg)
     {
         currHealth -= dmg;
+    }
+
+    void Start()
+    {
+        currSpeed = 5.0f;
     }
     /*void PositionChange()
     {

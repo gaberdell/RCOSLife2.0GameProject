@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /*  A class that includes a movement function. So many things need this.
- * 
+ *  As a virtual method, it can be overrided anytime
  */
 
 public abstract class EntityMovement : MonoBehaviour
@@ -15,6 +15,7 @@ public abstract class EntityMovement : MonoBehaviour
     public Vector2 position; //The current position of the animal in a Vector2 object
     public Vector2 newposition; //The position that the animal wants to reach
     public NavMeshAgent navi; //Hey, Listen!
+    public SpriteRenderer Sprite;
 
     //random pos
     public virtual void PositionChange()
@@ -42,5 +43,23 @@ public abstract class EntityMovement : MonoBehaviour
         navi.SetDestination(newposition);
     }
 
+    //This function flips the sprite of the entity
+    //Used to make sure the entity faces the correct direction. Will be removed in the future when animations are implemented
+    public void flipSprite()
+    {
+        Vector2 direction = newposition - position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        //flip sprites based on the direction of the target and "this"
+        if (angle >= 90 || angle <= -90)
+        {
+            //face left
+            Sprite.flipX = false;
+
+        }
+        else
+        {
+            Sprite.flipX = true;
+        }
+    }
 }
 

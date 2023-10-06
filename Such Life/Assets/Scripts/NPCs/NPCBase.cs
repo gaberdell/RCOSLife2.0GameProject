@@ -10,14 +10,21 @@ using UnityEngine.AI;
 public class NPCBase : EntityMovement
 {
     public string NPCName; //The name of the NPC
-    public enum State { Idling, Walking, Running, Panicking, Dying, Following, Talking, Attacking } //States that the NPC can be in
+    public enum State { Idling, Walking, Running, Panicking, Dying, Following, Sleeping } //States that the NPC can be in
+    public enum State2 { Talking, Attacking, None } //States that the NPC can be in in addition to the above
     public State currState = State.Idling;
-    public enum Hostility { Peaceful, Defensive, Hostile, Avoidant }
+    public State2 currState2= State2.None;
+    public Hostility Hostile;
+    public enum Hostility { Peaceful, Defensive, Hostile, Avoidant } //How NPC's will react to Player
+    public int awareness;
+    public bool Interactable; //Whether or not the Player is allowed to speak to the NPC
+    public float time;
+    public float timeDelay;
+
 
     public Animator animate;
     public GameObject player;
     public RaycastHit hit;
-    public SpriteRenderer NPCSprite;
 
     public float HPCap; //Max Health
     public float currHP; //Current HP of the NPC
@@ -35,5 +42,8 @@ public class NPCBase : EntityMovement
         return this.GetType().Name; //Get the Occupation, Assumes that the occupation of the NPC is its class
     }
 
-    
+    void Talk() {
+        currState2 = State2.Talking;
+
+    }
 }
