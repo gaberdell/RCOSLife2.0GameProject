@@ -65,10 +65,10 @@ public class AnimalBase : MonoBehaviour
             newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         }
         navi.speed = currSpeed*2;
-        navi.SetDestination(newposition);
+        moveTo(newposition);
     }
 
-    public string  getAnimal()
+    public string getAnimal()
     {
         return this.GetType().Name; //Get the animal type
     }
@@ -182,9 +182,9 @@ public class AnimalBase : MonoBehaviour
 
         if (distance <= awareness) {
             return closest;
-        } else {
-            return null;
         }
+
+        return null;
     }
        
     void OnCollisionEnter2D(Collision2D collision)
@@ -210,6 +210,11 @@ public class AnimalBase : MonoBehaviour
         return ((Vector2)thing.transform.position - position).sqrMagnitude;
     }
 
+    public void moveTo(Vector2 pos) {
+        newposition = pos;
+        navi.SetDestination(newposition);
+        flipSprite();
+    }
     
     //Looks for closest food that the animal can eat
     public void LookForFood(List<string> foods) {
@@ -221,6 +226,6 @@ public class AnimalBase : MonoBehaviour
             }
         }
         newposition = food.transform.position;
-        navi.SetDestination(newposition);
+        moveTo(newposition);
     }
 }
