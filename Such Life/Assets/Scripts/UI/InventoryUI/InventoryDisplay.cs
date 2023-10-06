@@ -11,21 +11,21 @@ public abstract class InventoryDisplay : MonoBehaviour
 {
     [SerializeField] MouseItemData mouseInventoryItem;    
 
-    protected InventorySystem inventorySystem; //inventory that we are trying to display on the UI canvas
-    protected Dictionary<InventorySlot_UI, InventorySlot> slotDictionary; //pair up UI slot with system slot
+    protected IInventorySystem inventorySystem; //inventory that we are trying to display on the UI canvas
+    protected Dictionary<InventorySlot_UI, IInventorySlot> slotDictionary; //pair up UI slot with system slot
 
     //getter
-    public InventorySystem InventorySystem => inventorySystem;
-    public Dictionary<InventorySlot_UI, InventorySlot> SlotDictionary => slotDictionary;
+    public IInventorySystem InventorySystem => inventorySystem;
+    public Dictionary<InventorySlot_UI, IInventorySlot> SlotDictionary => slotDictionary;
 
     protected virtual void Start()
     {
 
     }
 
-    public abstract void AssignSlot(InventorySystem invToDisplay, int offset); //to be implement in child classes
+    public abstract void AssignSlot(IInventorySystem invToDisplay, int offset); //to be implement in child classes
 
-    protected virtual void UpdateSlot(InventorySlot updatedSlot)
+    protected virtual void UpdateSlot(IInventorySlot updatedSlot)
     {
         // Look through every slot in the dictionary
         // key: InventorySlot_UI
@@ -55,7 +55,7 @@ public abstract class InventoryDisplay : MonoBehaviour
         {
             //If player is holding shift key? Split the Stack from inventory slot and 
             //put it into mouse inventory
-            if (playerPressedShift && clickedUISlot.AssignedInventorySlot.SplitStack(out InventorySlot halfStackSlot)) //split stacc
+            if (playerPressedShift && clickedUISlot.AssignedInventorySlot.SplitStack(out IInventorySlot halfStackSlot)) //split stacc
             {
                 mouseInventoryItem.UpdateMouseSlot(halfStackSlot);
                 clickedUISlot.UpdateUISlot();

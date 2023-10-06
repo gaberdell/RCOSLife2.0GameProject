@@ -16,9 +16,10 @@ public class InventorySystem : MonoBehaviour, IInventorySystem
     public List<InventorySlot> InventorySlots => Inventory;
     public int InventorySize => InventorySlots.Count;
 
-
+    //OLD CODE TO RE WRITE : event that activate when we add an item into our inventory 
+    //public UnityAction<InventorySlot> OnInventorySlotChanged;
     //event that activate when we add an item into our inventory 
-    
+
 
     private void OnEnable()
     {

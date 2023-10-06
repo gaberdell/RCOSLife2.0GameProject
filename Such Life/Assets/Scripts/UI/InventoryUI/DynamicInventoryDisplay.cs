@@ -18,13 +18,15 @@ public class DynamicInventoryDisplay : InventoryDisplay
         base.Start();
     }
 
+    private List<IInventorySystem> allInventoriesWeListen;
+
     public void RefreshDynamicInventory(IInventorySystem inventoryToShow, int offset) 
     {
         //clear out slots, update and assign slots 
         ClearSlots();
-        inventorySystem = inventoryToShow;
-        if(inventorySystem != null)
+        if(inventoryToShow != null)
         {
+            allInventoriesWeListen.Add(inventoryToShow);
             inventorySystem.OnInventorySlotChanged += UpdateSlot;
         }
 
