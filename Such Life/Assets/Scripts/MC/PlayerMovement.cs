@@ -69,6 +69,7 @@ public class PlayerMovement : MouseFollow
         rollTime = .4f;
         rollCooldown = 4;
         lastRollUsed = 0 - rollCooldown;
+        radius = 1;
     }
     // Update is called once per frame
     void Update() {
