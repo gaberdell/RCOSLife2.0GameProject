@@ -2,7 +2,8 @@
     "name": "SaveLoadAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:41bf26cae87c1fc4c82ce88ab420d770"
+        "GUID:94251034ecb32dc4ba4d58cdee6b0a40",
+        "GUID:a662fdd05dea99a4e8059e97cf3f5b5e"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
