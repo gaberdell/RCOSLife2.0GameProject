@@ -1,3 +1,16 @@
 {
-	"name": "SlimAssembly"
+    "name": "SlimAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0b24fb5582b561745b67a69c1d05b597"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
