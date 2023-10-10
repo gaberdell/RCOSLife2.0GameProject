@@ -18,12 +18,12 @@ public class Splody : mobBase
         monsterBody.drag = 10f;
         
         target = GameObject.Find("MC").transform;
-        agent = GetComponent<NavMeshAgent>();
-        agent.acceleration = 200;
-        agent.stoppingDistance = 1f;
-        agent.autoBraking = false;
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        navi = GetComponent<NavMeshAgent>();
+        navi.acceleration = 200;
+        navi.stoppingDistance = 1f;
+        navi.autoBraking = false;
+        navi.updateRotation = false;
+        navi.updateUpAxis = false;
 
         currState = State.Wander;
         currPosition = new Vector2(transform.position.x, transform.position.y);
@@ -57,8 +57,8 @@ public class Splody : mobBase
         StateChange();
 
         //monsterBody.MovePosition(currPosition);
-        agent.isStopped = false;
-        agent.acceleration = 200;
+        navi.isStopped = false;
+        navi.acceleration = 200;
         if (currState == State.Chasing)
         {
             spanim.SetBool("Attacking", false);
@@ -124,11 +124,11 @@ public class Splody : mobBase
             spanim.SetBool("Attacking", true);
             chargeExplosion();
         }
-        //If and only if the agent active and is on a NavMesh, it should set the agent's destination.
+        //If and only if the navi active and is on a NavMesh, it should set the navi's destination.
         //
         if (!exploded) {
             //print("This code runs");
-            agent.SetDestination(currPosition);
+            navi.SetDestination(currPosition);
         }
     }
 
@@ -144,7 +144,7 @@ public class Splody : mobBase
         float frame_speed = speed * Time.deltaTime;
         //angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
         //Vector2 conversion = currPosition;
-        //agent.SetDestination(conversion);
+        //navi.SetDestination(conversion);
         currPosition = Vector2.MoveTowards(currPosition,target.position, frame_speed);
         //print("Debug: speed is" + speed);
        // print("Debug: speed per frame is" + frame_speed);
@@ -162,10 +162,10 @@ public class Splody : mobBase
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        agent.isStopped = true;
+        navi.isStopped = true;
         if (collision.gameObject.tag == "Player" && currState == State.Attacking)
         {
-            agent.isStopped = false;
+            navi.isStopped = false;
             //bounce();
         }
     }
@@ -251,7 +251,7 @@ public class Splody : mobBase
     {
         angle = Mathf.Atan2((target.position.y - currPosition.y), (target.position.x - currPosition.x));
         angle *= -1;
-        agent.acceleration = 10;
+        navi.acceleration = 10;
         currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 3 * Mathf.Sin(angle));
     } */
 
