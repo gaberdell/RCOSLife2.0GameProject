@@ -202,13 +202,14 @@ public class Duck : AnimalBase
             }
         }
 
-        // void OnCollisionEnter2D(Collision2D collision)
-        // {
-        //     if (collision.gameObject == food) {
-        //         hunger += 20;
-        //         heal(10);
-        //         Destroy(food);
-        //         food = null;
-        //     }
-        // }
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            base.OnCollisionEnter2D(collision);
+            if (collision.gameObject == food) {
+                hunger += 20;
+                heal(10);
+                Destroy(food);
+                food = null;
+            }
+        }
     }

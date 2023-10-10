@@ -187,7 +187,7 @@ public class AnimalBase : MonoBehaviour
         return null;
     }
        
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         //If it is the player, it gets pushed. Will be changed to other entities in the future
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
@@ -196,7 +196,7 @@ public class AnimalBase : MonoBehaviour
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         if (currState == State.Pushed)
         {
