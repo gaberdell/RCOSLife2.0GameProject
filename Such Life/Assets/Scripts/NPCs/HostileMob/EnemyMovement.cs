@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public SpriteRenderer sprite;
-    public float speed = 0.5f;
-    public Transform Player;
-    public PlayerHP pHP;
-    
-    // Use this for initialization
-    void Start () {
-    }
-    
+    //Private Variables
+    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private float speed = 0.5f;
+    [SerializeField] private Transform Player;
+    [SerializeField] private float damageAmount = 20f;
+
     // Update is called once per frame
-    void Update () {
+    private void Update () {
         Vector3 displacement = Player.position - transform.position;
         displacement = displacement.normalized;
         if (Vector2.Distance (Player.position, transform.position) > 1.0f) {
@@ -23,10 +20,10 @@ public class EnemyMovement : MonoBehaviour
             transform.position += (displacement * speed * Time.deltaTime);
                         
         }
-        else{
+        else {
             Player.position += (displacement);
             sprite.color = Color.red;
-            pHP.decHP(20);
+            EventManager.DealDamage(Player.gameObject, damageAmount);
         }
     }
 

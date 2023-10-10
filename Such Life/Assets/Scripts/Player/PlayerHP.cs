@@ -5,10 +5,19 @@ using UnityEngine;
 public class PlayerHP : MonoBehaviour
 {
 
-    public float maxHP = 100;
+    [SerializeField] private float maxHP = 100;
+
     private float currHP;
 
-    public healthBarScript healthBar;
+    private void OnEnable()
+    {
+        EventManager.onDealDamage += OnDealtDamage;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onDealDamage -= OnDealtDamage;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,16 +26,24 @@ public class PlayerHP : MonoBehaviour
         healthBar.SetMaxHealth(maxHP);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Unity Quick Tip if update isn't needed Remove it, leaving it slows down performance
+
+
+    private bool OnDealtDamage(GameObject isOurObject, float damageAmount)
     {
-        
+        if (isOurObject)
+        {
+            decHP(damageAmount);
+            return true;
+        }
+        return false;
     }
 
 
-    public void decHP(float decAM){
+    private void decHP(float decAM){
+        
         currHP -= decAM;
 
-        healthBar.SetHealth(currHP);
+        EventManager.SetPlayerHealthBar(currHP);
     }
 }

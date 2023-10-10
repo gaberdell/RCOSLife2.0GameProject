@@ -8,7 +8,5 @@ using UnityEngine.Events;
 public interface IInteractable
 {
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
-
-    public void Interact(Interactor interactor, out bool interactionSuccessful);
     public void EndInteraction();
 }

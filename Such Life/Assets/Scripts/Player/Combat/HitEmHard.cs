@@ -13,33 +13,28 @@ public class HitEmHard : MonoBehaviour
 
     public bool animation_go;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        playerControls = new playerAction();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void PerformAttack(InputAction.CallbackContext obj) {
-     //   wparent.Attack();
-    }
-
-
-
-    private void onEnable() {
         playerControls.Player.Enable();
         attack = playerControls.Player.Attack;
         attack.Enable();
         attack.performed += PerformAttack;
     }
 
-    private void onDisable() {
+    private void OnDisable()
+    {
         playerControls.Player.Disable();
         attack.Disable();
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        playerControls = new playerAction();
+    }
+
+
+    private void PerformAttack(InputAction.CallbackContext obj) {
+     //   wparent.Attack();
     }
 }
