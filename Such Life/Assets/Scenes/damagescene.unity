@@ -4381,7 +4381,7 @@ GameObject:
   - component: {fileID: 1015980457}
   - component: {fileID: 1015980456}
   - component: {fileID: 1015980455}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8339,7 +8339,7 @@ PrefabInstance:
       objectReference: {fileID: 322756035}
     - target: {fileID: 7925289063335126091, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: enemies.m_Bits
-      value: 256
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
