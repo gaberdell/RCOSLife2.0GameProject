@@ -20,3 +20,51 @@ public class GreedyGoblin : Goblin
     }
 }
 
+    FastGoblin:
+
+// FastGoblin.cs
+using UnityEngine;
+
+public class FastGoblin : Goblin
+{
+    public FastGoblin()
+    {
+        speed = 8.0f; // Increase the speed
+    }
+}
+
+    TankGoblin:
+
+
+// TankGoblin.cs
+using UnityEngine;
+
+public class TankGoblin : Goblin
+{
+    public TankGoblin()
+    {
+        maxHealth = 200; // Increase the max health
+        damage = 5; // Decrease the damage (but more health)
+    }
+}
+
+    NinjaGoblin:
+
+// NinjaGoblin.cs
+using UnityEngine;
+
+public class NinjaGoblin : Goblin
+{
+    public NinjaGoblin()
+    {
+        attackRange = 2.0f; // Increase the attack range
+        stealAmount = 5; // Decrease the amount of money stolen per action
+        runAwayMoneyThreshold = 20; // Lower the threshold for running away
+    }
+
+    // Override the RunAway method to make NinjaGoblin's escape more unique
+    void RunAway()
+    {
+        // Implement NinjaGoblin's unique running away behavior
+    }
+}

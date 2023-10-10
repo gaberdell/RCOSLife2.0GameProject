@@ -1,38 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-
 public class Goblin : MobBase
 {
-    public int maxHealth = 100; // Maximum health of the Goblin
-    public int currentHealth; // Current health of the Goblin
-    public int damage = 10; // Damage the Goblin deals to the player
-    public float attackRange = 1.5f; // Range at which the Goblin can attack the player
+    public int maxHealth = 100;
+    public int currentHealth;
+    public int damage = 10;
+    public float attackRange = 1.5f;
 
-    public Animator goblinAnimator; // Reference to the Goblin's animator component
-    public SpriteRenderer goblinSpriteRenderer; // Reference to the Goblin's sprite renderer component
+    public GameObject healthBarPrefab; // Prefab for the health bar UI
+    public GameObject combatEffectPrefab; // Prefab for combat effects (e.g., particles)
+    
+    public Transform[] patrolWaypoints; // Waypoints for patrolling
+    public float patrolSpeed = 2.0f;
+    private int currentWaypointIndex = 0;
 
-    public AudioClip stealSound; // Sound effect for stealing money
-    public AudioClip defeatSound; // Sound effect for Goblin's defeat
+    private GameManager gameManager;
 
-    private bool canSteal = true; // Whether the Goblin can steal money
-    public float stealCooldown = 3.0f; // Cooldown between steal actions
-
-    public GameObject lootDropPrefab; // Prefab of the loot to drop when defeated
-
-    public int runAwayMoneyThreshold = 50; // The amount of money at which the Goblin decides to run away
-    private bool isRunningAway = false; // Indicates whether the Goblin is currently running away
-
-    // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth; // Initialize Goblin's health
-        goblinAnimator = GetComponent<Animator>(); // Get the animator component
-        goblinSpriteRenderer = GetComponent<SpriteRenderer>(); // Get the sprite renderer component
-        // Add other initialization code here
+        currentHealth = maxHealth;
+
+        // Instantiate and attach a health bar to the Goblin
+        GameObject healthBarInstance = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);
+        healthBarInstance.transform.SetParent(transform);
+
+        // Get a reference to the GameManager
+        gameManager = FindObjectOfType<GameManager>();
+
+        // Start patrolling if there are waypoints
+        if (patrolWaypoints.Length > 0)
+        {
+            Patrol();
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Implement AI behavior, such as chasing the player, here
@@ -126,6 +127,38 @@ public class Goblin : MobBase
 
         // Set the running away flag to true
         isRunningAway = true;
+    }
+    
+    void Patrol()
+    {
+        if (patrolWaypoints.Length > 0)
+        {
+            Vector3 targetWaypoint = patrolWaypoints[currentWaypointIndex].position;
+            Vector3 moveDirection = (targetWaypoint - transform.position).normalized;
+
+            // Move towards the current waypoint
+            transform.position += moveDirection * patrolSpeed * Time.deltaTime;
+
+            // If Goblin reaches the waypoint, move to the next waypoint
+            if (Vector3.Distance(transform.position, targetWaypoint) < 0.1f)
+            {
+                currentWaypointIndex = (currentWaypointIndex + 1) % patrolWaypoints.Length;
+            }
+        }
+    }
+
+    public void Defeat()
+    {
+        // Play defeat sound effect...
+        
+        // Instantiate combat effects (e.g., particles)
+        Instantiate(combatEffectPrefab, transform.position, Quaternion.identity);
+
+        // Drop randomized loot
+        gameManager.DropRandomLoot(transform.position);
+
+        // Destroy the Goblin game object
+        Destroy(gameObject);
     }
 }
 
