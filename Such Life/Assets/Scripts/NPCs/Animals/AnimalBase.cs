@@ -7,7 +7,7 @@ using UnityEngine.AI;
  * This is the base for all animal AI
  * This class does not implement AI for any specific animal
 */
-public class AnimalBase : MonoBehaviour
+public class AnimalBase : MonoBehaviour, IDamageable
 {   
     //The State and Stats of animal
     public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Pushed } //The different states the animal can be in
@@ -41,6 +41,25 @@ public class AnimalBase : MonoBehaviour
 
     public NavMeshAgent navi; //Hey, Listen!
 
+    private void OnEnable()
+    {
+        EventManager.onDealDamage += dealDamage;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onDealDamage -= dealDamage;
+    }
+
+    private bool dealDamage(GameObject ourGameObject, float amount)
+    {
+        if (ourGameObject == gameObject)
+        {
+            currHP = Mathf.Max(0f, currHP - amount);
+            return true;
+        }
+        return false;  
+    }
 
     //random pos
     public void PositionChange()

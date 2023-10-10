@@ -7,7 +7,7 @@ using System.Linq;
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
 
 [System.Serializable]
-public class InventorySystem : MonoBehaviour, IInventorySystem
+public class InventorySystem : MonoBehaviour
 {
     [SerializeField] private List<InventorySlot> Inventory;
 
@@ -104,4 +104,27 @@ public class InventorySystem : MonoBehaviour, IInventorySystem
         return freeSlot == null ? false : true;
     }
 
+}
+
+[System.Serializable]
+public struct InventorySaveData
+{
+    public InventorySystem InvSystem;
+
+    public Vector3 Position;
+    public Quaternion Rotation;
+
+    public InventorySaveData(InventorySystem _invSystem, Vector3 pos, Quaternion rot)
+    {
+        InvSystem = _invSystem;
+        Position = pos;
+        Rotation = rot;
+    }
+
+    public InventorySaveData(InventorySystem _invSystem)
+    {
+        InvSystem = _invSystem;
+        Position = Vector3.zero;
+        Rotation = Quaternion.identity;
+    }
 }

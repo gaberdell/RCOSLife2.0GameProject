@@ -15,12 +15,15 @@ public class EventManager : MonoBehaviour
 
     public delegate void SetPlayerHealthBarDelegate(float health);
 
-    //Delegates with returns
+    public delegate void SetPlayerWalkSpeedDelegate(float speed);
+
+        //Delegates with returns
 
     public delegate string GetIDDelegate(GameObject gameObjectWithID);
 
     public delegate bool DealDamageDelegate(GameObject objectToDealDamageTo, float damageAmount);
-    
+
+    public delegate float GetWalkSpeedDelegate();
 
     //Make the Event
     public static event CloseInventoryDelegate closeInventoryUIEvent;
@@ -33,9 +36,15 @@ public class EventManager : MonoBehaviour
 
     public static event SetPlayerHealthBarDelegate setPlayerHealthBar;
 
+    public static event SetPlayerWalkSpeedDelegate setPlayerWalkSpeed;
+
+        //Events with returns
+
     public static event GetIDDelegate getID;
 
     public static event DealDamageDelegate onDealDamage;
+
+    public static event GetWalkSpeedDelegate getWalkSpeed;
 
     //Make it so the event can be called
     public static void CloseInventoryUI(bool closePlayerInventory) {
@@ -50,6 +59,11 @@ public class EventManager : MonoBehaviour
     public static void SetPlayerHealthBar(float health) 
     { 
         if (forceIDValidation != null) setPlayerHealthBar(health); 
+    }
+
+    public static void SetPlayerWalkSpeed(float speed)
+    {
+        if (setPlayerWalkSpeed != null) setPlayerWalkSpeed(speed);
     }
 
     public static void SaveGame() { if (onSaveGame != null) onSaveGame(); }
@@ -67,5 +81,11 @@ public class EventManager : MonoBehaviour
     {
         if (onDealDamage != null) return onDealDamage(objectToDealDamageTo, damageAmount);
         else return false;
+    }
+
+    public static float GetPlayerWalkSpeed()
+    {
+        if (getWalkSpeed != null) return getWalkSpeed();
+        else return 0f;
     }
 }

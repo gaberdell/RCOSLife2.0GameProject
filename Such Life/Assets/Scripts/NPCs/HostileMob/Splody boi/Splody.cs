@@ -226,9 +226,9 @@ public class Splody : mobBase
               mob_obj.GetComponent<mobBase>().damageSelf(damage); }
             }
             //samething for an AnimalBase object
-          else if (mob_obj.GetComponent<AnimalBase>()){
+          else if (mob_obj.GetComponent<IDamageable>() != null){
                 //decrease the AnimalBase's HP
-                mob_obj.GetComponent<AnimalBase>().currHP -= damage;
+                EventManager.DealDamage(mob_obj, damage);
           }
         }
             spanim.SetTrigger("IsDead");
@@ -247,24 +247,4 @@ public class Splody : mobBase
             Destroy(gameObject);
         }
     }
-    /*void bounce()
-    {
-        angle = Mathf.Atan2((target.position.y - currPosition.y), (target.position.x - currPosition.x));
-        angle *= -1;
-        agent.acceleration = 10;
-        currPosition = new Vector2(currPosition.x + 2 * Mathf.Cos(angle), currPosition.y + 3 * Mathf.Sin(angle));
-    } */
-
-  /*  void flipSprite(float PosX)
-    {
-        if (currPosition.x > PosX)
-        {
-            MobSprite.flipX = true;
-        }
-        else
-        {
-            MobSprite.flipX = false;
-        }
-    }
-  */
 }

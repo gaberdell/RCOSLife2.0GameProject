@@ -6,43 +6,82 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MouseFollow
 {
-    public Rigidbody2D body;
-    public Animator anim;
-    public Transform interactor; // Shows what user inputted
-    public float walkSpeed;
-    public Vector2 direction;
+    [SerializeField] private Rigidbody2D body;
+    [SerializeField] private Animator anim;
+    [SerializeField] private Transform interactor; // Shows what user inputted
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private Vector2 direction;
 
     private float inputX;
     private float inputY;
 
-    public float teleportDistance;
+    [SerializeField] private float teleportDistance;
 
     //for new input system
     //look in playerControls in input folder to change bindings
-    public playerAction playerControls;
-    private InputAction teleport;
-    private InputAction dash;
-    private InputAction roll;
+    [SerializeField] private playerAction playerControls;
+    [SerializeField] private InputAction teleport;
+    [SerializeField] private InputAction dash;
+    [SerializeField] private InputAction roll;
 
-    public float teleportCooldown; //how long between you can use consecutive teleports (seconds)
-    public float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
-    public float lastTeleportUsed; //Time for last used teleport
+    [SerializeField] private float teleportCooldown; //how long between you can use consecutive teleports (seconds)
+    [SerializeField] private float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
+    private float lastTeleportUsed; //Time for last used teleport
+    
+    [SerializeField] private float dashTime; //how long dash lasts
+    [SerializeField] private float dashSpeed; //how fast the character is when he is dashing
+    [SerializeField] private float dashCooldown; //cooldown for dash
+    private float lastDashUsed; //Time for last used dash
+    
+    [SerializeField] private float rollTime; //same variables as dash but for roll
+    [SerializeField] private float rollSpeed;
+    [SerializeField] private float rollCooldown;
+    private float lastRollUsed;
+    
+    private bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
+    private bool canMove; //whether or not you can move, ex if you are stunned or after you tp
 
-    public float dashTime; //how long dash lasts
-    public float dashSpeed; //how fast the character is when he is dashing
-    public float dashCooldown; //cooldown for dash
-    public float lastDashUsed; //Time for last used dash
+    private void OnEnable()
+    {
+        playerControls.Player.Enable();
 
-    public float rollTime; //same variables as dash but for roll
-    public float rollSpeed;
-    public float rollCooldown;
-    public float lastRollUsed;
+        teleport = playerControls.Player.Teleport;
+        teleport.Enable();
+        teleport.performed += TeleportFunct;
 
-    public bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
-    public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
+        dash = playerControls.Player.Dash;
+        dash.Enable();
+        dash.performed += DashFunct;
 
+        roll = playerControls.Player.Roll;
+        roll.Enable();
+        roll.performed += RollFunct;
 
+        EventManager.setPlayerWalkSpeed += SetWalkSpeed;
+        EventManager.getWalkSpeed += GetWalkSpeed;
+    }
+    private void OnDisable()
+    {
+        playerControls.Player.Disable();
+        teleport.Disable();
+        dash.Disable();
 
+        teleport.performed -= TeleportFunct;
+        dash.performed -= DashFunct;
+        roll.performed -= RollFunct;
+    }
+
+    //Helper variable functions
+    private void SetWalkSpeed(float newWalkSpeed)
+    {
+        walkSpeed = newWalkSpeed;
+    }
+    private float GetWalkSpeed()
+    {
+        return walkSpeed;
+    }
+
+    //MonoBehavior functions
     void Awake()
     {
         walkSpeed = 2;
@@ -223,27 +262,7 @@ public class PlayerMovement : MouseFollow
         }
     }
     
-    private void OnEnable(){
-        playerControls.Player.Enable();
 
-        teleport = playerControls.Player.Teleport;
-        teleport.Enable();
-        teleport.performed += TeleportFunct;
-
-        dash = playerControls.Player.Dash;
-        dash.Enable();
-        dash.performed += DashFunct;
-
-        roll = playerControls.Player.Roll;
-        roll.Enable();
-        roll.performed += RollFunct;
-    }
-    private void OnDisable(){
-        playerControls.Player.Disable();
-        teleport.Disable();
-        dash.Disable();
-
-    }
 
     //combat movement functions
 
@@ -320,4 +339,5 @@ public class PlayerMovement : MouseFollow
             Debug.Log("Cannot roll: roll is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
         }
     }
+
 }
