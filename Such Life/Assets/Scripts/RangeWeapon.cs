@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-public class MeleeWeapon : MonoBehaviour
+public class RangeWeapon : MonoBehaviour
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common
@@ -15,6 +14,11 @@ public class MeleeWeapon : MonoBehaviour
         // need to be declared in archetype structure
         [SerializeField] int Durability;
         [SerializeField] float AttackMovesSpeed; //Number of attacks per second
+
+    [SerializeField] int Pierce; //numEnemiesCanHit
+    [SerializeField] float FiringRate; //Rounds per minute
+    [SerializeField] int Capacity; //amount of projectile you can shoot before having to go through reload animation
+    [SerializeField] int ReloadSpeed; //time it takes to replace the current “mag” with a new one
 
     //[SerializeField] int Range; //Number of tiles that the weapon can hit
     //[SerializeField] float Damage; //Amount of damage weapon is dealing
