@@ -40,10 +40,7 @@ public class PlayerMovement : MouseFollow
     public bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
     public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
     
-    
-    public GameObject attackPoint;
-    public float radius;
-    public LayerMask enemies;
+
 
 
     void Awake()
@@ -69,7 +66,6 @@ public class PlayerMovement : MouseFollow
         rollTime = .4f;
         rollCooldown = 4;
         lastRollUsed = 0 - rollCooldown;
-        radius = 1;
     }
     // Update is called once per frame
     void Update() {
@@ -173,8 +169,6 @@ public class PlayerMovement : MouseFollow
 
         
         
-        
-        
 
         //Tracks what user is inputting.
         if (inputX == 0 && inputY > 0) /*N*/ {
@@ -207,27 +201,6 @@ public class PlayerMovement : MouseFollow
         {
             canMove = true;
         }
-        if(Input.GetMouseButtonDown(0)){
-            anim.SetBool("Attack", true);
-        }
-    }
-
-    public void endAttack(){
-        anim.SetBool("Attack", false);
-    }
-    
-    public void attack()
-    {
-        Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position,radius,enemies);
-        foreach (Collider2D enemyGameObject in enemy){
-            Debug.Log("Hit an Enemy");
-            enemyGameObject.GetComponent<EnemyHealth>().health -= 10;
-        }
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(attackPoint.transform.position, radius);
     }
         
     void FixedUpdate() {
