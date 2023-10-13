@@ -191,11 +191,8 @@ public class Duck : AnimalBase
                     //How the duck follows the player
                     else if (currState == State.Following)
                     {
-                        newposition.x = player.transform.position.x;
-                        newposition.y = player.transform.position.y;
                         navi.speed = walkspeed;
-                        navi.SetDestination(newposition);
-                        flipSprite();
+                        moveTo(player.transform.position);
                     }
                     position = transform.position;
                 }
@@ -206,10 +203,13 @@ public class Duck : AnimalBase
         {
             base.OnCollisionEnter2D(collision);
             if (collision.gameObject == food) {
+                currState = State.Eating;
                 hunger += 20;
                 heal(10);
                 Destroy(food);
                 food = null;
+                moveTo(transform.position);
+                currState = State.Idling;
             }
         }
     }

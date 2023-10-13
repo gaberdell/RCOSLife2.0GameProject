@@ -54,9 +54,11 @@ public class Wolf : AnimalBase
             aniSprite.flipY = dead;
         }
         // Need to use an event that gets triggered when the player attacks it
-        // if (currHP < HPCap) {
-        //     Follow();
-        // }
+        if (currHP < HPCap) {
+            List<GameObject> pack = findGroup("Wolf");
+            print(pack.Count);
+            // Follow();
+        }
 
         time = time + 1f * Time.deltaTime;
         if (time >= timeDelay) {
@@ -86,9 +88,11 @@ public class Wolf : AnimalBase
             //If the hunger is less than or equal to 30, it starts looking for food
             if (hunger <= 30)
             {
-                navi.speed = walkspeed / 2;
+                navi.speed = runspeed;
+                currState = State.Running;
                 LookForFood(foodtypes);
             }
+            
             //
             //If the hunger is 0, it starts dying
             if (hunger <= 0)
@@ -122,6 +126,7 @@ public class Wolf : AnimalBase
         base.OnCollisionEnter2D(collision);
         // Try to eat non-null food and stop moving
         if (collision.gameObject == food) {
+            currState = State.Eating;
             hunger += 50;
             heal(20);
             Destroy(food);

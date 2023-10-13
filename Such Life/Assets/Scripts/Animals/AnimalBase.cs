@@ -186,6 +186,27 @@ public class AnimalBase : MonoBehaviour
 
         return null;
     }
+
+    public List<GameObject> findGroup(string tag) {
+        GameObject[] group;
+        // Find all nearby animals of same tag within the awareness distance
+        //When no object with the tag is found, Unity returns an Error
+        try {
+            group = GameObject.FindGameObjectsWithTag(tag);
+        } catch {
+            group = new GameObject[0];
+        }
+
+        List<GameObject> nearby = new List<GameObject>();
+        foreach (GameObject obj in group) {
+            Vector2 diff = (Vector2) obj.transform.position - position;
+            if (diff.sqrMagnitude <= awareness * awareness) {
+                nearby.Add(obj);
+            }
+        }
+
+        return nearby;
+    }
        
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -220,12 +241,17 @@ public class AnimalBase : MonoBehaviour
     public void LookForFood(List<string> foods) {
         float currentclosest = Mathf.Infinity;
         foreach(var thing in foods) {
-            food = findClosestObj(thing);
-            if (food && getDistance(food) < currentclosest) {
-                currentclosest = getDistance(food);
+            GameObject target = findClosestObj(thing);
+            if (target && getDistance(target) < currentclosest) {
+                currentclosest = getDistance(target);
+                food = target;
             }
         }
-        newposition = food.transform.position;
-        moveTo(newposition);
+        if (food) {
+            newposition = food.transform.position;
+            moveTo(newposition);
+        } else {
+            currState = State.Idling;
+        }
     }
 }
