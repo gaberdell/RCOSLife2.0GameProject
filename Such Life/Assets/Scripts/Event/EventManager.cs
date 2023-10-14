@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour
 
     public delegate void UpdateInventorySlotDelegate(IInventorySystem inventorySystem, IInventorySlot inventorySlot);
 
-    public delegate void OnSaveGameDelegate();
+    public delegate void OnDataLoadedDelegate(SaveData saveData);
     public delegate void OnRemoveDataDelegate();
     public delegate void ForceIDValidiationDelegate();
 
@@ -17,8 +17,10 @@ public class EventManager : MonoBehaviour
 
     public delegate void SetPlayerWalkSpeedDelegate(float speed);
 
-        //Delegates with returns
+    //Delegates with returns
 
+    public delegate bool OnSaveGameDelegate(SaveData saveData);
+    public delegate SaveData OnLoadGameDelegate();
     public delegate string GetIDDelegate(GameObject gameObjectWithID);
 
     public delegate bool DealDamageDelegate(GameObject objectToDealDamageTo, float damageAmount);
@@ -30,8 +32,10 @@ public class EventManager : MonoBehaviour
 
     public static event UpdateInventorySlotDelegate updateInventorySlot;
 
+    public static event OnDataLoadedDelegate onGameLoaded;
     public static event OnSaveGameDelegate onSaveGame;
     public static event OnRemoveDataDelegate onDeleteData;
+    public static event OnLoadGameDelegate onLoadGame;
     public static event ForceIDValidiationDelegate forceIDValidation;
 
     public static event SetPlayerHealthBarDelegate setPlayerHealthBar;
@@ -66,10 +70,24 @@ public class EventManager : MonoBehaviour
         if (setPlayerWalkSpeed != null) setPlayerWalkSpeed(speed);
     }
 
-    public static void SaveGame() { if (onSaveGame != null) onSaveGame(); }
+    public static void GameLoaded(SaveData loadedData)
+    {
+        if (onGameLoaded != null) onGameLoaded(loadedData);
+    }
+
     public static void DeleteData() { if (onDeleteData != null) onDeleteData(); }
     public static void ForceIDValidation() { if (forceIDValidation != null) forceIDValidation(); }
-    
+
+    public static bool SaveGame(SaveData saveData)
+    {
+        if (onSaveGame != null) return onSaveGame(saveData);
+        else return false;
+    }
+    public static SaveData LoadData()
+    {
+        if (onLoadGame != null) return onLoadGame();
+        else return null;
+    }
 
     public static string GetID(GameObject gameObjectWithID)
     {

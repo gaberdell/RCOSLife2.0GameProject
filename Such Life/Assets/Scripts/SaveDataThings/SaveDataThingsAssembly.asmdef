@@ -1,8 +1,10 @@
 {
-    "name": "EditorAssembly",
+    "name": "SaveDataThingsAssembly",
     "rootNamespace": "",
     "references": [
-        "SaveLoadAssembly"
+        "GUID:9b89040f0455afc4a9caddd5b1e6e8ad",
+        "GUID:f2d0d46beb1433e4e862b0a8e9af5d46",
+        "GUID:94251034ecb32dc4ba4d58cdee6b0a40"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

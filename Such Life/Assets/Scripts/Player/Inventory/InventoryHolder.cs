@@ -26,7 +26,7 @@ public abstract class InventoryHolder : MonoBehaviour
 
     protected virtual void Awake()
     {
-        SaveLoad.onLoadGame += LoadInventory;
+        EventManager.onGameLoaded += LoadInventory;
 
         primaryInvSystem = new InventorySystem(inventorySize); 
     }

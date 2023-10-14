@@ -5,49 +5,58 @@ using UnityEngine;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials!*/
 
-/*Alright so this script is what most others scrips go through
- when they have to save or load. Think of it like the save 
- load api for the game!
- *NOTE: it has some help from SaveLoad and SaveData */
+/* Due note go through the EventManager when saving and loading
+ * but this is the main thing that it calls to help due its stuff
+ * like when they have to save or load. Think of it like the save 
+ * load api for the game!
+ * 
+ * (Note other scripts can go through it but its not recomeneded)
+ * NOTE: it has some help from SaveLoad and SaveData */
 public class SaveGameManager : MonoBehaviour
 {
-    public static SaveData data;
+    //We have a local data save so we only have to load data once then
+    //use this local copy as opposed to keep on loading from a json file
+    public static SaveData dataSingleton;
 
     private void Awake()
     {
-        data = new SaveData();
-        SaveLoad.onLoadGame += LoadData;     
+        dataSingleton = new SaveData();
+        dataSingleton = SaveLoad.Load();
     }
 
     private void OnEnable()
     {
-        EventManager.onSaveGame += SaveData;
+        EventManager.onSaveGame += SaveGame;
         EventManager.onDeleteData += DeleteData;
+        EventManager.onLoadGame += LoadData;
     }
 
     private void OnDisable()
     {
-        EventManager.onSaveGame -= SaveData;
+        EventManager.onSaveGame -= SaveGame;
         EventManager.onDeleteData -= DeleteData;
+        EventManager.onLoadGame -= LoadData;
     }
 
     public void DeleteData()
     {
         SaveLoad.DeleteSaveData();
+        dataSingleton = new SaveData();
     }
-
-    private static void SaveData()
+    private static bool SaveGame(SaveData saveData)
     {
-        var saveData = data;
-        SaveLoad.Save(saveData);
+        dataSingleton = saveData;
+        return SaveLoad.Save(saveData);
     }
-    public static void LoadData(SaveData _data)
+    private static SaveData LoadData()
     {
-        data = _data;
+        return dataSingleton;
     }
-
-    public static void TryLoadData()
+    
+    //Probably will go unused if you want to grab the data from the
+    //JSON file idk why you want to do that tho
+    private static SaveData HardLoadData()
     {
-        SaveLoad.Load();
+        return SaveLoad.Load();
     }
 }

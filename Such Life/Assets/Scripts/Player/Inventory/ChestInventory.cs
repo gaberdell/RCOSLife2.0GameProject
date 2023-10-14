@@ -8,7 +8,6 @@ using UnityEngine.UI;
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with slight modification */
 
 
-[RequireComponent(typeof(UniqueID))]
 public class ChestInventory : InventoryHolder, IInteractable
 {
     public GameObject DynTextObject;
@@ -23,22 +22,24 @@ public class ChestInventory : InventoryHolder, IInteractable
     protected override void Awake()
     {
         base.Awake();
-        SaveLoad.onLoadGame += LoadInventory;
+        
     }
 
     private void OnEnable()
     {
+        EventManager.onGameLoaded += LoadInventory;
         EventManager.closeInventoryUIEvent += CloseChest;
     }
 
     private void OnDisable()
     {
+        EventManager.onGameLoaded -= LoadInventory;
         EventManager.closeInventoryUIEvent -= CloseChest;
     }
 
     private void Start()
     {
-        var chestSaveData = new InventorySaveData(primaryInvSystem, transform.position, transform.rotation);
+        SavableSlot[] chestSaveData = primaryInvSystem.ToSavabaleSlots();
         SaveGameManager.data.chestDictionaryData.Add(EventManager.GetID(gameObject), chestSaveData);
         localRenderer = spriteChild.GetComponent<SpriteRenderer>();
 
@@ -49,16 +50,14 @@ public class ChestInventory : InventoryHolder, IInteractable
     {
         // Check the save data for this specific chest inventory, and if its exist, load it
         //Maybe add in the chest manager of some sort to load all of the chest in the chest dictionary into the world 
-        if (data.chestDictionaryData.TryGetValue(EventManager.GetID(gameObject), out InventorySaveData chestData))
+        if (data.savedSlots.TryGetValue(EventManager.GetID(gameObject), out InventoryItemData[] chestSlots))
         {
             //Inherits these from InventoryHolder
             primaryInvSystem = chestData.InvSystem;
-            transform.position = chestData.Position;
-            transform.rotation = chestData.Rotation;
         }
     }
 
-    public void Interact(Interactor interactor, out bool interactSuccessful)
+    public void Interact(out bool interactSuccessful)
     {
         // if any is listening out on this event (hence the ?), if yes, invoke it
         if (isOpen == false)

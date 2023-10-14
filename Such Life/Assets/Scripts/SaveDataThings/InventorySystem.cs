@@ -106,18 +106,7 @@ public class InventorySystem : MonoBehaviour
         return freeSlot == null ? false : true;
     }
 
-    public SavableSlot[] ToSavabaleSlots()
-    {
-        SavableSlot[] returnArray = new SavableSlot[InventorySlots.Count];
-
-        for (int i = 0; i < InventorySlots.Count; i++)
-        {
-            returnArray[i].amount = InventorySlots[i].StackSize;
-            returnArray[i].itemData = InventorySlots[i].ItemData;
-        }
-
-        return returnArray;
-    }
+    public SavableSlot[]
 
 }
 

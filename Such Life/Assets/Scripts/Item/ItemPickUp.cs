@@ -59,7 +59,7 @@ public class ItemPickUp : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //adjust this function slightly when start to implement player and chest inventory
-        var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
+        /*var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
         var chest = other.transform.GetComponent<ChestInventory>();
         if ((!inventory && !chest) || (freeze)) return;
         if(chest){
@@ -74,7 +74,7 @@ public class ItemPickUp : MonoBehaviour
                 SaveGameManager.data.collectedItems.Add(id);
                 Destroy(this.gameObject);
             }
-        }
+        }*/
     }
 
     void Update()

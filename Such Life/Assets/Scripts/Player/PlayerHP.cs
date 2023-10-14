@@ -23,7 +23,7 @@ public class PlayerHP : MonoBehaviour
     void Start()
     {
         currHP = maxHP;
-        healthBar.SetMaxHealth(maxHP);
+        EventManager.SetPlayerHealthBar(maxHP);
     }
 
     // Unity Quick Tip if update isn't needed Remove it, leaving it slows down performance

@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IInventorySystem
 {
     public void OnInventorySlotChanged(IInventorySystem inventorySystem, IInventorySlot inventorySlot);
-    public int InventorySize { get; set; }
-    public List<IInventorySlot> InventorySlots { get; set; }
+    public int InventorySize { get;}
+    public List<IInventorySlot> InventorySlots { get;}
 }

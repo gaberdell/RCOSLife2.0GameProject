@@ -76,7 +76,7 @@ public class Interactor : MonoBehaviour
 
     void StartInteraction(IInteractable interactable)
     {
-        interactable.Interact(this, out bool interactSuccessful);
+        interactable.Interact(out bool interactSuccessful);
         // this bool will disable movement when player interact with interactable object/s 
         //in the player movement script (Not implement yet)
         IsInteracting = true;
