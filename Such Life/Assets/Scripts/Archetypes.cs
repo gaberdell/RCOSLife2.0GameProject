@@ -1,9 +1,11 @@
 
-public readonly struct Melee
+public class Light
 {
-    int Durability;
-    string Archetype;
-    float AttackMovesSpeed;
+    int Durability = 150;
 }
 
+public class Heavy
+{
+    int Durability = 200;
+}
 

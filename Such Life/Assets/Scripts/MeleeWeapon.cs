@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class MeleeWeapon : MonoBehaviour
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
