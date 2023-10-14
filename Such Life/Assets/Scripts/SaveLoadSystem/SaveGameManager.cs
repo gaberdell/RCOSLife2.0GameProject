@@ -38,7 +38,12 @@ public class SaveGameManager : MonoBehaviour
         EventManager.onLoadGame -= LoadData;
     }
 
-    public void DeleteData()
+    private void SoftSaveSlot(string ID, SavableSlot[] slots)
+    {
+        dataSingleton.savedSlots.Add(ID, slots);
+    }
+
+    private void DeleteData()
     {
         SaveLoad.DeleteSaveData();
         dataSingleton = new SaveData();
