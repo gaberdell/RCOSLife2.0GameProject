@@ -40,7 +40,7 @@ public class ChestInventory : InventoryHolder, IInteractable
     private void Start()
     {
         SavableSlot[] chestSaveData = primaryInvSystem.ToSavabaleSlots();
-        SaveGameManager.data.chestDictionaryData.Add(EventManager.GetID(gameObject), chestSaveData);
+        EventManager.SoftSave(EventManager.GetID(gameObject), chestSaveData);
         localRenderer = spriteChild.GetComponent<SpriteRenderer>();
 
         DynText = DynTextObject.GetComponent<Text>();
@@ -50,10 +50,10 @@ public class ChestInventory : InventoryHolder, IInteractable
     {
         // Check the save data for this specific chest inventory, and if its exist, load it
         //Maybe add in the chest manager of some sort to load all of the chest in the chest dictionary into the world 
-        if (data.savedSlots.TryGetValue(EventManager.GetID(gameObject), out InventoryItemData[] chestSlots))
+        if (data.savedSlots.TryGetValue(EventManager.GetID(gameObject), out SavableSlot[] chestSlots))
         {
             //Inherits these from InventoryHolder
-            primaryInvSystem = chestData.InvSystem;
+            primaryInvSystem.WriteInSavableSlots(chestSlots);
         }
     }
 

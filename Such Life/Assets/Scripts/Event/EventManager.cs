@@ -9,9 +9,12 @@ public class EventManager : MonoBehaviour
 
     public delegate void UpdateInventorySlotDelegate(IInventorySystem inventorySystem, IInventorySlot inventorySlot);
 
+    public delegate void RemoveSpecificDataDelegate(string ID, bool isSavableObjects);
+    public delegate void SoftSaveDataDelegate(string ID, SavableSlot[] slots);
+    public delegate void SoftSaveItemDelegate(string ID, ItemPickUpSaveData slots);
     public delegate void OnDataLoadedDelegate(SaveData saveData);
     public delegate void OnRemoveDataDelegate();
-    public delegate void ForceIDValidiationDelegate();
+    public delegate void ForceIDValidiationDelegate(GameObject gameObjectWithID);
 
     public delegate void SetPlayerHealthBarDelegate(float health);
 
@@ -19,6 +22,7 @@ public class EventManager : MonoBehaviour
 
     //Delegates with returns
 
+    public delegate bool ContainSpecificDataDelegate(string ID, bool isSavableObjects);
     public delegate bool OnSaveGameDelegate(SaveData saveData);
     public delegate SaveData OnLoadGameDelegate();
     public delegate string GetIDDelegate(GameObject gameObjectWithID);
@@ -32,6 +36,10 @@ public class EventManager : MonoBehaviour
 
     public static event UpdateInventorySlotDelegate updateInventorySlot;
 
+    public static event ContainSpecificDataDelegate onContainSpecificData;
+    public static event RemoveSpecificDataDelegate onRemoveSpecificData;
+    public static event SoftSaveDataDelegate onSoftSaveData;
+    public static event SoftSaveItemDelegate onSoftSaveItem;
     public static event OnDataLoadedDelegate onGameLoaded;
     public static event OnSaveGameDelegate onSaveGame;
     public static event OnRemoveDataDelegate onDeleteData;
@@ -75,9 +83,33 @@ public class EventManager : MonoBehaviour
         if (onGameLoaded != null) onGameLoaded(loadedData);
     }
 
-    public static void DeleteData() { if (onDeleteData != null) onDeleteData(); }
-    public static void ForceIDValidation() { if (forceIDValidation != null) forceIDValidation(); }
+    public static void SoftSave(string ID, SavableSlot[] slots)
+    {
+        if (onSoftSaveData != null) onSoftSaveData(ID, slots);
+    }
 
+    public static void SoftSaveItem(string ID, ItemPickUpSaveData item)
+    {
+        if (onSoftSaveItem != null) onSoftSaveItem(ID, item);
+    }
+
+    public static void RemoveSpecificData(string ID, bool isObjectsToSave = false)
+    {
+        if (onRemoveSpecificData != null) onRemoveSpecificData(ID, isObjectsToSave);
+    }
+
+    public static void ForceIDValidation(GameObject gameObjectWithID)
+    {
+        if (forceIDValidation != null) forceIDValidation(gameObjectWithID);
+    }
+
+    public static void DeleteData() { if (onDeleteData != null) onDeleteData(); }
+
+    public static bool ContainSpecificData(string ID, bool isObjectsToSave = false)
+    {
+        if (onContainSpecificData != null) return onContainSpecificData(ID, isObjectsToSave);
+        else return false;
+    }
     public static bool SaveGame(SaveData saveData)
     {
         if (onSaveGame != null) return onSaveGame(saveData);

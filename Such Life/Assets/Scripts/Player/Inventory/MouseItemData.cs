@@ -64,7 +64,7 @@ public class MouseItemData : MonoBehaviour
     }
 
     private void Instanter(InventorySlot AssignedInventorySlot, Vector3 newPos){
-        AssignedInventorySlot.ItemData.ItemPrefab.GetComponent<UniqueID>().forceValidate();
+        EventManager.ForceIDValidation(AssignedInventorySlot.ItemData.ItemPrefab);
         GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
         Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
         secret_collider.enabled = false;

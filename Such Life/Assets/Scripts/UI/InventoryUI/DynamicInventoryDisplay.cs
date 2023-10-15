@@ -18,9 +18,9 @@ public class DynamicInventoryDisplay : InventoryDisplay
         base.Start();
     }
 
-    private List<IInventorySystem> allInventoriesWeListen;
+    private List<InventorySystem> allInventoriesWeListen;
 
-    public void RefreshDynamicInventory(IInventorySystem inventoryToShow, int offset) 
+    public void RefreshDynamicInventory(InventorySystem inventoryToShow, int offset) 
     {
         //clear out slots, update and assign slots 
         ClearSlots();
@@ -33,9 +33,9 @@ public class DynamicInventoryDisplay : InventoryDisplay
         AssignSlot(inventoryToShow, offset);
     }
 
-    public override void AssignSlot(IInventorySystem inventoryToShow, int offset)
+    public override void AssignSlot(InventorySystem inventoryToShow, int offset)
     {
-        slotDictionary = new Dictionary<InventorySlot_UI, IInventorySlot>();
+        slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
 
         //prevent accessing null object (NullException Error)
         if(inventoryToShow == null)

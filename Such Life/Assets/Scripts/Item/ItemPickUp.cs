@@ -21,9 +21,8 @@ public class ItemPickUp : MonoBehaviour
 
     private void Awake()
     {
-        id = GetComponent<UniqueID>().ID;
+        
         itemSaveData = new ItemPickUpSaveData(ItemData, transform.position, transform.rotation);
-        SaveLoad.onLoadGame += LoadGame;
         
         myCollider = GetComponent<CircleCollider2D>();
         myCollider.isTrigger = true;
@@ -34,9 +33,20 @@ public class ItemPickUp : MonoBehaviour
         freezecount = freezetime;
     }
 
+    private void OnEnable()
+    {
+
+        EventManager.onGameLoaded += LoadGame;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onGameLoaded -= LoadGame;
+    }
+
     private void LoadGame(SaveData data)
     {
-        if (data.collectedItems.Contains(id))
+        if (data.savedSlots.ContainsKey(id))
         {
             Destroy(this.gameObject);
         }
@@ -44,16 +54,16 @@ public class ItemPickUp : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (SaveGameManager.data.activeItems.ContainsKey(id))
+        if (EventManager.ContainSpecificData(id, true))
         {
-            SaveGameManager.data.activeItems.Remove(id);
+            EventManager.RemoveSpecificData(id, true);
         }
-        SaveLoad.onLoadGame -= LoadGame;
     }
 
     private void Start()
     {
-        SaveGameManager.data.activeItems.Add(id, itemSaveData);
+        id = EventManager.GetID(gameObject);
+        EventManager.SoftSaveItem(id, itemSaveData);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

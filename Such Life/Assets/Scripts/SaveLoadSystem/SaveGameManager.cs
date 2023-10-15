@@ -26,23 +26,41 @@ public class SaveGameManager : MonoBehaviour
 
     private void OnEnable()
     {
+        EventManager.onContainSpecificData += DoesHaveSpecificID;
+        EventManager.onSoftSaveItem += SoftSaveItem;
+        EventManager.onSoftSaveData += SoftSaveSlot;
         EventManager.onSaveGame += SaveGame;
+
         EventManager.onDeleteData += DeleteData;
+        EventManager.onRemoveSpecificData += RemoveSpecificID;
+
         EventManager.onLoadGame += LoadData;
     }
 
     private void OnDisable()
     {
+        EventManager.onContainSpecificData -= DoesHaveSpecificID;
+        EventManager.onSoftSaveItem -= SoftSaveItem;
+        EventManager.onSoftSaveData -= SoftSaveSlot;
         EventManager.onSaveGame -= SaveGame;
+
         EventManager.onDeleteData -= DeleteData;
+        EventManager.onRemoveSpecificData -= RemoveSpecificID;
+
         EventManager.onLoadGame -= LoadData;
     }
 
+    //Soft saving is where we just add data to the local
+    //save file without writing it to json saving time!
     private void SoftSaveSlot(string ID, SavableSlot[] slots)
     {
         dataSingleton.savedSlots.Add(ID, slots);
     }
 
+    private void SoftSaveItem(string ID, ItemPickUpSaveData item)
+    {
+        dataSingleton.objectsToSave.Add(ID, item);
+    }
     private void DeleteData()
     {
         SaveLoad.DeleteSaveData();
@@ -64,4 +82,30 @@ public class SaveGameManager : MonoBehaviour
     {
         return SaveLoad.Load();
     }
+
+    private bool DoesHaveSpecificID(string ID, bool isObjectsToSave = false)
+    {
+        if (isObjectsToSave)
+        {
+            return dataSingleton.objectsToSave.ContainsKey(ID);
+        }
+        else
+        {
+            return dataSingleton.savedSlots.ContainsKey(ID);
+        }
+    }
+
+
+    private void RemoveSpecificID(string ID, bool isObjectsToSave = false)
+    {
+        if (isObjectsToSave)
+        {
+            dataSingleton.objectsToSave.Remove(ID);
+        }
+        else
+        {
+            dataSingleton.savedSlots.Remove(ID);
+        }
+    }
+
 }

@@ -15,23 +15,14 @@ public class InventorySystem : MonoBehaviour
     //Inventory getter
     public List<InventorySlot> InventorySlots => Inventory;
 
+    public UnityAction<InventorySlot> OnInventorySlotChanged;
+
     public int InventorySize { get => InventorySlots.Count; }
     //public int InventorySize {return InventorySlots.Count; };
 
     //OLD CODE TO RE WRITE : event that activate when we add an item into our inventory 
     //public UnityAction<InventorySlot> OnInventorySlotChanged;
     //event that activate when we add an item into our inventory 
-
-
-    private void OnEnable()
-    {
-        EventManager.updateInventorySlot += OnInventorySlotChanged;
-    }
-
-    private void OnDisable()
-    {
-        EventManager.updateInventorySlot -= OnInventorySlotChanged;
-    }
 
     /* Constructor */
     public InventorySystem(int size)
@@ -47,14 +38,6 @@ public class InventorySystem : MonoBehaviour
     }
 
 
-    public void OnInventorySlotChanged(IInventorySystem inventorySystem, IInventorySlot inventorySlot)
-    {
-        if ( inventorySystem == (IInventorySlot) this)
-        {
-            Debug.Log("Sussus Mongus");
-        }
-    }
-
     public bool AddToInventory(InventoryItemData itemToAdd, int amountToAdd)
     {
         //if item exist in inventory
@@ -67,7 +50,7 @@ public class InventorySystem : MonoBehaviour
                 if (emptySlot.IsEnoughSpaceInStack(amountToAdd))
                 {
                     emptySlot.AddToStack(amountToAdd);
-                    //OnInventorySlotChanged?.Invoke(emptySlot);
+                    OnInventorySlotChanged?.Invoke(emptySlot);
                     //EventManager.UpdateInventorySlot(this, emptySlot);
                     return true;
                 }
@@ -81,7 +64,7 @@ public class InventorySystem : MonoBehaviour
             {
                 //add item into available slot
                 freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
-                //OnInventorySlotChanged?.Invoke(freeSlot);
+                OnInventorySlotChanged?.Invoke(freeSlot);
                 //EventManager.UpdateInventorySlot(this, freeSlot);
                 return true;
             }
@@ -119,6 +102,13 @@ public class InventorySystem : MonoBehaviour
         return returnArray;
     }
 
+    public void WriteInSavableSlots(SavableSlot[] savableSlots)
+    {
+        for (int i = 0; i < InventorySlots.Count; i++)
+        {
+            InventorySlots[i].UpdateInventorySlot(savableSlots[i].itemData, savableSlots[i].amount);
+        }
+    }
 }
 
 [System.Serializable]

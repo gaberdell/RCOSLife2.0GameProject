@@ -37,7 +37,9 @@ public class UniqueID : MonoBehaviour
         return null;
     }
 
-    private void forceValidate(){
+    private void forceValidate(GameObject isOurGameObject)
+    {
+        if (isOurGameObject == gameObject)
         OnValidate();
     }
 

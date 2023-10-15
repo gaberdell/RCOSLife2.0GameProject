@@ -11,11 +11,11 @@ using UnityEngine;
  */
 public class SaveData
 {
-    public List<GameObject> objectsToSave;
+    public SerializableDictionary<string, ItemPickUpSaveData> objectsToSave;
     public SerializableDictionary<string, SavableSlot[]> savedSlots;
     public SaveData()
     {
-        objectsToSave = new List<GameObject>();
+        objectsToSave = new SerializableDictionary<string, ItemPickUpSaveData>();
         savedSlots = new SerializableDictionary<string, SavableSlot[]>();
     }
 }

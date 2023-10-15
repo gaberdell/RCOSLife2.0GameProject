@@ -10,13 +10,14 @@ public class PlayerInventoryHolder : InventoryHolder
 {
     public static UnityAction OnPlayerInventoryChanged;
     public playerAction playerControl;
-
+    private string playerChestID;
 
     public static UnityAction<InventorySystem, int> OnPlayerInventoryDisplayRequested;
 
     private void Start()
     {
-        SaveGameManager.data.playerInventory = new InventorySaveData(primaryInvSystem);
+        playerChestID = EventManager.GetID(gameObject);
+        EventManager.SoftSave(playerChestID, primaryInvSystem.ToSavabaleSlots());
     }
 
 
@@ -39,9 +40,9 @@ public class PlayerInventoryHolder : InventoryHolder
     protected override void LoadInventory(SaveData data)
     {
         // Check the save data for player's inventory
-        if (data.playerInventory.InvSystem != null)
+        if (data.savedSlots.TryGetValue(playerChestID, out SavableSlot[] inventorySlots))
         {
-            this.primaryInvSystem = data.playerInventory.InvSystem;
+            primaryInvSystem.WriteInSavableSlots(inventorySlots);
             OnPlayerInventoryChanged?.Invoke();
         }
     }
