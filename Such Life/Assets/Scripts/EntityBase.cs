@@ -17,6 +17,10 @@ public abstract class EntityBase : MonoBehaviour
     public NavMeshAgent navi; //Hey, Listen!
     public SpriteRenderer Sprite;
     public playerAction playerControl; //Allows player to interact with entity
+    public int maxHealth; //the total health of an entity
+    public int currHealth; //current health
+    public float speed;
+    public int damage; //damage that a enemy make in fighting
 
     //random pos
     public virtual void PositionChange()
@@ -100,6 +104,25 @@ public abstract class EntityBase : MonoBehaviour
         catch
         {
             return null;
+        }
+    }
+    //This function returns the value of the current amount of HP the Animal has
+    public float getHealth()
+    {
+        return currHealth;
+    }
+
+    public void takeDamage(int dmg)
+    {
+        currHealth -= dmg;
+    }
+
+    public void heal(int val)
+    {
+        currHealth += val;
+        if (currHealth > maxHealth)
+        {
+            currHealth = maxHealth;
         }
     }
 }

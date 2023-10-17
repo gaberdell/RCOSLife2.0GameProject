@@ -6,14 +6,12 @@ public class mobBase : EntityBase
 {
 
     //Some common feature for enemies
-    public int damage; //damage that a enemy make in fighting
-    public int maxHealth; //the total health of an enemy
-    public int currHealth; //current health
+    
     public float angle;
     public float alertRange; //min distance from target required for mob to chase.
     public float knockbackDuration;
     public float knockbackPower;
-    public float speed;
+    
 
     public bool playerSighted = false; //check whether player is in monster's sight
     public Vector2 currPosition; //current position
@@ -53,15 +51,7 @@ public class mobBase : EntityBase
         currState = State.Chasing;
     }
     public LayerMask targetLayerMobs;  
-    public int getHealth()
-    {
-        //gets the health
-        return currHealth;
-    }
-    public void damageSelf(int dmg)
-    {
-        currHealth -= dmg;
-    }
+
 
     void Start()
     {

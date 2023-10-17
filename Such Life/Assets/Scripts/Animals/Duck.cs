@@ -16,8 +16,8 @@ public class Duck : AnimalBase
     void Start()
     {
         //status initialization
-        HPCap = 45f;
-        currHP = HPCap;
+        maxHealth = 45;
+        currHealth = maxHealth;
         currMaxSpeed = 0;
         walkspeed = 1f;
         runspeed = 1.4f;
@@ -57,9 +57,9 @@ public class Duck : AnimalBase
     void Update()
     {
         //If the Duck has 0HP, it dies
-        if (currHP <= 0)
+        if (currHealth <= 0)
         {
-            currHP = 0;
+            currHealth = 0;
             currState = State.Dying;
             dead = true;
             Sprite.flipY = dead; //Temporary death effect. It flips upside-down

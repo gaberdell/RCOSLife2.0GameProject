@@ -223,12 +223,12 @@ public class Splody : mobBase
             }
             else{
               //Damage the object's mobBase (decrease the mobBase's HP) 
-              mob_obj.GetComponent<mobBase>().damageSelf(damage); }
+              mob_obj.GetComponent<mobBase>().takeDamage(damage); }
             }
             //samething for an AnimalBase object
           else if (mob_obj.GetComponent<AnimalBase>()){
                 //decrease the AnimalBase's HP
-                mob_obj.GetComponent<AnimalBase>().currHP -= damage;
+                mob_obj.GetComponent<AnimalBase>().currHealth -= damage;
           }
         }
             spanim.SetTrigger("IsDead");

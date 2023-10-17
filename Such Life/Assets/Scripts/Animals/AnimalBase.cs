@@ -16,8 +16,6 @@ public class AnimalBase : EntityBase
     public float walkspeed; //How fast the animal walks
     public float runspeed; //How fast the animal runs
     public Rigidbody2D animal;
-    public float HPCap; //Max Health
-    public float currHP; //Current HP of Animal
 
     public float weight; //Determines how much the animal will get pushed
     public float hungerCap; //Max Hunger Value
@@ -33,7 +31,6 @@ public class AnimalBase : EntityBase
     public bool reached; //Determines if the animal has reached its destination
     public GameObject player;
     public RaycastHit hit;
-    public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
     public List<string> drops; //What the animal will drop when it dies
@@ -78,11 +75,7 @@ public class AnimalBase : EntityBase
         currState = State.Following;
     }
 
-    //This function returns the value of the current amount of HP the Animal has
-    public float getHP()
-    {
-        return currHP;
-    }
+
 
     //This function returns the speed the animal is currently moving at
     public float getSpeed()
@@ -90,55 +83,6 @@ public class AnimalBase : EntityBase
         return currSpeed;
     }
 
-
-
-    //A simple function that makes the animal take the specified amount of damage
-    public void takeDamage(int val)
-    {
-        currHP -= val;
-    }
-
-    public void heal(int val)
-    {
-        currHP += val;
-        if(currHP > HPCap)
-        {
-            currHP = HPCap;
-        }
-    }
-
-    //This function finds the closest Object with the tag given
-    public GameObject findClosestObj(string tag)
-    {
-        GameObject[] things; 
-        //Get all the objects with the given tag in the scene
-        //When no object with the tag is found, Unity returns an Error
-        try {
-            things = GameObject.FindGameObjectsWithTag(tag);
-        } catch {
-            return null;
-        }
-        
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-
-        //Loop through the list and compare their distances to the Animal
-        foreach(GameObject thing in things) {
-            Vector2 diff = (Vector2)thing.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-
-            if (curDistance < distance) {
-                closest = thing;
-                distance = curDistance;
-            }
-        }
-
-        if (distance <= awareness) {
-            return closest;
-        }
-
-        return null;
-    }
 
     public List<GameObject> findGroup(string tag) {
         GameObject[] group;
@@ -194,7 +138,7 @@ public class AnimalBase : EntityBase
     public void LookForFood(List<string> foods) {
         float currentclosest = Mathf.Infinity;
         foreach(var thing in foods) {
-            GameObject target = findClosestObj(thing);
+            GameObject target = findClosestObj(thing, awareness);
             if (target && getDistance(target) < currentclosest) {
                 currentclosest = getDistance(target);
                 food = target;

@@ -11,8 +11,8 @@ public class Wolf : AnimalBase
     // Start is called before the first frame update
     void Start()
     {
-        HPCap = 100f;
-        currHP = HPCap;
+        maxHealth = 100;
+        currHealth = maxHealth;
         currMaxSpeed = 1;
         walkspeed = 1;
         runspeed = 2;
@@ -29,7 +29,7 @@ public class Wolf : AnimalBase
         //object initialization
         player = GameObject.Find("MC");
         animate = GetComponent<Animator>();
-        aniSprite = GetComponent<SpriteRenderer>();
+        Sprite = GetComponent<SpriteRenderer>();
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         self = navi.gameObject;
         navi.updateRotation = false;
@@ -53,14 +53,14 @@ public class Wolf : AnimalBase
     // Update is called once per frame
     void Update()
     {
-        if (currHP <= 0) {
-            currHP = 0;
+        if (currHealth <= 0) {
+            currHealth = 0;
             currState = State.Dying;
             dead = true;
-            aniSprite.flipY = dead;
+            Sprite.flipY = dead;
         }
         // Need to use an event that gets triggered when the player attacks it
-        if (currHP < HPCap) {
+        if (currHealth < maxHealth) {
             List<GameObject> pack = findGroup("Wolf");
             print(pack.Count);
             // Follow();

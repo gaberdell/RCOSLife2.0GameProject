@@ -27,9 +27,6 @@ public class NPCBase : EntityBase
     public GameObject player;
     public RaycastHit hit;
 
-    public float HPCap; //Max Health
-    public float currHP; //Current HP of the NPC
-
     public SortedDictionary<string,string> dialogue = new SortedDictionary<string,string>(); //A map structure that stores a key, usually what the dialogue is for, and a dialogue
 
 

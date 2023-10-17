@@ -9,8 +9,8 @@ public class Cow : AnimalBase
     void Start()
     {
         //Initialization of the States of the Cow
-        HPCap = 130;
-        currHP = HPCap;
+        maxHealth = 130;
+        currHealth = maxHealth;
         currMaxSpeed = 0;
         walkspeed = 1f;
         runspeed = 1.4f;
@@ -41,9 +41,9 @@ public class Cow : AnimalBase
     void Update()
     {
         //If the cow has 0HP, it dies
-        if (currHP <= 0)
+        if (currHealth <= 0)
         {
-            currHP = 0;
+            currHealth = 0;
             currState = State.Dying;
             Sprite.flipY = true; //Temporary death effect. It flips upside-down
         }
