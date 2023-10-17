@@ -1,11 +1,22 @@
-public class Weapon {//Nothing gets assigned until a specific type of weapon calls these variables.
-    int numEnemiesCanHit; //Piercing
-    float damage; //Amount of damage weapon is dealing
-    int range; //Number of tiles that the weapon can hit
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+public class Weapon : MonoBehaviour
+{//Nothing gets assigned until a specific type of weapon calls these variables.
+
+    [SerializeField] int Durability;
+    [SerializeField] string archetype; // more modular option later
+    [SerializeField] string rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
+    [SerializeField] int Piercing; //numEnemiesCanHit
+    [SerializeField] float damage; //Amount of damage weapon is dealing
+    [SerializeField] int range; //Number of tiles that the weapon can hit
     //Suggestion: range starting at 0 for melee?
-    float attackSpeed; //Number of attacks per second
+    [SerializeField] int Capacity; //amount of projectile you can shoot before having to go through reload animation
+    [SerializeField] int ReloadSpeed; //time it takes to replace the current “mag” with a new one
+    [SerializeField] float attackSpeed; //Number of attacks per second
+    [SerializeField] float FiringRate; //Rounds per minute
     //Suggestion: implement cap?
-    float armorPenetration; //Percentage of armor ignored
+    [SerializeField] float armorPenetration; //Percentage of armor ignored
     double critDamage = 1.25; //Multiplier of the damage if crit is landed, weapon should add to that percentage
     float critChance = 0; //Percent chance to crit, weapon should add to this chance
     //string material; //Do not know how the specific weapons will inherit the class
@@ -13,6 +24,11 @@ public class Weapon {//Nothing gets assigned until a specific type of weapon cal
     bool isOneHanded = false;
     bool isTwoHanded = false;//Determines if player can hold another weapon.
 }
+
+
+
+
+
 
 /* Example:
 class Axe : Weapon {
