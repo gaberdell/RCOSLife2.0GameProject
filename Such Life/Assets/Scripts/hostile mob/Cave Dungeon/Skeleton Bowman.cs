@@ -1,6 +1,8 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
-public class Skeleton Bowman : MonoBehaviour
+public class SkeletonBowman : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
@@ -27,7 +29,7 @@ public class Skeleton Bowman : MonoBehaviour
 
     private void Awake()
     {
-        skeletonAnimator = GetComponent<Animator);
+        skeletonAnimator = GetComponent<Animator>();
     }
 
     void Start()
