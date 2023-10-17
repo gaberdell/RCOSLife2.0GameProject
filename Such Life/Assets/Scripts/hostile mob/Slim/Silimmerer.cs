@@ -13,7 +13,7 @@ public class Slimmerer : mobBase
     void Start()
     {
         target = GameObject.Find("MC").transform;
-        MobSprite = GetComponent<SpriteRenderer>();
+        Sprite = GetComponent<SpriteRenderer>();
 
         monsterBody = GetComponent<Rigidbody2D>();
         monsterBody.drag = 15f;
@@ -31,13 +31,13 @@ public class Slimmerer : mobBase
         knockbackDuration = 0.7f;
         knockbackPower = 30;
 
-        agent = GetComponent<NavMeshAgent>();
-        agent.speed = speed;
-        agent.acceleration = 200;
-        agent.stoppingDistance = 1f;
-        agent.autoBraking = false;
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
+        navi = GetComponent<NavMeshAgent>();
+        navi.speed = speed;
+        navi.acceleration = 200;
+        navi.stoppingDistance = 1f;
+        navi.autoBraking = false;
+        navi.updateRotation = false;
+        navi.updateUpAxis = false;
 
         currState = State.Wander;
         currPosition = new Vector2(transform.position.x, transform.position.y);
@@ -57,22 +57,22 @@ public class Slimmerer : mobBase
         if (time >= time_move)
         {
             prevPosition = currPosition;
-            agent.speed = speed;
+            navi.speed = speed;
 
             if (currState == State.Chasing)
             {
-                agent.SetDestination(target.position);
+                navi.SetDestination(target.position);
             }
             else if (currState == State.Wander)
             {
                 wander();
-                agent.SetDestination(currPosition);
+                navi.SetDestination(currPosition);
             }
         }
         if (time >= time_move + time_stop)
         {
             time = 0f;
-            agent.speed = 0;
+            navi.speed = 0;
         }
     }
 
@@ -154,19 +154,19 @@ public class Slimmerer : mobBase
             monsterBody.AddForce(-knockDirect * knockbackPower);
         }
         // Set the position of the slime to the place it just got knocked back to.
-        agent.SetDestination(transform.position);
+        navi.SetDestination(transform.position);
     }
 
     // Flip the sprite in relation to the position you give it.
     public void flipSprite(float PosX)
     {
-        if (transform.position.x > PosX && !MobSprite.flipX)
+        if (transform.position.x > PosX && !Sprite.flipX)
         {
-            MobSprite.flipX = true;
+            Sprite.flipX = true;
         }
-        else if (transform.position.x < PosX && MobSprite.flipX)
+        else if (transform.position.x < PosX && Sprite.flipX)
         {
-            MobSprite.flipX = false;
+            Sprite.flipX = false;
         }
     }
 

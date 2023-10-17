@@ -28,7 +28,7 @@ public class Cow : AnimalBase
 
         //Initialization of game objects and attached components
         player = GameObject.Find("MC");
-        aniSprite = GetComponent<SpriteRenderer>();
+        Sprite = GetComponent<SpriteRenderer>();
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         navi.updateRotation = false;
         navi.updateUpAxis = false;
@@ -45,7 +45,7 @@ public class Cow : AnimalBase
         {
             currHP = 0;
             currState = State.Dying;
-            aniSprite.flipY = true; //Temporary death effect. It flips upside-down
+            Sprite.flipY = true; //Temporary death effect. It flips upside-down
         }
 
         //This part of the Update doesn't work by frame.

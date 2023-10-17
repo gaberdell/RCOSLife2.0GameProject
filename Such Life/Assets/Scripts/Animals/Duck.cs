@@ -35,7 +35,7 @@ public class Duck : AnimalBase
         //object initialization
         player = GameObject.Find("MC");
         animate = GetComponent<Animator>();
-        aniSprite = GetComponent<SpriteRenderer>();
+        Sprite = GetComponent<SpriteRenderer>();
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         self = navi.gameObject;
         navi.updateRotation = false;
@@ -62,7 +62,7 @@ public class Duck : AnimalBase
             currHP = 0;
             currState = State.Dying;
             dead = true;
-            aniSprite.flipY = dead; //Temporary death effect. It flips upside-down
+            Sprite.flipY = dead; //Temporary death effect. It flips upside-down
         }
         //if the flying boolean is maked,
         animate.SetBool("Flying", flying);
