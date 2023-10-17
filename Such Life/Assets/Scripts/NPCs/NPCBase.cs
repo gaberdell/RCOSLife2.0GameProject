@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 /* A general class that is the basis for NPCs 
  * Implements basic things that all NPCS should have.
@@ -20,7 +21,7 @@ public class NPCBase : EntityBase
     public bool Interactable; //Whether or not the Player is allowed to speak to the NPC
     public float time;
     public float timeDelay;
-
+    public InventorySystem Inventory;
 
     public Animator animate;
     public GameObject player;

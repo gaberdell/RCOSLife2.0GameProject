@@ -12,10 +12,11 @@ public abstract class EntityBase : MonoBehaviour
 
     public float currMaxSpeed; //Current possible max speed
     public float currSpeed; //Current Speed of Animal
-    public Vector2 position; //The current position of the animal in a Vector2 object
+    public Vector2 position; //The current position of the entity in a Vector2 object
     public Vector2 newposition; //The position that the animal wants to reach
     public NavMeshAgent navi; //Hey, Listen!
     public SpriteRenderer Sprite;
+    public playerAction playerControl; //Allows player to interact with entity
 
     //random pos
     public virtual void PositionChange()
@@ -59,6 +60,46 @@ public abstract class EntityBase : MonoBehaviour
         else
         {
             Sprite.flipX = true;
+        }
+    }
+
+    //This function finds the closest Object with the tag given
+    public GameObject findClosestObj(string tag, float radius)
+    {
+        GameObject[] things;
+        //When no object with the tag is found, Unity returns an Error
+        try
+        {
+            //Get all the objects with the given tag in the scene
+            things = GameObject.FindGameObjectsWithTag(tag);
+            GameObject closest = null;
+            float distance = Mathf.Infinity;
+
+            //Loop through the list and compare their distances to the Animal
+            foreach (GameObject thing in things)
+            {
+                Vector2 diff = (Vector2)thing.transform.position - position;
+                float curDistance = diff.sqrMagnitude;
+
+                if (curDistance < distance)
+                {
+                    closest = thing;
+                    distance = curDistance;
+                }
+            }
+            if (distance <= radius)
+            {
+                return closest;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        //If an error is returned, return NULL
+        catch
+        {
+            return null;
         }
     }
 }
