@@ -106,45 +106,7 @@ public class AnimalBase : EntityBase
         }
     }
 
-    //This function finds the closest Object with the tag given
-    public GameObject findClosestObj(string tag)
-    {
-        GameObject[] things; 
-        //When no object with the tag is found, Unity returns an Error
-        try
-        {
-            //Get all the objects with the given tag in the scene
-            things = GameObject.FindGameObjectsWithTag(tag);
-            GameObject closest = null;
-            float distance = Mathf.Infinity;
 
-            //Loop through the list and compare their distances to the Animal
-            foreach(GameObject thing in things)
-            {
-                Vector2 diff = (Vector2)thing.transform.position - position;
-                float curDistance = diff.sqrMagnitude;
-
-                if (curDistance < distance)
-                {
-                    closest = thing;
-                    distance = curDistance;
-                }
-               }
-            if (distance <= awareness)
-            {
-                return closest;
-            }
-            else
-            {
-                return null;
-            }
-        }
-            //If an error is returned, return NULL
-             catch
-        {
-            return null;
-        }
-    }
        
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -175,7 +137,7 @@ public class AnimalBase : EntityBase
     {
         float currentclosest = -1f;
         foreach(var thing in foods) {
-            food = findClosestObj(thing);
+            food = findClosestObj(thing, awareness);
 
             
             if (food)
