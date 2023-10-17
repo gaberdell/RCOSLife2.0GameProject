@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1 : MobBase
+public class Boss1 : mobBase
 {
     public int maxHealth = 1000; // Extremely high health
     public int currentHealth;

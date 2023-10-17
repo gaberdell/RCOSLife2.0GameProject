@@ -1,11 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-public class Goblin : MobBase
+using UnityEngine;
+
+public class Goblin : mobBase
 {
     public int maxHealth = 100;
     public int currentHealth;
     public int damage = 10;
     public float attackRange = 1.5f;
+    public bool canSteal;
+    public float stealRange;
+    public float moneyStolen;
+    public float runAwayMoneyThreshold;
+    public bool isRunningAway;
+    public float stealAmount;
+    public float stealCooldown;
+
+
+
 
     public GameObject healthBarPrefab; // Prefab for the health bar UI
     public GameObject combatEffectPrefab; // Prefab for combat effects (e.g., particles)
@@ -14,7 +26,7 @@ public class Goblin : MobBase
     public float patrolSpeed = 2.0f;
     private int currentWaypointIndex = 0;
 
-    private GameManager gameManager;
+    //private GameManager gameManager;
 
     void Start()
     {
@@ -25,7 +37,7 @@ public class Goblin : MobBase
         healthBarInstance.transform.SetParent(transform);
 
         // Get a reference to the GameManager
-        gameManager = FindObjectOfType<GameManager>();
+       // gameManager = FindObjectOfType<GameManager>();
 
         // Start patrolling if there are waypoints
         if (patrolWaypoints.Length > 0)
@@ -71,14 +83,14 @@ public class Goblin : MobBase
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
             // Deal damage to the player
-            player.TakeDamage(damage);
+           // player.TakeDamage(damage);
         }
     }
 
     // Function to steal money from the player
     void StealMoney()
     {
-        if (player.money >= stealAmount)
+      /*  if (player.money >= stealAmount)
         {
             // Play steal sound effect
             AudioSource.PlayClipAtPoint(stealSound, transform.position);
@@ -99,7 +111,7 @@ public class Goblin : MobBase
             // Start the cooldown timer
             StartCoroutine(StealCooldown());
         }
-
+      */
         Debug.Log("Goblin stole " + stealAmount + " money! Total stolen: " + moneyStolen);
     }
 
@@ -119,9 +131,9 @@ public class Goblin : MobBase
 
         // Invert the direction to move away from the player
         Vector2 runDirection = -directionToPlayer.normalized;
-
+        Vector3 runDir = new Vector3((runDirection * speed * Time.deltaTime).x, (runDirection * speed * Time.deltaTime).y, 0.0f);
         // Set the Goblin's position to move away from the player
-        transform.position += runDirection * speed * Time.deltaTime;
+        transform.position += runDir;
 
         // Optionally, you can add animation or other behavior here to visually indicate running away
 
@@ -155,7 +167,7 @@ public class Goblin : MobBase
         Instantiate(combatEffectPrefab, transform.position, Quaternion.identity);
 
         // Drop randomized loot
-        gameManager.DropRandomLoot(transform.position);
+       // gameManager.DropRandomLoot(transform.position);
 
         // Destroy the Goblin game object
         Destroy(gameObject);

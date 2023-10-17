@@ -20,11 +20,9 @@ public class GreedyGoblin : Goblin
     }
 }
 
-    FastGoblin:
+ //   FastGoblin:
 
 // FastGoblin.cs
-using UnityEngine;
-
 public class FastGoblin : Goblin
 {
     public FastGoblin()
@@ -33,11 +31,10 @@ public class FastGoblin : Goblin
     }
 }
 
-    TankGoblin:
+//    TankGoblin:
 
 
 // TankGoblin.cs
-using UnityEngine;
 
 public class TankGoblin : Goblin
 {
@@ -48,10 +45,9 @@ public class TankGoblin : Goblin
     }
 }
 
-    NinjaGoblin:
+//    NinjaGoblin:
 
 // NinjaGoblin.cs
-using UnityEngine;
 
 public class NinjaGoblin : Goblin
 {
