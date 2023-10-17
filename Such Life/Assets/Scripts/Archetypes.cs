@@ -1,10 +1,10 @@
 
-public class Light
+public class LightWeapon
 {
     int Durability = 150;
 }
 
-public class Heavy
+public class HeavyWeapon
 {
     int Durability = 200;
 }
