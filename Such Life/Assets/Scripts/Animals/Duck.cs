@@ -98,11 +98,11 @@ public class Duck : AnimalBase
                 time = 0f;
 
 
-                //If the duck is idling, it has a 50% chance to start wandering
+                //If the duck is idling, it has a 30% chance to start wandering
                 if (currState == State.Idling)
                 {
                     int gen = Random.Range(0, 100);
-                    if (gen > 50)
+                    if (gen < 30)
                     {
                         Walk();
                     }
@@ -112,18 +112,17 @@ public class Duck : AnimalBase
                 if (currState == State.Walking)
                 {
                     PositionChange();
-                    flipSprite();
                     int gen = Random.Range(0, 100);
-                    if (gen > 90)
+                    if (gen < 10)
                     {
                         Idle();
                     }
                 }
                 //If the hunger is greater than or equal to  80, the duck can heal.
                 if (hunger >= 80)
-            {
-                heal(1);
-            }
+                {
+                    heal(1);
+                }
                 //If the hunger is less than or equal to 30, it starts looking for grass
                 if (hunger <= 30)
                 {
@@ -150,56 +149,67 @@ public class Duck : AnimalBase
             //While the timeDelay isn't met
             else
             {
-            //if the duck detects a non-null food, it will try to eat it. 
-            if(food!=null && hunger < hungerCap - 20)
-            {
-                newposition = food.transform.position;
-                float tempdist1 = position.sqrMagnitude;
-                float tempdist2 = newposition.sqrMagnitude;
-                //it will succeed in eating if the food is less than 0.05 units away from the food.
-                if ((tempdist1 - tempdist2) < 0.05f){
-                    animate.SetTrigger("Eating");
-                    hunger += 20;
-                    heal(10);
-                    Destroy(food);
-                    food = null;
-                }
-            }
-            else {
-                //If the duck is being pushed, it flies away. It doesn't fly as far away if the player has food. 
-                if (currState == State.Pushed)
+                //if the duck detects a non-null food, it will try to eat it. 
+                if(food!=null && hunger < hungerCap - 20)
                 {
-                    //temp code, to be implemented.
-                    newposition = transform.position;
-                    position = transform.position;
-                    navi.SetDestination(newposition);
-                    if (!dead) {
-                        self.layer = LayerMask.NameToLayer("Flying");
-                        //mark the flying boolean
-                        animate.SetBool("Flying", true);
-                        if (!flying) { 
-                            fly_time = 1f;
-                        }
-                        flying = true;
-                        dc.isTrigger = true;
-                        float fly_x_temp = animal.velocity.x;
-                        float fly_y_temp = animal.velocity.y;
-                        fly_x = 5*fly_x_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
-                        fly_y = 5*fly_y_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
-                        
+                    newposition = food.transform.position;
+                    float tempdist1 = position.sqrMagnitude;
+                    float tempdist2 = newposition.sqrMagnitude;
+                    //it will succeed in eating if the food is less than 0.05 units away from the food.
+                    if ((tempdist1 - tempdist2) < 0.05f){
+                        animate.SetTrigger("Eating");
+                        hunger += 20;
+                        heal(10);
+                        Destroy(food);
+                        food = null;
                     }
                 }
-                //How the duck follows the player
-                else if (currState == State.Following)
-                {
-                    newposition.x = player.transform.position.x;
-                    newposition.y = player.transform.position.y;
-                    navi.speed = walkspeed;
-                    navi.SetDestination(newposition);
-                    flipSprite();
+                else {
+                    //If the duck is being pushed, it flies away. It doesn't fly as far away if the player has food. 
+                    if (currState == State.Pushed)
+                    {
+                        //temp code, to be implemented.
+                        newposition = transform.position;
+                        position = transform.position;
+                        navi.SetDestination(newposition);
+                        if (!dead) {
+                            self.layer = LayerMask.NameToLayer("Flying");
+                            //mark the flying boolean
+                            animate.SetBool("Flying", true);
+                            if (!flying) { 
+                                fly_time = 1f;
+                            }
+                            flying = true;
+                            dc.isTrigger = true;
+                            float fly_x_temp = animal.velocity.x;
+                            float fly_y_temp = animal.velocity.y;
+                            fly_x = 5*fly_x_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
+                            fly_y = 5*fly_y_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
+                            
+                        }
+                    }
+                    //How the duck follows the player
+                    else if (currState == State.Following)
+                    {
+                        navi.speed = walkspeed;
+                        moveTo(player.transform.position);
+                    }
+                    position = transform.position;
                 }
             }
-            position = transform.position;
+        }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            base.OnCollisionEnter2D(collision);
+            if (collision.gameObject == food) {
+                currState = State.Eating;
+                hunger += 20;
+                heal(10);
+                Destroy(food);
+                food = null;
+                moveTo(transform.position);
+                currState = State.Idling;
             }
         }
     }

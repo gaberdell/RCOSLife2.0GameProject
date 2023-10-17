@@ -33,6 +33,7 @@ public class AnimalBase : EntityBase
     public bool reached; //Determines if the animal has reached its destination
     public GameObject player;
     public RaycastHit hit;
+    public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
     public List<string> drops; //What the animal will drop when it dies
@@ -106,9 +107,61 @@ public class AnimalBase : EntityBase
         }
     }
 
+    //This function finds the closest Object with the tag given
+    public GameObject findClosestObj(string tag)
+    {
+        GameObject[] things; 
+        //Get all the objects with the given tag in the scene
+        //When no object with the tag is found, Unity returns an Error
+        try {
+            things = GameObject.FindGameObjectsWithTag(tag);
+        } catch {
+            return null;
+        }
+        
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
 
+        //Loop through the list and compare their distances to the Animal
+        foreach(GameObject thing in things) {
+            Vector2 diff = (Vector2)thing.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+
+            if (curDistance < distance) {
+                closest = thing;
+                distance = curDistance;
+            }
+        }
+
+        if (distance <= awareness) {
+            return closest;
+        }
+
+        return null;
+    }
+
+    public List<GameObject> findGroup(string tag) {
+        GameObject[] group;
+        // Find all nearby animals of same tag within the awareness distance
+        //When no object with the tag is found, Unity returns an Error
+        try {
+            group = GameObject.FindGameObjectsWithTag(tag);
+        } catch {
+            group = new GameObject[0];
+        }
+
+        List<GameObject> nearby = new List<GameObject>();
+        foreach (GameObject obj in group) {
+            Vector2 diff = (Vector2) obj.transform.position - position;
+            if (diff.sqrMagnitude <= awareness * awareness) {
+                nearby.Add(obj);
+            }
+        }
+
+        return nearby;
+    }
        
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         //If it is the player, it gets pushed. Will be changed to other entities in the future
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
@@ -117,7 +170,7 @@ public class AnimalBase : EntityBase
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         if (currState == State.Pushed)
         {
@@ -131,37 +184,27 @@ public class AnimalBase : EntityBase
         return ((Vector2)thing.transform.position - position).sqrMagnitude;
     }
 
+    public void moveTo(Vector2 pos) {
+        newposition = pos;
+        navi.SetDestination(newposition);
+        flipSprite();
+    }
     
     //Looks for closest food that the animal can eat
-    public void LookForFood(List<string> foods) 
-    {
-        float currentclosest = -1f;
+    public void LookForFood(List<string> foods) {
+        float currentclosest = Mathf.Infinity;
         foreach(var thing in foods) {
-            food = findClosestObj(thing, awareness);
-
-            
-            if (food)
-            {
-                if (currentclosest == -1f)
-                {
-                    currentclosest = getDistance(food);
-                }
-
-                if (getDistance(food) < currentclosest)
-                {
-                    currentclosest = getDistance(food);
-                    newposition = food.transform.position;
-                    navi.SetDestination(newposition);
-                    
-                }
-                else
-                {
-                    return;
-                }
-                
+            GameObject target = findClosestObj(thing);
+            if (target && getDistance(target) < currentclosest) {
+                currentclosest = getDistance(target);
+                food = target;
             }
         }
-        
-
+        if (food) {
+            newposition = food.transform.position;
+            moveTo(newposition);
+        } else {
+            currState = State.Idling;
+        }
     }
 }
