@@ -80,7 +80,7 @@ public class AnimalBase : EntityBase
     //This function returns the speed the animal is currently moving at
     public float getSpeed()
     {
-        return currSpeed;
+        return speed;
     }
 
 
@@ -123,16 +123,6 @@ public class AnimalBase : EntityBase
         }
     }
 
-    public float getDistance(GameObject thing)
-    {
-        return ((Vector2)thing.transform.position - position).sqrMagnitude;
-    }
-
-    public void moveTo(Vector2 pos) {
-        newposition = pos;
-        navi.SetDestination(newposition);
-        flipSprite();
-    }
     
     //Looks for closest food that the animal can eat
     public void LookForFood(List<string> foods) {

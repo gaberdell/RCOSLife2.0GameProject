@@ -11,7 +11,6 @@ public abstract class EntityBase : MonoBehaviour
 {
 
     public float currMaxSpeed; //Current possible max speed
-    public float currSpeed; //Current Speed of Animal
     public Vector2 position; //The current position of the entity in a Vector2 object
     public Vector2 newposition; //The position that the animal wants to reach
     public NavMeshAgent navi; //Hey, Listen!
@@ -19,7 +18,7 @@ public abstract class EntityBase : MonoBehaviour
     public playerAction playerControl; //Allows player to interact with entity
     public int maxHealth; //the total health of an entity
     public int currHealth; //current health
-    public float speed;
+    public float speed; //the speed
     public int damage; //damage that a enemy make in fighting
 
     //random pos
@@ -124,6 +123,18 @@ public abstract class EntityBase : MonoBehaviour
         {
             currHealth = maxHealth;
         }
+    }
+
+    public float getDistance(GameObject thing)
+    {
+        return ((Vector2)thing.transform.position - position).sqrMagnitude;
+    }
+
+    public void moveTo(Vector2 pos)
+    {
+        newposition = pos;
+        navi.SetDestination(newposition);
+        flipSprite();
     }
 }
 
