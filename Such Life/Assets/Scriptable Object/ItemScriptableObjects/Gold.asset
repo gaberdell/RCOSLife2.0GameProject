@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59db689eec632fd49aec25f9cd9a13ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 263606838acd44a48a38b52d2f9adbed, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
   ID: 2
   DisplayName: Gold
   Description: Gold Coins used as Currency
-  Icon: {fileID: 2598169284401989221, guid: 4128a4011ee8d4ea991d6b02be0ff9e3, type: 3}
+  Icon: {fileID: 0}
   MaxStackSize: 100
   Type: 
   GoldValue: 1

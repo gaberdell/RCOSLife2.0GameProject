@@ -7,7 +7,7 @@ using System.Linq;
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
 
 [System.Serializable]
-public class InventorySystem : MonoBehaviour
+public class InventorySystem
 {
     [SerializeField] private List<InventorySlot> Inventory;
     //public int InventorySize { get; set; }

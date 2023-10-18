@@ -62,7 +62,7 @@ public class ItemPickUp : MonoBehaviour
 
     private void Start()
     {
-        id = EventManager.GetID(gameObject);
+        EventManager.GetID(gameObject, ref id);
         EventManager.SoftSaveItem(id, itemSaveData);
     }
 

@@ -25,7 +25,7 @@ public class EventManager : MonoBehaviour
     public delegate bool ContainSpecificDataDelegate(string ID, bool isSavableObjects);
     public delegate bool OnSaveGameDelegate(SaveData saveData);
     public delegate SaveData OnLoadGameDelegate();
-    public delegate string GetIDDelegate(GameObject gameObjectWithID);
+    public delegate string GetIDDelegate(GameObject gameObjectWithID, ref string id);
 
     public delegate bool DealDamageDelegate(GameObject objectToDealDamageTo, float damageAmount);
 
@@ -121,9 +121,9 @@ public class EventManager : MonoBehaviour
         else return null;
     }
 
-    public static string GetID(GameObject gameObjectWithID)
+    public static string GetID(GameObject gameObjectWithID, ref string id)
     {
-        if (getID != null) return getID(gameObjectWithID);
+        if (getID != null) return getID(gameObjectWithID, ref id);
         else return null;
     }
 

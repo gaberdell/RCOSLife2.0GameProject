@@ -28,10 +28,13 @@ public class UniqueID : MonoBehaviour
     }
 
 
-    private string returnID(GameObject isOurGameObject)
+    private string returnID(GameObject isOurGameObject, ref string id)
     {
+        Debug.Log(isOurGameObject.name + " <- Other obj name, our name " + gameObject.name);
         if (isOurGameObject == gameObject)
         {
+            Debug.Log(isOurGameObject.name + " <- We returned " + gameObject.name);
+            id = _id;
             return _id;
         }
         return null;

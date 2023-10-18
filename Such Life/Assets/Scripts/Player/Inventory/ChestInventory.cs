@@ -16,6 +16,8 @@ public class ChestInventory : InventoryHolder, IInteractable
     public Sprite[] chestSprites;
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
 
+    private string ourID;
+
     private bool isOpen = false;
     private Text DynText;
 
@@ -39,18 +41,21 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     private void Start()
     {
-        SavableSlot[] chestSaveData = primaryInvSystem.ToSavabaleSlots();
-        EventManager.SoftSave(EventManager.GetID(gameObject), chestSaveData);
         localRenderer = spriteChild.GetComponent<SpriteRenderer>();
-
+        EventManager.GetID(gameObject, ref ourID);
         DynText = DynTextObject.GetComponent<Text>();
+
+        SavableSlot[] chestSaveData = primaryInvSystem.ToSavabaleSlots();
+
+        EventManager.SoftSave(ourID, chestSaveData);
+        Debug.Log("Why do you leave?");
     }
 
     protected override void LoadInventory(SaveData data)
     {
         // Check the save data for this specific chest inventory, and if its exist, load it
         //Maybe add in the chest manager of some sort to load all of the chest in the chest dictionary into the world 
-        if (data.savedSlots.TryGetValue(EventManager.GetID(gameObject), out SavableSlot[] chestSlots))
+        if (data.savedSlots.TryGetValue(ourID, out SavableSlot[] chestSlots))
         {
             //Inherits these from InventoryHolder
             primaryInvSystem.WriteInSavableSlots(chestSlots);
