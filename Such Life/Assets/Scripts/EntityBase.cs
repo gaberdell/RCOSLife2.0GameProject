@@ -24,11 +24,11 @@ public abstract class EntityBase : MonoBehaviour
     //random pos
     public virtual void PositionChange()
     {
-        currSpeed = Random.Range(0, currMaxSpeed);
-        float posxmin = transform.position.x - currSpeed;
-        float posxmax = transform.position.x + currSpeed;
-        float posymin = transform.position.y - currSpeed;
-        float posymax = transform.position.y + currSpeed;
+        speed = Random.Range(0, currMaxSpeed);
+        float posxmin = transform.position.x - speed;
+        float posxmax = transform.position.x + speed;
+        float posymin = transform.position.y - speed;
+        float posymax = transform.position.y + speed;
 
         int gen = Random.Range(0, 2);
         if (gen == 0)
@@ -43,7 +43,7 @@ public abstract class EntityBase : MonoBehaviour
         {
             newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         }
-        navi.speed = currSpeed * 2;
+        navi.speed = speed * 2;
         navi.SetDestination(newposition);
     }
 

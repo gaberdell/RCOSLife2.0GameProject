@@ -55,7 +55,7 @@ public class mobBase : EntityBase
 
     void Start()
     {
-        currSpeed = 5.0f;
+        speed = 5.0f;
     }
     /*void PositionChange()
     {
