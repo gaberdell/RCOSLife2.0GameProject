@@ -50,21 +50,21 @@ public class PlayerMovement : MouseFollow
         playerControls = new playerAction();
 
         teleportDistance = 3;
-        teleportCooldown = 8;
+        teleportCooldown = 1;
         lastTeleportUsed = 0 - teleportCooldown; //allow you to use teleport as soon as you spawn in
-        teleportDelay = .5f;
+        teleportDelay = .3f;
 
         canMove = true;
         combatMove = false;
 
         dashSpeed = 10;
         dashTime = .2f;
-        dashCooldown = 4;
+        dashCooldown = 1;
         lastDashUsed = 0 - dashCooldown;
 
         rollSpeed = 5;
         rollTime = .4f;
-        rollCooldown = 4;
+        rollCooldown = 1;
         lastRollUsed = 0 - rollCooldown;
     }
     // Update is called once per frame
@@ -250,6 +250,9 @@ public class PlayerMovement : MouseFollow
         if (Time.time > lastTeleportUsed + teleportCooldown && canMove == true)
         {
             lastTeleportUsed = Time.time;
+            // Play teleport animation
+            anim.SetTrigger("Teleport");
+            // Teleport player
             body.position = teleportDistance * direction + body.position;
             Debug.Log("called teleport function");
             canMove = false;
@@ -272,7 +275,9 @@ public class PlayerMovement : MouseFollow
     {
         if (Time.time > lastDashUsed + dashCooldown && canMove == true)
         {
-            //need roll animation
+            //Enter Dashing animations
+            anim.SetBool("isDashing", true);
+            // Dash
             lastDashUsed = Time.time;
             Vector2 currentDirection = direction;
             combatMove = true;
@@ -281,6 +286,8 @@ public class PlayerMovement : MouseFollow
             yield return new WaitForSeconds(dashTime);
             combatMove = false;
             yield return null;
+            //Exit Dashing animations
+            anim.SetBool("isDashing", false);
         }
         else
         {
@@ -299,6 +306,9 @@ public class PlayerMovement : MouseFollow
     {
         if (Time.time > lastRollUsed + rollCooldown && canMove == true)
         {
+            //Enter Rolling animations
+            anim.SetBool("isRolling", true);
+            //
             lastRollUsed = Time.time;
             Vector2 currentDirection = direction;
             combatMove = true;
@@ -307,6 +317,8 @@ public class PlayerMovement : MouseFollow
             yield return new WaitForSeconds(rollTime);
             combatMove = false;
             yield return null;
+            //Exit Dashing animations
+            anim.SetBool("isRolling", false);
         }
         else
         {
