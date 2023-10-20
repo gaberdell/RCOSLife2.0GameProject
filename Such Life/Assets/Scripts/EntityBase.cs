@@ -26,6 +26,8 @@ public abstract class EntityBase : MonoBehaviour
     public string variation; //The string that saves what type the mob is
 
 
+    public float timeDelay; //A timer
+
     public GameObject player;
     public Animator animate;
     public RaycastHit hit;

@@ -26,12 +26,64 @@ public class Zombie : mobBase
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         navi.updateRotation = false;
         navi.updateUpAxis = false;
+        alertRange = 5.0f;
+        currState = State.Idling;
+        position = this.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if (currHealth <= maxHealth / 2)
+        {
+            defense = (int)(defense * 1.5); //Defense increases by 50% when health is below 50%. Rounds to the nearest whole number
+        }
+        if (currHealth <= 0)
+        {
+            currState = State.Dead;
+        }
 
+        if (currState != State.Dead)
+        {
+            if (findClosestObj("MC", alertRange) == player)
+            {
+                currState = State.Chasing;
+                newposition = player.transform.position;
+                navi.SetDestination(newposition);
+            }
+            else if (currState == State.Chasing)
+            {
+                navi.Stop();
+                currState = State.Idling;
+            }
+            else
+            {
+                time = time + 1f * Time.deltaTime;
+                if (time >= timeDelay)
+                {
+                    time = 0f;
+
+
+                    //If the sheep is idling, it has a 50% chance to start wandering
+                    if (currState == State.Idling)
+                    {
+                        int gen = Random.Range(0, 100);
+                        if (gen > 40)
+                        {
+                            Wander();
+                        }
+                    }
+                    if (currState == State.Wander)
+                    {
+                        PositionChange();
+                        int gen = Random.Range(0, 100);
+                        if (gen > 70)
+                        {
+                            Idle();
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

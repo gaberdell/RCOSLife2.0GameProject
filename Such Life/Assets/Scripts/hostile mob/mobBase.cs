@@ -20,7 +20,7 @@ public class mobBase : EntityBase
     public float time_move; //time until Update() is called.
 
     //States for Enemies
-    public enum State { Idling, Wander, Chasing, Attacking };
+    public enum State { Idling, Wander, Chasing, Attacking, Dead };
     public State currState;
 
     public GameObject monsterObj;
