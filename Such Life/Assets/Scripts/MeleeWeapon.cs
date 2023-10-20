@@ -9,8 +9,7 @@ public class MeleeWeapon : Archetype
     [SerializeField] int Attack;
     [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
-    [SerializeField] int WeaponType;
-    [SerializeField] Archetype Archetype; // more modular option later
+    [SerializeField] Archetype WArchetype = new Archetype(0); // more modular option later
     //[SerializeField] int Range; //Number of tiles that the weapon can hit
     //[SerializeField] float Damage; //Amount of damage weapon is dealing
     //[SerializeField] float ArmorPenetration; //Percentage of armor ignored
