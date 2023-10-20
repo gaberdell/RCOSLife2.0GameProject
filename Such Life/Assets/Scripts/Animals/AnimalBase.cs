@@ -78,28 +78,6 @@ public class AnimalBase : EntityBase
         return speed;
     }
 
-
-    public List<GameObject> findGroup(string tag) {
-        GameObject[] group;
-        // Find all nearby animals of same tag within the awareness distance
-        //When no object with the tag is found, Unity returns an Error
-        try {
-            group = GameObject.FindGameObjectsWithTag(tag);
-        } catch {
-            group = new GameObject[0];
-        }
-
-        List<GameObject> nearby = new List<GameObject>();
-        foreach (GameObject obj in group) {
-            Vector2 diff = (Vector2) obj.transform.position - position;
-            if (diff.sqrMagnitude <= awareness * awareness) {
-                nearby.Add(obj);
-            }
-        }
-
-        return nearby;
-    }
-       
     public void OnCollisionEnter2D(Collision2D collision)
     {
         //If it is the player, it gets pushed. Will be changed to other entities in the future
