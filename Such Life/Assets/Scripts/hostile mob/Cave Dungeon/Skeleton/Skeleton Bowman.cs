@@ -1,44 +1,43 @@
-using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class SkeletonBowman : MonoBehaviour
+
+public class BaseSkeleton : mobBase
 {
-    public int maxHealth = 100;
-    private int currentHealth;
 
     public float invincibilityDuration = 3.0f;
-    private bool isInvincible = false;
+    protected bool isInvincible = false;
 
-    private float timeToRecover = 0;
+    protected float timeToRecover = 0;
 
-    private Animator skeletonAnimator;
+    protected Animator skeletonAnimator;
 
     public float proximityDetectionDistance = 5.0f;
-    private bool playerInRange = false;
+    protected bool playerInRange = false;
 
     public GameObject bonePrefab; // Prefab for the bone projectile
     public Transform boneSpawnPoint; // Transform where bones are spawned
     public float boneAttackCooldown = 2.0f;
-    private float lastBoneAttackTime = 0;
+    protected float lastBoneAttackTime = 0;
 
     public GameObject fingerPrefab; // Prefab for the finger projectile
     public Transform fingerSpawnPoint; // Transform where fingers are spawned
     public float fingerAttackCooldown = 4.0f;
-    private float lastFingerAttackTime = 0;
+    protected float lastFingerAttackTime = 0;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         skeletonAnimator = GetComponent<Animator>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
-        currentHealth = maxHealth;
+        currHealth = maxHealth;
         SetCrumpledState(true); // Initially in crumpled state
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (playerInRange)
         {
@@ -73,9 +72,9 @@ public class SkeletonBowman : MonoBehaviour
     {
         if (!isInvincible)
         {
-            currentHealth -= damage;
+            currHealth -= damage;
 
-            if (currentHealth <= 0)
+            if (currHealth <= 0)
             {
                 // Skeleton is defeated
                 Defeat();

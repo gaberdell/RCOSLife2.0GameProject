@@ -23,9 +23,7 @@ public class mobBase : EntityBase
     public enum State { Idling, Wander, Chasing, Attacking };
     public State currState;
 
-    //public Animator an;
     public GameObject monsterObj;
-    public GameObject player;
     // public Vector2 newPosition;
 
     public Transform target;

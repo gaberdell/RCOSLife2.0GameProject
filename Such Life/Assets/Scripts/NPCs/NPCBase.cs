@@ -23,9 +23,7 @@ public class NPCBase : EntityBase
     public float timeDelay;
     public InventorySystem Inventory;
 
-    public Animator animate;
-    public GameObject player;
-    public RaycastHit hit;
+
 
     public SortedDictionary<string,string> dialogue = new SortedDictionary<string,string>(); //A map structure that stores a key, usually what the dialogue is for, and a dialogue
 
