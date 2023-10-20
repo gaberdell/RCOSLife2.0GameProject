@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Wolf : AnimalBase
 {
-    private Collider2D dc;
+    public Collider2D dc;
     private bool dead;
     private GameObject self;
     int stored;
@@ -32,14 +32,10 @@ public class Wolf : AnimalBase
         Sprite = GetComponent<SpriteRenderer>();
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         self = navi.gameObject;
+        // self.Class = this;
         navi.updateRotation = false;
         navi.updateUpAxis = false;
 
-        // NavMeshHit closestHit;
-        // if (NavMesh.SamplePosition(gameObject.transform.position, out closestHit, 500f, NavMesh.AllAreas))
-        //     gameObject.transform.position = closestHit.position;
-        // else
-        //     Debug.LogError("Could not find position on NavMesh!");
         food = null;
         foodtypes = new List<string>();
         foodtypes.Add("CanFly");
@@ -58,12 +54,6 @@ public class Wolf : AnimalBase
             currState = State.Dying;
             dead = true;
             Sprite.flipY = dead;
-        }
-        // Need to use an event that gets triggered when the player attacks it
-        if (currHealth < maxHealth) {
-            List<GameObject> pack = findGroup("Wolf");
-            print(pack.Count);
-            // Follow();
         }
 
         time = time + 1f * Time.deltaTime;
