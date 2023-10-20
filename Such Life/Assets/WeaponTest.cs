@@ -11,7 +11,7 @@ public class WeaponTest : MonoBehaviour
     public LayerMask enemies;
 
     void Awake(){
-        radius = 1;
+        radius = 5;
     }
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,8 @@ public class WeaponTest : MonoBehaviour
             anim.SetBool("Attacking", true);
         }
     }
-        public void endAttack(){
+
+    public void endAttack(){
         anim.SetBool("Attacking", false);
     }
     
@@ -35,7 +36,7 @@ public class WeaponTest : MonoBehaviour
         Collider2D[] enemy = Physics2D.OverlapCircleAll(attackPoint.transform.position,radius,enemies);
         foreach (Collider2D enemyGameObject in enemy){
             Debug.Log("Hit an Enemy");
-            enemyGameObject.GetComponent<EnemyHealth>().health -= 10;
+            enemyGameObject.GetComponent<EnemyHealth>().TakeDamage(10);
         }
     }
 
