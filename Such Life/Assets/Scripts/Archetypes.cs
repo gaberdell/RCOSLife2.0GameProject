@@ -1,11 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class LightWeapon
+public class Archetype : MonoBehaviour
 {
-    int Durability = 150;
+    private string[] Archetypes = {"Heavy","Medium","Light"};
+    private int[] WeaponDurabilities = {200,150,100};
+    private float[] MoveSpeeds = {0,0,0};
+    [SerializeField] private string Type;
+    [SerializeField] private int Durability;
+    [SerializeField] private float AttackMovesSpeed;
+
+    public Archetype()
+    {
+    }
+    public Archetype(int WeaponType)
+    {
+        Type = Archetypes[WeaponType];
+        Durability = WeaponDurabilities[WeaponType];
+        AttackMovesSpeed = MoveSpeeds[WeaponType];
+    }
 }
 
-public class HeavyWeapon
-{
-    int Durability = 200;
-}
+
 

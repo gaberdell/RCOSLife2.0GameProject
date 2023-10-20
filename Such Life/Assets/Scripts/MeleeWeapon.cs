@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeWeapon : MonoBehaviour
+public class MeleeWeapon : Archetype
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common
     [SerializeField] int Attack;
     [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
-    [SerializeField] string Archetype; // more modular option later
-        // need to be declared in archetype structure
-        [SerializeField] int Durability;
-        [SerializeField] float AttackMovesSpeed; //Number of attacks per second
-
+    [SerializeField] int WeaponType;
+    [SerializeField] Archetype Archetype; // more modular option later
     //[SerializeField] int Range; //Number of tiles that the weapon can hit
     //[SerializeField] float Damage; //Amount of damage weapon is dealing
     //[SerializeField] float ArmorPenetration; //Percentage of armor ignored
