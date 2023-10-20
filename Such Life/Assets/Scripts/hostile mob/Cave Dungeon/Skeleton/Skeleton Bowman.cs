@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BaseSkeleton : MonoBehaviour
+public class Skeleton Bowman : MonoBehaviour
 {
     public int maxHealth = 100;
     private int currentHealth;
@@ -27,7 +27,7 @@ public class BaseSkeleton : MonoBehaviour
 
     private void Awake()
     {
-        skeletonAnimator = GetComponent<Animator>();
+        skeletonAnimator = GetComponent<Animator);
     }
 
     void Start()
