@@ -20,6 +20,16 @@ public abstract class EntityBase : MonoBehaviour
     public int currHealth; //current health
     public float speed; //the speed
     public int damage; //damage that a enemy make in fighting
+    public float critChance; //Crit chance for entity when they attack. Example: 15% is 0.15f
+    public float critDamage; //Crit damage multiplier that is multiplied to attack
+    public int defense; //The defense stat of an entity
+    public string variation; //The string that saves what type the mob is
+
+
+    public GameObject player;
+    public Animator animate;
+    public RaycastHit hit;
+
 
     //random pos
     public virtual void PositionChange()
@@ -135,6 +145,21 @@ public abstract class EntityBase : MonoBehaviour
         newposition = pos;
         navi.SetDestination(newposition);
         flipSprite();
+    }
+
+    public Texture2D getSpriteVariant(string directory) // This function will be used to pick a random sprite for an entity within a folder
+    {
+
+        return null;
+    }
+
+    public Texture2D getSpecificSprite(string directory, string variation) //This function will get a specific sprite
+    {
+        string fullDir = directory + '/' + variation + ".png";
+        var rawData = System.IO.File.ReadAllBytes(fullDir);
+        Texture2D tex = new Texture2D(2, 2);
+        tex.LoadImage(rawData);
+        return tex;
     }
 }
 
