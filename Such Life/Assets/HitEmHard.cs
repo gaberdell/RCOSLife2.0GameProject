@@ -26,7 +26,8 @@ public class HitEmHard : MonoBehaviour
     }
 
     private void PerformAttack(InputAction.CallbackContext obj) {
-     //   wparent.Attack();
+        wparent.AttackFunct();
+        Debug.Log("performed attack");
     }
 
 
