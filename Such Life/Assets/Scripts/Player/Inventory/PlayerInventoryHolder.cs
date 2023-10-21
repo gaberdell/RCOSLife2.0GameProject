@@ -17,7 +17,6 @@ public class PlayerInventoryHolder : InventoryHolder
     private void Start()
     {
         EventManager.GetID(gameObject, ref playerChestID);
-        Debug.Log(playerChestID);
         EventManager.SoftSave(playerChestID, primaryInvSystem.ToSavabaleSlots());
     }
 

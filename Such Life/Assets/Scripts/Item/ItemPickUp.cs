@@ -29,7 +29,6 @@ public class ItemPickUp : MonoBehaviour
         myCollider.radius = pickUpRadius;
 
         freeze = true;
-        Debug.Log("item freezed");
         freezecount = freezetime;
     }
 
@@ -68,23 +67,18 @@ public class ItemPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+       
         //adjust this function slightly when start to implement player and chest inventory
-        /*var inventory = other.transform.GetComponent<PlayerInventoryHolder>();
-        var chest = other.transform.GetComponent<ChestInventory>();
-        if ((!inventory && !chest) || (freeze)) return;
-        if(chest){
-            if(chest.PrimaryInventorySystem.AddToInventory(ItemData,1)){
-                SaveGameManager.data.collectedItems.Add(id);
-                Destroy(this.gameObject);
-            }
+        var inventory = other.transform.GetComponent<IInventoryHolder>();
+        string inventoryID = null;
+        EventManager.GetID(other.gameObject, ref inventoryID);
+
+        if ((inventory == null) || (freeze)) return;
+
+        if (inventory.AddToPrimaryInventory(ItemData, 1))
+        { 
+            Destroy(this.gameObject);
         }
-        else if(inventory){
-            if (inventory.AddToInventory(ItemData, 1))
-            {
-                SaveGameManager.data.collectedItems.Add(id);
-                Destroy(this.gameObject);
-            }
-        }*/
     }
 
     void Update()
@@ -93,7 +87,6 @@ public class ItemPickUp : MonoBehaviour
         if (freezecount <= 0f && freeze)
         {
             freeze = false;
-            Debug.Log("item unfreezed");
         }
     }
 }

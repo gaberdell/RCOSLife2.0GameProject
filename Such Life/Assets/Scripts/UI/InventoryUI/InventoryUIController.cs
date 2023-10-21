@@ -82,6 +82,7 @@ public class InventoryUIController : MonoBehaviour
 
     void ShowPlayerInventory(InventorySystem inventoryToShow, int offset)
     {
+        Debug.Log(inventoryToShow);
         playerBackpackPanel.RefreshDynamicInventory(inventoryToShow, offset);
         playerBackpackPanel.gameObject.SetActive(true);
     }

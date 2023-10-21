@@ -48,7 +48,6 @@ public class ChestInventory : InventoryHolder, IInteractable
         SavableSlot[] chestSaveData = primaryInvSystem.ToSavabaleSlots();
 
         EventManager.SoftSave(ourID, chestSaveData);
-        Debug.Log("Why do you leave?");
     }
 
     protected override void LoadInventory(SaveData data)

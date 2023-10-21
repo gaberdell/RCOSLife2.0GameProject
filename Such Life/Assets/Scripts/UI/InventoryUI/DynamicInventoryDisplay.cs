@@ -18,15 +18,13 @@ public class DynamicInventoryDisplay : InventoryDisplay
         base.Start();
     }
 
-    private List<InventorySystem> allInventoriesWeListen;
-
-    public void RefreshDynamicInventory(InventorySystem inventoryToShow, int offset) 
+    public void RefreshDynamicInventory(InventorySystem inventoryToShow, int offset)
     {
         //clear out slots, update and assign slots 
         ClearSlots();
-        if(inventoryToShow != null)
+        inventorySystem = inventoryToShow;
+        if (inventorySystem != null)
         {
-            allInventoriesWeListen.Add(inventoryToShow);
             inventorySystem.OnInventorySlotChanged += UpdateSlot;
         }
 
@@ -38,14 +36,14 @@ public class DynamicInventoryDisplay : InventoryDisplay
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
 
         //prevent accessing null object (NullException Error)
-        if(inventoryToShow == null)
+        if (inventoryToShow == null)
         {
             return;
         }
 
 
         //create and pair the inventory slot
-        for(int i = offset; i < inventoryToShow.InventorySize; i++)
+        for (int i = offset; i < inventoryToShow.InventorySize; i++)
         {
             var uiSlot = Instantiate(slotPrefab, transform);
             slotDictionary.Add(uiSlot, inventoryToShow.InventorySlots[i]);
@@ -57,13 +55,13 @@ public class DynamicInventoryDisplay : InventoryDisplay
 
     private void ClearSlots()
     {
-        foreach(var item in transform.Cast<Transform>())
+        foreach (var item in transform.Cast<Transform>())
         {
             //Implement object pooling later to improve performance
             Destroy(item.gameObject);
         }
 
-        if(slotDictionary != null)
+        if (slotDictionary != null)
         {
             slotDictionary.Clear();
         }

@@ -7,7 +7,7 @@ using UnityEngine.Events;
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
 /* This script is for building the user's backpack and chest system */
 [System.Serializable]
-public abstract class InventoryHolder : MonoBehaviour
+public abstract class InventoryHolder : MonoBehaviour, IInventoryHolder
 {
     [SerializeField] private int inventorySize;
     [SerializeField] protected InventorySystem primaryInvSystem;
@@ -30,6 +30,12 @@ public abstract class InventoryHolder : MonoBehaviour
 
         primaryInvSystem = new InventorySystem(inventorySize); 
     }
+
+    public bool AddToPrimaryInventory(InventoryItemData inventoryItemData, int amount)
+    {
+        return primaryInvSystem.AddToInventory(inventoryItemData, amount);
+    }
+
 
     protected abstract void LoadInventory(SaveData saveData);
 }

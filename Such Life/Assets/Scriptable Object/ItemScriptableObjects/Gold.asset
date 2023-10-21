@@ -15,7 +15,7 @@ MonoBehaviour:
   ID: 2
   DisplayName: Gold
   Description: Gold Coins used as Currency
-  Icon: {fileID: 0}
+  Icon: {fileID: -7746669258064082428, guid: efd1c084c52d2e1498646a4dc90a5b77, type: 3}
   MaxStackSize: 100
   Type: 
   GoldValue: 1
