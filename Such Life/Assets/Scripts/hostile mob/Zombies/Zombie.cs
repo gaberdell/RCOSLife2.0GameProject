@@ -13,22 +13,24 @@ public class Zombie : mobBase
     // Start is called before the first frame update
     void Start()
     {
-
+        timeDelay = 2f;
         maxHealth = 5000;
         currHealth = maxHealth;
         damage = 1000;
         critChance = 0.15f;
         critDamage = 1.5f;
         defense = 750;
-        speed = 1f;
+        speed = 0.5f;
+        currMaxSpeed = 1.0f;
         player = GameObject.Find("MC");
         Sprite = GetComponent<SpriteRenderer>();
         navi = GetComponent<UnityEngine.AI.NavMeshAgent>();
         navi.updateRotation = false;
         navi.updateUpAxis = false;
-        alertRange = 5.0f;
+        alertRange = 100.0f;
         currState = State.Idling;
         position = this.transform.position;
+        navi.speed = speed;
     }
 
     // Update is called once per frame
@@ -45,16 +47,18 @@ public class Zombie : mobBase
 
         if (currState != State.Dead)
         {
-            if (findClosestObj("MC", alertRange) == player)
+            if (getDistance(player) <= alertRange /*&& !detectWall()*/)
             {
+                playerSighted = true;
                 currState = State.Chasing;
                 newposition = player.transform.position;
                 navi.SetDestination(newposition);
             }
-            else if (currState == State.Chasing)
+            else if (currState == State.Chasing && getDistance(player) > alertRange)
             {
-                navi.Stop();
+                playerSighted = false;
                 currState = State.Idling;
+                navi.SetDestination(this.transform.position);
             }
             else
             {
@@ -77,13 +81,15 @@ public class Zombie : mobBase
                     {
                         PositionChange();
                         int gen = Random.Range(0, 100);
-                        if (gen > 70)
+                        if (gen > 90)
                         {
                             Idle();
                         }
                     }
                 }
             }
+
         }
+        flipSprite();
     }
 }

@@ -36,7 +36,6 @@ public abstract class EntityBase : MonoBehaviour
     //random pos
     public virtual void PositionChange()
     {
-        speed = Random.Range(0, currMaxSpeed);
         float posxmin = transform.position.x - speed;
         float posxmax = transform.position.x + speed;
         float posymin = transform.position.y - speed;

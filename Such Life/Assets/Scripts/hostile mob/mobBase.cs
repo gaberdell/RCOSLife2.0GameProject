@@ -51,10 +51,6 @@ public class mobBase : EntityBase
     public LayerMask targetLayerMobs;  
 
 
-    void Start()
-    {
-        speed = 5.0f;
-    }
     /*void PositionChange()
     {
 
