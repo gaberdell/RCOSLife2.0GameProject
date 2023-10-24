@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Goblin : mobBase
 {
-    public int maxHealth = 100;
     public int currentHealth;
-    public int damage = 10;
     public float attackRange = 1.5f;
     public bool canSteal;
     public float stealRange;
@@ -30,7 +28,9 @@ public class Goblin : mobBase
 
     void Start()
     {
+        maxHealth = 100;
         currentHealth = maxHealth;
+        damage = 10;
 
         // Instantiate and attach a health bar to the Goblin
         GameObject healthBarInstance = Instantiate(healthBarPrefab, transform.position, Quaternion.identity);

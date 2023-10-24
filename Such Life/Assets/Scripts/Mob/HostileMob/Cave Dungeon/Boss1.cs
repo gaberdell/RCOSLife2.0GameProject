@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss1 : mobBase
 {
-    public int maxHealth = 1000; // Extremely high health
+    
     public int currentHealth;
     public int defense = 50; // High defense
 
@@ -35,6 +35,7 @@ public class Boss1 : mobBase
 
     void Start()
     {
+        maxHealth = 1000; // Extremely high health
         currentHealth = maxHealth;
         // Other initialization code...
     }

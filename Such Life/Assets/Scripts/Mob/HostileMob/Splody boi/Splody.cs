@@ -211,33 +211,38 @@ public class Splody : mobBase
         //find and damage all entities in the explosion radius
         Collider2D[] mob_exploded = Physics2D.OverlapCircleAll(transform.position, explosionRange, targetLayerMobs);
         //loop over every mob object:
-        for (int mob = 0; mob < mob_exploded.Length; mob++){
+        for (int mob = 0; mob < mob_exploded.Length; mob++)
+        {
             GameObject mob_obj = mob_exploded[mob].gameObject;
 
 
-          //check if the object has a mobBase class 
-          if (mob_obj.GetComponent<mobBase>())
+            //check if the object has a mobBase class 
+            if (mob_obj.GetComponent<mobBase>())
             {
-            if (mob_obj.GetComponent<Splody>()) {
-                mob_obj.GetComponent<Splody>().explode();
-            }
-            else{
-              //Damage the object's mobBase (decrease the mobBase's HP) 
-              mob_obj.GetComponent<mobBase>().damageSelf(damage); }
+                if (mob_obj.GetComponent<Splody>())
+                {
+                    mob_obj.GetComponent<Splody>().explode();
+                }
+                else
+                {
+                    //Damage the object's mobBase (decrease the mobBase's HP) 
+                    mob_obj.GetComponent<mobBase>().damageSelf(damage);
+                }
             }
             //samething for an AnimalBase object
-          else if (mob_obj.GetComponent<AnimalBase>()){
+            else if (mob_obj.GetComponent<IDamageable>() != null)
+            {
                 //decrease the AnimalBase's HP
-                mob_obj.GetComponent<AnimalBase>().currHP -= damage;
-          }
+                EventManager.DealDamage(mob_obj, damage);
+            }
         }
-            spanim.SetTrigger("IsDead");
-            //to be implemented, add an explosion sprite
-            //set the exploded value to true
-            exploded = true;
-            
-            
-        
+        spanim.SetTrigger("IsDead");
+        //to be implemented, add an explosion sprite
+        //set the exploded value to true
+        exploded = true;
+
+
+
     }
     void Explosion_step() {
         if (spanim.GetCurrentAnimatorStateInfo(0).IsName("Oof") && spanim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)

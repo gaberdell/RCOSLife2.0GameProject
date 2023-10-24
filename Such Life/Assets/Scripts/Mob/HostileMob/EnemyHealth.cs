@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public Animator animator;
     public int maxHealth = 100;
@@ -13,16 +13,31 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    private void OnEnable()
     {
-        currentHealth -= damage;
+        EventManager.onDealDamage += TakeDamage;
+    }
 
-        // Play hurt animation
-        animator.SetTrigger("Hurt");
-        if(currentHealth <= 0)
+    private void OnDisable()
+    {
+        EventManager.onDealDamage -= TakeDamage;
+    }
+
+    public bool TakeDamage(GameObject ourGameObject, float damage)
+    {
+        if (ourGameObject == gameObject)
         {
-            Die();
+            currentHealth -= (int) damage;
+
+            // Play hurt animation
+            animator.SetTrigger("Hurt");
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+            return true;
         }
+        return false;
     }
 
     void Die()

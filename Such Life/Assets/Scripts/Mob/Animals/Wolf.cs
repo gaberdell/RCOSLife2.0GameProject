@@ -50,6 +50,8 @@ public class Wolf : AnimalBase
         dead = false;
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
@@ -127,9 +129,10 @@ public class Wolf : AnimalBase
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    new void OnCollisionEnter2D(Collision2D collision)
     {
         base.OnCollisionEnter2D(collision);
+        OnCollisionEnter2D(collision);
         // Try to eat non-null food and stop moving
         if (collision.gameObject == food) {
             currState = State.Eating;

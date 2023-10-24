@@ -7,7 +7,7 @@ using UnityEngine.AI;
  * This is the base for all animal AI
  * This class does not implement AI for any specific animal
 */
-public class AnimalBase : MonoBehaviour, IDamageable
+public class AnimalBase : EntityBase, IDamageable
 {   
     //The State and Stats of animal
     public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Pushed } //The different states the animal can be in
@@ -18,8 +18,6 @@ public class AnimalBase : MonoBehaviour, IDamageable
     public Rigidbody2D animal;
     public float HPCap; //Max Health
     public float currHP; //Current HP of Animal
-    public float currMaxSpeed; //Current possible max speed
-    public float currSpeed; //Current Speed of Animal
     public float weight; //Determines how much the animal will get pushed
     public float hungerCap; //Max Hunger Value
     public float hunger; //Hunger of the animal
@@ -27,8 +25,6 @@ public class AnimalBase : MonoBehaviour, IDamageable
     public int size; //Depending on the size, there are predetermined stats
 
     public Animator animate;
-    public Vector2 position; //The current position of the animal in a Vector2 object
-    public Vector2 newposition; //The position that the animal wants to reach
 
     public float time;
     public float timeDelay;
@@ -38,8 +34,7 @@ public class AnimalBase : MonoBehaviour, IDamageable
     public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
-
-    public NavMeshAgent navi; //Hey, Listen!
+    public List<string> drops; //What the animal will drop when it dies
 
     private void OnEnable()
     {
@@ -62,7 +57,7 @@ public class AnimalBase : MonoBehaviour, IDamageable
     }
 
     //random pos
-    public void PositionChange()
+    new public void PositionChange()
     {
         currSpeed = Random.Range(0, currMaxSpeed);
         float posxmin = transform.position.x - currSpeed;
@@ -139,25 +134,6 @@ public class AnimalBase : MonoBehaviour, IDamageable
         return currSpeed;
     }
 
-    //This function flips the sprite of the animal.
-    //This may be removed in the future when animations are added.
-   public void flipSprite()
-    {
-        Vector2 direction = newposition - position; 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //flip sprites based on the direction of the target and "this"
-        if (angle >= 90 || angle <= -90)
-        {
-            //face left
-            aniSprite.flipX = false;
-
-        }
-        else
-        {
-            aniSprite.flipX = true;
-        }
-    }
-
     //A simple function that makes the animal take the specified amount of damage
     public void takeDamage(int val)
     {
@@ -212,8 +188,34 @@ public class AnimalBase : MonoBehaviour, IDamageable
             return null;
         }
     }
-       
-    void OnCollisionEnter2D(Collision2D collision)
+
+    public List<GameObject> findGroup(string tag)
+    {
+        GameObject[] group;
+        // Find all nearby animals of same tag within the awareness distance
+        //When no object with the tag is found, Unity returns an Error
+        try
+        {
+            group = GameObject.FindGameObjectsWithTag(tag);
+        }
+        catch
+        {
+            group = new GameObject[0];
+        }
+
+        List<GameObject> nearby = new List<GameObject>();
+        foreach (GameObject obj in group)
+        {
+            Vector2 diff = (Vector2)obj.transform.position - position;
+            if (diff.sqrMagnitude <= awareness * awareness)
+            {
+                nearby.Add(obj);
+            }
+        }
+
+        return nearby;
+    }
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         //If it is the player, it gets pushed. Will be changed to other entities in the future
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
@@ -235,8 +237,13 @@ public class AnimalBase : MonoBehaviour, IDamageable
     {
         return ((Vector2)thing.transform.position - position).sqrMagnitude;
     }
+    public void moveTo(Vector2 pos)
+    {
+        newposition = pos;
+        navi.SetDestination(newposition);
+        flipSprite();
+    }
 
-    
     //Looks for closest food that the animal can eat
     public void LookForFood(List<string> foods) 
     {

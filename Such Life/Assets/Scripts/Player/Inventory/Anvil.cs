@@ -5,7 +5,6 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 //This class is for an anvil
-[RequireComponent(typeof(UniqueID))]
 public class Anvil : InventoryHolder, IInteractable
 {
     public Sprite anvilSprite;
@@ -13,32 +12,44 @@ public class Anvil : InventoryHolder, IInteractable
     public GameObject spriteChild;
     private SpriteRenderer localRenderer;
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
-    
+    private string ourID;
     protected override void Awake()
     {
         base.Awake();
-        SaveLoad.onLoadGame += LoadInventory;
     }
+
+    private void OnEnable()
+    {
+        EventManager.onGameLoaded += LoadInventory;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.onGameLoaded -= LoadInventory;
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        var anvilSaveData = new InventorySaveData(primaryInvSystem, transform.position, transform.rotation);
-        SaveGameManager.data.anvilDictionaryData.Add(GetComponent<UniqueID>().ID, anvilSaveData);
+        EventManager.GetID(gameObject, ref ourID);
+
+        SavableSlot[] anvilSaveData = primaryInvSystem.ToSavabaleSlots();
+
+        EventManager.SoftSave(ourID, anvilSaveData);
         localRenderer = spriteChild.GetComponent<SpriteRenderer>();
     }
 
     protected override void LoadInventory(SaveData data)
     {
-        if (data.anvilDictionaryData.TryGetValue(GetComponent<UniqueID>().ID, out InventorySaveData anvilData))
+        if (data.savedSlots.TryGetValue(ourID, out SavableSlot[] chestSlots))
         {
-            this.primaryInvSystem = anvilData.InvSystem;
-            this.transform.position = anvilData.Position;
-            this.transform.rotation = anvilData.Rotation;
+            //Inherits these from InventoryHolder
+            primaryInvSystem.WriteInSavableSlots(chestSlots);
         }
     }
 
-    public void Interact(Interactor interactor, out bool interactSuccessful)
+    public void Interact(out bool interactSuccessful)
     {
         // if any is listening out on this event (hence the ?), if yes, invoke it
         OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, 0);
