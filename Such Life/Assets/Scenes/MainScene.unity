@@ -5963,6 +5963,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4285985039666438381, guid: dbf1b0888a0d2024da538ac86a536245, type: 3}
     - target: {fileID: 1933137348951341883, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: _id
       value: 3d4091a2-2f43-48c1-85de-0d683de85b79
