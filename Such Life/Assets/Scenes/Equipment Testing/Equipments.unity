@@ -301,10 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 509daefe9a1d46646b1cbc05ca642627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 
-  Durability: 100
-  AttackMovesSpeed: 0
   Attack: 0
   Rarity: 
   Reinforce: 0
-  WArchetype: {fileID: 0}
+  WArchetype: {fileID: 11400000, guid: 09f7861cc18b2f64f873e1cad799ef1f, type: 2}

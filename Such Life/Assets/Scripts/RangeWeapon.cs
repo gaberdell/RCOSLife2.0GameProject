@@ -10,10 +10,7 @@ public class RangeWeapon : MonoBehaviour
     [SerializeField] int Attack;
     [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
-    [SerializeField] string Archetype; // more modular option later
-        // need to be declared in archetype structure
-        [SerializeField] int Durability;
-        [SerializeField] float AttackMovesSpeed; //Number of attacks per second
+    [SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
 
     [SerializeField] int Pierce; //numEnemiesCanHit
     [SerializeField] float FiringRate; //Rounds per minute
