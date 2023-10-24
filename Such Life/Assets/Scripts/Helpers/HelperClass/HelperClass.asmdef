@@ -1,0 +1,16 @@
+{
+    "name": "HelperClass",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f2d0d46beb1433e4e862b0a8e9af5d46"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

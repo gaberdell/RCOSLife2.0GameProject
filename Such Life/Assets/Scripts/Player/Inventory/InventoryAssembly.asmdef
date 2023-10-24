@@ -1,0 +1,24 @@
+{
+    "name": "InventoryAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:94251034ecb32dc4ba4d58cdee6b0a40",
+        "GUID:a662fdd05dea99a4e8059e97cf3f5b5e",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:d52d843b3d724534bac1d3b205302f7e",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:9b89040f0455afc4a9caddd5b1e6e8ad",
+        "GUID:f2d0d46beb1433e4e862b0a8e9af5d46",
+        "GUID:35dfe6f4790c2cb49973b610b1c5fce5",
+        "GUID:af6c62ff4da5fe448aeaed80c04fa807"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

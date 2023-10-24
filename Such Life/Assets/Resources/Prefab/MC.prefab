@@ -126,10 +126,11 @@ GameObject:
   - component: {fileID: 7887569298735229455}
   - component: {fileID: 5611377554060918271}
   - component: {fileID: 5642498062214917297}
-  - component: {fileID: 7925289063335126091}
   - component: {fileID: 5642498061771927945}
-  - component: {fileID: 1706496984}
-  - component: {fileID: 3495392231663070125}
+  - component: {fileID: 1973969561936613051}
+  - component: {fileID: 6292811526506097683}
+  - component: {fileID: 7641848126051002950}
+  - component: {fileID: 1933137348951341883}
   m_Layer: 0
   m_Name: MC
   m_TagString: Untagged
@@ -259,22 +260,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7925289063335126091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724269156444419255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04e2b67074d375048b620335c44b651b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  body: {fileID: 7887569298735229455}
-  anim: {fileID: 5642498062214917297}
-  interactor: {fileID: 227616985}
-  walkSpeed: 2
 --- !u!114 &5642498061771927945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,7 +287,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7925289063335126091}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
@@ -376,12 +361,28 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 457af862-7ef9-4767-bca7-f2eda65b326c
     m_ActionName: Player/Interacting[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0bbb5f4f-1831-4b28-9cd8-0a397e0e99bf
+    m_ActionName: Player/Teleport[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c74e9384-7b9e-4edd-aa11-92b562f7f9a2
+    m_ActionName: Player/Dash[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bef009de-33f1-477f-8743-a4d225179b0f
+    m_ActionName: Player/Roll[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 53d20c1f-faa7-4eb6-800c-71e9ee512f9e
+    m_ActionName: Player/Attack[/Keyboard/v]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1706496984
+--- !u!114 &1973969561936613051
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -390,15 +391,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 724269156444419255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79bbc2e720b0a54195ed1030e668d48, type: 3}
+  m_Script: {fileID: 11500000, guid: 52dc2aaacd208f54897a3fcd9ae8fbbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionPoint: {fileID: 2065209224}
+  inventorySize: 50
+  primaryInvSystem:
+    Inventory: []
+  offset: 10
+--- !u!114 &6292811526506097683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724269156444419255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98c7713b3a0c6a4d978201df6314b58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionPoint: {fileID: 227616985}
   InteractionLayer:
     serializedVersion: 2
     m_Bits: 64
   InteractionPointRadius: 1
---- !u!114 &3495392231663070125
+--- !u!114 &7641848126051002950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -407,12 +424,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 724269156444419255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 288dedb15146b864fb4143ac6e8415ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 51b879286c64dc849a4ec74bc3bb8742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 10
-  primaryInvSystem:
-    Inventory: []
-  secondaryInvSize: 50
-  secondaryInvSystem:
-    Inventory: []
+  mousePosition: {x: 0, y: 0, z: 0}
+  cursorSpeed: 5
+  mouseBody: {fileID: 0}
+  pos: {x: 0, y: 0}
+  body: {fileID: 7887569298735229455}
+  anim: {fileID: 5642498062214917297}
+  interactor: {fileID: 227616985}
+  walkSpeed: 2
+  direction: {x: 0, y: 0}
+  teleportDistance: 0
+  teleport:
+    m_Name: Teleport
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c4bb57e5-e28c-4748-80e3-a74edde0628e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  dash:
+    m_Name: Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d948d3cf-f06e-4f31-9801-c49ad318b3d6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  roll:
+    m_Name: Roll
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: b4628fd2-564f-4d4a-a79c-9654572094fe
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  teleportCooldown: 0
+  teleportDelay: 0
+  dashTime: 0
+  dashSpeed: 0
+  dashCooldown: 0
+  rollTime: 0
+  rollSpeed: 0
+  rollCooldown: 0
+--- !u!114 &1933137348951341883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724269156444419255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: e493a1d9-150d-454e-84f8-59e8066f7eb9
