@@ -41,8 +41,6 @@ public class PlayerMovement : MouseFollow
     public bool canMove; //whether or not you can move, ex if you are stunned or after you tp
     
 
-
-
     void Awake()
     {
         walkSpeed = 2;

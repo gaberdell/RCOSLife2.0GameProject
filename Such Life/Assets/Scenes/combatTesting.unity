@@ -135,14 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86182bec8d4ba6f488bd0bccb3eafd1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1604158529401426974}
-  attackPoint: {fileID: 480987704}
-  attackRange: 0.86
-  enemyLayers:
-    serializedVersion: 2
-    m_Bits: 8
-  attackDamage: 40
-  attackRate: 2
 --- !u!1 &480987703
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +492,7 @@ GameObject:
   - component: {fileID: 3976590779585634588}
   - component: {fileID: 3976590779585634589}
   - component: {fileID: 3976590779585634590}
+  - component: {fileID: 3976590779585634591}
   m_Layer: 3
   m_Name: Enemy (Ghost Stand In)
   m_TagString: Untagged
@@ -563,12 +556,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
+  m_Sprite: {fileID: 4740742658319907719, guid: bc7f57962f779e74db638e9d0ab86a05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.2, y: 0.31}
+  m_Size: {x: 0.44, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -623,6 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   maxHealth: 100
+  currentHealth: 0
 --- !u!58 &3976590779585634590
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -769,7 +763,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.29, y: 0.8}
+  m_Size: {x: 0.44, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -813,10 +807,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be708b400cccefc4a879cda4b684ee59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerAtk: 10
-  playerDef: 10
-  playerCritRate: 0.5
-  playerCritDmg: 1.5
 --- !u!114 &6344784319772488712
 MonoBehaviour:
   m_ObjectHideFlags: 0
