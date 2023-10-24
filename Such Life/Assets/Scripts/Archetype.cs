@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Archetype : MonoBehaviour
+
+[CreateAssetMenu(fileName = "New Archetype", menuName = "Archetype")]
+public class Archetype : ScriptableObject
 {
     private string[] Archetypes = {"Heavy","Medium","Light"};
     private int[] WeaponDurabilities = {200,150,100};
@@ -10,7 +12,7 @@ public class Archetype : MonoBehaviour
     [SerializeField] private string Type;
     [SerializeField] private int Durability;
     [SerializeField] private float AttackMovesSpeed;
-
+    /*
     public Archetype()
     {
     }
@@ -20,6 +22,7 @@ public class Archetype : MonoBehaviour
         Durability = WeaponDurabilities[WeaponType];
         AttackMovesSpeed = MoveSpeeds[WeaponType];
     }
+    */
 }
 
 
