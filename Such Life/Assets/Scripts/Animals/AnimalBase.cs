@@ -7,7 +7,7 @@ using UnityEngine.AI;
  * This is the base for all animal AI
  * This class does not implement AI for any specific animal
 */
-public class AnimalBase : MonoBehaviour
+public class AnimalBase : EntityBase
 {   
     //The State and Stats of animal
     public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Pushed } //The different states the animal can be in
@@ -18,8 +18,7 @@ public class AnimalBase : MonoBehaviour
     public Rigidbody2D animal;
     public float HPCap; //Max Health
     public float currHP; //Current HP of Animal
-    public float currMaxSpeed; //Current possible max speed
-    public float currSpeed; //Current Speed of Animal
+
     public float weight; //Determines how much the animal will get pushed
     public float hungerCap; //Max Hunger Value
     public float hunger; //Hunger of the animal
@@ -27,8 +26,7 @@ public class AnimalBase : MonoBehaviour
     public int size; //Depending on the size, there are predetermined stats
 
     public Animator animate;
-    public Vector2 position; //The current position of the animal in a Vector2 object
-    public Vector2 newposition; //The position that the animal wants to reach
+
 
     public float time;
     public float timeDelay;
@@ -38,36 +36,8 @@ public class AnimalBase : MonoBehaviour
     public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
-
-    public NavMeshAgent navi; //Hey, Listen!
-
-
-    //random pos
-    public void PositionChange()
-    {
-        currSpeed = Random.Range(0, currMaxSpeed);
-        float posxmin = transform.position.x - currSpeed;
-        float posxmax = transform.position.x + currSpeed;
-        float posymin = transform.position.y - currSpeed;
-        float posymax = transform.position.y + currSpeed;
-
-        int gen = Random.Range(0, 2);
-        if (gen == 0) 
-        {
-            newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
-        }
-        else if (gen == 1)
-        {
-            newposition = new Vector2(transform.position.x, Random.Range(posymin, posymax));
-        }
-        else if(gen == 2)
-        {
-            newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
-        }
-        navi.speed = currSpeed*2;
-        navi.SetDestination(newposition);
-    }
-
+    public List<string> drops; //What the animal will drop when it dies
+    
     public string  getAnimal()
     {
         return this.GetType().Name; //Get the animal type
@@ -120,24 +90,7 @@ public class AnimalBase : MonoBehaviour
         return currSpeed;
     }
 
-    //This function flips the sprite of the animal.
-    //This may be removed in the future when animations are added.
-   public void flipSprite()
-    {
-        Vector2 direction = newposition - position; 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        //flip sprites based on the direction of the target and "this"
-        if (angle >= 90 || angle <= -90)
-        {
-            //face left
-            aniSprite.flipX = false;
 
-        }
-        else
-        {
-            aniSprite.flipX = true;
-        }
-    }
 
     //A simple function that makes the animal take the specified amount of damage
     public void takeDamage(int val)
@@ -158,43 +111,57 @@ public class AnimalBase : MonoBehaviour
     public GameObject findClosestObj(string tag)
     {
         GameObject[] things; 
+        //Get all the objects with the given tag in the scene
         //When no object with the tag is found, Unity returns an Error
-        try
-        {
-            //Get all the objects with the given tag in the scene
+        try {
             things = GameObject.FindGameObjectsWithTag(tag);
-            GameObject closest = null;
-            float distance = Mathf.Infinity;
-
-            //Loop through the list and compare their distances to the Animal
-            foreach(GameObject thing in things)
-            {
-                Vector2 diff = (Vector2)thing.transform.position - position;
-                float curDistance = diff.sqrMagnitude;
-
-                if (curDistance < distance)
-                {
-                    closest = thing;
-                    distance = curDistance;
-                }
-               }
-            if (distance <= awareness)
-            {
-                return closest;
-            }
-            else
-            {
-                return null;
-            }
-        }
-            //If an error is returned, return NULL
-             catch
-        {
+        } catch {
             return null;
         }
+        
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+
+        //Loop through the list and compare their distances to the Animal
+        foreach(GameObject thing in things) {
+            Vector2 diff = (Vector2)thing.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+
+            if (curDistance < distance) {
+                closest = thing;
+                distance = curDistance;
+            }
+        }
+
+        if (distance <= awareness) {
+            return closest;
+        }
+
+        return null;
+    }
+
+    public List<GameObject> findGroup(string tag) {
+        GameObject[] group;
+        // Find all nearby animals of same tag within the awareness distance
+        //When no object with the tag is found, Unity returns an Error
+        try {
+            group = GameObject.FindGameObjectsWithTag(tag);
+        } catch {
+            group = new GameObject[0];
+        }
+
+        List<GameObject> nearby = new List<GameObject>();
+        foreach (GameObject obj in group) {
+            Vector2 diff = (Vector2) obj.transform.position - position;
+            if (diff.sqrMagnitude <= awareness * awareness) {
+                nearby.Add(obj);
+            }
+        }
+
+        return nearby;
     }
        
-    void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         //If it is the player, it gets pushed. Will be changed to other entities in the future
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
@@ -203,7 +170,7 @@ public class AnimalBase : MonoBehaviour
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         if (currState == State.Pushed)
         {
@@ -217,37 +184,27 @@ public class AnimalBase : MonoBehaviour
         return ((Vector2)thing.transform.position - position).sqrMagnitude;
     }
 
+    public void moveTo(Vector2 pos) {
+        newposition = pos;
+        navi.SetDestination(newposition);
+        flipSprite();
+    }
     
     //Looks for closest food that the animal can eat
-    public void LookForFood(List<string> foods) 
-    {
-        float currentclosest = -1f;
+    public void LookForFood(List<string> foods) {
+        float currentclosest = Mathf.Infinity;
         foreach(var thing in foods) {
-            food = findClosestObj(thing);
-
-            
-            if (food)
-            {
-                if (currentclosest == -1f)
-                {
-                    currentclosest = getDistance(food);
-                }
-
-                if (getDistance(food) < currentclosest)
-                {
-                    currentclosest = getDistance(food);
-                    newposition = food.transform.position;
-                    navi.SetDestination(newposition);
-                    
-                }
-                else
-                {
-                    return;
-                }
-                
+            GameObject target = findClosestObj(thing);
+            if (target && getDistance(target) < currentclosest) {
+                currentclosest = getDistance(target);
+                food = target;
             }
         }
-        
-
+        if (food) {
+            newposition = food.transform.position;
+            moveTo(newposition);
+        } else {
+            currState = State.Idling;
+        }
     }
 }
