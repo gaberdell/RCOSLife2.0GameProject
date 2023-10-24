@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class HybridWeapon : MonoBehaviour
+[CreateAssetMenu(fileName = "New HybridWeapon", menuName = "HybridWeapon")]
+public class HybridWeapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common

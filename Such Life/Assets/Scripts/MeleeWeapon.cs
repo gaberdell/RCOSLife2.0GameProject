@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeWeapon : MonoBehaviour
+[CreateAssetMenu(fileName = "New MeleeWeapon", menuName = "MeleeWeapon")]
+public class MeleeWeapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common

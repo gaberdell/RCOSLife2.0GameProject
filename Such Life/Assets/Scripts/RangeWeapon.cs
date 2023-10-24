@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class RangeWeapon : MonoBehaviour
+[CreateAssetMenu(fileName = "New RangeWeapon", menuName = "RangeWeapon")]
+public class RangeWeapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common

@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Weapon : MonoBehaviour
+
+
+[CreateAssetMenu(fileName = "WeaponTemplateDoNotCreate", menuName = "New Weapon")]
+public class Weapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common
