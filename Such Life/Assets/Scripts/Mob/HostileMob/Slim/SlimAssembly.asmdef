@@ -2,8 +2,8 @@
     "name": "SlimAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:0b24fb5582b561745b67a69c1d05b597",
-        "GUID:f2d0d46beb1433e4e862b0a8e9af5d46"
+        "GUID:0c92ae02563fe3d45bcf4afdbdb93a4f",
+        "GUID:f467484fe5a46ed419bbb68cbccec56c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

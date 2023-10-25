@@ -71,12 +71,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1389317410033103885, guid: 46e412ab8bc92495eb0f3b6764c76ca8, type: 3}
+  m_Sprite: {fileID: -641143830685118463, guid: aa15c65014a0b9349aff8caaf8aa8c4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: a05d2508-14c2-4c91-892b-34963c4672eb
+  _id: fb63b531-20d1-4baf-83b8-4e413229d1f8
 --- !u!114 &8029752879040401336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpRadius: 0.5
-  ItemData: {fileID: 11400000, guid: d02ec97fe7cb5429ea01e6f931f8f7c1, type: 2}
+  ItemData: {fileID: 11400000, guid: cbe94cfffc4ad3648ba7a42c54d7895d, type: 2}
   itemSaveData:
     ItemData: {fileID: 0}
     Position: {x: 0, y: 0, z: 0}
@@ -238,12 +238,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1899487692306646558, guid: a1ec70a0c00824bf98f1df4986bd36e3, type: 3}
+  m_Sprite: {fileID: 4238104672342434454, guid: ba6234ec57ea010419a471e8d63ec3e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -258,6 +258,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6512710252638093842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4cd75a00a1a443e8a1c3e21445b9b64, type: 3}
+  m_Script: {fileID: 11500000, guid: 11fec5c77c4ff554788536e4d818dda9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
