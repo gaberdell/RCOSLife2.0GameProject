@@ -29,6 +29,8 @@ public class AnimalBase : EntityBase
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
     public List<string> drops; //What the animal will drop when it dies
+
+    public Collider2D dc; // The collider for the sprite
     
     public string  getAnimal()
     {
@@ -84,17 +86,6 @@ public class AnimalBase : EntityBase
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
         { 
                 currState = State.Pushed;            
-        }
-        // Try to eat non-null food and stop moving
-        if (collision.gameObject == food)
-        {
-            currState = State.Eating;
-            hunger += 50;
-            heal(20);
-            Destroy(food);
-            food = null;
-            moveTo(transform.position);
-            currState = State.Idling;
         }
     }
 

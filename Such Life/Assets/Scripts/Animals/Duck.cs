@@ -5,7 +5,6 @@ using UnityEngine;
 public class Duck : AnimalBase
 {
     // Start is called before the first frame update
-    private Collider2D dc;
     private bool flying;
     private bool dead;
     private float fly_x;
