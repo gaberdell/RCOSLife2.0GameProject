@@ -78,16 +78,28 @@ public class AnimalBase : EntityBase
         return speed;
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
+        base.OnCollisionEnter2D(collision);
         //If it is the player, it gets pushed. Will be changed to other entities in the future
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
         { 
                 currState = State.Pushed;            
         }
+        // Try to eat non-null food and stop moving
+        if (collision.gameObject == food)
+        {
+            currState = State.Eating;
+            hunger += 50;
+            heal(20);
+            Destroy(food);
+            food = null;
+            moveTo(transform.position);
+            currState = State.Idling;
+        }
     }
 
-    public void OnCollisionExit2D(Collision2D collision)
+    public virtual void OnCollisionExit2D(Collision2D collision)
     {
         if (currState == State.Pushed)
         {

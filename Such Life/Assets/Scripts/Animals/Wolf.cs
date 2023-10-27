@@ -117,7 +117,7 @@ public class Wolf : AnimalBase
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public override void OnCollisionEnter2D(Collision2D collision)
     {
         base.OnCollisionEnter2D(collision);
         // Try to eat non-null food and stop moving
