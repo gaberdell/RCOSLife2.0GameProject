@@ -30,7 +30,7 @@ public abstract class EntityBase : MonoBehaviour
 
     public GameObject player;
     public Animator animate;
-    public RaycastHit hit;
+    public RaycastHit2D hit;
 
     public virtual void PositionChange() {
         PositionChange(transform.position);
@@ -151,6 +151,18 @@ public abstract class EntityBase : MonoBehaviour
         flipSprite();
     }
 
+    //Find if a Wall is in the way through raycast
+    public bool checkWall(GameObject target)
+    {
+        LayerMask mask = LayerMask.GetMask("Walls");
+        Vector2 direction = (Vector2)transform.position - (Vector2)target.transform.position;
+        hit = Physics2D.Raycast(transform.position, direction, getDistance(target), mask);
+        if (hit.collider != null)
+            return true; //A wall was hit
+        else
+            return false; //No wall was hit
+    }
+
     public void teleportTo(Vector2 pos)
     {
         newposition = pos;
@@ -174,4 +186,3 @@ public abstract class EntityBase : MonoBehaviour
         return tex;
     }
 }
-

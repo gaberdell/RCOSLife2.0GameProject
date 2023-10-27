@@ -9,6 +9,7 @@ The Zombie is decently tanky and has high health, attack, and defense; it gets t
 half health. Its only method of attack is by touching the player*/
 public class Zombie : mobBase
 {
+    public bool WallInWay;
 
     // Start is called before the first frame update
     void Start()
@@ -48,14 +49,15 @@ public class Zombie : mobBase
 
         if (currState != State.Dead)
         {
-            if (getDistance(player) <= alertRange /*&& !detectWall()*/)
+            if (getDistance(player) <= alertRange && !checkWall(player))
             {
-                playerSighted = true;
-                currState = State.Chasing;
-                newposition = player.transform.position;
-                navi.SetDestination(newposition);
+                    playerSighted = true;
+                    currState = State.Chasing;
+                    newposition = player.transform.position;
+                    navi.SetDestination(newposition);
+                
             }
-            else if (currState == State.Chasing && getDistance(player) > alertRange)
+            else if (currState == State.Chasing && (getDistance(player) > alertRange || checkWall(player)) )
             {
                 playerSighted = false;
                 currState = State.Idling;
@@ -94,5 +96,14 @@ public class Zombie : mobBase
         flipSprite();
     }
 
-
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        //If it is the player, it gets pushed. Will be changed to other entities in the future
+        if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
+        {
+            //Damage Player
+            Destroy(player); //Temporary as player has no health
+        }
+    }
+    
 }
