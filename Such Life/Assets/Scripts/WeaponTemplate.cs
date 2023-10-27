@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "WeaponTemplateDoNotCreate", menuName = "New Weapon")]
+[CreateAssetMenu(fileName = "New Weapon", menuName = "WeaponTemplateDoNotCreate")]
 public class Weapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
