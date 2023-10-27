@@ -24,7 +24,7 @@ public abstract class EntityBase : MonoBehaviour
     public float critDamage; //Crit damage multiplier that is multiplied to attack
     public int defense; //The defense stat of an entity
     public string variation; //The string that saves what type the mob is
-
+    public Collider2D collider;
 
     public float timeDelay; //A timer
 
