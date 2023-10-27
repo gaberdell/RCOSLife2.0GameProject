@@ -33,6 +33,19 @@ public class Boss1 : mobBase
     public string nextAreaName; // Name of the next area to unlock progression
     public string achievementName; // Name of the special achievement
 
+    // Add a reference to the player or player controller script
+    public PlayerController playerController;
+
+       public float slamRange = 10.0f; // Range of the slam attack
+    public float slamCooldown = 5.0f; // Cooldown between slam attacks
+    private float lastSlamTime = 0;
+
+    public Transform slamAttackPoint; // Point where the slam attack occurs
+    public LayerMask playerLayer; // Layer to detect the player
+
+    // Reference to the player controller
+    public PlayerController playerController;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -41,42 +54,53 @@ public class Boss1 : mobBase
 
     void Update()
     {
-        // Implement boss AI behavior, phases, and attacks...
+        if (CanPerformSlamAttack())
+        {
+            PerformSlamAttack();
+        }
+
+        // Implement other boss AI behavior, phases, and attacks...
     }
 
-    void MeleeAttack()
+    // Check if the boss can perform a slam attack
+    bool CanPerformSlamAttack()
     {
-        // Melee attack logic...
+        return Time.time - lastSlamTime >= slamCooldown;
     }
 
-    void RangedAttack()
+    // Perform the slam attack
+    void PerformSlamAttack()
     {
-        // Ranged attack logic...
-    }
+        // Check if the player is within slam range
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(slamAttackPoint.position, slamRange, playerLayer);
+        
+        foreach (Collider2D player in hitPlayers)
+        {
+            // If player is hit, trigger dodge mechanics in the player controller
+            playerController.TriggerDodge();
+        }
 
-    void AoEAttack()
-    {
-        // AoE attack logic...
-    }
-
-    void SummonStandardEnemy()
-    {
-        // Summon standard enemy logic...
+        // Set the last slam attack time
+        lastSlamTime = Time.time;
     }
 
     public void TakeDamage(int damage)
     {
-        // Handle boss taking damage...
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Defeat();
+        }
     }
 
     void ShiftPhase()
     {
-        // Shift to the next phase...
+        // Implement phase shifting logic...
     }
 
     public void Defeat()
     {
-        // Handle boss defeat...
+        // Handle boss defeat logic, such as dropping items, unlocking progression, etc.
     }
 }
-

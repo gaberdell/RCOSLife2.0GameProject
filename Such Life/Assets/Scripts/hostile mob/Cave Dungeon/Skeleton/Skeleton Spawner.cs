@@ -7,6 +7,7 @@ public class SkeletonSpawner : MonoBehaviour
     public GameObject easySkeletonPrefab;
     public GameObject mediumSkeletonPrefab;
     public GameObject hardSkeletonPrefab;
+    public GameObject flyingSkeletonPrefab; // Add the FlyingSkeleton prefab
 
     public Transform spawnPoint;
     public float spawnInterval = 10.0f;
@@ -15,9 +16,11 @@ public class SkeletonSpawner : MonoBehaviour
 
     // Adjust the spawn probabilities
     [Range(0, 1)]
-    public float easySpawnProbability = 0.6f;
+    public float easySpawnProbability = 0.4f; // Adjust probabilities as needed
     [Range(0, 1)]
     public float mediumSpawnProbability = 0.3f;
+    [Range(0, 1)]
+    public float flyingSpawnProbability = 0.2f; // Probability for the FlyingSkeleton
 
     private void Start()
     {
@@ -59,6 +62,10 @@ public class SkeletonSpawner : MonoBehaviour
         else if (randomValue < easySpawnProbability + mediumSpawnProbability)
         {
             return mediumSkeletonPrefab;
+        }
+        else if (randomValue < easySpawnProbability + mediumSpawnProbability + flyingSpawnProbability)
+        {
+            return flyingSkeletonPrefab; // Spawn the FlyingSkeleton
         }
         else
         {
