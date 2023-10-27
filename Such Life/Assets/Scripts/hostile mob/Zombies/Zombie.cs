@@ -31,6 +31,7 @@ public class Zombie : mobBase
         currState = State.Idling;
         position = this.transform.position;
         navi.speed = speed;
+        collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -92,4 +93,6 @@ public class Zombie : mobBase
         }
         flipSprite();
     }
+
+
 }
