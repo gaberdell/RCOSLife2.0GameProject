@@ -2,9 +2,9 @@
     "name": "ItemAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:94251034ecb32dc4ba4d58cdee6b0a40",
-        "GUID:f467484fe5a46ed419bbb68cbccec56c",
-        "GUID:65c58adfd7a65f342b2a14b26370b9f1"
+        "EventManager",
+        "BaseClassAssembly",
+        "HelperClass"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -2,14 +2,14 @@
     "name": "InventoryAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:94251034ecb32dc4ba4d58cdee6b0a40",
-        "GUID:6055be8ebefd69e48b49212b09b47b2f",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:0acb0c5de2bdcce41870932e19020ced",
-        "GUID:f467484fe5a46ed419bbb68cbccec56c",
-        "GUID:65c58adfd7a65f342b2a14b26370b9f1",
-        "GUID:2bfb13cc12832394e8e89862bb4ee72c",
-        "GUID:2d55363481f78e24f8339cbeaf7a2e19"
+        "EventManager",
+        "Unity.TextMeshPro",
+        "Unity.InputSystem",
+        "InterfaceAssembly",
+        "BaseClassAssembly",
+        "HelperClass",
+        "PlayerInputAssembly",
+        "ItemAssembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

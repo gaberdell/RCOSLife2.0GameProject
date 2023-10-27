@@ -2,7 +2,7 @@
     "name": "HelperClass",
     "rootNamespace": "",
     "references": [
-        "GUID:f467484fe5a46ed419bbb68cbccec56c"
+        "BaseClassAssembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
