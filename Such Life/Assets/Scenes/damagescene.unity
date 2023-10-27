@@ -4400,7 +4400,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3044b981908cb0e4b8735e33877c3cb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  animator: {fileID: 0}
+  maxHealth: 100
+  currentHealth: 0
+  isDead: 0
 --- !u!61 &1015980456
 BoxCollider2D:
   m_ObjectHideFlags: 0

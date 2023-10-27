@@ -29,14 +29,14 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        if (isDead){
+        if (!isDead){
             Debug.Log("Enemy died!");
             //Die animation
             //animator.SetBool("IsDead",true);
             //Disable the enemy
             this.enabled = false;
             GetComponent<Collider2D>().enabled = false;
-            GetComponent<EnemyMovement>().enabled = false;
+            //GetComponent<EnemyMovement>().enabled = false;
             isDead = true;
         }
 
