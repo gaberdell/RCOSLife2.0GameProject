@@ -478,6 +478,11 @@ MonoBehaviour:
   lastRollUsed: 0
   combatMove: 0
   canMove: 0
+  attackPoint: {fileID: 0}
+  radius: 0
+  enemies:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3976590779585634584
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +569,7 @@ SpriteRenderer:
   m_Size: {x: 0.44, y: 0.3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &3976590779585634587
@@ -912,7 +917,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29, y: 0.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -950,7 +955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
-  animator: {fileID: 0}
   healthBar: {fileID: 0}
 --- !u!114 &6344784320467823479
 MonoBehaviour:
@@ -1175,7 +1179,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.29, y: 0.26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
