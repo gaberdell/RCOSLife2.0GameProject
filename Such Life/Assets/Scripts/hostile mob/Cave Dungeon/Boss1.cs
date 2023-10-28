@@ -33,8 +33,8 @@ public class Boss1 : mobBase
     public string nextAreaName; // Name of the next area to unlock progression
     public string achievementName; // Name of the special achievement
 
-    // Add a reference to the player or player controller script
-    public PlayerController playerController;
+    // // Add a reference to the player or player controller script
+    // public PlayerController playerController;
 
        public float slamRange = 10.0f; // Range of the slam attack
     public float slamCooldown = 5.0f; // Cooldown between slam attacks
@@ -42,9 +42,6 @@ public class Boss1 : mobBase
 
     public Transform slamAttackPoint; // Point where the slam attack occurs
     public LayerMask playerLayer; // Layer to detect the player
-
-    // Reference to the player controller
-    public PlayerController playerController;
 
     void Start()
     {
@@ -69,20 +66,32 @@ public class Boss1 : mobBase
     }
 
     // Perform the slam attack
-    void PerformSlamAttack()
-    {
-        // Check if the player is within slam range
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(slamAttackPoint.position, slamRange, playerLayer);
-        
-        foreach (Collider2D player in hitPlayers)
-        {
-            // If player is hit, trigger dodge mechanics in the player controller
-            playerController.TriggerDodge();
-        }
+public float knockbackForce = 10.0f; // Adjust the force as needed
 
-        // Set the last slam attack time
-        lastSlamTime = Time.time;
+// Perform the slam attack
+void PerformSlamAttack()
+{
+    // Check if the player is within slam range
+    Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(slamAttackPoint.position, slamRange, playerLayer);
+
+    foreach (Collider2D player in hitPlayers)
+    {
+        // Calculate the knockback direction away from the slam attack point
+        Vector2 knockbackDirection = (player.transform.position - slamAttackPoint.position).normalized;
+
+        // Apply a force to move the player slightly away
+        Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
+        if (playerRigidbody != null)
+        {
+            playerRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
     }
+
+    // Set the last slam attack time
+    lastSlamTime = Time.time;
+}
+
+
 
     public void TakeDamage(int damage)
     {
