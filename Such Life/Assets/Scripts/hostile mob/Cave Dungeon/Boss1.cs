@@ -104,12 +104,51 @@ void PerformSlamAttack()
     }
 
     void ShiftPhase()
+{
+    if (currentPhase < totalPhases)
     {
-        // Implement phase shifting logic...
+        // Implement logic for transitioning to the next phase
+        // For example, change boss behavior, appearance, or attack patterns
+
+        // Increment the current phase
+        currentPhase++;
     }
+    else
+    {
+        // Handle the final phase or any other logic when all phases are completed
+        // For example, you can call the Defeat method.
+        Defeat();
+    }
+}
+
 
     public void Defeat()
+{
+    // Implement boss defeat logic, such as:
+    // - Dropping items or rewards
+    // - Unlocking progression (e.g., opening a gate)
+    // - Triggering a special achievement
+
+    // For example, you can spawn a rare drop prefab:
+    if (rareDropPrefab != null)
     {
-        // Handle boss defeat logic, such as dropping items, unlocking progression, etc.
+        Instantiate(rareDropPrefab, transform.position, Quaternion.identity);
     }
+
+    // You can also change the behavior or appearance of the boss to indicate defeat.
+    // For example, you can disable the boss's AI or play a defeat animation.
+
+    // Optionally, load the next area or perform other progression-related tasks.
+    if (!string.IsNullOrEmpty(nextAreaName))
+    {
+        // Load the next area or trigger progression here.
+        // SceneManager.LoadScene(nextAreaName); // If using Unity's SceneManager.
+    }
+
+    // Destroy or deactivate the boss GameObject.
+    // You can also play a victory animation or display a victory screen.
+    // For example:
+    // gameObject.SetActive(false);
+}
+
 }

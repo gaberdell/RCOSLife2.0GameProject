@@ -100,13 +100,27 @@ public class BaseSkeleton : mobBase
         skeletonAnimator.SetBool("Crumpled", crumpled);
     }
 
+
     private void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Player") && !isInvincible)
     {
-        if (other.CompareTag("Player"))
+        // Check if the player entered and the skeleton is not invincible
+        //PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+
+        if (player != null)
         {
+            // Deal damage to the player
+            //player.TakeDamage(20); // Adjust the damage value as needed
+
+            // Optionally, make the skeleton invincible for a short duration to prevent rapid damage
+            isInvincible = true;
             playerInRange = true;
+            timeToRecover = Time.time + invincibilityDuration;
+            skeletonAnimator.SetTrigger("Crumble");
         }
     }
+}
 
     private void OnTriggerExit(Collider other)
     {

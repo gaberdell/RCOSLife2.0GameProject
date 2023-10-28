@@ -7,6 +7,7 @@ TagManager:
   - Animal
   - Grass
   - CanFly
+  - BoxTag
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,10 @@ TagManager:
     locked: 0
   - name: Infobox
     uniqueID: 2069794067
+    locked: 0
+  - name: Background
+    uniqueID: 2562392385
+    locked: 0
+  - name: Game Object
+    uniqueID: 746908971
     locked: 0
