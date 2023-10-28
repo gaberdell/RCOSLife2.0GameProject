@@ -32,23 +32,26 @@ public abstract class EntityBase : MonoBehaviour
     public Animator animate;
     public RaycastHit hit;
 
+    public virtual void PositionChange() {
+        PositionChange(transform.position);
+    }
 
     //random pos
-    public virtual void PositionChange()
+    public virtual void PositionChange(Vector2 pos)
     {
-        float posxmin = transform.position.x - speed;
-        float posxmax = transform.position.x + speed;
-        float posymin = transform.position.y - speed;
-        float posymax = transform.position.y + speed;
+        float posxmin = pos.x - 2 * speed;
+        float posxmax = pos.x + 2 * speed;
+        float posymin = pos.y - 2 * speed;
+        float posymax = pos.y + 2 * speed;
 
         int gen = Random.Range(0, 2);
         if (gen == 0)
         {
-            newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
+            newposition = new Vector2(Random.Range(posxmin, posxmax), pos.y);
         }
         else if (gen == 1)
         {
-            newposition = new Vector2(transform.position.x, Random.Range(posymin, posymax));
+            newposition = new Vector2(pos.x, Random.Range(posymin, posymax));
         }
         else if (gen == 2)
         {
@@ -146,6 +149,14 @@ public abstract class EntityBase : MonoBehaviour
         newposition = pos;
         navi.SetDestination(newposition);
         flipSprite();
+    }
+
+    public void teleportTo(Vector2 pos)
+    {
+        newposition = pos;
+        flipSprite();
+        position = pos;
+        transform.position = pos;
     }
 
     public Texture2D getSpriteVariant(string directory) // This function will be used to pick a random sprite for an entity within a folder

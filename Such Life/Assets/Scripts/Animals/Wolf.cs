@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Wolf : AnimalBase
 {
-    public Collider2D dc;
     private bool dead;
     private GameObject self;
     int stored;
@@ -60,22 +59,6 @@ public class Wolf : AnimalBase
         if (time >= timeDelay) {
             time = 0f;
 
-            //If the wolf is idling, it has a 30% chance to start wandering
-            if (currState == State.Idling) {
-                int gen = Random.Range(0, 100);
-                if (gen < 30) {
-                    Walk();
-                }
-            }
-
-            //If the wolf is wandering, it has a 10% chance of stopping.
-            if (currState == State.Walking) {
-                PositionChange();
-                int gen = Random.Range(0, 100);
-                if (gen < 10) {
-                    Idle();
-                }
-            }
             //If the hunger is greater than or equal to 80, the wolf can heal.
             if (hunger >= 80)
             {
