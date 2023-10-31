@@ -127,10 +127,10 @@ GameObject:
   - component: {fileID: 5611377554060918271}
   - component: {fileID: 5642498062214917297}
   - component: {fileID: 5642498061771927945}
-  - component: {fileID: 1973969561936613051}
-  - component: {fileID: 6292811526506097683}
-  - component: {fileID: 7641848126051002950}
   - component: {fileID: 1933137348951341883}
+  - component: {fileID: 5130092104023469143}
+  - component: {fileID: 1004651837947557347}
+  - component: {fileID: 6433802198877147689}
   m_Layer: 0
   m_Name: MC
   m_TagString: Untagged
@@ -251,7 +251,7 @@ Animator:
   m_GameObject: {fileID: 724269156444419255}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 35898dc0391454745b38420bda82628f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 441b087a116a37745bf3be6238b6288f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 168803ef6470e4c43829505cf53c60fc, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 81f1807e305aa8a4b80479775ab87f3e, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -382,96 +382,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1973969561936613051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724269156444419255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52dc2aaacd208f54897a3fcd9ae8fbbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventorySize: 50
-  primaryInvSystem:
-    Inventory: []
-  offset: 10
---- !u!114 &6292811526506097683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724269156444419255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98c7713b3a0c6a4d978201df6314b58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionPoint: {fileID: 227616985}
-  InteractionLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  InteractionPointRadius: 1
---- !u!114 &7641848126051002950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 724269156444419255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51b879286c64dc849a4ec74bc3bb8742, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mousePosition: {x: 0, y: 0, z: 0}
-  cursorSpeed: 5
-  mouseBody: {fileID: 0}
-  pos: {x: 0, y: 0}
-  body: {fileID: 7887569298735229455}
-  anim: {fileID: 5642498062214917297}
-  interactor: {fileID: 227616985}
-  walkSpeed: 2
-  direction: {x: 0, y: 0}
-  teleportDistance: 0
-  teleport:
-    m_Name: Teleport
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: c4bb57e5-e28c-4748-80e3-a74edde0628e
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  dash:
-    m_Name: Dash
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: d948d3cf-f06e-4f31-9801-c49ad318b3d6
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  roll:
-    m_Name: Roll
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: b4628fd2-564f-4d4a-a79c-9654572094fe
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
-  teleportCooldown: 0
-  teleportDelay: 0
-  dashTime: 0
-  dashSpeed: 0
-  dashCooldown: 0
-  rollTime: 0
-  rollSpeed: 0
-  rollCooldown: 0
 --- !u!114 &1933137348951341883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,4 +394,94 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: e493a1d9-150d-454e-84f8-59e8066f7eb9
+  _id: 57b864f9-b411-46e0-8e25-824018687722
+--- !u!114 &5130092104023469143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724269156444419255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7913923fa8426914bbb5075d1e975031, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionPoint: {fileID: 227616985}
+  InteractionLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  InteractionPointRadius: 1
+--- !u!114 &1004651837947557347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724269156444419255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d16cc62e969cd1419c12dd861e58022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mousePosition: {x: 0, y: 0, z: 0}
+  cursorSpeed: 5
+  mouseBody: {fileID: 0}
+  pos: {x: 0, y: 0}
+  body: {fileID: 7887569298735229455}
+  anim: {fileID: 5642498062214917297}
+  interactor: {fileID: 227616985}
+  walkSpeed: 0
+  direction: {x: 0, y: 0}
+  teleportDistance: 0
+  teleport:
+    m_Name: Teleport
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f81638a6-b1d8-4292-9e69-212f91fdaa87
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  dash:
+    m_Name: Dash
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9a286ee4-8c0c-4c94-b241-0ff4e7cae56f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  roll:
+    m_Name: Roll
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a3257094-de73-490d-98fb-2a22a946cd19
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  teleportCooldown: 0
+  teleportDelay: 0
+  dashTime: 0
+  dashSpeed: 0
+  dashCooldown: 0
+  rollTime: 0
+  rollSpeed: 0
+  rollCooldown: 0
+--- !u!114 &6433802198877147689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724269156444419255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c4f9d433d89584397480afff171715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySize: 50
+  primaryInvSystem:
+    Inventory: []
+  offset: 10

@@ -1,11 +1,7 @@
 {
-    "name": "HostileMob",
+    "name": "ProceduralAnimation",
     "rootNamespace": "",
-    "references": [
-        "EventManager",
-        "BaseClassAssembly",
-        "InterfaceAssembly"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

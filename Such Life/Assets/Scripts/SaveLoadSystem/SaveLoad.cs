@@ -17,6 +17,7 @@ public static class SaveLoad
     public static bool Save(SaveData data)
     {
         //          a "space" built into Unity
+        Debug.Log(Application.persistentDataPath);
         string dir = Application.persistentDataPath + SaveDirectory;
 
         //If the directory does not exist, create a new directory folder

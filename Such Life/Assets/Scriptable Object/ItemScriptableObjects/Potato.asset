@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 263606838acd44a48a38b52d2f9adbed, type: 3}
+  m_Script: {fileID: 11500000, guid: eb133a7ba3f611242a95b42f69c4b135, type: 3}
   m_Name: Potato
   m_EditorClassIdentifier: 
   ID: 0
   DisplayName: Potato
   Description: A starchy vegetable that can be turn into a magical clear liquid.
-  Icon: {fileID: -6137242429100743368, guid: cb44bab0025f06b4d8ae4eb0ea5b95d2, type: 3}
+  Icon: {fileID: -6137242429100743368, guid: 345b38c555e681f42801ae21bae559bb, type: 3}
   MaxStackSize: 2
   Type: 
   GoldValue: 0
