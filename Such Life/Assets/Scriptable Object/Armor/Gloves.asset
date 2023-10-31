@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74f535b1487f11a45bc7ddf7d82df9da, type: 3}
+  m_Name: Gloves
+  m_EditorClassIdentifier: 
+  ID: 0
+  DisplayName: 
+  Description: 
+  Icon: {fileID: 0}
+  MaxStackSize: 0
+  Type: 
+  GoldValue: 0
+  placeable: 0
+  colliderType: box
+  boxColliderSize: {x: 2, y: 2}
+  circleColliderRadius: 0
+  ItemPrefab: {fileID: 0}
+  expMult:
+  - 1
+  - 1.25
+  - 1.5
+  - 2
+  - 2.5
+  - 3.5
+  - 4.5
+  - 5
+  - 5.5
+  - 6
+  - 6.5
+  - 7
+  - 8
+  - 9
+  - 10
+  - 13
+  - 17
+  - 21
+  - 24
+  - 27
+  - 30
+  mainStatMult:
+  - 1
+  - 1.2
+  - 1.4
+  - 1.6
+  - 1.8
+  - 2
+  - 2.2
+  - 2.4
+  - 2.6
+  - 2.85
+  - 3.15
+  - 3.45
+  - 3.75
+  - 4.05
+  - 4.35
+  - 4.65
+  - 4.95
+  - 5.3
+  - 5.8
+  - 6.55
+  - 8
+  equipmentLevel: 0
+  baseEXP: 0
+  requiredEXP: 0
+  currEXP: 0
+  armorType: Gloves
+  setName: 
+  durabilityPoint: 100
+  rarity: 
+  mainStats: 0
+  mainStatType: Attack
+  iconPic: {fileID: 0}
+  ItemPrefab: {fileID: 0}
