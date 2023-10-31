@@ -155,7 +155,7 @@ public abstract class EntityBase : MonoBehaviour
     public bool checkWall(GameObject target)
     {
         LayerMask mask = LayerMask.GetMask("Walls");
-        Vector2 direction = (Vector2)transform.position - (Vector2)target.transform.position;
+        Vector2 direction = (Vector2)target.transform.position - (Vector2)transform.position;
         hit = Physics2D.Raycast(transform.position, direction, getDistance(target), mask);
         if (hit.collider != null)
             return true; //A wall was hit
