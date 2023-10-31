@@ -44,7 +44,7 @@ public class Duck : AnimalBase
         foodtypes.Add("Grass");
         //collider stuff
         stored = self.layer;
-        dc = GetComponent<BoxCollider2D>();
+        collider = GetComponent<BoxCollider2D>();
         //set inital internal varibles
         dead = false;
         //collision layers
@@ -68,22 +68,22 @@ public class Duck : AnimalBase
         if (flying){
             //slide for 1s until the duck's colider no longer intercts other things.
             if (fly_time < 0f) {
-                if (!dc.IsTouchingLayers() | (fly_time - Time.deltaTime) > 0)
+                if (!collider.IsTouchingLayers() | (fly_time - Time.deltaTime) > 0)
                 {
                     self.layer = stored;
                     flying = false;
-                    dc.isTrigger = false;
+                    collider.isTrigger = false;
                     currState = State.Idling;
                 }
             } else
             {
-                if (!dc.IsTouchingLayers()|(fly_time - Time.deltaTime)>0)
+                if (!collider.IsTouchingLayers()|(fly_time - Time.deltaTime)>0)
                 {
                     fly_time -= Time.deltaTime;
                 }
                 animal.velocity = new Vector2(fly_x, fly_y);
                 print(fly_time);
-                if(dc.IsTouchingLayers())
+                if(collider.IsTouchingLayers())
                 {
                     print("On object");
                 }
@@ -179,7 +179,7 @@ public class Duck : AnimalBase
                                 fly_time = 1f;
                             }
                             flying = true;
-                            dc.isTrigger = true;
+                            collider.isTrigger = true;
                             float fly_x_temp = animal.velocity.x;
                             float fly_y_temp = animal.velocity.y;
                             fly_x = 5*fly_x_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);

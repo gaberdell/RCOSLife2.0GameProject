@@ -29,8 +29,6 @@ public class AnimalBase : EntityBase
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
     public List<string> drops; //What the animal will drop when it dies
-
-    public Collider2D dc; // The collider for the sprite
     
     public string  getAnimal()
     {

@@ -40,7 +40,7 @@ public class Wolf : AnimalBase
         foodtypes.Add("CanFly");
         //collider stuff
         stored = self.layer;
-        dc = GetComponent<BoxCollider2D>();
+        collider = GetComponent<BoxCollider2D>();
         //set inital internal varibles
         dead = false;
     }
