@@ -57,7 +57,7 @@ public class Zombie : mobBase
                     navi.SetDestination(newposition);
                 
             }
-            else if (currState == State.Chasing && (getDistance(player) > alertRange || checkWall(player))) 
+            else if (currState == State.Chasing && (getDistance(player) > alertRange || checkWall(player)) )
             {
                 playerSighted = false;
                 currState = State.Idling;
