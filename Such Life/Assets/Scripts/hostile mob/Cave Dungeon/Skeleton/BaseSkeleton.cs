@@ -49,11 +49,12 @@ public class BaseSkeleton : mobBase
         navi.autoBraking = false;
         navi.updateRotation = false;
         navi.updateUpAxis = false;
-
+        spanim = GetComponent<Animator>();
         currState = State.Wander;
         currPosition = new Vector2(transform.position.x, transform.position.y);
         prevX = 0;
         prevY = 0;
+        alertRange = 50f;
     }
 
     protected virtual void Update()
@@ -96,6 +97,7 @@ public class BaseSkeleton : mobBase
             {
                 spanim.SetFloat("Yvel", 0f);
             }
+            navi.SetDestination(target.position);
         }
         else if (currState == State.Wander)
         {   
@@ -171,7 +173,7 @@ public class BaseSkeleton : mobBase
         //angle = Mathf.Atan2((target.position.y - currPosition.y) , (target.position.x - currPosition.x));
         //Vector2 conversion = currPosition;
         //navi.SetDestination(conversion);
-        currPosition = Vector2.MoveTowards(currPosition,target.position, frame_speed);
+        transform.position = Vector2.MoveTowards(transform.position,target.position, frame_speed);
         //print("Debug: speed is" + speed);
        // print("Debug: speed per frame is" + frame_speed);
         //flipSprite(oldPosX);
