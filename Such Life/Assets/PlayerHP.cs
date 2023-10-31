@@ -20,9 +20,6 @@ public class PlayerHP : MonoBehaviour
 
     void Update()
     {
-        if (currHP > 0){
-            decHP(3);
-        }
         
     }
 

@@ -20,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= damage;
 
         // Play hurt animation
-        //animator.SetTrigger("Hurt");
+        animator.SetTrigger("IsHit");
         if(currentHealth <= 0)
         {
             Die();
@@ -32,14 +32,25 @@ public class EnemyHealth : MonoBehaviour
         if (!isDead){
             Debug.Log("Enemy died!");
             //Die animation
-            //animator.SetBool("IsDead",true);
+            animator.SetBool("IsDead",true);
             //Disable the enemy
-            this.enabled = false;
             GetComponent<Collider2D>().enabled = false;
-            //GetComponent<EnemyMovement>().enabled = false;
+            GetComponent<EnemyMovement>().enabled = false;
+            this.enabled = false;
             isDead = true;
         }
+        if(isDead){
+            StartCoroutine(Dead());
+            Dead();            
+        }
+    }
 
+      IEnumerator Dead()
+    {
+        // Death animation runs for 1.3 seconds
+        yield return new WaitForSeconds(1.3f);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Animator>().enabled = false;
     }
     
 }
