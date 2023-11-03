@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class Boss1 : mobBase
 {
-    public int maxHealth = 1000; // Extremely high health
-    public int currentHealth;
-    public int defense = 50; // High defense
+    
 
     public int sustainedDamageThreshold = 100; // Require sustained damage output to defeat
     private int sustainedDamageCounter = 0;
@@ -45,7 +43,10 @@ public class Boss1 : mobBase
 
     void Start()
     {
-        currentHealth = maxHealth;
+        maxHealth = 50000; // Extremely high health
+        currHealth = maxHealth;
+        defense = 2000;
+
         // Other initialization code...
     }
 
@@ -92,16 +93,6 @@ void PerformSlamAttack()
 }
 
 
-
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-
-        if (currentHealth <= 0)
-        {
-            Defeat();
-        }
-    }
 
     void ShiftPhase()
 {
