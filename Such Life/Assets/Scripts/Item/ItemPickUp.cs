@@ -6,11 +6,11 @@ using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
 [RequireComponent(typeof(UniqueID))]
-public class ItemPickUp : MonoBehaviour
+public class ItemPickUp : Interactable
 {
     public float pickUpRadius = 1f;
-    public InventoryItemData ItemData;
-
+    public InventoryItemData ItemData; // would changing this to a general var/ scriptable object data type work? ItemData can be a piece of armor, equipment, building materials, resources, ...
+    
     private CircleCollider2D myCollider;
     [SerializeField] private ItemPickUpSaveData itemSaveData;
     private string id;

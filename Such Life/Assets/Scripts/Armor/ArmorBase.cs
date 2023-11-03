@@ -52,11 +52,6 @@ public class ArmorBase : InventoryItemData
 
 
 
-    /* Equipment icon/display */
-    //for displaying the icon/artwork
-    public Sprite iconPic;
-    public GameObject ItemPrefab;
-
     /* On creation of the scriptable object, run a "randomize rarity" and "randomize substats" function 
      * to populate the substatsInfo array depend on the rarity of the object. Once this
      * stat has been set for the object, you cannot change it.
@@ -64,4 +59,8 @@ public class ArmorBase : InventoryItemData
      * and durabilityPoint (will go up and down when player repair the armor)
     */
 
+    private void Awake()
+    {
+        //to be implement
+    }
 }

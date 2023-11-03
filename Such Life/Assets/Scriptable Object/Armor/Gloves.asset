@@ -15,8 +15,8 @@ MonoBehaviour:
   ID: 0
   DisplayName: 
   Description: 
-  Icon: {fileID: 0}
-  MaxStackSize: 0
+  Icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  MaxStackSize: 1
   Type: 
   GoldValue: 0
   placeable: 0
@@ -78,5 +78,3 @@ MonoBehaviour:
   rarity: 
   mainStats: 0
   mainStatType: Attack
-  iconPic: {fileID: 0}
-  ItemPrefab: {fileID: 0}
