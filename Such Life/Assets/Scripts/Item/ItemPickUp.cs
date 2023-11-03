@@ -5,8 +5,26 @@ using UnityEngine;
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class ItemPickUp : MonoBehaviour
+public class ItemPickUp : Interactable
 {
+    public Item item;
+    public override void Interact()
+    {
+        base.Interact();
+
+        PickUpItem();
+
+    }
+
+
+    void PickUpItem()
+    {
+        Debug.Log("Pick up" + item.name);
+        //Add item into inventory (Destroy game object in the current scene and add that item into the inventory)
+        Destroy(gameObject);
+
+    }
+    /*
     public float pickUpRadius = 1f;
     public InventoryItemData ItemData; // would changing this to a general var/ scriptable object data type work? ItemData can be a piece of armor, equipment, building materials, resources, ...
     
@@ -89,4 +107,5 @@ public class ItemPickUp : MonoBehaviour
             freeze = false;
         }
     }
+    */
 }

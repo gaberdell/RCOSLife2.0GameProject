@@ -1,4 +1,3 @@
-<<<<<<<< HEAD:Such Life/Assets/Scripts/WeaponTemplate.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -34,9 +33,9 @@ public class Weapon : ScriptableObject
     //[SerializeField] float ArmorPenetration; //Percentage of armor ignored
     double critDamage = 1.25; //Multiplier of the damage if crit is landed, weapon should add to that percentage
     float critChance = 0; //Percent chance to crit, weapon should add to this chance
-========
+}
 //Change this so it uses Get Setters as opposed to this
-public abstract class Weapon {//Nothing gets assigned until a specific type of weapon calls these variables.
+public abstract class ItemWeapon {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     int numEnemiesCanHit; //Piercing
     float damage; //Amount of damage weapon is dealing
@@ -47,7 +46,6 @@ public abstract class Weapon {//Nothing gets assigned until a specific type of w
     float armorPenetration; //Percentage of armor ignored
     double critDamage; //Multiplier of the damage if crit is landed, weapon should add to that percentage
     float critChance; //Percent chance to crit, weapon should add to this chance
->>>>>>>> main:Such Life/Assets/Scripts/Helpers/InterfaceBaseClasses/BaseClass/Weapon.cs
     //string material; //Do not know how the specific weapons will inherit the class
     float weight; //How heavy the weapon, impacts how much player holds in inventory
     bool isOneHanded;
