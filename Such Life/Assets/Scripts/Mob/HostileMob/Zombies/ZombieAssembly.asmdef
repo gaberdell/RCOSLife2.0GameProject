@@ -1,0 +1,17 @@
+{
+    "name": "ZombieAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fc5d6116f23c28b478a8772674ce0971",
+        "GUID:aeb114d2e4ebad54e97100cd57f2bbb2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
