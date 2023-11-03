@@ -1,0 +1,17 @@
+{
+    "name": "SlimAssembly",
+    "rootNamespace": "",
+    "references": [
+        "HostileMob",
+        "BaseClassAssembly"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

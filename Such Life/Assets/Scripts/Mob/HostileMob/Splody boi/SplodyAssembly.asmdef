@@ -1,0 +1,19 @@
+{
+    "name": "SplodyAssembly",
+    "rootNamespace": "",
+    "references": [
+        "EventManager",
+        "HostileMob",
+        "BaseClassAssembly",
+        "InterfaceAssembly"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

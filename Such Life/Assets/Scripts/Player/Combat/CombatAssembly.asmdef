@@ -1,0 +1,20 @@
+{
+    "name": "CombatAssembly",
+    "rootNamespace": "",
+    "references": [
+        "EventManager",
+        "Unity.InputSystem",
+        "NavMeshComponents",
+        "PlayerInputAssembly",
+        "BaseClassAssembly"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
