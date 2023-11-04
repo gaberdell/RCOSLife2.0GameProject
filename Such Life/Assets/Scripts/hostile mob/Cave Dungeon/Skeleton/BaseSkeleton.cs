@@ -30,6 +30,7 @@ public class BaseSkeleton : mobBase
     public float fingerAttackCooldown = 4.0f;
     protected float lastFingerAttackTime = 0;
 
+
     protected virtual void Awake()
     {
         skeletonAnimator = GetComponent<Animator>();
@@ -37,7 +38,7 @@ public class BaseSkeleton : mobBase
 
     protected virtual void Start()
     {
-        currHealth = maxHealth;
+        currHealth = 100;
         SetCrumpledState(true); // Initially in crumpled state
          monsterBody = GetComponent<Rigidbody2D>();
         monsterBody.drag = 10f;
@@ -98,6 +99,7 @@ public class BaseSkeleton : mobBase
                 spanim.SetFloat("Yvel", 0f);
             }
             navi.SetDestination(target.position);
+            PerformBoneAttack();
         }
         else if (currState == State.Wander)
         {   
@@ -230,26 +232,21 @@ public class BaseSkeleton : mobBase
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
 {
-    if (other.CompareTag("Player") && !isInvincible)
+    if (other.CompareTag("Enemy"))
     {
-        // Check if the player entered and the skeleton is not invincible
-        //PlayerCharacter player = other.GetComponent<PlayerCharacter>();
+        // Check if the collided object is an enemy
+        BaseSkeleton enemy = other.GetComponent<BaseSkeleton>();
 
-        if (player != null)
+        if (enemy != null)
         {
-            // Deal damage to the player
-            //player.TakeDamage(20); // Adjust the damage value as needed
-
-            // Optionally, make the skeleton invincible for a short duration to prevent rapid damage
-            isInvincible = true;
-            playerInRange = true;
-            timeToRecover = Time.time + invincibilityDuration;
-            skeletonAnimator.SetTrigger("Crumble");
+            // Deal damage to the enemy
+            enemy.TakeDamage(damage);
         }
     }
 }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -259,24 +256,31 @@ public class BaseSkeleton : mobBase
         }
     }
 
+
     void PerformBoneAttack()
+{
+    if (bonePrefab != null && boneSpawnPoint != null)
     {
-        if (bonePrefab != null && boneSpawnPoint != null)
+        // Instantiate the bone prefab at the spawn point
+        GameObject bone = Instantiate(bonePrefab, boneSpawnPoint.position, boneSpawnPoint.rotation);
+        // Calculate the direction from the skeleton to the player
+        Vector3 directionToPlayer = (target.position - boneSpawnPoint.position).normalized;
+
+        // Get the Rigidbody component of the bone
+        Rigidbody boneRigidbody = bone.GetComponent<Rigidbody>();
+
+        if (boneRigidbody != null)
         {
-            // Instantiate and throw a bone projectile
-            GameObject bone = Instantiate(bonePrefab, boneSpawnPoint.position, boneSpawnPoint.rotation);
-            Rigidbody boneRigidbody = bone.GetComponent<Rigidbody>();
-
-            if (boneRigidbody != null)
-            {
-                // Apply force to the bone in the forward direction
-                boneRigidbody.AddForce(boneSpawnPoint.forward * 10.0f, ForceMode.Impulse);
-
-                // Set the last attack time
-                lastBoneAttackTime = Time.time;
-            }
+            // Set the initial velocity of the bone in the direction of the player
+            boneRigidbody.velocity = directionToPlayer * 10;
         }
+
+        // Set the last attack time
+        lastBoneAttackTime = Time.time;
     }
+}
+
+
 
     void PerformFingerAttack()
     {
