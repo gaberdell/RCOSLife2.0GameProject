@@ -40,10 +40,10 @@ public abstract class EntityBase : MonoBehaviour
     //random pos
     public virtual void PositionChange(Vector2 pos)
     {
-        float posxmin = pos.x - 2 * speed;
-        float posxmax = pos.x + 2 * speed;
-        float posymin = pos.y - 2 * speed;
-        float posymax = pos.y + 2 * speed;
+        float posxmin = pos.x - speed;
+        float posxmax = pos.x + speed;
+        float posymin = pos.y - speed;
+        float posymax = pos.y + speed;
 
         int gen = Random.Range(0, 2);
         if (gen == 0)
@@ -59,7 +59,7 @@ public abstract class EntityBase : MonoBehaviour
             newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         }
         navi.speed = currSpeed * 2;
-        navi.SetDestination(newposition);
+        moveTo(newposition);
     }
 
     //This function flips the sprite of the entity

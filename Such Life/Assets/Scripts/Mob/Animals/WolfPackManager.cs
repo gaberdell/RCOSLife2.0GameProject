@@ -12,6 +12,32 @@ public class WolfPackManager : MonoBehaviour
     public float timeDelay = 1f;
     public Vector2 packLocation;
 
+    private void OnEnable() {
+        EventManager.onDealDamage += TakeDamage;
+    }
+
+    private void OnDisable() {
+        EventManager.onDealDamage -= TakeDamage;
+    }
+
+    public bool TakeDamage(GameObject hit, float damage) {
+        bool attacked = false;
+        foreach (var wolf in allWolves) {
+            if (hit == wolf.navi.gameObject) {
+                // AnimalBase already handles taking damage
+                // wolf.takeDamage((int)damage);
+                attacked = true;
+                break;
+            }
+        }
+        if (attacked) {
+            foreach (var wolf in allWolves) {
+                wolf.currState = AnimalBase.State.Following;
+            }
+        }
+        return attacked;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +52,12 @@ public class WolfPackManager : MonoBehaviour
             
             GameObject go = Instantiate(wolfPrefab, pos, Quaternion.identity);
             allWolves[i] = go.GetComponent<Wolf>();
-            // Debug.Log("here1");
-            // while (allWolves[i].dc.IsTouchingLayers()) {
+
+            // Trying to make the wolves not spawn in terrain
+            // Debug.Log(i);
+            // Debug.Log("here");
+            // d.isTrigger = true;
+            // while (allWolves[i].collider.IsTouchingLayers()) {
             //     Debug.Log("here2");
             //     pos = (Vector2)this.transform.position + new Vector2(
             //         Random.Range(-roamLimits.x, roamLimits.x),
@@ -35,6 +65,7 @@ public class WolfPackManager : MonoBehaviour
             //     );
             //     allWolves[i].teleportTo(pos);
             // }
+            // d.isTrigger = false;
         }
     }
 
@@ -54,10 +85,8 @@ public class WolfPackManager : MonoBehaviour
             time = 0f;
             foreach (var wolf in allWolves) {
                 //If the wolf is idling, it has a 30% chance to start wandering
-                // Debug.Log(wolf.currState);
                 if (wolf.currState == AnimalBase.State.Idling) {
                     gen = Random.Range(0, 100);
-                    // Debug.Log(gen);
                     if (gen < 30) {
                         wolf.Walk();
                     }
@@ -68,11 +97,9 @@ public class WolfPackManager : MonoBehaviour
                     // Move to a random location near the location of the pack,
                     // or generate a new one
                     if (packLocation.Equals(Vector2.zero)) {
-                        // Debug.Log("a");
                         wolf.PositionChange();
                         packLocation = wolf.newposition;
                     } else {
-                        // Debug.Log("b");
                         wolf.PositionChange(packLocation);
                     }
                     gen = Random.Range(0, 100);
@@ -81,20 +108,6 @@ public class WolfPackManager : MonoBehaviour
                     }
                 }
             }
-            
         }
-        // TODO: replace with event
-        // bool attacked = false;
-        // foreach (var wolf in allWolves) {
-        //     if (wolf.currHealth < wolf.currMaxHealth) {
-        //         attacked = true;
-        //     }
-        // }
-
-        // if (attacked) {
-        //     foreach (var wolf in allWolves) {
-        //         wolf.currState = wolf.State.Following;
-        //     }
-        // }
     }
 }
