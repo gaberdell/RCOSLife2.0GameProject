@@ -225,7 +225,7 @@ public class Splody : mobBase
                 }
                 else
                 {
-                    //Damage the object's mobBase (decrease the mobBase's HP)
+                    //Damage the object's mobBase (decrease the mobBase's HP) 
                     //mob_obj.GetComponent<mobBase>().damageSelf(damage);
                 }
             }

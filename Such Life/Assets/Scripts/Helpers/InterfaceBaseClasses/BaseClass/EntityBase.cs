@@ -11,6 +11,7 @@ public abstract class EntityBase : MonoBehaviour
 {
 
     public float currMaxSpeed; //Current possible max speed
+    public float currSpeed; //Current Speed of Animal
     public Vector2 position; //The current position of the entity in a Vector2 object
     public Vector2 newposition; //The position that the animal wants to reach
     public NavMeshAgent navi; //Hey, Listen!
@@ -57,7 +58,7 @@ public abstract class EntityBase : MonoBehaviour
         {
             newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         }
-        navi.speed = speed * 2;
+        navi.speed = currSpeed * 2;
         navi.SetDestination(newposition);
     }
 

@@ -20,6 +20,7 @@ public class NPCBase : EntityBase
     public int awareness;
     public bool Interactable; //Whether or not the Player is allowed to speak to the NPC
     public float time;
+    public float timeDelay;
     //public InventorySystem Inventory;
 
 
