@@ -44,11 +44,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         Debug.Log("Enemy died!");
         //Die animation
-        //animator.SetBool("IsDead",true);
+        animator.SetBool("IsDead",true);
         //Disable the enemy
         this.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EnemyMovement>().enabled = false;
     }
-
 }
