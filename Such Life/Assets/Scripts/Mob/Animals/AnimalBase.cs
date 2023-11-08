@@ -217,7 +217,7 @@ public class AnimalBase : EntityBase, IDamageable
 
         return nearby;
     }
-    protected void OnCollisionEnter2D(Collision2D collision)
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         //If it is the player, it gets pushed. Will be changed to other entities in the future
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")

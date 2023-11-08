@@ -53,7 +53,8 @@ public class Boss1 : mobBase
     // Check if the boss can perform a slam attack
     bool CanPerformSlamAttack()
     {
-        return Time.time - lastSlamTime >= slamCooldown;
+        // return Time.time - lastSlamTime >= slamCooldown;
+        return false;
     }
 
     // Perform the slam attack
@@ -62,24 +63,24 @@ public float knockbackForce = 10.0f; // Adjust the force as needed
 // Perform the slam attack
 void PerformSlamAttack()
 {
-    // Check if the player is within slam range
-    Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(slamAttackPoint.position, slamRange, playerLayer);
+    // // Check if the player is within slam range
+    // Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(slamAttackPoint.position, slamRange, playerLayer);
 
-    foreach (Collider2D player in hitPlayers)
-    {
-        // Calculate the knockback direction away from the slam attack point
-        Vector2 knockbackDirection = (player.transform.position - slamAttackPoint.position).normalized;
+    // foreach (Collider2D player in hitPlayers)
+    // {
+    //     // Calculate the knockback direction away from the slam attack point
+    //     Vector2 knockbackDirection = (player.transform.position - slamAttackPoint.position).normalized;
 
-        // Apply a force to move the player slightly away
-        Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
-        if (playerRigidbody != null)
-        {
-            playerRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-        }
-    }
+    //     // Apply a force to move the player slightly away
+    //     Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
+    //     if (playerRigidbody != null)
+    //     {
+    //         playerRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+    //     }
+    // }
 
-    // Set the last slam attack time
-    lastSlamTime = Time.time;
+    // // Set the last slam attack time
+    // lastSlamTime = Time.time;
 }
 
 
