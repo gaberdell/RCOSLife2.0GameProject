@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 1907837394}
   - component: {fileID: 1907837393}
   m_Layer: 0
-  m_Name: Item1
+  m_Name: Gloves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 1
   interactionTransform: {fileID: 1907837392}
-  item: {fileID: 11400000, guid: 39da891286f1170459140c6c89bb0f95, type: 2}
+  item: {fileID: 11400000, guid: e6aa4d4a026f0d7429bdaa63c7bc3e8d, type: 2}
 --- !u!58 &1907837394
 CircleCollider2D:
   m_ObjectHideFlags: 0

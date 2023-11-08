@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
+//To be modified with "Inventory"
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class ItemPickUp : Interactable
@@ -21,6 +22,8 @@ public class ItemPickUp : Interactable
     {
         Debug.Log("Pick up" + item.name);
         //Add item into inventory (Destroy game object in the current scene and add that item into the inventory)
+
+        //if item pick up then destroy game object
         Destroy(gameObject);
 
     }
