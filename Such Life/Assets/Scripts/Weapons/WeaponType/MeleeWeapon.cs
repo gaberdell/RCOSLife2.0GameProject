@@ -2,21 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New HybridWeapon", menuName = "HybridWeapon")]
-public class HybridWeapon : ScriptableObject
+[CreateAssetMenu(fileName = "New MeleeWeapon", menuName = "MeleeWeapon")]
+public class MeleeWeapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common
-    [SerializeField] int Attack;
-    [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
+    [SerializeField] string WeaponName;
+    [SerializeField] Rarity WRarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
     [SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
-
-    [SerializeField] int Pierce; //numEnemiesCanHit
-    [SerializeField] float FiringRate; //Rounds per minute
-    [SerializeField] int Capacity; //amount of projectile you can shoot before having to go through reload animation
-    [SerializeField] int ReloadSpeed; //time it takes to replace the current “mag” with a new one
-
     //[SerializeField] int Range; //Number of tiles that the weapon can hit
     //[SerializeField] float Damage; //Amount of damage weapon is dealing
     //[SerializeField] float ArmorPenetration; //Percentage of armor ignored
