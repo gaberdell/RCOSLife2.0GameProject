@@ -5,6 +5,7 @@ using UnityEngine;
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
 
 [RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(InventoryItemData))]
 public class ItemPickUp : MonoBehaviour
 {
     public float pickUpRadius = 1f;
