@@ -2999,9 +2999,21 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 99
       objectReference: {fileID: 0}
+    - target: {fileID: 1933137348951341883, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: _id
+      value: 2fcdf6bf-8235-4308-a198-8d90a73c274a
+      objectReference: {fileID: 0}
     - target: {fileID: 3495392231663070125, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5611377554060918271, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_IsTrigger
