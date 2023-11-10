@@ -11,7 +11,7 @@ public class Weapon : ScriptableObject
     [SerializeField] int Attack;
     [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
-    //[SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
+    [SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
 
     //Melee
 
@@ -34,10 +34,8 @@ public class Weapon : ScriptableObject
     double critDamage = 1.25; //Multiplier of the damage if crit is landed, weapon should add to that percentage
     float critChance = 0; //Percent chance to crit, weapon should add to this chance
 }
-
 //Change this so it uses Get Setters as opposed to this
-public abstract class WeaponItem 
-{//Nothing gets assigned until a specific type of weapon calls these variables.
+public abstract class ItemWeapon {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     int numEnemiesCanHit; //Piercing
     float damage; //Amount of damage weapon is dealing
