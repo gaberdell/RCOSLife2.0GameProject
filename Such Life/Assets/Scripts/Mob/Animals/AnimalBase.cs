@@ -24,13 +24,9 @@ public class AnimalBase : EntityBase, IDamageable
     public float hungerDrain; //How fast the hunger of the animal drains, by percentage per second
     public int size; //Depending on the size, there are predetermined stats
 
-    public Animator animate;
 
     public float time;
-    public float timeDelay;
     public bool reached; //Determines if the animal has reached its destination
-    public GameObject player;
-    public RaycastHit hit;
     public SpriteRenderer aniSprite;
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat

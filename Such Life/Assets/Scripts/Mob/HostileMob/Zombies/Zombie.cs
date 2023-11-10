@@ -55,7 +55,7 @@ public class Zombie : mobBase
                     currState = State.Chasing;
                     newposition = player.transform.position;
                     navi.SetDestination(newposition);
-                    navi.Resume();
+                    navi.isStopped = false;
                 
             }
             else if (currState == State.Chasing && (getDistance(player) > alertRange || checkWall(player)) )
@@ -63,7 +63,7 @@ public class Zombie : mobBase
                 playerSighted = false;
                 currState = State.Idling;
                 navi.SetDestination(this.transform.position);
-                navi.Stop();
+                navi.isStopped = true;
             }
             else
             {
@@ -80,7 +80,7 @@ public class Zombie : mobBase
                         if (gen > 40)
                         {
                             Wander();
-                            navi.Resume();
+                            navi.isStopped = false;
                         }
                     }
                     if (currState == State.Wander)
@@ -90,7 +90,7 @@ public class Zombie : mobBase
                         if (gen > 90)
                         {
                             Idle();
-                            navi.Stop();
+                            navi.isStopped = true;
                         }
                     }
                 }
