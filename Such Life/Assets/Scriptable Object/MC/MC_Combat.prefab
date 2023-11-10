@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 5874255886537059722}
   - component: {fileID: 5874255886537059721}
   m_Layer: 0
-  m_Name: MC
+  m_Name: MC_Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
