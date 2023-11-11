@@ -2745,7 +2745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!195 &1554407408
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2808,7 +2808,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 31
-  m_Sprite: {fileID: 21300000, guid: e07d93efcd6684a438c96cec211502b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd06014106d8c0548804b284d1cb3437, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2816,7 +2816,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1554407410
@@ -2842,9 +2842,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1554407407}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afb3dc5a9ef48114e8bac39c3096a7c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f196c7ebbadc3444a0491f0faf6e040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currMaxSpeed: 0
+  currSpeed: 0
+  position: {x: 0, y: 0}
+  newposition: {x: 0, y: 0}
+  navi: {fileID: 1554407408}
+  Sprite: {fileID: 1554407409}
+  currState: 0
+  awareness: 0
+  walkspeed: 0
+  runspeed: 0
+  animal: {fileID: 0}
+  HPCap: 0
+  currHP: 0
+  weight: 0
+  hungerCap: 0
+  hunger: 0
+  hungerDrain: 0
+  size: 0
+  animate: {fileID: 0}
+  time: 0
+  timeDelay: 0
+  reached: 0
+  player: {fileID: 0}
+  aniSprite: {fileID: 0}
+  food: {fileID: 0}
+  foodtypes: []
+  drops: []
 --- !u!50 &1554407412
 Rigidbody2D:
   serializedVersion: 4
@@ -2876,7 +2903,7 @@ Animator:
   m_GameObject: {fileID: 1554407407}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 69290d1966228dc429f1815076eb305d, type: 2}
+  m_Controller: {fileID: 9100000, guid: b52a13e2c0dd9aa41ad492ccafcca633, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6621,7 +6648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1945941983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6631,9 +6658,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1945941982}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2577bc1d6f878740b942492308bae49, type: 3}
+  m_Script: {fileID: 11500000, guid: 8c1fbfe111a74b04fad9a156dfeb13ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currMaxSpeed: 0
+  currSpeed: 0
+  position: {x: 0, y: 0}
+  newposition: {x: 0, y: 0}
+  navi: {fileID: 1945941988}
+  Sprite: {fileID: 1945941986}
+  currState: 0
+  awareness: 0
+  walkspeed: 0
+  runspeed: 0
+  animal: {fileID: 0}
+  HPCap: 0
+  currHP: 0
+  weight: 0
+  hungerCap: 0
+  hunger: 0
+  hungerDrain: 0
+  size: 0
+  animate: {fileID: 0}
+  time: 0
+  timeDelay: 0
+  reached: 0
+  player: {fileID: 0}
+  aniSprite: {fileID: 0}
+  food: {fileID: 0}
+  foodtypes: []
+  drops: []
 --- !u!61 &1945941984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6652,7 +6706,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -6721,15 +6775,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a20d1fcb6b0659c4ab2848568585c032, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c4398ae34480c24e91616fa0a78ad84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1945941987

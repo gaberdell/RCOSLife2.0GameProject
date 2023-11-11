@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 2cf80401d15df3249842a4b819c3db47
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3007767978795889333
+    second: fx_medium_explosion_1
+  - first:
+      213: 3632050661137932697
+    second: fx_medium_explosion_2
+  - first:
+      213: -8048884641990879109
+    second: fx_medium_explosion_4
+  - first:
+      213: 4130755665695844656
+    second: fx_medium_explosion_8
+  - first:
+      213: 1083098225893581621
+    second: fx_medium_explosion_10
+  - first:
+      213: -2517177098415683538
+    second: fx_medium_explosion_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +59,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +93,147 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: fx_medium_explosion_1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 84
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d831985f24246d0800000000000000
+      internalID: -3007767978795889333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx_medium_explosion_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 70
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 991695735d2a76230800000000000000
+      internalID: 3632050661137932697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx_medium_explosion_4
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 90
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78590c101e9c4090800000000000000
+      internalID: -8048884641990879109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx_medium_explosion_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 33
+        width: 40
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 039abbb6464635930800000000000000
+      internalID: 4130755665695844656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx_medium_explosion_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 39
+        width: 20
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5332e331910f70f00800000000000000
+      internalID: 1083098225893581621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fx_medium_explosion_11
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 38
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e284f2cf3c0311dd0800000000000000
+      internalID: -2517177098415683538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
