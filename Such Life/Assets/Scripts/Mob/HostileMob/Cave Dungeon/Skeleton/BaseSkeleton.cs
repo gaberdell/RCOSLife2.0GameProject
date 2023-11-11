@@ -29,6 +29,8 @@ public class BaseSkeleton : mobBase
     public Transform fingerSpawnPoint; // Transform where fingers are spawned
     public float fingerAttackCooldown = 4.0f;
     protected float lastFingerAttackTime = 0;
+    public float boneSpeed = 10.0f;
+
 
 
     protected virtual void Awake()
@@ -37,8 +39,7 @@ public class BaseSkeleton : mobBase
     }
 
     protected virtual void Start()
-    {
-        currHealth = 100;
+    {        currHealth = 100;
         SetCrumpledState(true); // Initially in crumpled state
          monsterBody = GetComponent<Rigidbody2D>();
         monsterBody.drag = 10f;
@@ -132,7 +133,10 @@ public class BaseSkeleton : mobBase
                 spanim.SetFloat("Yvel", 0f);
             }
         }
-
+            if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PerformBoneAttack();
+        }
         // if (playerInRange)
         // {
         //     // If player is in proximity, get up and become vulnerable
@@ -257,13 +261,16 @@ public class BaseSkeleton : mobBase
     }
 
 
-    void PerformBoneAttack()
+
+
+void PerformBoneAttack()
 {
     if (bonePrefab != null && boneSpawnPoint != null)
     {
         // Instantiate the bone prefab at the spawn point
         GameObject bone = Instantiate(bonePrefab, boneSpawnPoint.position, boneSpawnPoint.rotation);
-        // Calculate the direction from the skeleton to the player
+
+        // Calculate the direction from the bone to the player
         Vector3 directionToPlayer = (target.position - boneSpawnPoint.position).normalized;
 
         // Get the Rigidbody component of the bone
@@ -271,14 +278,16 @@ public class BaseSkeleton : mobBase
 
         if (boneRigidbody != null)
         {
-            // Set the initial velocity of the bone in the direction of the player
-            boneRigidbody.velocity = directionToPlayer * 10;
+            // Apply force to the bone in the direction of the player
+            boneRigidbody.AddForce(directionToPlayer * boneSpeed, ForceMode.Impulse);
         }
 
         // Set the last attack time
         lastBoneAttackTime = Time.time;
     }
 }
+
+
 
 
 

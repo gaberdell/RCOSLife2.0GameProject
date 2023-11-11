@@ -32,12 +32,20 @@ public class Boss1 : mobBase
 
     public string nextAreaName; // Name of the next area to unlock progression
     public string achievementName; // Name of the special achievement
+    public float bossSlamCooldown = 3.0f; // Adjust the cooldown value as needed
+    public float lastSlamTime = 0.0f;
+
+    public float knockbackForce = 5.0f;
+    public LayerMask playerLayer; // Declare this in your class
+
+   
 
     void Start()
     {
         maxHealth = 1000; // Extremely high health
         currentHealth = maxHealth;
-        // Other initialization code...
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        playerLayer = playerObject.layer;
     }
 
     void Update()
@@ -50,58 +58,56 @@ public class Boss1 : mobBase
         // Implement other boss AI behavior, phases, and attacks...
     }
 
+
+
     // Check if the boss can perform a slam attack
     bool CanPerformSlamAttack()
     {
-        // return Time.time - lastSlamTime >= slamCooldown;
-        return false;
+        // Replace this with your actual logic, for example:
+        return Time.time - lastSlamTime >= bossSlamCooldown;
     }
 
     // Perform the slam attack
-public float knockbackForce = 10.0f; // Adjust the force as needed
+   void PerformSlamAttack()
+    {
+        // Check if the player is within slam range
+        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, meleeAttackRange, playerLayer);
 
-// Perform the slam attack
-void PerformSlamAttack()
-{
-    // // Check if the player is within slam range
-    // Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(slamAttackPoint.position, slamRange, playerLayer);
+        foreach (Collider2D player in hitPlayers)
+        {
+            // Calculate the knockback direction away from the boss
+            Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
 
-    // foreach (Collider2D player in hitPlayers)
-    // {
-    //     // Calculate the knockback direction away from the slam attack point
-    //     Vector2 knockbackDirection = (player.transform.position - slamAttackPoint.position).normalized;
+            // Apply a force to move the player slightly away
+            Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
+            if (playerRigidbody != null)
+            {
+                playerRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+            }
+        }
 
-    //     // Apply a force to move the player slightly away
-    //     Rigidbody2D playerRigidbody = player.GetComponent<Rigidbody2D>();
-    //     if (playerRigidbody != null)
-    //     {
-    //         playerRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
-    //     }
-    // }
-
-    // // Set the last slam attack time
-    // lastSlamTime = Time.time;
-}
-
+        // Set the last slam attack time
+        lastSlamTime = Time.time;
+    }
 
 
     void ShiftPhase()
-{
-    if (currentPhase < totalPhases)
     {
-        // Implement logic for transitioning to the next phase
-        // For example, change boss behavior, appearance, or attack patterns
+        if (currentPhase < totalPhases)
+        {
+            // Implement logic for transitioning to the next phase
+            // For example, change boss behavior, appearance, or attack patterns
 
-        // Increment the current phase
-        currentPhase++;
+            // Increment the current phase
+            currentPhase++;
+        }
+        else
+        {
+            // Handle the final phase or any other logic when all phases are completed
+            // For example, you can call the Defeat method.
+            Defeat();
+        }
     }
-    else
-    {
-        // Handle the final phase or any other logic when all phases are completed
-        // For example, you can call the Defeat method.
-        Defeat();
-    }
-}
 
 
     public void Defeat()
