@@ -9,18 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb133a7ba3f611242a95b42f69c4b135, type: 3}
+  m_Script: {fileID: 11500000, guid: ba1e3bdcef852e3428387646ad3f3460, type: 3}
   m_Name: Tomato
   m_EditorClassIdentifier: 
-  ID: 1
-  DisplayName: Tomato
-  Description: 'Red, juicy.... fruit.... hmmmm I thought it was a vegetable. '
-  Icon: {fileID: 2134584563556110807, guid: 345b38c555e681f42801ae21bae559bb, type: 3}
-  MaxStackSize: 5
-  Type: 
-  GoldValue: 0
-  placeable: 0
-  colliderType: circle
-  boxColliderSize: {x: 2, y: 2}
-  circleColliderRadius: 0.4
-  ItemPrefab: {fileID: 8602753799084525264, guid: c7b5be1758ce64a0c8c8dbcb250bd69a, type: 3}
+  name: Tomato
+  icon: {fileID: 0}
+  isDefaultItem: 0

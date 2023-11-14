@@ -1,5 +1,43 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+[CreateAssetMenu(fileName = "New Weapon", menuName = "WeaponTemplateDoNotCreate")]
+public class Weapon : ScriptableObject
+{//Nothing gets assigned until a specific type of weapon calls these variables.
+
+    // All weapon stats have in common
+    [SerializeField] int Attack;
+    [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
+    [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
+    //[SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
+
+    //Melee
+
+
+    //Range
+    [SerializeField] int Pierce; //numEnemiesCanHit
+    [SerializeField] float FiringRate; //Rounds per minute
+    [SerializeField] int Capacity; //amount of projectile you can shoot before having to go through reload animation
+    [SerializeField] int ReloadSpeed; //time it takes to replace the current “mag” with a new one
+
+    //Suggestion: range starting at 0 for melee?
+
+    //Hybrid
+
+
+    //Suggestion: implement cap?
+    //[SerializeField] int Range; //Number of tiles that the weapon can hit
+    //[SerializeField] float Damage; //Amount of damage weapon is dealing
+    //[SerializeField] float ArmorPenetration; //Percentage of armor ignored
+    double critDamage = 1.25; //Multiplier of the damage if crit is landed, weapon should add to that percentage
+    float critChance = 0; //Percent chance to crit, weapon should add to this chance
+}
+
 //Change this so it uses Get Setters as opposed to this
-public abstract class Weapon {//Nothing gets assigned until a specific type of weapon calls these variables.
+public abstract class WeaponItem 
+{//Nothing gets assigned until a specific type of weapon calls these variables.
 
     int numEnemiesCanHit; //Piercing
     float damage; //Amount of damage weapon is dealing

@@ -89,7 +89,7 @@ public class PlaceObject : MonoBehaviour
             bc.size = itemdata.boxColliderSize;
         }
         ItemPickUp itempk = currentObject.AddComponent(typeof(ItemPickUp)) as ItemPickUp;
-        itempk.ItemData = itemdata;
+        //itempk.ItemData = itemdata;
 
         //GameObject currentObject = Instantiate(Resources.Load(name) as GameObject);
 
