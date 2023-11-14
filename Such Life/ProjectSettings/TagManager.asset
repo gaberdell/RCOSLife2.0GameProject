@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Animal
+  - Grass
+  - CanFly
+  - BoxTag
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Enemy
+  - Water
+  - UI
+  - Interactable
+  - 
+  - Flying
+  - Entities
+  - Background
+  - Cursor
+  - Walls
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Cursor
+    uniqueID: 3008680869
+    locked: 0
+  - name: Infobox
+    uniqueID: 2069794067
+    locked: 0
+  - name: Background
+    uniqueID: 2562392385
+    locked: 0
+  - name: Game Object
+    uniqueID: 746908971
+    locked: 0
