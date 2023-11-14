@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc818f0fd0a312145b4a257543da1b70, type: 3}
   m_Name: Surplus
   m_EditorClassIdentifier: 
-  WRarity: 
-  MAttack: 
-  RAttack: 
+  WRarity: Surplus
+  MAttack: 50
+  RAttack: 25
   DropChance: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc818f0fd0a312145b4a257543da1b70, type: 3}
   m_Name: Uncommon
   m_EditorClassIdentifier: 
-  WRarity: 
-  MAttack: 
-  RAttack: 
+  WRarity: Uncommon
+  MAttack: 75
+  RAttack: 50
   DropChance: 0
