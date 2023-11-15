@@ -38,6 +38,12 @@ public class Boss1 : mobBase
     public float knockbackForce = 5.0f;
     public LayerMask playerLayer; // Declare this in your class
 
+    public float flyHeight = 10.0f; // Height at which the boss flies
+    public float groundHeight = 0.0f; // Height at which the boss is on the ground
+    public float descentTime = 2.0f; // Time the boss spends on the ground after a slam attack
+
+    private bool isFlying = true; // Initially starts flying
+
    
 
     void Start()
@@ -56,6 +62,16 @@ public class Boss1 : mobBase
         }
 
         // Implement other boss AI behavior, phases, and attacks...
+        if (!isFlying)
+        {
+            // Boss is on the ground after slam attack
+            StartCoroutine(DescendForSeconds(descentTime));
+        }
+        else
+        {
+            // Boss is flying
+            transform.position = new Vector3(transform.position.x, flyHeight, transform.position.z);
+        }
     }
 
 
@@ -110,33 +126,44 @@ public class Boss1 : mobBase
     }
 
 
-    public void Defeat()
-{
-    // Implement boss defeat logic, such as:
-    // - Dropping items or rewards
-    // - Unlocking progression (e.g., opening a gate)
-    // - Triggering a special achievement
-
-    // For example, you can spawn a rare drop prefab:
-    if (rareDropPrefab != null)
+        public void Defeat()
     {
-        Instantiate(rareDropPrefab, transform.position, Quaternion.identity);
+        // Implement boss defeat logic, such as:
+        // - Dropping items or rewards
+        // - Unlocking progression (e.g., opening a gate)
+        // - Triggering a special achievement
+
+        // For example, you can spawn a rare drop prefab:
+        if (rareDropPrefab != null)
+        {
+            Instantiate(rareDropPrefab, transform.position, Quaternion.identity);
+        }
+
+        // You can also change the behavior or appearance of the boss to indicate defeat.
+        // For example, you can disable the boss's AI or play a defeat animation.
+
+        // Optionally, load the next area or perform other progression-related tasks.
+        if (!string.IsNullOrEmpty(nextAreaName))
+        {
+            // Load the next area or trigger progression here.
+            // SceneManager.LoadScene(nextAreaName); // If using Unity's SceneManager.
+        }
+
+        // Destroy or deactivate the boss GameObject.
+        // You can also play a victory animation or display a victory screen.
+        // For example:
+        // gameObject.SetActive(false);
     }
 
-    // You can also change the behavior or appearance of the boss to indicate defeat.
-    // For example, you can disable the boss's AI or play a defeat animation.
-
-    // Optionally, load the next area or perform other progression-related tasks.
-    if (!string.IsNullOrEmpty(nextAreaName))
+     IEnumerator DescendForSeconds(float seconds)
     {
-        // Load the next area or trigger progression here.
-        // SceneManager.LoadScene(nextAreaName); // If using Unity's SceneManager.
-    }
+        // Boss descends to the ground for a few seconds
+        transform.position = new Vector3(transform.position.x, groundHeight, transform.position.z);
 
-    // Destroy or deactivate the boss GameObject.
-    // You can also play a victory animation or display a victory screen.
-    // For example:
-    // gameObject.SetActive(false);
-}
+        yield return new WaitForSeconds(seconds);
+
+        // Boss goes back to flying
+        isFlying = true;
+    }
 
 }
