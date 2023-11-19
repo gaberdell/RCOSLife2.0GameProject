@@ -20,24 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -8625846662236638254, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
-<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Ghost_hit.anim
-    - time: 0.16666667
-      value: {fileID: 1570143437731978870, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
-    - time: 0.33333334
       value: {fileID: 293275071455328999, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
-    - time: 0.5
-      value: {fileID: -3073595936789769836, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
-    - time: 0.6666667
-=======
     - time: 0.083333336
       value: {fileID: 1570143437731978870, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     - time: 0.16666667
-      value: {fileID: 293275071455328999, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
+      value: {fileID: -8625846662236638254, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     - time: 0.25
-      value: {fileID: -3073595936789769836, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
+      value: {fileID: 293275071455328999, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     - time: 0.33333334
->>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Ghost_hit.anim
+      value: {fileID: -3073595936789769836, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
+    - time: 0.41666666
       value: {fileID: 2640212775168743854, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     attribute: m_Sprite
     path: 
@@ -58,8 +50,9 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -8625846662236638254, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
+    - {fileID: 293275071455328999, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     - {fileID: 1570143437731978870, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
+    - {fileID: -8625846662236638254, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     - {fileID: 293275071455328999, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     - {fileID: -3073595936789769836, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
     - {fileID: 2640212775168743854, guid: a2f207d37f2f9f8469fbaaefffa78450, type: 3}
@@ -68,11 +61,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Ghost_hit.anim
-    m_StopTime: 0.68333334
-=======
-    m_StopTime: 0.35000002
->>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Ghost_hit.anim
+    m_StopTime: 0.43333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
