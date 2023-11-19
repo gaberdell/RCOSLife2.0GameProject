@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MC
       objectReference: {fileID: 0}
+    - target: {fileID: 1233312878969357471, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1978017011455021776, guid: ad29e25e46c8dbb45ba4749fbb0e01e1, type: 3}
     - target: {fileID: 5033029624284957108, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
       propertyPath: m_RootOrder
       value: 0
