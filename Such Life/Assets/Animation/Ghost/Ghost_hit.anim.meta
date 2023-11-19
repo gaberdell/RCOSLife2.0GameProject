@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Ghost_hit.anim.meta
 guid: 199aaa01cda9af8429987f9eb925adc9
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
+=======
+guid: 4bfd1b759327acd4097de79287d93daa
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+>>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Ghost_hit.anim.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 

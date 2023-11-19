@@ -8,7 +8,11 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
+<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Enemy (Ghost Stand In).controller
   - m_ConditionMode: 1
+=======
+  - m_ConditionMode: 2
+>>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Enemy (Ghost Stand In).controller
     m_ConditionEvent: IsDead
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -19,12 +23,73 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
+<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Enemy (Ghost Stand In).controller
   m_ExitTime: 0.63414633
   m_HasExitTime: 1
+=======
+  m_ExitTime: 0
+  m_HasExitTime: 0
+>>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Enemy (Ghost Stand In).controller
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Enemy (Ghost Stand In).controller
+=======
+--- !u!1101 &-8976917039017573527
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsDead
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 6296767688258554510}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1102 &-8314392609212997109
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ghost_hit
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions:
+  - {fileID: -9046122251519391445}
+  - {fileID: -8976917039017573527}
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 4bfd1b759327acd4097de79287d93daa, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+>>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Enemy (Ghost Stand In).controller
 --- !u!1102 &-4866864740827588834
 AnimatorState:
   serializedVersion: 6
@@ -141,6 +206,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Enemy (Ghost Stand In).controller
   m_Name: Ghost_hit
   m_Speed: 1
   m_CycleOffset: 0
@@ -162,6 +228,27 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
+=======
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsHit
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: -8314392609212997109}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0
+  m_TransitionOffset: 0
+  m_ExitTime: 0.5
+  m_HasExitTime: 1
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+>>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Enemy (Ghost Stand In).controller
 --- !u!1101 &4459121189407509680
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -204,7 +291,11 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
+<<<<<<< Updated upstream:Such Life/Assets/Animation/Ghost/Enemy (Ghost Stand In).controller
   m_Motion: {fileID: 7400000, guid: 55b28d3c89242c24897e30a54322d1ef, type: 2}
+=======
+  m_Motion: {fileID: 7400000, guid: 5de5d3baa8cd7d64b9550e7c6482cd63, type: 2}
+>>>>>>> Stashed changes:Such Life/Assets/Arts/Animation/Ghost/Enemy (Ghost Stand In).controller
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
