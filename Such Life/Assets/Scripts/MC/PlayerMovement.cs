@@ -249,11 +249,13 @@ public class PlayerMovement : MouseFollow
         {
             lastTeleportUsed = Time.time;
             // Play teleport animation
-            anim.SetTrigger("Teleport");
+            anim.SetBool("isTeleport", true);
             // Teleport player
             body.position = teleportDistance * direction + body.position;
             Debug.Log("called teleport function");
             canMove = false;
+            //Exit Teleport animations
+            anim.SetBool("isTeleport", false);
         }
         else
         {
