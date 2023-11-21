@@ -239,7 +239,6 @@ public class PlayerMovement : MouseFollow
 
     //combat movement functions
 
-
     //this function teleports the player in the direction that they're moving. Currently binded to T
     //after it is called there is a cooldown period when it cannot be used again and a delay where you cannot move after using it.
     //currently does not check whether or not you are allowed to land at the spot where you teleport
@@ -249,13 +248,11 @@ public class PlayerMovement : MouseFollow
         {
             lastTeleportUsed = Time.time;
             // Play teleport animation
-            anim.SetBool("isTeleport", true);
+            anim.SetTrigger("isTeleport");  //not sure why, but trigger does not get set
             // Teleport player
             body.position = teleportDistance * direction + body.position;
             Debug.Log("called teleport function");
             canMove = false;
-            //Exit Teleport animations
-            anim.SetBool("isTeleport", false);
         }
         else
         {
@@ -263,6 +260,7 @@ public class PlayerMovement : MouseFollow
             Debug.Log("Cannot teleport: teleport is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
         }
     }
+    
 
     private void DashFunct(InputAction.CallbackContext context)
     {
