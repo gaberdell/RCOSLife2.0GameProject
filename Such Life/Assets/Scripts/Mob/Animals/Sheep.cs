@@ -8,8 +8,8 @@ public class Sheep : AnimalBase
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 80;
-        currHealth = maxHealth;
+        HPCap = 80;
+        currHP = HPCap;
         currMaxSpeed = 0;
         walkspeed = 1f;
         runspeed = 1.4f;
@@ -40,9 +40,9 @@ public class Sheep : AnimalBase
     void Update()
     {
         //If the sheep has 0HP, it dies
-        if (currHealth <= 0)
+        if (currHP <= 0)
         {
-            currHealth = 0;
+            currHP = 0;
             currState = State.Dying;
             Sprite.flipY = true; //Temporary death effect. It flips upside-down
         }

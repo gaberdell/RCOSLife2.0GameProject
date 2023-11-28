@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
-/* A general class that is the basis for NPCs
+/* A general class that is the basis for NPCs 
  * Implements basic things that all NPCS should have.
  */
 
@@ -23,7 +23,12 @@ public class NPCBase : EntityBase
     public float timeDelay;
     //public InventorySystem Inventory;
 
+    public Animator animate;
+    public GameObject player;
+    public RaycastHit hit;
 
+    public float HPCap; //Max Health
+    public float currHP; //Current HP of the NPC
 
     public SortedDictionary<string, string> dialogue = new SortedDictionary<string, string>(); //A map structure that stores a key, usually what the dialogue is for, and a dialogue
 

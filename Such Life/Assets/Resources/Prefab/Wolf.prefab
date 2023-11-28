@@ -117,42 +117,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 2065202446079416860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04bd336e64554394c92605f6d6a75103, type: 3}
+  m_Script: {fileID: 11500000, guid: e6287c3668e57954692c31960531e062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currMaxSpeed: 0
-  position: {x: 0, y: 0}
-  newposition: {x: 0, y: 0}
-  navi: {fileID: 0}
-  Sprite: {fileID: 0}
-  maxHealth: 0
-  currHealth: 0
-  speed: 0
-  damage: 0
-  critChance: 0
-  critDamage: 0
-  defense: 0
-  variation: 
-  collider: {fileID: 0}
-  timeDelay: 0
-  player: {fileID: 0}
-  animate: {fileID: 0}
   currState: 0
   awareness: 0
   walkspeed: 0
   runspeed: 0
   animal: {fileID: 0}
+  HPCap: 0
+  currHP: 0
+  currMaxSpeed: 0
+  currSpeed: 0
   weight: 0
   hungerCap: 0
   hunger: 0
   hungerDrain: 0
   size: 0
+  animate: {fileID: 0}
+  position: {x: 0, y: 0}
+  newposition: {x: 0, y: 0}
   time: 0
+  timeDelay: 0
   reached: 0
+  player: {fileID: 0}
+  aniSprite: {fileID: 0}
   food: {fileID: 0}
   foodtypes: []
-  drops: []
-  dc: {fileID: 0}
+  navi: {fileID: 0}
 --- !u!95 &2065202446079416931
 Animator:
   serializedVersion: 3
