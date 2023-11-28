@@ -17,31 +17,49 @@ public abstract class EntityBase : MonoBehaviour
     public NavMeshAgent navi; //Hey, Listen!
     public SpriteRenderer Sprite;
     public playerAction playerControl; //Allows player to interact with entity
+    public int maxHealth; //the total health of an entity
+    public int currHealth; //current health
+    public float speed; //the speed
+    public int damage; //damage that a enemy make in fighting
+    public float critChance; //Crit chance for entity when they attack. Example: 15% is 0.15f
+    public float critDamage; //Crit damage multiplier that is multiplied to attack
+    public int defense; //The defense stat of an entity
+    public string variation; //The string that saves what type the mob is
+    public Collider2D collider;
+
+    public float timeDelay; //A timer
+
+    public GameObject player;
+    public Animator animate;
+    public RaycastHit2D hit;
+
+    public virtual void PositionChange() {
+        PositionChange(transform.position);
+    }
 
     //random pos
-    public virtual void PositionChange()
+    public virtual void PositionChange(Vector2 pos)
     {
-        currSpeed = Random.Range(0, currMaxSpeed);
-        float posxmin = transform.position.x - currSpeed;
-        float posxmax = transform.position.x + currSpeed;
-        float posymin = transform.position.y - currSpeed;
-        float posymax = transform.position.y + currSpeed;
+        float posxmin = pos.x - speed;
+        float posxmax = pos.x + speed;
+        float posymin = pos.y - speed;
+        float posymax = pos.y + speed;
 
         int gen = Random.Range(0, 2);
         if (gen == 0)
         {
-            newposition = new Vector2(Random.Range(posxmin, posxmax), transform.position.y);
+            newposition = new Vector2(Random.Range(posxmin, posxmax), pos.y);
         }
         else if (gen == 1)
         {
-            newposition = new Vector2(transform.position.x, Random.Range(posymin, posymax));
+            newposition = new Vector2(pos.x, Random.Range(posymin, posymax));
         }
         else if (gen == 2)
         {
             newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
         }
         navi.speed = currSpeed * 2;
-        navi.SetDestination(newposition);
+        moveTo(newposition);
     }
 
     //This function flips the sprite of the entity
@@ -102,5 +120,70 @@ public abstract class EntityBase : MonoBehaviour
             return null;
         }
     }
-}
+    //This function returns the value of the current amount of HP the Animal has
+    public float getHealth()
+    {
+        return currHealth;
+    }
 
+    public void takeDamage(int dmg)
+    {
+        currHealth -= dmg;
+    }
+
+    public void heal(int val)
+    {
+        currHealth += val;
+        if (currHealth > maxHealth)
+        {
+            currHealth = maxHealth;
+        }
+    }
+
+    public float getDistance(GameObject thing)
+    {
+        return ((Vector2)thing.transform.position - position).sqrMagnitude;
+    }
+
+    public void moveTo(Vector2 pos)
+    {
+        newposition = pos;
+        navi.SetDestination(newposition);
+        flipSprite();
+    }
+
+    //Find if a Wall is in the way through raycast
+    public bool checkWall(GameObject target)
+    {
+        LayerMask mask = LayerMask.GetMask("Walls");
+        Vector2 direction =(Vector2)target.transform.position - (Vector2)transform.position;
+        hit = Physics2D.Raycast(transform.position, direction, getDistance(target), mask);
+        if (hit.collider != null)
+            return true; //A wall was hit
+        else
+            return false; //No wall was hit
+    }
+
+    public void teleportTo(Vector2 pos)
+    {
+        newposition = pos;
+        flipSprite();
+        position = pos;
+        transform.position = pos;
+    }
+
+    public Texture2D getSpriteVariant(string directory) // This function will be used to pick a random sprite for an entity within a folder
+    {
+
+        return null;
+    }
+
+    public Texture2D getSpecificSprite(string directory, string variation) //This function will get a specific sprite
+    {
+        string fullDir = directory + '/' + variation + ".png";
+        var rawData = System.IO.File.ReadAllBytes(fullDir);
+        Texture2D tex = new Texture2D(2, 2);
+        tex.LoadImage(rawData);
+        return tex;
+    }
+}

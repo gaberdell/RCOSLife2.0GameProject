@@ -5,7 +5,6 @@ using UnityEngine;
 public class Duck : AnimalBase
 {
     // Start is called before the first frame update
-    private Collider2D dc;
     private bool flying;
     private bool dead;
     private float fly_x;
@@ -16,8 +15,8 @@ public class Duck : AnimalBase
     void Start()
     {
         //status initialization
-        HPCap = 45f;
-        currHP = HPCap;
+        maxHealth = 45;
+        currHealth = maxHealth;
         currMaxSpeed = 0;
         walkspeed = 1f;
         runspeed = 1.4f;
@@ -45,7 +44,7 @@ public class Duck : AnimalBase
         foodtypes.Add("Grass");
         //collider stuff
         stored = self.layer;
-        dc = GetComponent<BoxCollider2D>();
+        collider = GetComponent<BoxCollider2D>();
         //set inital internal varibles
         dead = false;
         //collision layers
@@ -57,9 +56,9 @@ public class Duck : AnimalBase
     void Update()
     {
         //If the Duck has 0HP, it dies
-        if (currHP <= 0)
+        if (currHealth <= 0)
         {
-            currHP = 0;
+            currHealth = 0;
             currState = State.Dying;
             dead = true;
             Sprite.flipY = dead; //Temporary death effect. It flips upside-down
@@ -69,22 +68,22 @@ public class Duck : AnimalBase
         if (flying){
             //slide for 1s until the duck's colider no longer intercts other things.
             if (fly_time < 0f) {
-                if (!dc.IsTouchingLayers() | (fly_time - Time.deltaTime) > 0)
+                if (!collider.IsTouchingLayers() | (fly_time - Time.deltaTime) > 0)
                 {
                     self.layer = stored;
                     flying = false;
-                    dc.isTrigger = false;
+                    collider.isTrigger = false;
                     currState = State.Idling;
                 }
             } else
             {
-                if (!dc.IsTouchingLayers()|(fly_time - Time.deltaTime)>0)
+                if (!collider.IsTouchingLayers()|(fly_time - Time.deltaTime)>0)
                 {
                     fly_time -= Time.deltaTime;
                 }
                 animal.velocity = new Vector2(fly_x, fly_y);
                 print(fly_time);
-                if(dc.IsTouchingLayers())
+                if(collider.IsTouchingLayers())
                 {
                     print("On object");
                 }
@@ -149,7 +148,7 @@ public class Duck : AnimalBase
             //While the timeDelay isn't met
             else
             {
-                //if the duck detects a non-null food, it will try to eat it. 
+                //if the duck detects a non-null food, it will try to eat it.
                 if(food!=null && hunger < hungerCap - 20)
                 {
                     newposition = food.transform.position;
@@ -165,7 +164,7 @@ public class Duck : AnimalBase
                     }
                 }
                 else {
-                    //If the duck is being pushed, it flies away. It doesn't fly as far away if the player has food. 
+                    //If the duck is being pushed, it flies away. It doesn't fly as far away if the player has food.
                     if (currState == State.Pushed)
                     {
                         //temp code, to be implemented.
@@ -176,16 +175,16 @@ public class Duck : AnimalBase
                             self.layer = LayerMask.NameToLayer("Flying");
                             //mark the flying boolean
                             animate.SetBool("Flying", true);
-                            if (!flying) { 
+                            if (!flying) {
                                 fly_time = 1f;
                             }
                             flying = true;
-                            dc.isTrigger = true;
+                            collider.isTrigger = true;
                             float fly_x_temp = animal.velocity.x;
                             float fly_y_temp = animal.velocity.y;
                             fly_x = 5*fly_x_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
                             fly_y = 5*fly_y_temp/Mathf.Sqrt(fly_x_temp * fly_x_temp + fly_y_temp * fly_y_temp);
-                            
+
                         }
                     }
                     //How the duck follows the player
@@ -199,7 +198,7 @@ public class Duck : AnimalBase
             }
         }
 
-        new void OnCollisionEnter2D(Collision2D collision)
+        public override void OnCollisionEnter2D(Collision2D collision)
         {
             base.OnCollisionEnter2D(collision);
             if (collision.gameObject == food) {

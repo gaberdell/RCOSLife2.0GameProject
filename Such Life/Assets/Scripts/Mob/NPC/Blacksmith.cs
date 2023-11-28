@@ -10,8 +10,8 @@ public class Blacksmith : NPCBase
     // Start is called before the first frame update
     void Start()
     {
-        HPCap = 100;
-        currHP = 100;
+        maxHealth = 100;
+        currHealth = 100;
         awareness = 5;
         position = new Vector2(transform.position.x, transform.position.y);
         newposition = position;

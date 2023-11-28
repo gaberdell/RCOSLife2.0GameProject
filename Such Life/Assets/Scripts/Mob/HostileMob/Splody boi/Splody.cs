@@ -16,7 +16,7 @@ public class Splody : mobBase
     {
         monsterBody = GetComponent<Rigidbody2D>();
         monsterBody.drag = 10f;
-        
+
         target = GameObject.Find("MC").transform;
         navi = GetComponent<NavMeshAgent>();
         navi.acceleration = 200;
@@ -89,7 +89,7 @@ public class Splody : mobBase
             }
         }
         else if (currState == State.Wander)
-        {   
+        {
             if (time >= time_move){
                 wander();
                 time = 0;
@@ -152,14 +152,14 @@ public class Splody : mobBase
     }
 
     public override void PositionChange()
-    { 
+    {
         float posxmin = transform.position.x - speed;
         float posxmax = transform.position.x + speed;
         float posymin = transform.position.y - speed;
         float posymax = transform.position.y + speed;
         currPosition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
     }
-    
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         navi.isStopped = true;
@@ -174,7 +174,7 @@ public class Splody : mobBase
         if(!exploded&&explodeTimer <= 0) {
             explode();
         }
-        else if(!exploded) {  
+        else if(!exploded) {
             explodeTimer -= Time.deltaTime;
         }
         else
@@ -216,7 +216,7 @@ public class Splody : mobBase
             GameObject mob_obj = mob_exploded[mob].gameObject;
 
 
-            //check if the object has a mobBase class 
+            //check if the object has a mobBase class
             if (mob_obj.GetComponent<mobBase>())
             {
                 if (mob_obj.GetComponent<Splody>())
@@ -226,7 +226,7 @@ public class Splody : mobBase
                 else
                 {
                     //Damage the object's mobBase (decrease the mobBase's HP) 
-                    mob_obj.GetComponent<mobBase>().damageSelf(damage);
+                    //mob_obj.GetComponent<mobBase>().damageSelf(damage);
                 }
             }
             //samething for an AnimalBase object

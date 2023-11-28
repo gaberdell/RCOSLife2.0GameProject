@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public Animator animator;
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,5 +50,4 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EnemyMovement>().enabled = false;
     }
-    
 }
