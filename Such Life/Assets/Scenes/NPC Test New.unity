@@ -17665,9 +17665,69 @@ Transform:
   m_Children:
   - {fileID: 1696177092}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream:Such Life/Assets/Scenes/NPC Test New.unity
+=======
+--- !u!1001 &870106349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 984489666360563009, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_Name
+      value: Splody
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.520134
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.0552514
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 984489666360563013, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bae98a3c5445b9d478e7086a774ff691, type: 3}
+>>>>>>> Stashed changes
 --- !u!1 &1112008189
 =======
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -18352,7 +18412,7 @@ Transform:
   m_LocalScale: {x: 0.5589668, y: 0.5589668, z: 0.5589668}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1150231819
 PrefabInstance:
@@ -23764,7 +23824,7 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_HideEditorLogs: 0
-  m_NavMeshData: {fileID: 23800000, guid: fa6e1cc0816995e43a1c30d6c97b4027, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 268d17e84f84bfe4791498944d0bfc28, type: 2}
 --- !u!4 &2068952495
 Transform:
 =======
@@ -23810,7 +23870,7 @@ MonoBehaviour:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
   m_GameObject: {fileID: 0}
