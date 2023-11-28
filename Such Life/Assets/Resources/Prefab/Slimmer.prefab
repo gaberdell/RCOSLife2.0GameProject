@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: dce4926e886567043b7236a1c0841677, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff33e67ca46410e45b964c20b2a1c4da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.64, y: 0.64}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -132,39 +132,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2637762365785888349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a2ff937cac0bd4698d8716491afbbc, type: 3}
+  m_Script: {fileID: 11500000, guid: a3999626e7234184489d66bd8affb17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currMaxSpeed: 0
-  currSpeed: 0
-  position: {x: 0, y: 0}
-  newposition: {x: 0, y: 0}
-  navi: {fileID: 2637762365785888355}
-  Sprite: {fileID: 2637762365785888350}
-  damage: 0
-  maxHealth: 0
-  currHealth: 0
+  damage: 3
+  maxHealth: 5
+  currHealth: 5
   angle: 0
   alertRange: 0
   knockbackDuration: 0
   knockbackPower: 0
-  speed: 0
   playerSighted: 0
   currPosition: {x: 0, y: 0}
   distance: 0
   time: 0
-  time_move: 0
+  time_move: 3
   currState: 0
-  monsterObj: {fileID: 0}
+  monsterObj: {fileID: 2637762365785888349}
   player: {fileID: 0}
+  MobSprite: {fileID: 2637762365785888350}
   target: {fileID: 0}
   monsterBody: {fileID: 0}
-  targetLayerMobs:
-    serializedVersion: 2
-    m_Bits: 0
-  slimeSplitter: {fileID: 0}
-  time_stop: 0
-  prevPosition: {x: 0, y: 0}
+  agent: {fileID: 2637762365785888355}
 --- !u!195 &2637762365785888355
 NavMeshAgent:
   m_ObjectHideFlags: 0

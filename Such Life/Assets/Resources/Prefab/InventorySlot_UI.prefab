@@ -87,9 +87,9 @@ GameObject:
   - component: {fileID: 2051890923544140638}
   - component: {fileID: 3243828207352339858}
   - component: {fileID: 4121974179201410430}
+  - component: {fileID: -1632550367532491250}
   - component: {fileID: 3457684414401580660}
   - component: {fileID: 8305555059774910947}
-  - component: {fileID: 1822991032020418258}
   m_Layer: 5
   m_Name: InventorySlot_UI
   m_TagString: BoxTag
@@ -200,6 +200,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-1632550367532491250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441792115142883098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e639a9af1ca7248846fac2c2e9b726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSprite: {fileID: 5829951766812986228}
+  itemCount: {fileID: 7926214729520167955}
+  assignedInventorySlot:
+    itemData: {fileID: 0}
+    stackSize: -1
 --- !u!61 &3457684414401580660
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -247,23 +264,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &1822991032020418258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6441792115142883098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029f95e2eaa305a47bd42cc002607ac2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSprite: {fileID: 5829951766812986228}
-  itemCount: {fileID: 7926214729520167955}
-  assignedInventorySlot:
-    itemData: {fileID: 0}
-    stackSize: -1
 --- !u!1 &7156112921197732460
 GameObject:
   m_ObjectHideFlags: 0
