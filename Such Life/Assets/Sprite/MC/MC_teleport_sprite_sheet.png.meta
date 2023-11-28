@@ -1,0 +1,1656 @@
+fileFormatVersion: 2
+guid: 71270da5ead014a47ae92bd9ccf310b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1505536221210022734
+    second: MC_teleport_sprite_sheet_0
+  - first:
+      213: 4445363486422040267
+    second: MC_teleport_sprite_sheet_1
+  - first:
+      213: -3370291906553714160
+    second: MC_teleport_sprite_sheet_2
+  - first:
+      213: -3746207208413877077
+    second: MC_teleport_sprite_sheet_3
+  - first:
+      213: 7228678275165211256
+    second: MC_teleport_sprite_sheet_4
+  - first:
+      213: 4652501711927287931
+    second: MC_teleport_sprite_sheet_5
+  - first:
+      213: -6004006066895085751
+    second: MC_teleport_sprite_sheet_6
+  - first:
+      213: 4592153920471697804
+    second: MC_teleport_sprite_sheet_7
+  - first:
+      213: 8251817968701107183
+    second: MC_teleport_sprite_sheet_8
+  - first:
+      213: -3391003627941080242
+    second: MC_teleport_sprite_sheet_9
+  - first:
+      213: 6801069284690532903
+    second: MC_teleport_sprite_sheet_10
+  - first:
+      213: -5403823024657157219
+    second: MC_teleport_sprite_sheet_11
+  - first:
+      213: -7059496451648371948
+    second: MC_teleport_sprite_sheet_12
+  - first:
+      213: -1635002853671779746
+    second: MC_teleport_sprite_sheet_13
+  - first:
+      213: 2142645200736542757
+    second: MC_teleport_sprite_sheet_14
+  - first:
+      213: 8677785730940690297
+    second: MC_teleport_sprite_sheet_15
+  - first:
+      213: -6879154834335235786
+    second: MC_teleport_sprite_sheet_16
+  - first:
+      213: -40940312533926768
+    second: MC_teleport_sprite_sheet_17
+  - first:
+      213: 436961277537733666
+    second: MC_teleport_sprite_sheet_18
+  - first:
+      213: -4989176309521721210
+    second: MC_teleport_sprite_sheet_19
+  - first:
+      213: 2747377980927042324
+    second: MC_teleport_sprite_sheet_20
+  - first:
+      213: -3053734747249393611
+    second: MC_teleport_sprite_sheet_21
+  - first:
+      213: 6195618839178855546
+    second: MC_teleport_sprite_sheet_22
+  - first:
+      213: 2059029783561256824
+    second: MC_teleport_sprite_sheet_23
+  - first:
+      213: 1621710396100451751
+    second: MC_teleport_sprite_sheet_24
+  - first:
+      213: -1684838534299695931
+    second: MC_teleport_sprite_sheet_25
+  - first:
+      213: -3861423956259431703
+    second: MC_teleport_sprite_sheet_26
+  - first:
+      213: 7928307747244308339
+    second: MC_teleport_sprite_sheet_27
+  - first:
+      213: -7903588379301194332
+    second: MC_teleport_sprite_sheet_28
+  - first:
+      213: 5825979658381639892
+    second: MC_teleport_sprite_sheet_29
+  - first:
+      213: 6762452883303859042
+    second: MC_teleport_sprite_sheet_30
+  - first:
+      213: 998111187756648870
+    second: MC_teleport_sprite_sheet_31
+  - first:
+      213: -5993302213258889626
+    second: MC_teleport_sprite_sheet_32
+  - first:
+      213: -8911770302119993237
+    second: MC_teleport_sprite_sheet_33
+  - first:
+      213: -3774593619290629043
+    second: MC_teleport_sprite_sheet_34
+  - first:
+      213: -7529300574343132176
+    second: MC_teleport_sprite_sheet_35
+  - first:
+      213: 885006760585858379
+    second: MC_teleport_sprite_sheet_36
+  - first:
+      213: -8706359210303837320
+    second: MC_teleport_sprite_sheet_37
+  - first:
+      213: -5368172079649754880
+    second: MC_teleport_sprite_sheet_38
+  - first:
+      213: 174486290935435108
+    second: MC_teleport_sprite_sheet_39
+  - first:
+      213: -7521022631240769189
+    second: MC_teleport_sprite_sheet_40
+  - first:
+      213: 6904586138245913653
+    second: MC_teleport_sprite_sheet_41
+  - first:
+      213: 4799000751589689711
+    second: MC_teleport_sprite_sheet_42
+  - first:
+      213: -8336345493904761743
+    second: MC_teleport_sprite_sheet_43
+  - first:
+      213: -7561902179003165683
+    second: MC_teleport_sprite_sheet_44
+  - first:
+      213: -9049156780554343592
+    second: MC_teleport_sprite_sheet_45
+  - first:
+      213: 5379610033090204243
+    second: MC_teleport_sprite_sheet_46
+  - first:
+      213: -5984092714579040253
+    second: MC_teleport_sprite_sheet_47
+  - first:
+      213: -1927108670864396095
+    second: MC_teleport_sprite_sheet_48
+  - first:
+      213: 2796229225742728549
+    second: MC_teleport_sprite_sheet_49
+  - first:
+      213: 5969223954905173284
+    second: MC_teleport_sprite_sheet_50
+  - first:
+      213: -7282416326119552398
+    second: MC_teleport_sprite_sheet_51
+  - first:
+      213: -1576767164764329739
+    second: MC_teleport_sprite_sheet_52
+  - first:
+      213: 5226931579434657142
+    second: MC_teleport_sprite_sheet_53
+  - first:
+      213: 4926016510729015952
+    second: MC_teleport_sprite_sheet_54
+  - first:
+      213: 702641957958381126
+    second: MC_teleport_sprite_sheet_55
+  - first:
+      213: -7639536450900518171
+    second: MC_teleport_sprite_sheet_56
+  - first:
+      213: -1409414706699586494
+    second: MC_teleport_sprite_sheet_57
+  - first:
+      213: 497990993231065473
+    second: MC_teleport_sprite_sheet_58
+  - first:
+      213: -4666429303474645065
+    second: MC_teleport_sprite_sheet_59
+  - first:
+      213: 5056347695333629689
+    second: MC_teleport_sprite_sheet_60
+  - first:
+      213: -5021206205730127562
+    second: MC_teleport_sprite_sheet_61
+  - first:
+      213: 8779585943607223440
+    second: MC_teleport_sprite_sheet_62
+  - first:
+      213: 1799980347949061418
+    second: MC_teleport_sprite_sheet_63
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4315bd673db4e410800000000000000
+      internalID: 1505536221210022734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce7da1d98a11bd30800000000000000
+      internalID: 4445363486422040267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01aed781e515a31d0800000000000000
+      internalID: -3370291906553714160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacab77646cc20cc0800000000000000
+      internalID: -3746207208413877077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a4ec2979c615460800000000000000
+      internalID: 7228678275165211256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70a25038a1019040800000000000000
+      internalID: 4652501711927287931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94f9d61fa4c7daca0800000000000000
+      internalID: -6004006066895085751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 114
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8902af09ab9abf30800000000000000
+      internalID: 4592153920471697804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb6d97f8b8548270800000000000000
+      internalID: 8251817968701107183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43d28caa2cb0f0d0800000000000000
+      internalID: -3391003627941080242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a9cc61b70426e50800000000000000
+      internalID: 6801069284690532903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d93bb3af693c105b0800000000000000
+      internalID: -5403823024657157219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4134e5a4161a70e90800000000000000
+      internalID: -7059496451648371948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52c424319d4f49e0800000000000000
+      internalID: -1635002853671779746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520e89535743cbd10800000000000000
+      internalID: 2142645200736542757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 114
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f5ca93520bd6870800000000000000
+      internalID: 8677785730940690297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631898020255880a0800000000000000
+      internalID: -6879154834335235786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09cfb6ea00d8e6ff0800000000000000
+      internalID: -40940312533926768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ccc3087f5601600800000000000000
+      internalID: 436961277537733666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688d92d8492e2cab0800000000000000
+      internalID: -4989176309521721210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413e2e8a7b5a02620800000000000000
+      internalID: 2747377980927042324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 530ceef3d64fe95d0800000000000000
+      internalID: -3053734747249393611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7449f822824bf550800000000000000
+      internalID: 6195618839178855546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f3e1fcda4239c10800000000000000
+      internalID: 2059029783561256824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad10285309718610800000000000000
+      internalID: 1621710396100451751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c44d2b97404e98e0800000000000000
+      internalID: -1684838534299695931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea19f7de57796ac0800000000000000
+      internalID: -3861423956259431703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3777970e3e1070e60800000000000000
+      internalID: 7928307747244308339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5d8d87e30d05290800000000000000
+      internalID: -7903588379301194332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d04d76c1a90ad050800000000000000
+      internalID: 5825979658381639892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26384af711f09dd50800000000000000
+      internalID: 6762452883303859042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 80
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9049846d00add00800000000000000
+      internalID: 998111187756648870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6663423146383dca0800000000000000
+      internalID: -5993302213258889626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6023467028035480800000000000000
+      internalID: -8911770302119993237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4cd9b61a13fd9bc0800000000000000
+      internalID: -3774593619290629043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb0223050d828790800000000000000
+      internalID: -7529300574343132176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 45
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d0a84b5fc284c00800000000000000
+      internalID: 885006760585858379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ba3ee2d6ccc2780800000000000000
+      internalID: -8706359210303837320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0017e437feb6085b0800000000000000
+      internalID: -5368172079649754880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 45
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46fc16d6b56eb6200800000000000000
+      internalID: 174486290935435108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b516835d3c5ff9790800000000000000
+      internalID: -7521022631240769189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 43
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53cdb3bb28402df50800000000000000
+      internalID: 6904586138245913653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_42
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 43
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f690653e1c9799240800000000000000
+      internalID: 4799000751589689711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_43
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 44
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17cd0eee0f95f4c80800000000000000
+      internalID: -8336345493904761743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 43
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d04934a680abe0790800000000000000
+      internalID: -7561902179003165683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 43
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85bad324adfea6280800000000000000
+      internalID: -9049156780554343592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 43
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 352187c92d638aa40800000000000000
+      internalID: 5379610033090204243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 43
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3086384916b34fca0800000000000000
+      internalID: -5984092714579040253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 4
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c07d85cfd88145e0800000000000000
+      internalID: -1927108670864396095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 5
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56df5fe6aa33ec620800000000000000
+      internalID: 2796229225742728549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_50
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 6
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d00e88f81f6d250800000000000000
+      internalID: 5969223954905173284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_51
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 6
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a832f6fe8afea90800000000000000
+      internalID: -7282416326119552398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 6
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f8e8b22e923e1ae0800000000000000
+      internalID: -1576767164764329739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_53
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 5
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6756979f39ac98840800000000000000
+      internalID: 5226931579434657142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 6
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09256b7dae9bc5440800000000000000
+      internalID: 4926016510729015952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_55
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 6
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ee464532940c900800000000000000
+      internalID: 702641957958381126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_56
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 4
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ea1d6be21aeaf590800000000000000
+      internalID: -7639536450900518171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_57
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 4
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244b5f9aac0c07ce0800000000000000
+      internalID: -1409414706699586494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_58
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 3
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181b1ec7b2839e600800000000000000
+      internalID: 497990993231065473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_59
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 4
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b79be4b5438d3fb0800000000000000
+      internalID: -4666429303474645065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_60
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 4
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fed9317071cb2640800000000000000
+      internalID: 5056347695333629689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_61
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 4
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63108733f87115ab0800000000000000
+      internalID: -5021206205730127562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_62
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 3
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094a8b346ea57d970800000000000000
+      internalID: 8779585943607223440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_teleport_sprite_sheet_63
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 2
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25103af690daf810800000000000000
+      internalID: 1799980347949061418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

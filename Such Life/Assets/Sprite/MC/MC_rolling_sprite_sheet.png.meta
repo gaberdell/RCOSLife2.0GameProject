@@ -1,0 +1,2232 @@
+fileFormatVersion: 2
+guid: 1f646c16a6393f040a60c3b11674c58b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5017828714866867782
+    second: MC_rolling_sprite_sheet_0
+  - first:
+      213: 7630676067864490177
+    second: MC_rolling_sprite_sheet_1
+  - first:
+      213: -8514001301856997955
+    second: MC_rolling_sprite_sheet_2
+  - first:
+      213: -6183307663938825744
+    second: MC_rolling_sprite_sheet_3
+  - first:
+      213: 4712390266770681750
+    second: MC_rolling_sprite_sheet_4
+  - first:
+      213: -4192637399762602944
+    second: MC_rolling_sprite_sheet_5
+  - first:
+      213: -8687865211926659041
+    second: MC_rolling_sprite_sheet_6
+  - first:
+      213: -8135402460525835017
+    second: MC_rolling_sprite_sheet_7
+  - first:
+      213: -564111003387561624
+    second: MC_rolling_sprite_sheet_8
+  - first:
+      213: 6098367594455301429
+    second: MC_rolling_sprite_sheet_9
+  - first:
+      213: -5443274419088118650
+    second: MC_rolling_sprite_sheet_10
+  - first:
+      213: -2301476706034400696
+    second: MC_rolling_sprite_sheet_11
+  - first:
+      213: -1469448363857849391
+    second: MC_rolling_sprite_sheet_12
+  - first:
+      213: 101532137179172808
+    second: MC_rolling_sprite_sheet_13
+  - first:
+      213: -6750693666809152278
+    second: MC_rolling_sprite_sheet_14
+  - first:
+      213: -4139336926971977560
+    second: MC_rolling_sprite_sheet_15
+  - first:
+      213: -3828605419693773507
+    second: MC_rolling_sprite_sheet_16
+  - first:
+      213: -4461487665356579658
+    second: MC_rolling_sprite_sheet_17
+  - first:
+      213: 1714090860717835949
+    second: MC_rolling_sprite_sheet_18
+  - first:
+      213: -9063561657217157373
+    second: MC_rolling_sprite_sheet_19
+  - first:
+      213: 7213155813055141224
+    second: MC_rolling_sprite_sheet_20
+  - first:
+      213: 7787034149327488004
+    second: MC_rolling_sprite_sheet_21
+  - first:
+      213: 3410736312883780295
+    second: MC_rolling_sprite_sheet_22
+  - first:
+      213: 1161163667855652471
+    second: MC_rolling_sprite_sheet_23
+  - first:
+      213: -5727515697361305734
+    second: MC_rolling_sprite_sheet_24
+  - first:
+      213: -6669806397988466985
+    second: MC_rolling_sprite_sheet_25
+  - first:
+      213: -4714439760663424287
+    second: MC_rolling_sprite_sheet_26
+  - first:
+      213: -2651318996999292795
+    second: MC_rolling_sprite_sheet_27
+  - first:
+      213: -555140544907102420
+    second: MC_rolling_sprite_sheet_28
+  - first:
+      213: -5134197658186762146
+    second: MC_rolling_sprite_sheet_29
+  - first:
+      213: -2248880222602338910
+    second: MC_rolling_sprite_sheet_30
+  - first:
+      213: 3637971751406490689
+    second: MC_rolling_sprite_sheet_31
+  - first:
+      213: -7553107554157833247
+    second: MC_rolling_sprite_sheet_32
+  - first:
+      213: -4457587868345255392
+    second: MC_rolling_sprite_sheet_33
+  - first:
+      213: 7662999733458807228
+    second: MC_rolling_sprite_sheet_34
+  - first:
+      213: 1000168987763229285
+    second: MC_rolling_sprite_sheet_35
+  - first:
+      213: 2078316723870679704
+    second: MC_rolling_sprite_sheet_36
+  - first:
+      213: -8987581750812256239
+    second: MC_rolling_sprite_sheet_37
+  - first:
+      213: -3990949744200550751
+    second: MC_rolling_sprite_sheet_38
+  - first:
+      213: 1506353975128918182
+    second: MC_rolling_sprite_sheet_39
+  - first:
+      213: -7227071030970614340
+    second: MC_rolling_sprite_sheet_40
+  - first:
+      213: -1663055175882157136
+    second: MC_rolling_sprite_sheet_41
+  - first:
+      213: 1459322230714560788
+    second: MC_rolling_sprite_sheet_42
+  - first:
+      213: 1210370296212712439
+    second: MC_rolling_sprite_sheet_43
+  - first:
+      213: -873787630585567282
+    second: MC_rolling_sprite_sheet_44
+  - first:
+      213: 2493218068673342536
+    second: MC_rolling_sprite_sheet_45
+  - first:
+      213: 4812106520395555859
+    second: MC_rolling_sprite_sheet_46
+  - first:
+      213: -6182995114554502268
+    second: MC_rolling_sprite_sheet_47
+  - first:
+      213: 230305721167410637
+    second: MC_rolling_sprite_sheet_48
+  - first:
+      213: 877224804047397886
+    second: MC_rolling_sprite_sheet_49
+  - first:
+      213: 6766204531092351690
+    second: MC_rolling_sprite_sheet_50
+  - first:
+      213: -642353423393926869
+    second: MC_rolling_sprite_sheet_51
+  - first:
+      213: -3876923116078246519
+    second: MC_rolling_sprite_sheet_52
+  - first:
+      213: 1467552309044791803
+    second: MC_rolling_sprite_sheet_53
+  - first:
+      213: 3883707609525646258
+    second: MC_rolling_sprite_sheet_54
+  - first:
+      213: -5859786973439688992
+    second: MC_rolling_sprite_sheet_55
+  - first:
+      213: 1703781058867353596
+    second: MC_rolling_sprite_sheet_56
+  - first:
+      213: -2884189702941989649
+    second: MC_rolling_sprite_sheet_57
+  - first:
+      213: 2119609966332953022
+    second: MC_rolling_sprite_sheet_58
+  - first:
+      213: -3338118360880927094
+    second: MC_rolling_sprite_sheet_59
+  - first:
+      213: 2226043744422721282
+    second: MC_rolling_sprite_sheet_60
+  - first:
+      213: 397393348427812827
+    second: MC_rolling_sprite_sheet_61
+  - first:
+      213: 1720984055237957460
+    second: MC_rolling_sprite_sheet_62
+  - first:
+      213: -7153526858532780816
+    second: MC_rolling_sprite_sheet_63
+  - first:
+      213: 4950574741336937901
+    second: MC_rolling_sprite_sheet_64
+  - first:
+      213: 4145316157146652889
+    second: MC_rolling_sprite_sheet_65
+  - first:
+      213: -5002456473756719977
+    second: MC_rolling_sprite_sheet_66
+  - first:
+      213: -5947184963741623539
+    second: MC_rolling_sprite_sheet_67
+  - first:
+      213: 3508037724807691202
+    second: MC_rolling_sprite_sheet_68
+  - first:
+      213: 6684244010516979037
+    second: MC_rolling_sprite_sheet_69
+  - first:
+      213: -3419555602534417514
+    second: MC_rolling_sprite_sheet_70
+  - first:
+      213: 2601317942365440775
+    second: MC_rolling_sprite_sheet_71
+  - first:
+      213: 4413472410497068387
+    second: MC_rolling_sprite_sheet_72
+  - first:
+      213: 2039030998347272565
+    second: MC_rolling_sprite_sheet_73
+  - first:
+      213: -262248833265120458
+    second: MC_rolling_sprite_sheet_74
+  - first:
+      213: 262066675837038469
+    second: MC_rolling_sprite_sheet_75
+  - first:
+      213: -6181984513925092782
+    second: MC_rolling_sprite_sheet_76
+  - first:
+      213: 8844457595298293434
+    second: MC_rolling_sprite_sheet_77
+  - first:
+      213: -6904863249857042595
+    second: MC_rolling_sprite_sheet_78
+  - first:
+      213: -1803662505110567788
+    second: MC_rolling_sprite_sheet_79
+  - first:
+      213: 251921495977188705
+    second: MC_rolling_sprite_sheet_80
+  - first:
+      213: -378526368551924971
+    second: MC_rolling_sprite_sheet_81
+  - first:
+      213: -1504768417882396202
+    second: MC_rolling_sprite_sheet_82
+  - first:
+      213: 2545828502412085554
+    second: MC_rolling_sprite_sheet_83
+  - first:
+      213: -8622203664102398002
+    second: MC_rolling_sprite_sheet_84
+  - first:
+      213: -6593653056297758870
+    second: MC_rolling_sprite_sheet_85
+  - first:
+      213: 4656290105426439400
+    second: MC_rolling_sprite_sheet_86
+  - first:
+      213: -1203842227328903745
+    second: MC_rolling_sprite_sheet_87
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 30
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 113
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64ef46d61a8e2a540800000000000000
+      internalID: 5017828714866867782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 113
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c03325647b95e960800000000000000
+      internalID: 7630676067864490177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 113
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbda991dce038d980800000000000000
+      internalID: -8514001301856997955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 113
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1d9f1b07a703aa0800000000000000
+      internalID: -6183307663938825744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 113
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fefd5faf5c56140800000000000000
+      internalID: 4712390266770681750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 113
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044f12b9f72c0d5c0800000000000000
+      internalID: -4192637399762602944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 114
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1043aabe908e6780800000000000000
+      internalID: -8687865211926659041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 113
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fcc48bb09e391f80800000000000000
+      internalID: -8135402460525835017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 113
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869f13df700eb28f0800000000000000
+      internalID: -564111003387561624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 112
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53df2414401c1a450800000000000000
+      internalID: 6098367594455301429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 112
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c284b61ca9574b0800000000000000
+      internalID: -5443274419088118650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 112
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842cbfd21238f00e0800000000000000
+      internalID: -2301476706034400696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 112
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d35970af787b9be0800000000000000
+      internalID: -1469448363857849391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 112
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfc9d9d0f6b86100800000000000000
+      internalID: 101532137179172808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 112
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec7c5270e7b052a0800000000000000
+      internalID: -6750693666809152278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 113
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0ad2efefe1e86c0800000000000000
+      internalID: -4139336926971977560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 113
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d6406d7af0edac0800000000000000
+      internalID: -3828605419693773507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 113
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bc52a83b9c9512c0800000000000000
+      internalID: -4461487665356579658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 113
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da684d16e8ca9c710800000000000000
+      internalID: 1714090860717835949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 113
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30778bd81b2c73280800000000000000
+      internalID: -9063561657217157373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 113
+        width: 13
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86512babef64a1460800000000000000
+      internalID: 7213155813055141224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 113
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40440842d4a111c60800000000000000
+      internalID: 7787034149327488004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 79
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ca96ff0b9e555f20800000000000000
+      internalID: 3410736312883780295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 80
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77630ac24384d1010800000000000000
+      internalID: 1161163667855652471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 80
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f3e45a1d6c380b0800000000000000
+      internalID: -5727515697361305734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 81
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de054f4b661073a0800000000000000
+      internalID: -6669806397988466985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2ddae0402f29eb0800000000000000
+      internalID: -4714439760663424287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 81
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 588bc956b6f943bd0800000000000000
+      internalID: -2651318996999292795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 82
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27356c9d9ebb48f0800000000000000
+      internalID: -555140544907102420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 81
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e58b2299e6aafb8b0800000000000000
+      internalID: -5134197658186762146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_30
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 79
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2add2654a5f5ac0e0800000000000000
+      internalID: -2248880222602338910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_31
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 78
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1445d79780cac7230800000000000000
+      internalID: 3637971751406490689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_32
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 77
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e35a1492b8fd2790800000000000000
+      internalID: -7553107554157833247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_33
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 77
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ab03873777322c0800000000000000
+      internalID: -4457587868345255392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_34
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 77
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9a9b248a1785a60800000000000000
+      internalID: 7662999733458807228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_35
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 78
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5624dfe256051ed00800000000000000
+      internalID: 1000168987763229285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_36
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 80
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 892c0198c0aa7dc10800000000000000
+      internalID: 2078316723870679704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_37
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 81
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1185d011402b54380800000000000000
+      internalID: -8987581750812256239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_38
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 80
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a67d744a5c4d98c0800000000000000
+      internalID: -3990949744200550751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_39
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 79
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a88e8995f4a7e410800000000000000
+      internalID: 1506353975128918182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_40
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 80
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdfa70203944bb90800000000000000
+      internalID: -7227071030970614340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_41
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 79
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b35ba7f024abe8e0800000000000000
+      internalID: -1663055175882157136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_42
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 79
+        width: 14
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 411729646dd804410800000000000000
+      internalID: 1459322230714560788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_43
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 78
+        width: 14
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb61702f591cc010800000000000000
+      internalID: 1210370296212712439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_44
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 43
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec721dd87ceafd3f0800000000000000
+      internalID: -873787630585567282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_45
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 43
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84c2cd2bf90b99220800000000000000
+      internalID: 2493218068673342536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_46
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 44
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 314a489726908c240800000000000000
+      internalID: 4812106520395555859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_47
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 43
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 483d005c3b6913aa0800000000000000
+      internalID: -6182995114554502268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_48
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 42
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc57ceb45d5323300800000000000000
+      internalID: 230305721167410637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_49
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 42
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef32861cf478c2c00800000000000000
+      internalID: 877224804047397886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_50
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 42
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acae5611c2366ed50800000000000000
+      internalID: 6766204531092351690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_51
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 42
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21595af6f6e517f0800000000000000
+      internalID: -642353423393926869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_52
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 42
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 985d7ac77f6623ac0800000000000000
+      internalID: -3876923116078246519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_53
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 40
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf94be5bc0bcd5410800000000000000
+      internalID: 1467552309044791803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_54
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 40
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3f14d7e73b5e530800000000000000
+      internalID: 3883707609525646258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_55
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 39
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee7aac4bcaddaea0800000000000000
+      internalID: -5859786973439688992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_56
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 39
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7d3d498db05a710800000000000000
+      internalID: 1703781058867353596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_57
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 41
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe4ad4b0fbc49f7d0800000000000000
+      internalID: -2884189702941989649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_58
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 41
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb147a1c80e5a6d10800000000000000
+      internalID: 2119609966332953022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_59
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 41
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8eab71790f9ca1d0800000000000000
+      internalID: -3338118360880927094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_60
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 41
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207fbc0ddfe74ee10800000000000000
+      internalID: 2226043744422721282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_61
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 41
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdf84291523d38500800000000000000
+      internalID: 397393348427812827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_62
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 42
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457d19c41e922e710800000000000000
+      internalID: 1720984055237957460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_63
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 43
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f400f1293199bc90800000000000000
+      internalID: -7153526858532780816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_64
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 42
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5d86b7f79f3b440800000000000000
+      internalID: 4950574741336937901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_65
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 42
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d0e964051f178930800000000000000
+      internalID: 4145316157146652889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_66
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 794a06d5754b39ab0800000000000000
+      internalID: -5002456473756719977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_67
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 4
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0bd2a6f8ca577da0800000000000000
+      internalID: -5947184963741623539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_68
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 7
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cbf4dd69bd0fa030800000000000000
+      internalID: 3508037724807691202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_69
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 9
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d95ee438433cc50800000000000000
+      internalID: 6684244010516979037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_70
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 11
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69b3d3d0c4c4b80d0800000000000000
+      internalID: -3419555602534417514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_71
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 8
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70bca8ed2ecb91420800000000000000
+      internalID: 2601317942365440775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 10
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36d2aa516cdcf3d30800000000000000
+      internalID: 4413472410497068387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_73
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 11
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571df76c3e71c4c10800000000000000
+      internalID: 2039030998347272565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_74
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 6
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bc87a531e4c5cf0800000000000000
+      internalID: -262248833265120458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_75
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 3
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58febb0d04c03a300800000000000000
+      internalID: 262066675837038469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_76
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 1
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a678096dd253aa0800000000000000
+      internalID: -6181984513925092782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_77
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 1
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6a2cea253ddba70800000000000000
+      internalID: 8844457595298293434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_78
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 3
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d572f91357ffc20a0800000000000000
+      internalID: -6904863249857042595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_79
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 6
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4948130028a18f6e0800000000000000
+      internalID: -1803662505110567788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_80
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 11
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d510f04410f7300800000000000000
+      internalID: 251921495977188705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_81
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 10
+        width: 22
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b0858f5443fbaf0800000000000000
+      internalID: -378526368551924971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_82
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 8
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d9a4e6b81dfd1be0800000000000000
+      internalID: -1504768417882396202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_83
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 11
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2394659d889945320800000000000000
+      internalID: 2545828502412085554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_84
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 9
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7ea1c2377c75880800000000000000
+      internalID: -8622203664102398002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_85
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 7
+        width: 16
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f043fda73ae74a0800000000000000
+      internalID: -6593653056297758870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_86
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 4
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8eceb194e277e9040800000000000000
+      internalID: 4656290105426439400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC_rolling_sprite_sheet_87
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 3
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb5127a5fd71b4fe0800000000000000
+      internalID: -1203842227328903745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,6 +7,8 @@ TagManager:
   - Animal
   - Grass
   - CanFly
+  - MouseTag
+  - BoxTag
   layers:
   - Default
   - TransparentFX
