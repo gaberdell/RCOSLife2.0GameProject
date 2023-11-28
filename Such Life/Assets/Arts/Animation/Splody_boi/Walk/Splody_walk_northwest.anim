@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Walk_southeast
+  m_Name: Splody_walk_northwest
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,21 +20,21 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 8979945319134785359, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: 4343605778101628499, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     - time: 0.083333336
-      value: {fileID: -7987451454710706946, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: 3945497497407543199, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     - time: 0.16666667
-      value: {fileID: 6712311196413513457, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: 5615315253590471597, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     - time: 0.25
-      value: {fileID: 1545432465647943874, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: -6338556840999682637, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     - time: 0.33333334
-      value: {fileID: -8610904461254768852, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: 6913211895653913477, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     - time: 0.41666666
-      value: {fileID: 5598090684537372402, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: 2825913398729042614, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     - time: 0.5
-      value: {fileID: -2074534480078854696, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: 2639052110657132098, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     - time: 0.5833333
-      value: {fileID: -4737510914517252397, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+      value: {fileID: -3267664533140902606, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,14 +54,14 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 8979945319134785359, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
-    - {fileID: -7987451454710706946, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
-    - {fileID: 6712311196413513457, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
-    - {fileID: 1545432465647943874, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
-    - {fileID: -8610904461254768852, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
-    - {fileID: 5598090684537372402, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
-    - {fileID: -2074534480078854696, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
-    - {fileID: -4737510914517252397, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: 4343605778101628499, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: 3945497497407543199, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: 5615315253590471597, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: -6338556840999682637, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: 6913211895653913477, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: 2825913398729042614, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: 2639052110657132098, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
+    - {fileID: -3267664533140902606, guid: 4116d98b66887514aa823b6972e55bbf, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
