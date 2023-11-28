@@ -1,7 +1,37 @@
 fileFormatVersion: 2
-guid: 20cc731cc5404444e97aff8324ff5a43
+guid: e773cd595758da94fb24c29d1e2dec5f
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1309964970626212163
+    second: mob_scromblo_bomblo_explode_sheet_0
+  - first:
+      213: -8270897751406849144
+    second: mob_scromblo_bomblo_explode_sheet_1
+  - first:
+      213: -1002347911842909998
+    second: mob_scromblo_bomblo_explode_sheet_2
+  - first:
+      213: -9119811485160458813
+    second: mob_scromblo_bomblo_explode_sheet_3
+  - first:
+      213: -286335549347691344
+    second: mob_scromblo_bomblo_explode_sheet_4
+  - first:
+      213: 8221038942600845025
+    second: mob_scromblo_bomblo_explode_sheet_5
+  - first:
+      213: -1768655810096177878
+    second: mob_scromblo_bomblo_explode_sheet_6
+  - first:
+      213: 8289708521515445174
+    second: mob_scromblo_bomblo_explode_sheet_7
+  - first:
+      213: 151403327156709640
+    second: mob_scromblo_bomblo_explode_sheet_8
+  - first:
+      213: -1649922087416951232
+    second: mob_scromblo_bomblo_explode_sheet_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +71,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +105,231 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 68
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe9e99bcc112dde0800000000000000
+      internalID: -1309964970626212163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 68
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88351d1f05ed73d80800000000000000
+      internalID: -8270897751406849144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 62
+        width: 42
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0bf3582e1f612f0800000000000000
+      internalID: -1002347911842909998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 68
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5bb78e5cbef6180800000000000000
+      internalID: -9119811485160458813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 68
+        width: 42
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b4809eb55bb60cf0800000000000000
+      internalID: -286335549347691344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 68
+        width: 42
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e650628c5ff61270800000000000000
+      internalID: 8221038942600845025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 13
+        width: 42
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d594559e87477e0800000000000000
+      internalID: -1768655810096177878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 13
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbe474caf5fa0370800000000000000
+      internalID: 8289708521515445174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 13
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 809ecfc1684e91200800000000000000
+      internalID: 151403327156709640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mob_scromblo_bomblo_explode_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 13
+        width: 42
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e01786a9c4a19e0800000000000000
+      internalID: -1649922087416951232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
