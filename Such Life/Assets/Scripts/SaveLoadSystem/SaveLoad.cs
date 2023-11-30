@@ -10,18 +10,14 @@ using UnityEngine.Events;
 
 public static class SaveLoad
 {
-    public static UnityAction onSaveGame;
-    public static UnityAction<SaveData> onLoadGame;
-
     private const string SaveDirectory = "/SaveData/";
-
-    //hardcode save file name :(
+    //hardcode save file name :(            (i think its fine :] )
     private static string fileName = "SaveGame.sav";
 
     public static bool Save(SaveData data)
     {
-        onSaveGame?.Invoke();
         //          a "space" built into Unity
+        Debug.Log(Application.persistentDataPath);
         string dir = Application.persistentDataPath + SaveDirectory;
 
         //If the directory does not exist, create a new directory folder
@@ -56,8 +52,6 @@ public static class SaveLoad
         {
             string json = File.ReadAllText(fullPath);
             tempData = JsonUtility.FromJson<SaveData>(json); //turn the json file back into the SaveData data type for usage
-
-            onLoadGame?.Invoke(tempData);
         }
         else
         {
