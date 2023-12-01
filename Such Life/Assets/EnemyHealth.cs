@@ -35,7 +35,9 @@ public class EnemyHealth : MonoBehaviour
             animator.SetBool("IsDead",true);
             //Disable the enemy
             GetComponent<Collider2D>().enabled = false;
-            GetComponent<EnemyMovement>().enabled = false;
+            if(GetComponent<EnemyMovement>() != null ){
+                GetComponent<EnemyMovement>().enabled = false;
+            }
             this.enabled = false;
             isDead = true;
         }
