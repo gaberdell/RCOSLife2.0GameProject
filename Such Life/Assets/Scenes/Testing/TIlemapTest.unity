@@ -7115,9 +7115,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3521477515271602640, guid: 6276c57cf1ff6194ead25851a70401e2, type: 3}
+      propertyPath: dc
+      value: 
+      objectReference: {fileID: 8664971486736757392}
+    - target: {fileID: 3521477515271602640, guid: 6276c57cf1ff6194ead25851a70401e2, type: 3}
       propertyPath: animal
       value: 
       objectReference: {fileID: 8664971486736757391}
+    - target: {fileID: 5469674350617422079, guid: 6276c57cf1ff6194ead25851a70401e2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6276c57cf1ff6194ead25851a70401e2, type: 3}
 --- !u!1 &8664971486736757390 stripped
@@ -7128,5 +7136,10 @@ GameObject:
 --- !u!50 &8664971486736757391 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 331795458773142316, guid: 6276c57cf1ff6194ead25851a70401e2, type: 3}
+  m_PrefabInstance: {fileID: 8664971486736757389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &8664971486736757392 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6522424265735751153, guid: 6276c57cf1ff6194ead25851a70401e2, type: 3}
   m_PrefabInstance: {fileID: 8664971486736757389}
   m_PrefabAsset: {fileID: 0}

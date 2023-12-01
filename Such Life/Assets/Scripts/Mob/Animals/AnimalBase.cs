@@ -280,7 +280,6 @@ public class AnimalBase : EntityBase, IDamageable
             food = findClosestObj(thing);
             if (food)
             {
-                print("food");
                 if (currentclosest == -1f)
                 {
                     currentclosest = getDistance(food);
@@ -289,7 +288,6 @@ public class AnimalBase : EntityBase, IDamageable
                 if (getDistance(food) < currentclosest)
                 {
                     currentclosest = getDistance(food);
-                    Debug.Log("found food!");
                     moveTo(food.transform.position);
                     
                 }
