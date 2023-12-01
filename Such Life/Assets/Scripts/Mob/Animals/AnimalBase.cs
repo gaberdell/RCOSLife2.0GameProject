@@ -8,10 +8,10 @@ using UnityEngine.AI;
  * This class does not implement AI for any specific animal
 */
 public class AnimalBase : EntityBase, IDamageable
-{   
+{
     //The State and Stats of animal
     public enum State { Idling, Walking, Running, Eating, Panicking, Dying, Following, Pushed } //The different states the animal can be in
-    public State currState = State.Idling; 
+    public State currState = State.Idling;
     public int awareness; //When the animal can detect objects. Is different for different animals, and can change depending on state
     public float walkspeed; //How fast the animal walks
     public float runspeed; //How fast the animal runs
@@ -35,6 +35,8 @@ public class AnimalBase : EntityBase, IDamageable
     public GameObject food; //The variable that references the food object that the animal will go after
     public List<string> foodtypes; //What this animal will eat
     public List<string> drops; //What the animal will drop when it dies
+
+    public Collider2D dc; // The collider for the sprite
 
     private void OnEnable()
     {
@@ -73,6 +75,31 @@ public class AnimalBase : EntityBase, IDamageable
         else if (gen == 1)
         {
             newposition = new Vector2(transform.position.x, Random.Range(posymin, posymax));
+        }
+        else if(gen == 2)
+        {
+            newposition = new Vector2(Random.Range(posxmin, posxmax), Random.Range(posymin, posymax));
+        }
+        navi.speed = currSpeed*2;
+        navi.SetDestination(newposition);
+    }
+
+    new public void PositionChange(Vector2 pos)
+    {
+        currSpeed = Random.Range(0, currMaxSpeed);
+        float posxmin = pos.x - currSpeed;
+        float posxmax = pos.x + currSpeed;
+        float posymin = pos.y - currSpeed;
+        float posymax = pos.y + currSpeed;
+
+        int gen = Random.Range(0, 2);
+        if (gen == 0) 
+        {
+            newposition = new Vector2(Random.Range(posxmin, posxmax), pos.y);
+        }
+        else if (gen == 1)
+        {
+            newposition = new Vector2(pos.x, Random.Range(posymin, posymax));
         }
         else if(gen == 2)
         {
@@ -215,7 +242,8 @@ public class AnimalBase : EntityBase, IDamageable
 
         return nearby;
     }
-    protected void OnCollisionEnter2D(Collision2D collision)
+
+    public virtual void OnCollisionEnter2D(Collision2D collision)
     {
         //If it is the player, it gets pushed. Will be changed to other entities in the future
         if (collision.gameObject.tag == "Player" || collision.gameObject.name == "MC")
@@ -250,10 +278,9 @@ public class AnimalBase : EntityBase, IDamageable
         float currentclosest = -1f;
         foreach(var thing in foods) {
             food = findClosestObj(thing);
-
-            
             if (food)
             {
+                print("food");
                 if (currentclosest == -1f)
                 {
                     currentclosest = getDistance(food);
@@ -262,8 +289,8 @@ public class AnimalBase : EntityBase, IDamageable
                 if (getDistance(food) < currentclosest)
                 {
                     currentclosest = getDistance(food);
-                    newposition = food.transform.position;
-                    navi.SetDestination(newposition);
+                    Debug.Log("found food!");
+                    moveTo(food.transform.position);
                     
                 }
                 else
