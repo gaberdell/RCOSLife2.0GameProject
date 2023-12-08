@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: c1a241ba38e0aa640b8e9f79f79a8178, type: 3}
+  m_Sprite: {fileID: -8690326241252233523, guid: d1b84766d5049714abbd435954c5a7dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.48, y: 2.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -95,9 +95,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 984489666360563009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: addaa6f2f37abbc46acb4a7361f1b27c, type: 3}
+  m_Script: {fileID: 11500000, guid: e9284bbd846a99247ae590f8925ea624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currMaxSpeed: 0
+  currSpeed: 0
+  position: {x: 0, y: 0}
+  newposition: {x: 0, y: 0}
+  navi: {fileID: 0}
+  Sprite: {fileID: 0}
   damage: 0
   maxHealth: 0
   currHealth: 0
@@ -112,19 +118,19 @@ MonoBehaviour:
   time: 0
   time_move: 0
   currState: 0
-  monsterObj: {fileID: 984489666360563009}
+  monsterObj: {fileID: 0}
   player: {fileID: 0}
-  MobSprite: {fileID: 984489666360563012}
   target: {fileID: 0}
-  monsterBody: {fileID: 984489666360563018}
-  agent: {fileID: 984489666360563014}
+  monsterBody: {fileID: 0}
   targetLayerMobs:
     serializedVersion: 2
-    m_Bits: 513
-  spanim: {fileID: 3253416126273190757}
+    m_Bits: 0
+  spanim: {fileID: 0}
   explosionRange: 0
   explodeTimer: 0
   exploded: 0
+  prevX: 0
+  prevY: 0
 --- !u!195 &984489666360563014
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -178,7 +184,7 @@ Animator:
   m_GameObject: {fileID: 984489666360563009}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 208d7a0517d906d4796ab87fc8147456, type: 2}
+  m_Controller: {fileID: 9100000, guid: 174d2f5aad1b2594c9dbd38e57810e84, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
