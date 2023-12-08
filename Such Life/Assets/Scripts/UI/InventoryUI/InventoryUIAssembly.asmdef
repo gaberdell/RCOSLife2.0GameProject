@@ -1,0 +1,22 @@
+{
+    "name": "InventoryUIAssembly",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro",
+        "EventManager",
+        "Unity.InputSystem",
+        "InventoryAssembly",
+        "PlayerInputAssembly",
+        "HelperClass",
+        "BaseClassAssembly"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
