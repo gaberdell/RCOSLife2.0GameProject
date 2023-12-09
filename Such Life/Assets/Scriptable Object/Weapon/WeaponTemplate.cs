@@ -8,7 +8,8 @@ public class Weapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common
-    [SerializeField] int Attack;
+    [SerializeField] int MAttack; //Melee
+    [SerializeField] int RAttack; //Range
     [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
     [SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
@@ -22,9 +23,41 @@ public class Weapon : ScriptableObject
     [SerializeField] int Capacity; //amount of projectile you can shoot before having to go through reload animation
     [SerializeField] int ReloadSpeed; //time it takes to replace the current “mag” with a new one
 
+    public void constructor()
+    {
+        int index;
+        int RandomNum = Random.Range(1,201);
+        string[] Rarities = {"Surplus","Common","Uncommon","Epic","Legendary","Mythic"};
+        Dictionary<string, int[]> Attacks = new Dictionary<string, int[]>() {
+            { "Surplus", new int[] { 50, 25 } },
+            { "Common", new int[] { 50, 25 } },
+            { "Uncommon", new int[] { 75, 50 } },
+            { "Epic", new int[] { 75, 50 } },
+            { "Legendary", new int[] { 100, 75 } },
+            { "Mythic", new int[] { 200, 100 } }
+        };  // index 0 Melee Attack, index 1 Range Attack
+        if(RandomNum <= 100)
+            index = 0;
+        else if(RandomNum <= 170)
+            index = 1;
+        else if(RandomNum <= 194)
+            index = 2;
+        else if(RandomNum <= 199)
+            index = 3;
+        else
+            index = 4;
+        Rarity = Rarities[index];
+        MAttack = Attacks[Rarity][0];
+        RAttack = Attacks[Rarity][1];
+    }
     //Suggestion: range starting at 0 for melee?
 
     //Hybrid
+
+
+    //serialize reference
+    //[field: SerializeReference] public List<ComponentData> ComponentData
+
 
 
     //Suggestion: implement cap?
