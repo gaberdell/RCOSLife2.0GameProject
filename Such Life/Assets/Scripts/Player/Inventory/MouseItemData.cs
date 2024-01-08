@@ -7,6 +7,16 @@ using TMPro;
 using UnityEngine.EventSystems;
 
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
+/// <summary>
+/// Class <c>Mouse Item Data</c> job is to keep track of when a player picks up an item.
+/// Relationship status : 
+/// <c>MooBehaviour</c> based class
+/// <c>InventoryDisplay</c> what it mainly iterfaces with.
+/// Further noting on <c>Mouse Item Data</c> with <c>InventoryDisplay</c> is that the
+/// child of the latter <c>StaticInventoryDisplay</c> houses a collection of slots
+/// that use the knowledge of the curretly picked up item to transfer items.
+/// </summary>
+
 public class MouseItemData : MonoBehaviour
 {
     public Image ItemSprite;
@@ -18,8 +28,11 @@ public class MouseItemData : MonoBehaviour
 
     private void Awake()
     {
-        ItemSprite.color = Color.clear;
-        ItemSprite.preserveAspect = true;
+        if (ItemSprite != null)
+        {
+            ItemSprite.color = Color.clear;
+            ItemSprite.preserveAspect = true;
+        }
         ItemCount.text = "";
 
         _playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();

@@ -10,6 +10,7 @@ using UnityEngine;
 public class UniqueID : MonoBehaviour
 {
     [ReadOnly, SerializeField] private string _id = Guid.NewGuid().ToString();
+    //[TAG FOR REMOVAL] Try to centralize or remove this stuff doesn't really have a use??!?
     [SerializeField] private static SerializableDictionary<string, GameObject> idDatabase = new SerializableDictionary<string, GameObject>();
 
     //This is just here sense its faster for local scripts in case they need to grab it

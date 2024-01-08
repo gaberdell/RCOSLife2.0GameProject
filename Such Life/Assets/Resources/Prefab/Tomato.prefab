@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 4fa31bea-0d68-4d1f-a9fb-37858011ecb2
+  _id: ea7fdb5d-def6-4c5e-986a-c6ef254dff03
 --- !u!114 &224205734609721587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,11 +253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4d997f823c0b54db4fa864b27a4340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: 3c29e7a2f0041ac499cf3eb8382a986c, type: 2}
   pickUpRadius: 0.4
-  ItemData: {fileID: 11400000, guid: 3c29e7a2f0041ac499cf3eb8382a986c, type: 2}
   itemSaveData:
     ItemData: {fileID: 0}
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
+  ItemData: {fileID: 11400000, guid: 44c5352edcf4ab140a49c759062d68fc, type: 2}
   freezetime: 0
   freeze: 0

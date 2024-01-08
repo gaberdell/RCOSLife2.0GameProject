@@ -6,33 +6,21 @@ using UnityEngine;
 //To be modified with "Inventory"
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class ItemPickUp : Interactable
+public class ItemPickUp : MonoBehaviour
 {
-    public Item item;
-    public override void Interact()
-    {
-        base.Interact();
+    //Serailized Field Objects ie stuff to add definitions to in the editor...
+    [SerializeField]
+    private Item item;
+    [SerializeField]
+    private float pickUpRadius = 1f;
+    [SerializeField]
+    private ItemPickUpSaveData itemSaveData;
 
-        PickUpItem();
-
-    }
-
-
-    void PickUpItem()
-    {
-        Debug.Log("Pick up" + item.name);
-        //Add item into inventory (Destroy game object in the current scene and add that item into the inventory)
-
-        //if item pick up then destroy game object
-        Destroy(gameObject);
-
-    }
-    /*
-    public float pickUpRadius = 1f;
-    public InventoryItemData ItemData; // would changing this to a general var/ scriptable object data type work? ItemData can be a piece of armor, equipment, building materials, resources, ...
+    // would changing this to a general var/ scriptable object data type work? ItemData can be a piece of armor, equipment, building materials, resources, ...
+    public InventoryItemData ItemData; 
     
     private CircleCollider2D myCollider;
-    [SerializeField] private ItemPickUpSaveData itemSaveData;
+
     private string id;
 
     // items can only be picked up if it's 2s after being created, freezetime set to 2s initially
@@ -110,5 +98,4 @@ public class ItemPickUp : Interactable
             freeze = false;
         }
     }
-    */
 }
