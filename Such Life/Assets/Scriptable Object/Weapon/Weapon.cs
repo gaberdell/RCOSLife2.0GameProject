@@ -11,8 +11,10 @@ public class Weapon : ScriptableObject
     [SerializeField] int MAttack; //Melee
     [SerializeField] int RAttack; //Range
     [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
+    [SerializeField] string WeaponType; //Melee, Hybrid, Range
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
     [SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
+    [SerializeField] public Sprite sprite; // Weapon sprite
 
     //Melee
 
@@ -33,8 +35,8 @@ public class Weapon : ScriptableObject
             { "Common", new int[] { 50, 25 } },
             { "Uncommon", new int[] { 75, 50 } },
             { "Epic", new int[] { 75, 50 } },
-            { "Legendary", new int[] { 100, 75 } },
-            { "Mythic", new int[] { 200, 100 } }
+            { "Legendary", new int[] { 100, 75} },
+            { "Mythic", new int[] { 200, 100} }
         };  // index 0 Melee Attack, index 1 Range Attack
         if(RandomNum <= 100)
             index = 0;
