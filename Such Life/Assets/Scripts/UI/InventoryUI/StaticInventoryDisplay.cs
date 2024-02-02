@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
-
+/// <summary>
+/// Used for the hotbar
+/// </summary>
 public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private InventoryHolder inventoryHolder;
