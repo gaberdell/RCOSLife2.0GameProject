@@ -5,7 +5,21 @@ using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
-
+/// <summary>
+/// Class <c>PlayerInventoryHolder</c> Has DUAL function
+///     - Holds the data for the player's inventory
+///       this includes items and such using InventoryHolders
+///       PrimaryInventorySystem member that holds an InventorySystem
+///     - When the internal system is updated it tells the hotbar to update
+///     - BUT ALSO when the player inventory opens it updates player's hotbar???
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class
+/// <c>InventoryDisplay</c> what it mainly interfaces with.
+/// Specifically <c>StaticInventoryDisplay</c> to work witht he hotbar
+/// <c>InventoryHolder</c> is the parent class which inherits also
+/// From <c>MonoBehaviour</c> but also <c>IInventoryHolder</c>
+/// Which is used to get to the Save System.
+/// </summary>
 public class PlayerInventoryHolder : InventoryHolder
 {
     public static UnityAction OnPlayerInventoryChanged;
@@ -51,7 +65,6 @@ public class PlayerInventoryHolder : InventoryHolder
     void Update()
     {
         bool openInventoryKeyPressed = playerControl.Player.OpenInventory.WasPressedThisFrame();
-        //fix it so the function use playerAction instead of key press on keyboard
         if (openInventoryKeyPressed)
         {
             OnPlayerInventoryDisplayRequested?.Invoke(primaryInvSystem, offset);
