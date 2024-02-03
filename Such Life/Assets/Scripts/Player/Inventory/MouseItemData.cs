@@ -84,6 +84,9 @@ public class MouseItemData : MonoBehaviour
         secret_collider.enabled = true;
     }
 
+    //I have no clue what the hell this is doing???
+    //WHY DOES THIS EXSIST IS THIS LIKE AN APRIL FOOLS JOKE
+    //WHY IS THE STUFF MADE RANDOM
     public Vector3 newPosShift(Vector3 Pos, bool doNegative){
         Vector3 nextPos = new Vector3(Pos.x, Pos.y,0.0f);
         float randomChoice = Random.Range(0.3f,0.4f);
