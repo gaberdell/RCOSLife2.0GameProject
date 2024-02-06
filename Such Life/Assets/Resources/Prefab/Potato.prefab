@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a68635a1bb61c46b72d480ae008b36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: 8951b393-062b-4bb2-8caf-0b07f188d74c
+  _id: ac2ae960-0e73-4989-9cec-624cd8045471
 --- !u!114 &-278214784150418954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,12 +76,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4d997f823c0b54db4fa864b27a4340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  item: {fileID: 0}
   pickUpRadius: 0.5
-  ItemData: {fileID: 11400000, guid: d48a03223d86f64408e4c3263280457f, type: 2}
   itemSaveData:
     ItemData: {fileID: 0}
     Position: {x: 0, y: 0, z: 0}
     Rotation: {x: 0, y: 0, z: 0, w: 0}
+  ItemData: {fileID: 11400000, guid: 433f22e991216134ca24b3074ad4904c, type: 2}
   freezetime: 0
   freeze: 0
 --- !u!1 &7216009567038402387

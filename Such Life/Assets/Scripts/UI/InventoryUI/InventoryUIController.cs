@@ -5,7 +5,10 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
-
+/// <summary>
+/// Some type of overseer class?
+/// Seems to relay the fact that an inventory was opened to the DynamicInvetoryDisplay
+/// </summary>
 public class InventoryUIController : MonoBehaviour
 {
 

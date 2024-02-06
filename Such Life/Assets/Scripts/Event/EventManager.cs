@@ -70,7 +70,7 @@ public class EventManager : MonoBehaviour
 
     public static void SetPlayerHealthBar(float health) 
     { 
-        if (forceIDValidation != null) setPlayerHealthBar(health); 
+        if (setPlayerHealthBar != null) setPlayerHealthBar(health); 
     }
 
     public static void SetPlayerWalkSpeed(float speed)

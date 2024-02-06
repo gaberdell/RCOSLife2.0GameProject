@@ -33,7 +33,6 @@ public class MouseOver : MonoBehaviour
         if(itemName == "(Placeholder)"){
             itemName = my_parent.GetComponent<InventorySlot_UI>().AssignedInventorySlot.ItemData.DisplayName;
         }
-        Debug.Log(itemName);
 
         itemDescrip = "(Placeholder)";
         try{
@@ -45,7 +44,6 @@ public class MouseOver : MonoBehaviour
         if(itemDescrip == "(Placeholder)"){
             itemDescrip = my_parent.GetComponent<InventorySlot_UI>().AssignedInventorySlot.ItemData.Description;
         }
-        Debug.Log(itemDescrip);
 
         if (collision.gameObject.name == "Quad1" && quad == 0 && moveable)
         {
