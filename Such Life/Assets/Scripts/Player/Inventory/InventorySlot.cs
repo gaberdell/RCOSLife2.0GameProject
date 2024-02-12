@@ -5,7 +5,14 @@ using UnityEngine;
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
 
 [System.Serializable] //So can be seen in the inspector
-
+/// <summary>
+/// Class <c>InventorySlot</c> job is to manage a singular piece of Inventory Item Data alongside its stack size.
+/// Relationship status : 
+/// <c>IInventorySlot</c> based on this interface for connectivity purposes
+/// <c>InventoryItemData</c> is what holds most of its data
+/// Has functionality for clear slots, adding to slots, removing from stack
+/// adding, assining, updating, and finding if there is enough space in the slot
+/// </summary>
 public class InventorySlot : IInventorySlot
 {
     [SerializeField] private InventoryItemData itemData; //Reference to the item

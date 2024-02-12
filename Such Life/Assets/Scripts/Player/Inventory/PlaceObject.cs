@@ -17,8 +17,18 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 
+
+/// <summary>
+/// NOTE : THIS SCRIPT CURRENTLY GOES UNUSED AND IS PROBABLY BROKEN,
+/// Class <c>Place Object</c> job is to place objects the player is holding.
+/// Relationship status : 
+/// <c>MooBehaviour</c> based class
+/// <c>Mouse Item</c> what it mainly iterfaces with.
+/// Removes the item it *has* in its inventory to place it
+/// </summary>
 public class PlaceObject : MonoBehaviour
 {
+    //WHY IS IT ALWAYS PUBLIC FUNCTIONS C# HAS BUILT-IN GETTERS AND SETTERS YOU KNOW
     public MouseItemData mouseItem;
     public Transform player;
     public float placingRadius = 5f;   // how far player can place objects
