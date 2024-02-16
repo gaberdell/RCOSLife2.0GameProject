@@ -11,6 +11,7 @@ public class WeaponBag : MonoBehaviour
         List<Weapon> PossibleWeapons = new List<Weapon>();
         foreach(Weapon Item in WeaponList)
         {
+            Item.constructor();
             PossibleWeapons.Add(Item);
         }
         if(PossibleWeapons.Count > 0)

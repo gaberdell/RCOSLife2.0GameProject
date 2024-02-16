@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51979c6045ea31245a2e7a0e74629bdb, type: 3}
+  m_Name: sword
+  m_EditorClassIdentifier: 
+  MAttack: 0
+  RAttack: 0
+  Rarity: 
+  WeaponType: 
+  Reinforce: 0
+  WArchetype: {fileID: 0}
+  sprite: {fileID: 0}
+  Pierce: 0
+  FiringRate: 0
+  Capacity: 0
+  ReloadSpeed: 0

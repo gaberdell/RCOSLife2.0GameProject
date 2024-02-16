@@ -19,9 +19,11 @@ public class Box : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Destroy(gameObject);
-        }
+        
+    }
+
+    void OnMouseDown()
+    {
+        Destroy(gameObject);
     }
 }

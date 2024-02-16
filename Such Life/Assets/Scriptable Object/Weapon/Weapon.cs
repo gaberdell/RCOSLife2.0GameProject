@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New Weapon", menuName = "WeaponTemplateDoNotCreate")]
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
 public class Weapon : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
@@ -13,7 +13,7 @@ public class Weapon : ScriptableObject
     [SerializeField] string Rarity; //Surplus,Common,Uncommon,Epic,Legendary,Mythic
     [SerializeField] string WeaponType; //Melee, Hybrid, Range
     [SerializeField] int Reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
-    [SerializeField] Archetype WArchetype; // Declared in Archetype ScriptableObject
+    [SerializeField] public Archetype WArchetype; // Declared in Archetype ScriptableObject
     [SerializeField] public Sprite sprite; // Weapon sprite
 
     //Melee
