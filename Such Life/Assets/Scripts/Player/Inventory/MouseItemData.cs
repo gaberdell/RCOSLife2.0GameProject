@@ -16,7 +16,6 @@ using UnityEngine.EventSystems;
 /// child of the latter <c>StaticInventoryDisplay</c> houses a collection of slots
 /// that use the knowledge of the curretly picked up item to transfer items.
 /// </summary>
-
 public class MouseItemData : MonoBehaviour
 {
     public Image ItemSprite;

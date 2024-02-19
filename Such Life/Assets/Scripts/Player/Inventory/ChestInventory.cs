@@ -6,8 +6,14 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with slight modification */
-
-
+/// <summary>
+/// Class <c>ChestInventorya</c> Creates a basic chest functionality.
+/// Relationship status : 
+/// <c>InventoryHolder</c> based class
+/// <c>IInteractable</c> allows it to be interacted with
+/// <c>DynamicInventoryDisplay</c> is what is what renders out the inventory.
+/// <c>SavableSlot</c> used to save data 
+/// </summary>
 public class ChestInventory : InventoryHolder, IInteractable
 {
     public GameObject DynTextObject;
@@ -21,6 +27,7 @@ public class ChestInventory : InventoryHolder, IInteractable
     private bool isOpen = false;
     private Text DynText;
 
+    //Is this nesscary?
     protected override void Awake()
     {
         base.Awake();

@@ -6,6 +6,16 @@ using UnityEngine.Events;
 
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
 /* This script is for building the user's backpack and chest system */
+/// <summary>
+/// Class <c>InventoryHolder</c> Base class for PlayerInventoryHolder
+///     - Creates abstract class that makes interaction with an InvetorySystem easier
+///       can be seen in player classes,
+///     - When the internal system is updated it tells the hotbar to update
+///     - BUT ALSO when the player inventory opens it updates player's hotbar???
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class
+/// <c>IInventoryHolder</c> has been implemented
+/// Implements the AddToPrimaryInventory which interfaces with add to inventory
 [System.Serializable] //So it can be seen in the inspector
 public abstract class InventoryHolder : MonoBehaviour, IInventoryHolder
 {
