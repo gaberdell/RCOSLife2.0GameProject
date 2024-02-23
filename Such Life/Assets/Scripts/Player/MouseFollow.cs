@@ -25,10 +25,6 @@ public class MouseFollow : MonoBehaviour
     }
 
     void FixedUpdate() { 
-    
         mouseBody.MovePosition(mousePosition);
-
-
-
     }
 }

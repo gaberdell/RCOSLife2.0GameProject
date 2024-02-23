@@ -13,22 +13,14 @@ public class playerCombat : MonoBehaviour
     float nextAttackTime = 0f;
     
     // Update is called at every frame update
-    void Update()
-    {
-        if(Time.time >= nextAttackTime)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    Attack();
-                    nextAttackTime = Time.time + 1f / attackRate;
-                }
+    void Update() {
+        if(Time.time >= nextAttackTime && Input.GetKeyDown(KeyCode.Space)) { 
+            Attack();
+            nextAttackTime = Time.time + 1f / attackRate;     
         }
-        
-        
     }
 
-    void Attack()
-    {
+    void Attack() {
         // Play attack animation
         animator.SetTrigger("Attack");
         // Detect enemies in range of attack

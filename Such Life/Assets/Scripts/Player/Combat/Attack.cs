@@ -14,12 +14,6 @@ public class Attack : MonoBehaviour
         playerControls = new playerAction();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnEnable()
     {
         fire = playerControls.Player.Fire;
@@ -29,7 +23,6 @@ public class Attack : MonoBehaviour
     private void OnDisable()
     {
         fire.Disable();
-
     }
 
     public void MainAttack(InputAction.CallbackContext context)

@@ -8,9 +8,7 @@ public class HitEmHard : MonoBehaviour
 {
     public playerAction playerControls;
     private InputAction attack;
-
     private weaponParent wparent;
-
     public bool animation_go;
 
     private void OnEnable()
@@ -32,7 +30,6 @@ public class HitEmHard : MonoBehaviour
     {
         playerControls = new playerAction();
     }
-
 
     private void PerformAttack(InputAction.CallbackContext obj) {
      //   wparent.Attack();
