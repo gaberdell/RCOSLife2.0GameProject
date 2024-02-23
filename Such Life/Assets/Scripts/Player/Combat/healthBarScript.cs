@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class healthBarScript : MonoBehaviour
+public class HealthBarScript : MonoBehaviour
 {
-    public Slider slider;
+    [SerializeField] private Slider slider;
 
     private void OnEnable() {
         EventManager.setPlayerHealthBar += SetHealth;

@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerCombat : MonoBehaviour
+public class PlayerCombat : MonoBehaviour
 {
-    public Animator animator;
-    public Transform attackPoint;
-    public float attackRange = 0.5f;
-    public LayerMask enemyLayers;
-    public int attackDamage = 40;
-    public float attackRate = 2f;
-    float nextAttackTime = 0f;
+    [SerializeField] private Animator animator;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private LayerMask enemyLayers;
+    [SerializeField] private float attackRange = 0.5f;
+    [SerializeField] private int attackDamage = 40;
+    [SerializeField] private float AttackRate = 2f;
+    private float NextAttackTime = 0f;
     
     // Update is called at every frame update
     void Update() {
-        if(Time.time >= nextAttackTime && Input.GetKeyDown(KeyCode.Space)) { 
+        if(Time.time >= NextAttackTime && Input.GetKeyDown(KeyCode.Space)) { 
             Attack();
-            nextAttackTime = Time.time + 1f / attackRate;     
+            NextAttackTime = Time.time + 1f / AttackRate;     
         }
     }
 

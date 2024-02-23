@@ -6,28 +6,25 @@ using UnityEngine.InputSystem;
 
 public class HitEmHard : MonoBehaviour
 {
-    public playerAction playerControls;
+    public bool animation_go;
+    [SerializeField] private playerAction playerControls;
     private InputAction attack;
     private weaponParent wparent;
-    public bool animation_go;
-
-    private void OnEnable()
-    {
+    
+    private void OnEnable() {
         playerControls.Player.Enable();
         attack = playerControls.Player.Attack;
         attack.Enable();
         attack.performed += PerformAttack;
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         playerControls.Player.Disable();
         attack.Disable();
     }
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         playerControls = new playerAction();
     }
 
