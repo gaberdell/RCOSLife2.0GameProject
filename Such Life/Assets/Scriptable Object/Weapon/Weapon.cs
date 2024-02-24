@@ -52,6 +52,13 @@ public class Weapon : ScriptableObject
         MAttack = Attacks[Rarity][0];
         RAttack = Attacks[Rarity][1];
     }
+
+    public void fit()
+    {
+        
+    }
+
+
     //Suggestion: range starting at 0 for melee?
 
     //Hybrid
@@ -69,6 +76,8 @@ public class Weapon : ScriptableObject
     double critDamage = 1.25; //Multiplier of the damage if crit is landed, weapon should add to that percentage
     float critChance = 0; //Percent chance to crit, weapon should add to this chance
 }
+
+
 //Change this so it uses Get Setters as opposed to this
 public abstract class ItemWeapon {//Nothing gets assigned until a specific type of weapon calls these variables.
 
@@ -85,7 +94,6 @@ public abstract class ItemWeapon {//Nothing gets assigned until a specific type 
     float weight; //How heavy the weapon, impacts how much player holds in inventory
     bool isOneHanded;
     bool isTwoHanded;//Determines if player can hold another weapon.
-
 }
 
 /* Example:
