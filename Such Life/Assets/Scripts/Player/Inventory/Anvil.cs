@@ -5,12 +5,22 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 //This class is for an anvil
+/// <summary>
+/// Class <c>Anvil</c> unused class meant for an anvil system.
+///                    very similar to the chest class
+/// Relationship status : 
+/// <c>InventoryHolder</c> based class
+/// <c>IInteractable</c> allows it to be interacted with
+/// <c>DynamicInventoryDisplay</c> is what is what renders out the inventory.
+/// <c>SavableSlot</c> used to save data 
+/// </summary>
 public class Anvil : InventoryHolder, IInteractable
 {
     public Sprite anvilSprite;
     public GameObject DynText;
     public GameObject spriteChild;
     private SpriteRenderer localRenderer;
+    //Sussy UnityActions!
     public UnityAction<IInteractable> OnInteractionComplete { get; set; }
     private string ourID;
     protected override void Awake()

@@ -6,7 +6,21 @@ using UnityEngine.InputSystem;
 
 /* This abstract class represent the slots in the player's inventory */
 /* Codes provided by: Dan Pos - Game Dev Tutorials! */
-
+/// <summary>
+/// Class <c>InventoryDisplay</c> Abstract class that stores Inventory UI slots.
+///                               manages said slots with a Dictionairy 
+///                               updating them as need be along with assigning
+///                               them based on an inventorySystem it references
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class
+/// <c>MouseItemData</c> is here to check if is no item so functionality between
+///                      the two does not get overwritten.
+/// <c>InventorySlot_UI</c> Uses it to be updated.
+/// <c>InventorySlot</c> Uses it to be updated.
+/// <c>StaticInventoryDisplay</c> child class.
+/// <c>DynamicInventoryDisplay</c> other child class.
+/// <c>SavableSlot</c> used to save data 
+/// </summary>
 public abstract class InventoryDisplay : MonoBehaviour
 {
     [SerializeField] MouseItemData mouseInventoryItem;    
