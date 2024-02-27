@@ -24,6 +24,7 @@ public class Box : MonoBehaviour
 
     void OnMouseDown()
     {
+        GetComponent<WeaponBag>().InstantiateWeapon(transform.position);
         Destroy(gameObject);
     }
 }

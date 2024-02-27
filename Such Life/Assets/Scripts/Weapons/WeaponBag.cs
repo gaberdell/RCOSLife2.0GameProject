@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class WeaponBag : MonoBehaviour
 {
-    public GameObject Inventory;   // any possible game object that can drop weapons
+    public GameObject WeaponPrefab;
     public List<Weapon> WeaponList = new List<Weapon>();
     Weapon GetDroppedWeapon()
     {
         List<Weapon> PossibleWeapons = new List<Weapon>();
         foreach(Weapon Item in WeaponList)
         {
-            Item.constructor();
-            PossibleWeapons.Add(Item);
+            Weapon newItem = ScriptableObject.Instantiate(Item);
+            newItem.constructor();
+            PossibleWeapons.Add(newItem);
         }
         if(PossibleWeapons.Count > 0)
         {
@@ -28,8 +29,9 @@ public class WeaponBag : MonoBehaviour
         Weapon DroppedItem = GetDroppedWeapon();
         if(DroppedItem  != null)
         {
-            GameObject LootGameObject = Instantiate(Inventory, Position, Quaternion.identity);
+            GameObject LootGameObject = Instantiate(WeaponPrefab, Position, Quaternion.identity);
             LootGameObject.GetComponent<SpriteRenderer>().sprite = DroppedItem.sprite; //now we need a sprite for weapon drop
+            LootGameObject.GetComponent<WeaponData>().AssignSO(DroppedItem);
         }
     }
 }

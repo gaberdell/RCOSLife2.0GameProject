@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51979c6045ea31245a2e7a0e74629bdb, type: 3}
-  m_Name: sword
+  m_Name: Axe
   m_EditorClassIdentifier: 
   MAttack: 0
   RAttack: 0
@@ -18,7 +18,7 @@ MonoBehaviour:
   WeaponType: 
   Reinforce: 0
   WArchetype: {fileID: 0}
-  sprite: {fileID: 21300000, guid: 38bd4d9a148ba434c9c5d1a9420ac55d, type: 3}
+  sprite: {fileID: 0}
   Pierce: 0
   FiringRate: 0
   Capacity: 0
