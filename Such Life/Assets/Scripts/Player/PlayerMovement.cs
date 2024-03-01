@@ -46,6 +46,7 @@ public class PlayerMovement : MouseFollow
     private bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
     private bool canMove; //whether or not you can move, ex if you are stunned or after you tp
 
+    // Enable teleport, dash, roll, and attack based on input
     private void OnEnable()
     {
         playerControls.Player.Enable();
@@ -69,6 +70,8 @@ public class PlayerMovement : MouseFollow
         EventManager.setPlayerWalkSpeed += SetWalkSpeed;
         EventManager.getWalkSpeed += GetWalkSpeed;
     }
+    
+    // Remove disabled functions
     private void OnDisable()
     {
         playerControls.Player.Disable();
@@ -93,6 +96,8 @@ public class PlayerMovement : MouseFollow
     }
 
     //MonoBehavior functions
+
+    // Set default values
     void Awake()
     {
         walkSpeed = 2;
@@ -123,7 +128,7 @@ public class PlayerMovement : MouseFollow
     }
 
 
-    // Update is called once per frame
+    // determine player position
     void Update() {
         if (canMove == true)
         {
@@ -253,6 +258,7 @@ public class PlayerMovement : MouseFollow
         }
     }
 
+    // determine player velocity
     void FixedUpdate() {
         if (combatMove == false)
         {

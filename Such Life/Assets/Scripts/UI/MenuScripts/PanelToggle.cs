@@ -6,7 +6,8 @@ public class PanelToggle : MonoBehaviour
 {
     public GameObject panel;
 
-    public void OpenPanel()
+    // Toggle panel active status
+    public void togglePanel()
     {
         if (panel != null)
         {
