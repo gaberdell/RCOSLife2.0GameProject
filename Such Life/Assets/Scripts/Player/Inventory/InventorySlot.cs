@@ -12,6 +12,7 @@ using UnityEngine;
 /// <c>InventoryItemData</c> is what holds most of its data
 /// Has functionality for clear slots, adding to slots, removing from stack
 /// adding, assining, updating, and finding if there is enough space in the slot
+/// <c>InventorySlot_UI</c> goes ahead and calls the ClearSlot();
 /// </summary>
 public class InventorySlot : IInventorySlot
 {

@@ -5,17 +5,43 @@ using System.Linq;
 
 /* class represent the slots in the player's backpack and any other openable items */
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
+/// <summary>
+/// Class <c>DynamicInventoryDisplay</c> class that stores and presents a dynamic inventory holder.
+///                                      Class has a public method for InventoryUIController
+///                                      called Refresh slots used for setting it to show the
+///                                      current inventory.
+///                                      
+/// Relationship status : 
+/// <c>InventoryDisplay</c> based class.
+/// <c>InventorySlot_UI</c> Uses it to be updated and as a prefab.
+/// <c>InventorySlot</c> Uses it to be updated.
+/// <c>DynamicTextControl</c> calls this script to update itself despite it already updating itself..
+/// <c>InventoryUIController</c> Is the thing that actually starts using the 
+///                              public RefreshDynamicInventory method alongside
+///                              passing in an InventorySystem to show
+/// </summary>
 public class DynamicInventoryDisplay : InventoryDisplay
 {
     // for other class to access - Maybe a merchant (will use dynamic inventory display) have other
     // function for the inventory that the chest don't but merchant still want to access this variable
-    [SerializeField] protected InventorySlot_UI slotPrefab;
-    public GameObject dynamicText;
+    [SerializeField] 
+    private InventorySlot_UI slotPrefab;
 
-    // Start is called before the first frame update
-    protected override void Start()
+    public GameObject DynamicText { get; set; }
+
+    //Helper class
+    private void ClearSlots()
     {
-        base.Start();
+        foreach (var item in transform.Cast<Transform>())
+        {
+            //Implement object pooling later to improve performance
+            Destroy(item.gameObject);
+        }
+
+        if (slotDictionary != null)
+        {
+            slotDictionary.Clear();
+        }
     }
 
     public void RefreshDynamicInventory(InventorySystem inventoryToShow, int offset)
@@ -45,26 +71,13 @@ public class DynamicInventoryDisplay : InventoryDisplay
         //create and pair the inventory slot
         for (int i = offset; i < inventoryToShow.InventorySize; i++)
         {
-            var uiSlot = Instantiate(slotPrefab, transform);
+            //What the fudge knuckles is this?
+            InventorySlot_UI uiSlot = Instantiate(slotPrefab, transform);
             slotDictionary.Add(uiSlot, inventoryToShow.InventorySlots[i]);
             uiSlot.Init(inventoryToShow.InventorySlots[i]);
             uiSlot.UpdateUISlot();
         }
-        dynamicText.GetComponent<DynamicTextControl>().GrabCorners();
-    }
-
-    private void ClearSlots()
-    {
-        foreach (var item in transform.Cast<Transform>())
-        {
-            //Implement object pooling later to improve performance
-            Destroy(item.gameObject);
-        }
-
-        if (slotDictionary != null)
-        {
-            slotDictionary.Clear();
-        }
+        DynamicText.GetComponent<DynamicTextControl>().GrabCorners();
     }
 
     private void OnDisable()

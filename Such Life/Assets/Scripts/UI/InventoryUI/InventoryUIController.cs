@@ -30,6 +30,8 @@ public class InventoryUIController : MonoBehaviour
     private void OnEnable()
     {
         playerControl.Enable();
+        //Grab the static event held within inventory holder and use it whenever inventory is shown
+        //kinda sus tbh
         InventoryHolder.OnDynamicInventoryDisplayRequested += ShowInventory;
         PlayerInventoryHolder.OnPlayerInventoryDisplayRequested += ShowPlayerInventory;
         EventManager.closeInventoryUIEvent += CloseInventory;

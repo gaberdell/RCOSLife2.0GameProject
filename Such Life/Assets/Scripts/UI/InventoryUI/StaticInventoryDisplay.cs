@@ -43,9 +43,8 @@ public class StaticInventoryDisplay : InventoryDisplay
         AssignSlot(inventorySystem, 0);
     }
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
         RefreshStaticDisplay();
     }
 

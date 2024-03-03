@@ -3,11 +3,29 @@ using UnityEngine.UI;
 using TMPro;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
+/// <summary>
+/// Class <c>InventorySlot_UI</c> has an inventory slot but provides an image
+///                               and text for the count of the slot.
+///                                      
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class.
+/// <c>InventorySlot</c> is what it gets info from and 
+/// <c>DynamicTextControl</c> calls this script to update itself despite it already updating itself..
+/// <c>InventoryUIController</c> Is the thing that actually starts using the 
+///                              public RefreshDynamicInventory method alongside
+///                              passing in an InventorySystem to show
+/// <c></c>
+/// <c></c>
+/// <c></c>
+/// </summary>
 public class InventorySlot_UI : MonoBehaviour
 {
-    [SerializeField] private Image itemSprite;
-    [SerializeField] private TextMeshProUGUI itemCount;
-    [SerializeField] private InventorySlot assignedInventorySlot;
+    [SerializeField] 
+    private Image itemSprite;
+    [SerializeField] 
+    private TextMeshProUGUI itemCount;
+    [SerializeField] 
+    private InventorySlot assignedInventorySlot;
 
     private Button button;
 

@@ -19,11 +19,11 @@ using UnityEngine.InputSystem;
 /// <c>InventorySlot</c> Uses it to be updated.
 /// <c>StaticInventoryDisplay</c> child class.
 /// <c>DynamicInventoryDisplay</c> other child class.
-/// <c>SavableSlot</c> used to save data 
 /// </summary>
 public abstract class InventoryDisplay : MonoBehaviour
 {
-    [SerializeField] MouseItemData mouseInventoryItem;    
+    [SerializeField] 
+    private MouseItemData mouseInventoryItem;    
 
     protected InventorySystem inventorySystem; //inventory that we are trying to display on the UI canvas
     protected Dictionary<InventorySlot_UI, InventorySlot> slotDictionary; //pair up UI slot with system slot
@@ -32,13 +32,9 @@ public abstract class InventoryDisplay : MonoBehaviour
     public InventorySystem InventorySystem => inventorySystem;
     public Dictionary<InventorySlot_UI, InventorySlot> SlotDictionary => slotDictionary;
 
-    protected virtual void Start()
-    {
-
-    }
-
     public abstract void AssignSlot(InventorySystem invToDisplay, int offset); //to be implement in child classes
 
+    //Seems slow why not have it directly tell as opposed to cycling through the hash table?
     protected virtual void UpdateSlot(InventorySlot updatedSlot)
     {
         // Look through every slot in the dictionary
