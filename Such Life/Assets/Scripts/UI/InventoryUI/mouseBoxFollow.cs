@@ -3,8 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
+/// <summary>
+/// Class <c>mouseBoxFollow</c> Class that sets the tooltip for the for the item
+///                             the player is viewing by taking the name and the
+///                             description. Addionally it sets the position of
+///                             the object to the proper position.
+///                                      
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class.
+/// <c>InventorySlot_UI</c> Uses this to grab the information to display.
+/// </summary>
 public class mouseBoxFollow : MonoBehaviour
 {
     protected string itemName = "(No Item)";
@@ -13,6 +23,8 @@ public class mouseBoxFollow : MonoBehaviour
     public string ItemDescrip => itemDescrip;
 
     void Start(){
+        //[FIXED]
+        //Blud this is awful coding
         this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
         this.gameObject.GetComponent<Image>().enabled = false;
@@ -21,12 +33,15 @@ public class mouseBoxFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Bro :skull: this is wasteful coding
         this.gameObject.transform.position = Input.mousePosition;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "BoxTag"){
+        
+        if (collision.gameObject.tag == "BoxTag"){
+            Debug.Log(collision.name);
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
             this.gameObject.GetComponent<Image>().enabled = true;

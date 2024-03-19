@@ -14,9 +14,10 @@ using TMPro;
 /// <c>InventoryUIController</c> Is the thing that actually starts using the 
 ///                              public RefreshDynamicInventory method alongside
 ///                              passing in an InventorySystem to show
-/// <c></c>
-/// <c></c>
-/// <c></c>
+/// <c>mouseBoxFollow</c> Uses this to gather info on what name and description to set
+/// <c>MouseOver</c> Does a similar thing to mouse follow
+/// <c>DynamicInventoryDisplay</c> Like InventoryDisplay but with an assign thingy
+/// <c>StaticInventoryDisplay</c> Similar to the above
 /// </summary>
 public class InventorySlot_UI : MonoBehaviour
 {
