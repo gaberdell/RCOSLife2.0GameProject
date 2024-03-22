@@ -1268,10 +1268,10 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   attack:
-    m_Name: 
+    m_Name: Attack
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 
+    m_Id: b0a85109-3908-49dd-84ed-f5fc8c837133
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
