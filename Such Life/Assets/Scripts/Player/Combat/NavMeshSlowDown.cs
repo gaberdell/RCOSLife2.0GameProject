@@ -6,6 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Collision2D),typeof(NavMeshModifier))]
 public class NavMeshSlowDown : MonoBehaviour{
     private NavMeshModifier mod;
+
     private void Awake(){
         mod = GetComponent<NavMeshModifier>();
     }
@@ -19,10 +20,10 @@ public class NavMeshSlowDown : MonoBehaviour{
         }
         Debug.Log("Enter");
         if(col.gameObject.tag == "Player"|| col.gameObject.tag == "Untagged"){
-            
             EventManager.SetPlayerWalkSpeed(EventManager.GetPlayerWalkSpeed() / CostModifier);
         }
     }
+
     private void OnTriggerExit2D(Collider2D col){
         float CostModifier;
         switch(mod.area){

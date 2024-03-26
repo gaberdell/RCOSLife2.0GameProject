@@ -73,7 +73,6 @@ public class Interactor : MonoBehaviour
 
     }
 
-
     void StartInteraction(IInteractable interactable)
     {
         interactable.Interact(out bool interactSuccessful);

@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+/*
+ * Code for the achievements menu
+ * 
+ * 
+ * 
+ * 
+ */
 public class Achievements : MonoBehaviour
 {
 
@@ -45,19 +51,25 @@ public class Achievements : MonoBehaviour
     void Start()
     {
         // Instantiate achievement prefabs for each achievement on each page
+        // Achievements on a page = height of achievementsPrefab
         float achievementsPerPage = achievementsPrefab.GetComponent<RectTransform>().rect.height;
         for (int i = 0; i < achievementContents.Length; i++)
         {
             int y = 0;
+            // Iterate through every key-value-pair of achievements
             foreach (KeyValuePair<string, Achievement> kvp in achievementTracker)
             {
+                // if achievement category matches
                 if (kvp.Value.category == i)
                 {
+                    // Instantiate prefab
                     GameObject achievement = Instantiate(achievementsPrefab, achievementContents[i].transform);
+                    // Set achievement text
                     Text achievementText = achievement.GetComponentInChildren<Text>();
                     if (achievementText != null)
                     {
                         achievementText.text = kvp.Key;
+                        // Set text color
                         if (kvp.Value.isObtained)
                         {
                             achievementText.color = new Color(231/255.0f, 175/255.0f, 27/255.0f);
@@ -75,6 +87,7 @@ public class Achievements : MonoBehaviour
         }
     }
 
+    // Set current achievement page to pageIndex
     public void SetCurrentPage(int pageIndex)
     {
         currentPage = pageIndex;
@@ -84,11 +97,13 @@ public class Achievements : MonoBehaviour
         }
     }
 
+    // Switch tabs on click
     public void OnTabButtonClick(int pageIndex)
     {
         SetCurrentPage(pageIndex);
     }
 
+    // Set Achievement to true/obtained
     public void setAchievement(string request)
     {
         if (achievementTracker.ContainsKey(request))

@@ -1190,7 +1190,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
 
     // Player
     private readonly InputActionMap m_Player;
-    private IPlayerActions m_PlayerActionsCallbackInterface;
+    private IplayerActions m_playerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
     private readonly InputAction m_Player_Fire;
@@ -1201,10 +1201,10 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Dash;
     private readonly InputAction m_Player_Roll;
     private readonly InputAction m_Player_Attack;
-    public struct PlayerActions
+    public struct playerActions
     {
         private @playerAction m_Wrapper;
-        public PlayerActions(@playerAction wrapper) { m_Wrapper = wrapper; }
+        public playerActions(@playerAction wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
         public InputAction @Fire => m_Wrapper.m_Player_Fire;
@@ -1219,43 +1219,43 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
-        public void SetCallbacks(IPlayerActions instance)
+        public static implicit operator InputActionMap(playerActions set) { return set.Get(); }
+        public void SetCallbacks(IplayerActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsCallbackInterface != null)
+            if (m_Wrapper.m_playerActionsCallbackInterface != null)
             {
-                @Move.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMove;
-                @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @Fire.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @Fire.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnFire;
-                @OpenInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
-                @OpenInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
-                @OpenInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOpenInventory;
-                @CloseInventory.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCloseInventory;
-                @CloseInventory.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCloseInventory;
-                @CloseInventory.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCloseInventory;
-                @Interacting.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteracting;
-                @Interacting.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteracting;
-                @Interacting.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteracting;
-                @Teleport.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleport;
-                @Teleport.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleport;
-                @Teleport.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTeleport;
-                @Dash.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Dash.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Dash.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnDash;
-                @Roll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
-                @Roll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
-                @Roll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRoll;
-                @Attack.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                @Attack.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
-                @Attack.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAttack;
+                @Move.started -= m_Wrapper.m_playerActionsCallbackInterface.OnMove;
+                @Move.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnMove;
+                @Move.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnMove;
+                @Look.started -= m_Wrapper.m_playerActionsCallbackInterface.OnLook;
+                @Look.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnLook;
+                @Look.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnLook;
+                @Fire.started -= m_Wrapper.m_playerActionsCallbackInterface.OnFire;
+                @Fire.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnFire;
+                @Fire.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnFire;
+                @OpenInventory.started -= m_Wrapper.m_playerActionsCallbackInterface.OnOpenInventory;
+                @OpenInventory.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnOpenInventory;
+                @OpenInventory.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnOpenInventory;
+                @CloseInventory.started -= m_Wrapper.m_playerActionsCallbackInterface.OnCloseInventory;
+                @CloseInventory.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnCloseInventory;
+                @CloseInventory.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnCloseInventory;
+                @Interacting.started -= m_Wrapper.m_playerActionsCallbackInterface.OnInteracting;
+                @Interacting.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnInteracting;
+                @Interacting.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnInteracting;
+                @Teleport.started -= m_Wrapper.m_playerActionsCallbackInterface.OnTeleport;
+                @Teleport.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnTeleport;
+                @Teleport.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnTeleport;
+                @Dash.started -= m_Wrapper.m_playerActionsCallbackInterface.OnDash;
+                @Dash.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnDash;
+                @Dash.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnDash;
+                @Roll.started -= m_Wrapper.m_playerActionsCallbackInterface.OnRoll;
+                @Roll.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnRoll;
+                @Roll.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnRoll;
+                @Attack.started -= m_Wrapper.m_playerActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_playerActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_playerActionsCallbackInterface.OnAttack;
             }
-            m_Wrapper.m_PlayerActionsCallbackInterface = instance;
+            m_Wrapper.m_playerActionsCallbackInterface = instance;
             if (instance != null)
             {
                 @Move.started += instance.OnMove;
@@ -1291,7 +1291,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
             }
         }
     }
-    public PlayerActions @Player => new PlayerActions(this);
+    public playerActions @Player => new playerActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -1442,7 +1442,7 @@ public partial class @playerAction : IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_XRSchemeIndex];
         }
     }
-    public interface IPlayerActions
+    public interface IplayerActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);

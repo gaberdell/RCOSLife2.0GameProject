@@ -65,4 +65,9 @@ public class GraphicsSettings : MonoBehaviour
         PlayerPrefs.SetInt("ResolutionPreference", resolutionDropdown.value);
     }
 
+    public void SetFullScreen (bool fullScreen)
+    {
+        Screen.fullScreen = fullScreen;
+    }
+
 }

@@ -5,6 +5,12 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+
+/*
+ * Unnecessary for basic menu 
+ * Will not use for playable build at the moment
+ */
+
 public class KeyBindScript : MonoBehaviour
 {
     // syntax of key must match exactly what each text in the texts array below is

@@ -582,7 +582,6 @@ GameObject:
   - component: {fileID: 89910604}
   - component: {fileID: 89910603}
   - component: {fileID: 89910602}
-  - component: {fileID: 89910601}
   m_Layer: 5
   m_Name: Load Game Button
   m_TagString: Untagged
@@ -609,18 +608,6 @@ RectTransform:
   m_AnchoredPosition: {x: 19.713318, y: 21.307487}
   m_SizeDelta: {x: 370, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &89910601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 89910599}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f7f47144a3d1f459a5ef68e0df66a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &89910602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +652,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 89910601}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: MoveToScene
         m_Mode: 3
@@ -1216,12 +1203,12 @@ GameObject:
   m_Component:
   - component: {fileID: 145636768}
   m_Layer: 0
-  m_Name: Menu buttons
+  m_Name: Start Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &145636768
 Transform:
   m_ObjectHideFlags: 0
@@ -1533,7 +1520,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -1592,8 +1579,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 180662426}
-  - component: {fileID: 180662427}
   - component: {fileID: 180662428}
+  - component: {fileID: 180662427}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -1632,49 +1619,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 180662425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f51be74a657127446a9eee0577435161, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c445e8e5baa7db44907ca1a1a5554d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts:
-  - {fileID: 1815026084}
-  - {fileID: 1758732616}
-  - {fileID: 2103593722}
-  - {fileID: 575585217}
-  - {fileID: 2025053252}
-  - {fileID: 657807782}
-  - {fileID: 1964931298}
-  - {fileID: 1560082220}
-  - {fileID: 538838498}
-  - {fileID: 891109304}
-  - {fileID: 1725732731}
-  - {fileID: 849680465}
-  - {fileID: 790712446}
-  - {fileID: 1258285105}
-  - {fileID: 2026603991}
-  - {fileID: 1914098415}
-  - {fileID: 91138727}
-  - {fileID: 1331684722}
-  - {fileID: 343664127}
-  buttons:
-  - {fileID: 1634793894}
-  - {fileID: 1390494589}
-  - {fileID: 212476363}
-  - {fileID: 2015189823}
-  - {fileID: 1092912790}
-  - {fileID: 1546394211}
-  - {fileID: 1621377148}
-  - {fileID: 843523329}
-  - {fileID: 1136658319}
-  - {fileID: 505371032}
-  - {fileID: 346146120}
-  - {fileID: 802408344}
-  - {fileID: 1130499247}
-  - {fileID: 1617631754}
-  - {fileID: 353834005}
-  - {fileID: 1608928056}
-  - {fileID: 360231309}
-  - {fileID: 172595526}
-  - {fileID: 1019462257}
+  texts: []
+  buttons: []
 --- !u!114 &180662428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1721,7 +1670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &188985713
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2029,7 +1978,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -2379,7 +2328,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1992023533}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Brightness, Assembly-CSharp
         m_MethodName: SetBrightness
         m_Mode: 0
@@ -2423,8 +2372,8 @@ RectTransform:
   m_Father: {fileID: 1653392382}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.5666666}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2842,7 +2791,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -2975,7 +2924,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -3108,7 +3057,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -4660,7 +4609,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -4980,7 +4929,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 544720083}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1571014457}
+        m_TargetAssemblyTypeName: TabScript, MenuSettingsAssembly
+        m_MethodName: TabToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &544720083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5036,7 +4997,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 945958745}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: TabScript, Assembly-CSharp
           m_MethodName: TabToggle
           m_Mode: 3
@@ -6276,7 +6237,6 @@ GameObject:
   - component: {fileID: 733444826}
   - component: {fileID: 733444825}
   - component: {fileID: 733444824}
-  - component: {fileID: 733444823}
   m_Layer: 5
   m_Name: New Game Button
   m_TagString: Untagged
@@ -6303,18 +6263,6 @@ RectTransform:
   m_AnchoredPosition: {x: 19.713318, y: 37.40059}
   m_SizeDelta: {x: 370, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &733444823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733444821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78f7f47144a3d1f459a5ef68e0df66a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &733444824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6359,7 +6307,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 733444823}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: MoveToScene
         m_Mode: 3
@@ -6680,6 +6628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 771146354}
+  - component: {fileID: 771146355}
   m_Layer: 5
   m_Name: General
   m_TagString: Untagged
@@ -6707,6 +6656,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &771146355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 771146353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d221e25e6437aa40a5208f6cf750062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &771327353
 GameObject:
   m_ObjectHideFlags: 0
@@ -6757,7 +6718,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 771327353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e439d8dcfc8844598fbe5e1f804372, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e9071c19feb4dc4582fe2a2ac969e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 851547758}
@@ -6821,8 +6782,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 771327355}
-        m_TargetAssemblyTypeName: PanelToggle, Assembly-CSharp
-        m_MethodName: OpenPanel
+        m_TargetAssemblyTypeName: PanelToggle, MenuScriptsAssembly
+        m_MethodName: togglePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7779,7 +7740,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -7912,7 +7873,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -8107,14 +8068,14 @@ GameObject:
   - component: {fileID: 851547759}
   - component: {fileID: 851547762}
   - component: {fileID: 851547761}
-  - component: {fileID: 851547763}
+  - component: {fileID: 851547760}
   m_Layer: 5
   m_Name: Achievements Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &851547759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8137,6 +8098,22 @@ RectTransform:
   m_AnchoredPosition: {x: -0.11645508, y: 0}
   m_SizeDelta: {x: -602.23, y: -186}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &851547760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851547758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91cdcdebb8ee9b24eb855304dbd60a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievementsPrefab: {fileID: 0}
+  achievementPages: []
+  achievementContents: []
+  tabButtons: []
 --- !u!114 &851547761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8175,31 +8152,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851547758}
   m_CullTransparentMesh: 1
---- !u!114 &851547763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851547758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5100b1c6414ad04aaada7b7cca10f73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  achievementsPrefab: {fileID: 1959480227}
-  achievementPages:
-  - {fileID: 435806777}
-  - {fileID: 2111850535}
-  - {fileID: 31683501}
-  achievementContents:
-  - {fileID: 1358238046}
-  - {fileID: 1199839790}
-  - {fileID: 1074288139}
-  tabButtons:
-  - {fileID: 1896058883}
-  - {fileID: 1564278643}
-  - {fileID: 933433358}
 --- !u!1 &862314406
 GameObject:
   m_ObjectHideFlags: 0
@@ -9054,7 +9006,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 903180788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1571014457}
+        m_TargetAssemblyTypeName: TabScript, MenuSettingsAssembly
+        m_MethodName: TabToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &903180788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9110,7 +9074,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 945958745}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: TabScript, Assembly-CSharp
           m_MethodName: TabToggle
           m_Mode: 3
@@ -9618,7 +9582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 851547763}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Achievements, Assembly-CSharp
         m_MethodName: OnTabButtonClick
         m_Mode: 3
@@ -9679,17 +9643,13 @@ GameObject:
   - component: {fileID: 945958739}
   - component: {fileID: 945958741}
   - component: {fileID: 945958740}
-  - component: {fileID: 945958745}
-  - component: {fileID: 945958744}
-  - component: {fileID: 945958743}
-  - component: {fileID: 945958742}
   m_Layer: 5
   m_Name: Settings Page
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &945958739
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9750,63 +9710,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945958738}
   m_CullTransparentMesh: 1
---- !u!114 &945958742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945958738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f954a1b558a36714695325cab7e769cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graphicsQualityDropdown: {fileID: 1444285836}
-  resolutionDropdown: {fileID: 1818362137}
---- !u!114 &945958743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945958738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5adee08271953364c871151c63e74aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioMixer: {fileID: 24100000, guid: d06a4a6da75103e469e5889033aabaad, type: 2}
-  volumeSlider: {fileID: 1979470115}
---- !u!114 &945958744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945958738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 212f5bb0f3062674ba83ad544effe91b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &945958745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 945958738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8963afa36c489248949ee5e5248b9f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabs:
-  - {fileID: 771146353}
-  - {fileID: 1705156219}
-  - {fileID: 1627066662}
-  - {fileID: 180662425}
 --- !u!1 &955432868
 GameObject:
   m_ObjectHideFlags: 0
@@ -10517,7 +10420,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10947,7 +10850,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -11573,7 +11476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: restore_default_settings
         m_Mode: 1
@@ -11743,7 +11646,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -12384,7 +12287,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -12517,7 +12420,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -12728,7 +12631,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1185951943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e439d8dcfc8844598fbe5e1f804372, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e9071c19feb4dc4582fe2a2ac969e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 945958738}
@@ -12792,8 +12695,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1185951945}
-        m_TargetAssemblyTypeName: PanelToggle, Assembly-CSharp
-        m_MethodName: OpenPanel
+        m_TargetAssemblyTypeName: PanelToggle, MenuScriptsAssembly
+        m_MethodName: togglePanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12931,7 +12834,6 @@ GameObject:
   - component: {fileID: 1203371136}
   - component: {fileID: 1203371135}
   - component: {fileID: 1203371134}
-  - component: {fileID: 1203371137}
   m_Layer: 5
   m_Name: Settings Page Button
   m_TagString: Untagged
@@ -13002,7 +12904,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1203371137}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PanelToggle, Assembly-CSharp
         m_MethodName: OpenPanel
         m_Mode: 1
@@ -13052,19 +12954,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203371132}
   m_CullTransparentMesh: 1
---- !u!114 &1203371137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1203371132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e439d8dcfc8844598fbe5e1f804372, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 945958738}
 --- !u!1 &1225663530
 GameObject:
   m_ObjectHideFlags: 0
@@ -13298,7 +13187,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1242396670}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1571014457}
+        m_TargetAssemblyTypeName: TabScript, MenuSettingsAssembly
+        m_MethodName: TabToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1242396670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13354,7 +13255,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 945958745}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: TabScript, Assembly-CSharp
           m_MethodName: TabToggle
           m_Mode: 3
@@ -13853,7 +13754,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14129,7 +14030,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 274523697}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.43333334
+  m_Size: 0.43333337
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14318,7 +14219,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0.000045549747, y: 0.000061035156}
-  m_SizeDelta: {x: -940.651, y: -660.3}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1358238048
 MonoBehaviour:
@@ -14652,7 +14553,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -15321,8 +15222,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 945958742}
-        m_TargetAssemblyTypeName: GraphicsSettings, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GraphicsSettings, MenuSettingsAssembly
         m_MethodName: SetGrpahicsQuality
         m_Mode: 0
         m_Arguments:
@@ -15558,7 +15459,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1457617589}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1571014457}
+        m_TargetAssemblyTypeName: TabScript, MenuSettingsAssembly
+        m_MethodName: TabToggle
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1457617589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15614,7 +15527,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 945958745}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: TabScript, Assembly-CSharp
           m_MethodName: TabToggle
           m_Mode: 3
@@ -16343,7 +16256,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -16701,7 +16614,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 851547763}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Achievements, Assembly-CSharp
         m_MethodName: OnTabButtonClick
         m_Mode: 3
@@ -16796,6 +16709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1571014456}
+  - component: {fileID: 1571014457}
   m_Layer: 0
   m_Name: Tabs
   m_TagString: Untagged
@@ -16821,6 +16735,23 @@ Transform:
   m_Father: {fileID: 945958739}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1571014457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571014455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e502f3126abde94ea8139436d3cd544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pages:
+  - {fileID: 771146353}
+  - {fileID: 1705156219}
+  - {fileID: 1627066662}
+  - {fileID: 180662425}
 --- !u!1 &1575873228
 GameObject:
   m_ObjectHideFlags: 0
@@ -17286,7 +17217,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -17496,7 +17427,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -17629,7 +17560,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -17688,6 +17619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1627066663}
+  - component: {fileID: 1627066664}
   m_Layer: 5
   m_Name: Graphics
   m_TagString: Untagged
@@ -17721,6 +17653,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1627066664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627066662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44ce317ad6429f4cadcb375ccc92e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphicsQualityDropdown: {fileID: 1444285836}
+  resolutionDropdown: {fileID: 1818362137}
 --- !u!1 &1627707830
 GameObject:
   m_ObjectHideFlags: 0
@@ -18015,7 +17961,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -18482,9 +18428,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 945958744}
-        m_TargetAssemblyTypeName: GeneralSettings, Assembly-CSharp
-        m_MethodName: SetFullscreen
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GraphicsSettings, MenuSettingsAssembly
+        m_MethodName: SetFullScreen
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18885,6 +18831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1705156220}
+  - component: {fileID: 1705156221}
   m_Layer: 5
   m_Name: Audio
   m_TagString: Untagged
@@ -18916,6 +18863,20 @@ RectTransform:
   m_AnchoredPosition: {x: -421, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1705156221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705156219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da4a0fe9ee6bfd4c8aacfa8abb00ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: b3134808606399d4db0c6b65977f95ce, type: 2}
+  volumeSlider: {fileID: 1979470115}
 --- !u!1 &1710271475
 GameObject:
   m_ObjectHideFlags: 0
@@ -19520,7 +19481,6 @@ GameObject:
   - component: {fileID: 1749588064}
   - component: {fileID: 1749588063}
   - component: {fileID: 1749588062}
-  - component: {fileID: 1749588065}
   m_Layer: 5
   m_Name: Exit Button
   m_TagString: Untagged
@@ -19590,19 +19550,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1749588063}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1749588065}
-        m_TargetAssemblyTypeName: Exit, Assembly-CSharp
-        m_MethodName: exitGame
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1749588063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19641,18 +19589,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749588060}
   m_CullTransparentMesh: 1
---- !u!114 &1749588065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749588060}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7ad749cc2f7c442a7bfb1df1ad2c70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1758732614
 GameObject:
   m_ObjectHideFlags: 0
@@ -20340,8 +20276,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 945958742}
-        m_TargetAssemblyTypeName: GraphicsSettings, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GraphicsSettings, MenuSettingsAssembly
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -20861,7 +20797,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 851547763}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Achievements, Assembly-CSharp
         m_MethodName: OnTabButtonClick
         m_Mode: 3
@@ -21228,9 +21164,9 @@ RectTransform:
   m_Father: {fileID: 1358238047}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 113.1775, y: -32.9235}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 226.355, y: 65.847}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959480229
@@ -21670,7 +21606,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 945958743}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: VolumeSettings, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 0
@@ -21821,8 +21757,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1992023531}
   - component: {fileID: 1992023532}
-  - component: {fileID: 1992023533}
   - component: {fileID: 1992023535}
+  - component: {fileID: 1992023533}
   m_Layer: 3
   m_Name: Brightness
   m_TagString: Untagged
@@ -21870,12 +21806,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1992023530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd0ef9c4cf0a90d48a7bddacdede072d, type: 3}
+  m_Script: {fileID: 11500000, guid: 89edcd995dc0fbc4c963de7224633edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   brightnessSlider: {fileID: 266777516}
-  brightness: {fileID: 11400000, guid: ca5b212fc2ae7e540bc5961c1d6e6273, type: 2}
-  brightnessLayer: {fileID: 0}
+  brightness: {fileID: 11400000, guid: 249a3f6ccac46804abeb49f2482f12ba, type: 2}
+  brightnessLayer: {fileID: 11400000, guid: 249a3f6ccac46804abeb49f2482f12ba, type: 2}
 --- !u!20 &1992023535
 Camera:
   m_ObjectHideFlags: 0
@@ -22224,7 +22160,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 180662427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: KeyBindScript, Assembly-CSharp
         m_MethodName: toggle_input
         m_Mode: 3
@@ -23367,7 +23303,6 @@ GameObject:
   - component: {fileID: 2125995785}
   - component: {fileID: 2125995784}
   - component: {fileID: 2125995783}
-  - component: {fileID: 2125995782}
   m_Layer: 5
   m_Name: Achievements Page Button
   m_TagString: Untagged
@@ -23394,19 +23329,6 @@ RectTransform:
   m_AnchoredPosition: {x: 19.713257, y: 5.055496}
   m_SizeDelta: {x: 370, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2125995782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2125995780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e439d8dcfc8844598fbe5e1f804372, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panel: {fileID: 851547758}
 --- !u!114 &2125995783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23451,7 +23373,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2125995782}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PanelToggle, Assembly-CSharp
         m_MethodName: OpenPanel
         m_Mode: 1

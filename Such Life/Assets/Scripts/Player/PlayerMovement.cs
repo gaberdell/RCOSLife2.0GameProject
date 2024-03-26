@@ -23,6 +23,7 @@ public class PlayerMovement : MouseFollow
     [SerializeField] private InputAction teleport;
     [SerializeField] private InputAction dash;
     [SerializeField] private InputAction roll;
+    [SerializeField] private InputAction attack;
 
     [SerializeField] private float teleportCooldown; //how long between you can use consecutive teleports (seconds)
     [SerializeField] private float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
@@ -37,10 +38,15 @@ public class PlayerMovement : MouseFollow
     [SerializeField] private float rollSpeed;
     [SerializeField] private float rollCooldown;
     private float lastRollUsed;
-    
+
+    [SerializeField] private float attackTime; //same variables as dash but for roll
+    [SerializeField] private float attackCooldown;
+    private float lastAttackUsed;
+
     private bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
     private bool canMove; //whether or not you can move, ex if you are stunned or after you tp
 
+    // Enable teleport, dash, roll, and attack based on input
     private void OnEnable()
     {
         playerControls.Player.Enable();
@@ -57,18 +63,26 @@ public class PlayerMovement : MouseFollow
         roll.Enable();
         roll.performed += RollFunct;
 
+        attack = playerControls.Player.Attack;
+        attack.Enable();
+        attack.performed += AttackFunct;
+
         EventManager.setPlayerWalkSpeed += SetWalkSpeed;
         EventManager.getWalkSpeed += GetWalkSpeed;
     }
+    
+    // Remove disabled functions
     private void OnDisable()
     {
         playerControls.Player.Disable();
         teleport.Disable();
         dash.Disable();
+        attack.Disable();
 
         teleport.performed -= TeleportFunct;
         dash.performed -= DashFunct;
         roll.performed -= RollFunct;
+        attack.performed -= AttackFunct;
     }
 
     //Helper variable functions
@@ -82,6 +96,8 @@ public class PlayerMovement : MouseFollow
     }
 
     //MonoBehavior functions
+
+    // Set default values
     void Awake()
     {
         walkSpeed = 2;
@@ -105,8 +121,14 @@ public class PlayerMovement : MouseFollow
         rollTime = .4f;
         rollCooldown = 4;
         lastRollUsed = 0 - rollCooldown;
+
+        attackTime = .1f;
+        attackCooldown = .5f;
+        lastAttackUsed = 0 - attackCooldown;
     }
-    // Update is called once per frame
+
+
+    // determine player position
     void Update() {
         if (canMove == true)
         {
@@ -119,29 +141,26 @@ public class PlayerMovement : MouseFollow
             inputX = 0;
             inputY = 0;
         }
-
         direction = new Vector2(inputX, inputY).normalized;
 
         anim.SetFloat("Horizontal", inputX);
         anim.SetFloat("Vertical", inputY);
         anim.SetFloat("Speed", direction.sqrMagnitude);
 
-        
         //give the game info of the direction that the player is facing (for interaction feature later)
-    
-        if(Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical") == -1) {
+        if(Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Vertical") == 1 || Input.GetAxis("Vertical") == -1) 
+        {
             anim.SetFloat("LastHorizontal", Input.GetAxis("Horizontal"));
             anim.SetFloat("LastVertical", Input.GetAxis("Vertical"));
         }
 
-     
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-
-
+        float xDiff = mousePosition.x - body.position.x;
+        float yDiff = mousePosition.y - body.position.y;
         //Will now turn interactor towards cardinal direction of mouse.
-        if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y > 0) /*N*/ {
+        if (xDiff > -0.5 && xDiff < 0.5 && yDiff > 0) /*N*/ {
             if (inputY < 0) {//If character is walking southwards while facing north, character is walking backwards.
                anim.SetBool("isFacingForward", false); // If walking south, character is NOT facing forward.
             }
@@ -149,7 +168,7 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); //Else, character is facing forward.
             }
         }
-        if (mousePosition.x - body.position.x > 0.5 && mousePosition.y - body.position.y > 0.5) /*NE*/ {
+        if (xDiff > 0.5 && yDiff > 0.5) /*NE*/ {
             if (inputX < 0 && inputY < 0) {
                anim.SetBool("isFacingForward", false); 
             }
@@ -157,7 +176,7 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); 
             }
         }
-        if (mousePosition.x - body.position.x > 0 && mousePosition.y - body.position.y > -0.5 && mousePosition.y - body.position.y < 0.5) /*E*/ {
+        if (xDiff > 0 && yDiff > -0.5 && yDiff < 0.5) /*E*/ {
             if (inputX < 0) {
                anim.SetBool("isFacingForward", false); 
             }
@@ -165,7 +184,7 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); 
             }
         }
-        if (mousePosition.x - body.position.x > 0.5 && mousePosition.y - body.position.y < -0.5) /*SE*/ {
+        if (xDiff > 0.5 && yDiff < -0.5) /*SE*/ {
             if (inputX < 0 && inputY > 0) {
                anim.SetBool("isFacingForward", false); 
             }
@@ -173,7 +192,7 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); 
             }
         }
-        if (mousePosition.x - body.position.x > -0.5 && mousePosition.x - body.position.x < 0.5 && mousePosition.y - body.position.y < 0) /*S*/ {
+        if (xDiff > -0.5 && xDiff < 0.5 && yDiff < 0) /*S*/ {
             if (inputY > 0) {
                anim.SetBool("isFacingForward", false); 
             }
@@ -181,7 +200,7 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); 
             }
         }
-        if (mousePosition.x - body.position.x < -0.5 && mousePosition.y - body.position.y < -0.5) /*SW*/ {
+        if (xDiff < -0.5 && yDiff < -0.5) /*SW*/ {
             if (inputX > 0 && inputY > 0) {
                anim.SetBool("isFacingForward", false); 
             }
@@ -189,7 +208,7 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); 
             }
         }
-        if (mousePosition.x - body.position.x < 0 && mousePosition.y - body.position.y > -0.5 && mousePosition.y - body.position.y < 0.5) /*W*/ {
+        if (xDiff < 0 && yDiff > -0.5 && yDiff < 0.5) /*W*/ {
             if (inputX > 0) {
                anim.SetBool("isFacingForward", false); 
             }
@@ -197,7 +216,7 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); 
             }
         }
-        if (mousePosition.x - body.position.x < -0.5 && mousePosition.y - body.position.y > 0.5) /*NW*/ {
+        if (xDiff < -0.5 && yDiff > 0.5) /*NW*/ {
             if (inputX > 0 && inputY < 0) {
                anim.SetBool("isFacingForward", false); 
             }
@@ -205,14 +224,9 @@ public class PlayerMovement : MouseFollow
                anim.SetBool("isFacingForward", true); 
             }
         }
-        anim.SetFloat("MouseX", mousePosition.x - body.position.x);
-        anim.SetFloat("MouseY", mousePosition.y - body.position.y);
-
-        
-        
-        
-        
-
+        anim.SetFloat("MouseX", xDiff);
+        anim.SetFloat("MouseY", yDiff);
+   
         //Tracks what user is inputting.
         if (inputX == 0 && inputY > 0) /*N*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, 180);
@@ -238,16 +252,13 @@ public class PlayerMovement : MouseFollow
         if (inputX < 0 && inputY > 0) /*NW*/ {
             interactor.localRotation = Quaternion.Euler(0, 0, -135);
         }
-
-
         if (canMove == false && Time.time > lastTeleportUsed + teleportDelay) /*allows the player to move again after teleporting*/
         {
             canMove = true;
         }
     }
 
-
-        
+    // determine player velocity
     void FixedUpdate() {
         if (combatMove == false)
         {
@@ -263,9 +274,7 @@ public class PlayerMovement : MouseFollow
     }
     
 
-
     //combat movement functions
-
 
     //this function teleports the player in the direction that they're moving. Currently binded to T
     //after it is called there is a cooldown period when it cannot be used again and a delay where you cannot move after using it.
@@ -337,6 +346,27 @@ public class PlayerMovement : MouseFollow
         {
             float timeRemaining = rollCooldown - (Time.time - lastRollUsed);
             Debug.Log("Cannot roll: roll is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
+        }
+    }
+
+    private void AttackFunct(InputAction.CallbackContext context)
+    {
+        StartCoroutine(AttackRoutine());
+    }
+    // Binded to v
+    private IEnumerator AttackRoutine()
+    {
+        if (Time.time > lastAttackUsed + attackCooldown && canMove == true)
+        {
+            lastAttackUsed = Time.time;
+            Debug.Log("Called attack routine");
+            yield return new WaitForSeconds(attackTime);
+            yield return null;
+        }
+        else
+        {
+            float timeRemaining = attackCooldown - (Time.time - lastAttackUsed);
+            Debug.Log("Cannot attack: attack is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
         }
     }
 

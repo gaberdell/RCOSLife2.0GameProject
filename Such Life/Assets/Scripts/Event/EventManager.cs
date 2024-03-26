@@ -60,7 +60,7 @@ public class EventManager : MonoBehaviour
 
     //Make it so the event can be called
     public static void CloseInventoryUI(bool closePlayerInventory) {
-        if (closeInventoryUIEvent != null) closeInventoryUIEvent(closePlayerInventory);
+        closeInventoryUIEvent?.Invoke(closePlayerInventory);
     }
 
     public static void UpdateInventorySlot(IInventorySystem inventorySystem, IInventorySlot inventorySlot)
