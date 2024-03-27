@@ -38,11 +38,19 @@ public class InventorySlot_UI : MonoBehaviour
         ClearSlot();
 
         itemSprite.preserveAspect = true;
-
-        button = GetComponent<Button>();
-        button?.onClick.AddListener(OnUISlotClick);
         
         ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
+    }
+
+    public void OnEnable()
+    {
+        Debug.Log("Sus");
+        EventManager.inventorySlotPressed += OnUISlotClick;
+    }
+
+    public void OnDisable()
+    {
+        EventManager.inventorySlotPressed -= OnUISlotClick;
     }
 
     public void Init(InventorySlot slot)
@@ -90,9 +98,12 @@ public class InventorySlot_UI : MonoBehaviour
         itemCount.text = "";
     }
 
-    public void OnUISlotClick()
+    public void OnUISlotClick(GameObject isUs)
     {
-        //Access display class function
-        ParentDisplay?.SlotClicked(this);
+        if (isUs == gameObject)
+        {
+            //Access display class function
+            ParentDisplay?.SlotClicked(this);
+        }
     }
 }

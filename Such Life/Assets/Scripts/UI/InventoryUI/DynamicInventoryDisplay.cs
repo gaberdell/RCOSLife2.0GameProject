@@ -77,7 +77,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
             uiSlot.Init(inventoryToShow.InventorySlots[i]);
             uiSlot.UpdateUISlot();
         }
-        DynamicText.GetComponent<DynamicTextControl>().GrabCorners();
+        //DynamicText.GetComponent<DynamicTextControl>().GrabCorners();
     }
 
     private void OnDisable()

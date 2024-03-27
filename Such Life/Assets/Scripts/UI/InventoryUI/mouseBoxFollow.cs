@@ -27,7 +27,6 @@ public class mouseBoxFollow : MonoBehaviour
         //Blud this is awful coding
         this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-        this.gameObject.GetComponent<Image>().enabled = false;
     }
 
     // Update is called once per frame
@@ -41,10 +40,9 @@ public class mouseBoxFollow : MonoBehaviour
     {
         
         if (collision.gameObject.tag == "BoxTag"){
-            Debug.Log(collision.name);
+            //Debug.Log(collision.name);
             this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
             this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            this.gameObject.GetComponent<Image>().enabled = true;
             if(collision.gameObject.GetComponent<InventorySlot_UI>().AssignedInventorySlot.ItemData != null){
                 itemName = collision.gameObject.GetComponent<InventorySlot_UI>().AssignedInventorySlot.ItemData.DisplayName;
                 itemDescrip = collision.gameObject.GetComponent<InventorySlot_UI>().AssignedInventorySlot.ItemData.Description;
@@ -57,7 +55,7 @@ public class mouseBoxFollow : MonoBehaviour
         if(collision.gameObject.tag == "BoxTag"){
             this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
             this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
-            this.gameObject.GetComponent<Image>().enabled = false;
+            //this.gameObject.GetComponent<Image>().enabled = false;
         }
     }
 }

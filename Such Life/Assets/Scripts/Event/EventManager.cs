@@ -20,6 +20,8 @@ public class EventManager : MonoBehaviour
 
     public delegate void SetPlayerWalkSpeedDelegate(float speed);
 
+    public delegate void InventorySlotPressed(GameObject inventoryslot);
+
     //Delegates with returns
 
     public delegate bool ContainSpecificDataDelegate(string ID, bool isSavableObjects);
@@ -49,6 +51,8 @@ public class EventManager : MonoBehaviour
     public static event SetPlayerHealthBarDelegate setPlayerHealthBar;
 
     public static event SetPlayerWalkSpeedDelegate setPlayerWalkSpeed;
+
+    public static event InventorySlotPressed inventorySlotPressed;
 
         //Events with returns
 
@@ -104,6 +108,11 @@ public class EventManager : MonoBehaviour
     }
 
     public static void DeleteData() { if (onDeleteData != null) onDeleteData(); }
+
+    public static void PressInventorySlot(GameObject inventoryslot)
+    {
+        if (inventorySlotPressed != null) inventorySlotPressed(inventoryslot);
+    }
 
     public static bool ContainSpecificData(string ID, bool isObjectsToSave = false)
     {
