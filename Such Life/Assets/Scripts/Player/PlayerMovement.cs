@@ -23,7 +23,6 @@ public class PlayerMovement : MouseFollow
     [SerializeField] private InputAction teleport;
     [SerializeField] private InputAction dash;
     [SerializeField] private InputAction roll;
-    [SerializeField] private InputAction attack;
 
     [SerializeField] private float teleportCooldown; //how long between you can use consecutive teleports (seconds)
     [SerializeField] private float teleportDelay; //there is a delay between after the teleport and when you can move (seconds)
@@ -39,9 +38,7 @@ public class PlayerMovement : MouseFollow
     [SerializeField] private float rollCooldown;
     private float lastRollUsed;
 
-    [SerializeField] private float attackTime; //same variables as dash but for roll
-    [SerializeField] private float attackCooldown;
-    private float lastAttackUsed;
+    
 
     private bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
     private bool canMove; //whether or not you can move, ex if you are stunned or after you tp
@@ -63,9 +60,6 @@ public class PlayerMovement : MouseFollow
         roll.Enable();
         roll.performed += RollFunct;
 
-        attack = playerControls.Player.Attack;
-        attack.Enable();
-        attack.performed += AttackFunct;
 
         EventManager.setPlayerWalkSpeed += SetWalkSpeed;
         EventManager.getWalkSpeed += GetWalkSpeed;
@@ -77,12 +71,10 @@ public class PlayerMovement : MouseFollow
         playerControls.Player.Disable();
         teleport.Disable();
         dash.Disable();
-        attack.Disable();
 
         teleport.performed -= TeleportFunct;
         dash.performed -= DashFunct;
         roll.performed -= RollFunct;
-        attack.performed -= AttackFunct;
     }
 
     //Helper variable functions
@@ -122,9 +114,6 @@ public class PlayerMovement : MouseFollow
         rollCooldown = 4;
         lastRollUsed = 0 - rollCooldown;
 
-        attackTime = .1f;
-        attackCooldown = .5f;
-        lastAttackUsed = 0 - attackCooldown;
     }
 
 
@@ -349,25 +338,6 @@ public class PlayerMovement : MouseFollow
         }
     }
 
-    private void AttackFunct(InputAction.CallbackContext context)
-    {
-        StartCoroutine(AttackRoutine());
-    }
-    // Binded to v
-    private IEnumerator AttackRoutine()
-    {
-        if (Time.time > lastAttackUsed + attackCooldown && canMove == true)
-        {
-            lastAttackUsed = Time.time;
-            Debug.Log("Called attack routine");
-            yield return new WaitForSeconds(attackTime);
-            yield return null;
-        }
-        else
-        {
-            float timeRemaining = attackCooldown - (Time.time - lastAttackUsed);
-            Debug.Log("Cannot attack: attack is on cooldown. " + timeRemaining.ToString("F2") + "seconds left");
-        }
-    }
+    
 
 }
