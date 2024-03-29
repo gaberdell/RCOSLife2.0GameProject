@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class TabScript : MonoBehaviour
 {
-    public GameObject[] tabs;
+    // Store pages/tabs
+    [SerializeField] GameObject[] pages;
 
-    public void TabToggle(int tab)
+    // Toggle specific tab, must assign to tab button
+    public void TabToggle(int tabID)
     {
-        for (int i = 0; i < tabs.Length; i++)
+        for (int i = 0; i < pages.Length; i++)
         {
-            tabs[i].SetActive(false);
+            pages[i].SetActive(false);
         }
-        tabs[tab - 1].SetActive(true);
+        pages[tabID - 1].SetActive(true);
     }
 }

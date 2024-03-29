@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class healthBarScript : MonoBehaviour
+public class HealthBarScript : MonoBehaviour
 {
+    [SerializeField] private Slider slider;
 
-    public Slider slider;
-
-    private void OnEnable()
-    {
+    private void OnEnable() {
         EventManager.setPlayerHealthBar += SetHealth;
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         EventManager.setPlayerHealthBar -= SetHealth;
     }
 
@@ -24,7 +21,6 @@ public class healthBarScript : MonoBehaviour
     }
 
     public void SetHealth(float health){
-
         slider.value = health;
     }
 }
