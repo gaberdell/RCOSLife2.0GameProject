@@ -2,9 +2,9 @@
     "name": "HostileMob",
     "rootNamespace": "",
     "references": [
-        "EventManager",
         "BaseClassAssembly",
-        "InterfaceAssembly"
+        "InterfaceAssembly",
+        "EventManager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
