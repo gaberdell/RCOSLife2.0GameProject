@@ -56,11 +56,6 @@ public class MouseItemData : MonoBehaviour
 
     private void Update()
     {
-        if(Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Debug.Log("Is inside object : " + insideObject);
-        }
-
         // To-do: Add controller support later down the lines
         //If there is an item in the mouse inventory, make the item follow the mouse
         if(AssignedInventorySlot.ItemData != null)
@@ -70,7 +65,6 @@ public class MouseItemData : MonoBehaviour
             {
                 Debug.Log("Placed?!?!");
                 if(AssignedInventorySlot.ItemData.ItemPrefab != null){
-                    Debug.Log("Aint no way :O");
                     Vector3 newPos = my_cam.ScreenToWorldPoint(Input.mousePosition);
                     newPos.z = 0.0f;
                     for(int i = 0; i < AssignedInventorySlot.StackSize-1; i++){
@@ -96,7 +90,7 @@ public class MouseItemData : MonoBehaviour
     }
 
     private void Instanter(InventorySlot AssignedInventorySlot, Vector3 newPos){
-        EventManager.ForceIDValidation(AssignedInventorySlot.ItemData.ItemPrefab);
+        //EventManager.ForceIDValidation(AssignedInventorySlot.ItemData.ItemPrefab);
         GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
         Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
         secret_collider.enabled = false;

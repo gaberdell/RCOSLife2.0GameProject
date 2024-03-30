@@ -16,7 +16,8 @@ using System.Linq;
 [System.Serializable]
 public class InventorySystem
 {
-    [SerializeField] private List<InventorySlot> Inventory;
+    [SerializeField] 
+    private List<InventorySlot> Inventory;
     //public int InventorySize { get; set; }
 
     //Inventory getter
@@ -32,17 +33,32 @@ public class InventorySystem
     //event that activate when we add an item into our inventory 
 
     /* Constructor */
+    //Copy over things intiated in editor for set chests
     public InventorySystem(int size)
     {
-        Inventory = new List<InventorySlot>(size);
 
-        for (int i = 0; i < size; i++)
+        if (Inventory == null)
+        {
+            Inventory = new List<InventorySlot>(size);
+        }
+
+        AddBlankSlotsToSize(size);
+    }
+
+    public InventorySystem()
+    {
+        Debug.Log("Shadow called");
+    }
+
+    public void AddBlankSlotsToSize(int size)
+    {
+        for (int i = Inventory.Count; i < size; i++)
         {
             Inventory.Add(new InventorySlot());
         }
-
-
     }
+
+
 
 
     public bool AddToInventory(InventoryItemData itemToAdd, int amountToAdd)
@@ -115,6 +131,28 @@ public class InventorySystem
         {
             InventorySlots[i].UpdateInventorySlot(savableSlots[i].itemData, savableSlots[i].amount);
         }
+    }
+
+    public void PrintSlots()
+    {
+        if (InventorySlots == null)
+        {
+            Debug.Log("Slots technically null");
+        }
+
+        string stringToAddTogther = "";
+        for (int i = 0; i < InventorySlots.Count; i++)
+        {
+            if (InventorySlots[i].ItemData != null)
+            {
+                stringToAddTogther += InventorySlots[i].ItemData.DisplayName + ", ";
+            }
+            else
+            {
+                stringToAddTogther += "NULL" + ", ";
+            }
+        }
+        Debug.Log(stringToAddTogther);
     }
 }
 

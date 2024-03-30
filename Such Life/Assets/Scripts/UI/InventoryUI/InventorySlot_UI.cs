@@ -44,7 +44,6 @@ public class InventorySlot_UI : MonoBehaviour
 
     public void OnEnable()
     {
-        Debug.Log("Sus");
         EventManager.inventorySlotPressed += OnUISlotClick;
     }
 
