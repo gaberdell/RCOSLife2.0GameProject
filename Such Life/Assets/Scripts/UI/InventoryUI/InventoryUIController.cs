@@ -5,14 +5,29 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
+
 /// <summary>
-/// Some type of overseer class?
-/// Seems to relay the fact that an inventory was opened to the DynamicInvetoryDisplay
+/// Class <c>InventoryUIController</c> Type of overseer class? Seems to 
+///                                    relay the fact that an inventory was 
+///                                    opened to the two 
+///                                    DynamicInvetoryDisplay each 
+///                                    representing a different display.
+///                                    Additionally it controls the displayer
+///                                    being able to be seen by the player.
+///                                    
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class.
+/// <c>playerAction</c> Gets the input from this class
+/// <c>DynamicInventoryDisplay</c> Displays the players version when button
+///                                is pressed by player and also controls
+///                                the chest inventory inside.
+///                                
 /// </summary>
 public class InventoryUIController : MonoBehaviour
 {
 
-    [FormerlySerializedAs("chestPanel")] public DynamicInventoryDisplay inventoryPanel;
+    [FormerlySerializedAs("chestPanel")] 
+    public DynamicInventoryDisplay inventoryPanel;
     public GameObject dynamicText;
     public DynamicInventoryDisplay playerBackpackPanel;
 
@@ -30,6 +45,8 @@ public class InventoryUIController : MonoBehaviour
     private void OnEnable()
     {
         playerControl.Enable();
+        //Grab the static event held within inventory holder and use it whenever inventory is shown
+        //kinda sus tbh
         InventoryHolder.OnDynamicInventoryDisplayRequested += ShowInventory;
         PlayerInventoryHolder.OnPlayerInventoryDisplayRequested += ShowPlayerInventory;
         EventManager.closeInventoryUIEvent += CloseInventory;

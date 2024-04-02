@@ -6,15 +6,26 @@ using UnityEngine;
 
 
 [System.Serializable]
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class UniqueID : MonoBehaviour
 {
+    [SerializeField]
+    private bool _isSetID = false;
+
     [ReadOnly, SerializeField] private string _id = Guid.NewGuid().ToString();
     //[TAG FOR REMOVAL] Try to centralize or remove this stuff doesn't really have a use??!?
-    [SerializeField] private static SerializableDictionary<string, GameObject> idDatabase = new SerializableDictionary<string, GameObject>();
+    [SerializeField] private static SerializableDictionary<string, GameObject> _idDatabase = new SerializableDictionary<string, GameObject>();
 
     //This is just here sense its faster for local scripts in case they need to grab it
     public string ID => _id;
+
+    private void Awake()
+    {
+        if (!_isSetID) {
+            _id = Guid.NewGuid().ToString();
+        }
+    }
+
 
     private void OnEnable()
     {
@@ -49,22 +60,22 @@ public class UniqueID : MonoBehaviour
     {
         //if the database contains the id, generate a new one, or else add the id into the database
         //objects in the world will be linked to the ID
-        if (idDatabase.ContainsKey(_id))
+        if (_idDatabase.ContainsKey(_id))
         {
             Generate();
         }
         else
         {
-            idDatabase.Add(_id, this.gameObject);
+            _idDatabase.Add(_id, this.gameObject);
         }
     }
 
     private void OnDestroy()
     {
         //if the objects already remove from the world, remove it from the database
-        if (idDatabase.ContainsKey(_id))
+        if (_idDatabase.ContainsKey(_id))
         {
-            idDatabase.Remove(_id);
+            _idDatabase.Remove(_id);
         }
     }
 
@@ -72,7 +83,7 @@ public class UniqueID : MonoBehaviour
     private void Generate()
     {
         _id = Guid.NewGuid().ToString();
-        idDatabase.Add(_id, this.gameObject);
+        _idDatabase.Add(_id, this.gameObject);
     }
 
 

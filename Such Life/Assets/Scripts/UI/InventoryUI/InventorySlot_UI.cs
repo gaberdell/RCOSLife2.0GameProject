@@ -3,11 +3,30 @@ using UnityEngine.UI;
 using TMPro;
 
 /* Base codes provided by: Dan Pos - Game Dev Tutorials! with modification */
+/// <summary>
+/// Class <c>InventorySlot_UI</c> has an inventory slot but provides an image
+///                               and text for the count of the slot.
+///                                      
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class.
+/// <c>InventorySlot</c> is what it gets info from and 
+/// <c>DynamicTextControl</c> calls this script to update itself despite it already updating itself..
+/// <c>InventoryUIController</c> Is the thing that actually starts using the 
+///                              public RefreshDynamicInventory method alongside
+///                              passing in an InventorySystem to show
+/// <c>mouseBoxFollow</c> Uses this to gather info on what name and description to set
+/// <c>MouseOver</c> Does a similar thing to mouse follow
+/// <c>DynamicInventoryDisplay</c> Like InventoryDisplay but with an assign thingy
+/// <c>StaticInventoryDisplay</c> Similar to the above
+/// </summary>
 public class InventorySlot_UI : MonoBehaviour
 {
-    [SerializeField] private Image itemSprite;
-    [SerializeField] private TextMeshProUGUI itemCount;
-    [SerializeField] private InventorySlot assignedInventorySlot;
+    [SerializeField] 
+    private Image itemSprite;
+    [SerializeField] 
+    private TextMeshProUGUI itemCount;
+    [SerializeField] 
+    private InventorySlot assignedInventorySlot;
 
     private Button button;
 
@@ -19,11 +38,18 @@ public class InventorySlot_UI : MonoBehaviour
         ClearSlot();
 
         itemSprite.preserveAspect = true;
-
-        button = GetComponent<Button>();
-        button?.onClick.AddListener(OnUISlotClick);
         
         ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
+    }
+
+    public void OnEnable()
+    {
+        EventManager.inventorySlotPressed += OnUISlotClick;
+    }
+
+    public void OnDisable()
+    {
+        EventManager.inventorySlotPressed -= OnUISlotClick;
     }
 
     public void Init(InventorySlot slot)
@@ -71,9 +97,12 @@ public class InventorySlot_UI : MonoBehaviour
         itemCount.text = "";
     }
 
-    public void OnUISlotClick()
+    public void OnUISlotClick(GameObject isUs)
     {
-        //Access display class function
-        ParentDisplay?.SlotClicked(this);
+        if (isUs == gameObject)
+        {
+            //Access display class function
+            ParentDisplay?.SlotClicked(this);
+        }
     }
 }

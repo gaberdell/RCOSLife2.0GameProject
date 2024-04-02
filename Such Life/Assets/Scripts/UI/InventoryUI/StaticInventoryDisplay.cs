@@ -6,6 +6,21 @@ using UnityEngine;
 /// <summary>
 /// Used for the hotbar
 /// </summary>
+/// <summary>
+/// Class <c>DynamicInventoryDisplay</c> class that stores and presents a static inventory holder.
+///                                      Class has a public method for InventoryUIController
+///                                      called Refresh slots used for setting it to show the
+///                                      current inventory. USED primarily for the hotbar.
+///                                      
+/// Relationship status : 
+/// <c>InventoryDisplay</c> based class.
+/// <c>InventorySlot_UI</c> Uses it to be updated and as a prefab.
+/// <c>InventorySlot</c> Uses it to be updated.
+/// <c>DynamicTextControl</c> calls this script to update itself despite it already updating itself..
+/// <c>InventoryUIController</c> Is the thing that actually starts using the 
+///                              public RefreshDynamicInventory method alongside
+///                              passing in an InventorySystem to show
+/// </summary>
 public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private InventoryHolder inventoryHolder;
@@ -43,9 +58,8 @@ public class StaticInventoryDisplay : InventoryDisplay
         AssignSlot(inventorySystem, 0);
     }
 
-    protected override void Start()
+    void Start()
     {
-        base.Start();
         RefreshStaticDisplay();
     }
 

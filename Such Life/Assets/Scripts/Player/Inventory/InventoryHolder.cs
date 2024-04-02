@@ -26,9 +26,18 @@ public abstract class InventoryHolder : MonoBehaviour, IInventoryHolder
 
     protected virtual void Awake()
     {
+        //primaryInvSystem.PrintSlots();
         EventManager.onGameLoaded += LoadInventory;
 
-        primaryInvSystem = new InventorySystem(inventorySize); 
+        if (primaryInvSystem == null)
+        {
+            primaryInvSystem = new InventorySystem(inventorySize);
+        }
+        else
+        {
+            primaryInvSystem.AddBlankSlotsToSize(inventorySize);
+            primaryInvSystem.PrintSlots();
+        }
     }
 
     public bool AddToPrimaryInventory(InventoryItemData inventoryItemData, int amount)

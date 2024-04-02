@@ -10,9 +10,16 @@ using UnityEngine;
  */
 
 [CreateAssetMenu(menuName = "Inventory System/Inventory Item")]
+/// <summary>
+/// Class <c>Inventory Item Data</c> the most bare bones piece of data for the inventory system.
+/// Relationship status : 
+/// <c>ScriptableObject</c> based class
+/// <c>InventorySlot</c> what it mainly uses it.
+/// Is a Scriptable object so it can be made in the editor to represent an item
+/// </summary>
 public class InventoryItemData : ScriptableObject
 {
-    public int ID;
+    public int ID; //Also is all this stuff being public really good practice :thinky:
     public string DisplayName;
     [TextArea(4, 4)]
     public string Description;

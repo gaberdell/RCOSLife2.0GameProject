@@ -16,15 +16,21 @@ using UnityEngine.EventSystems;
 /// child of the latter <c>StaticInventoryDisplay</c> houses a collection of slots
 /// that use the knowledge of the curretly picked up item to transfer items.
 /// </summary>
-
+/// THIS SHOULD PROBABLY BE INSIDE OF THE UI Scripts
 public class MouseItemData : MonoBehaviour
 {
     public Image ItemSprite;
     public TextMeshProUGUI ItemCount;
     public InventorySlot AssignedInventorySlot;
 
+    [SerializeField]
+    private string compareTag = "BoxTag";
+
     private Transform _playerTransform;
     private Camera my_cam;
+
+    private bool insideObject = false;
+    private GameObject inventorySlotToTrigger = null;
 
     private void Awake()
     {
@@ -55,8 +61,9 @@ public class MouseItemData : MonoBehaviour
         if(AssignedInventorySlot.ItemData != null)
         {
             transform.position = Mouse.current.position.ReadValue();
-            if(Mouse.current.leftButton.wasPressedThisFrame && !IsPointerOverUIObject())
+            if(Mouse.current.leftButton.wasPressedThisFrame && !insideObject)
             {
+                Debug.Log("Placed?!?!");
                 if(AssignedInventorySlot.ItemData.ItemPrefab != null){
                     Vector3 newPos = my_cam.ScreenToWorldPoint(Input.mousePosition);
                     newPos.z = 0.0f;
@@ -72,21 +79,25 @@ public class MouseItemData : MonoBehaviour
                 }
                 ClearSlot();
             }
-
+        }
+        if (Mouse.current.leftButton.wasPressedThisFrame && insideObject)
+        {
+            Debug.Log("Hello?");
+            EventManager.PressInventorySlot(inventorySlotToTrigger);
+            //inventorySlotToTrigger.GetComponent<InventorySlot_UI>()
+            //OnUISlotClick
         }
     }
 
     private void Instanter(InventorySlot AssignedInventorySlot, Vector3 newPos){
-        EventManager.ForceIDValidation(AssignedInventorySlot.ItemData.ItemPrefab);
+        //EventManager.ForceIDValidation(AssignedInventorySlot.ItemData.ItemPrefab);
         GameObject secret_obj = Instantiate(AssignedInventorySlot.ItemData.ItemPrefab, newPos,Quaternion.identity);
         Collider2D secret_collider = secret_obj.GetComponent<Collider2D>();
         secret_collider.enabled = false;
         secret_collider.enabled = true;
     }
 
-    //I have no clue what the hell this is doing???
-    //WHY DOES THIS EXSIST IS THIS LIKE AN APRIL FOOLS JOKE
-    //WHY IS THE STUFF MADE RANDOM
+    //Part of the placing script
     public Vector3 newPosShift(Vector3 Pos, bool doNegative){
         Vector3 nextPos = new Vector3(Pos.x, Pos.y,0.0f);
         float randomChoice = Random.Range(0.3f,0.4f);
@@ -105,17 +116,17 @@ public class MouseItemData : MonoBehaviour
         ItemSprite.sprite = null;
     }
 
-    //modified from StackOverflow
-    public static bool IsPointerOverUIObject()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        // Do a ray-cast on the mouse to see if it's ontop of any object, if yes, return true, else is false
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = Mouse.current.position.ReadValue();
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        Debug.Log("Wow!");
-        return results.Count > 0;
+        if (collision.CompareTag(compareTag)) {
+            inventorySlotToTrigger = collision.gameObject;
+            insideObject = true;
+        }
     }
 
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        inventorySlotToTrigger = null;
+        insideObject = false;
+    }
 }

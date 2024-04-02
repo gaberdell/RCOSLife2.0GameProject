@@ -3,8 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 
+/// <summary>
+/// Class <c>MouseOver</c> Weird class that I do not even know what it does
+///                                      
+/// Relationship status : 
+/// <c>MonoBehaviour</c> based class.
+/// <c>InventorySlot_UI</c> Uses this to grab the information to set its
+///                         personally internal information
+/// </summary>
 public class MouseOver : MonoBehaviour
 {
     public int quad = 0;  
