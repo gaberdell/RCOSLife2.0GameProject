@@ -475,7 +475,6 @@ GameObject:
   - component: {fileID: 3976590779585634591}
   - component: {fileID: 3976590779585634589}
   - component: {fileID: 3976590779585634585}
-  - component: {fileID: 3976590779585634592}
   - component: {fileID: 3976590779585634594}
   - component: {fileID: 3976590779585634593}
   m_Layer: 3
@@ -600,7 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 3976590779585634586}
   speed: 0.5
-  Player: {fileID: 2689284233076599858}
+  Player: {fileID: 7676305239715549489}
   damageAmount: 20
 --- !u!58 &3976590779585634590
 CircleCollider2D:
@@ -637,45 +636,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3976590779585634592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976590779585634584}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69abbc2751b6f4149b7dcac9b1fae358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currMaxSpeed: 0
-  currSpeed: 0
-  position: {x: 0, y: 0}
-  newposition: {x: 0, y: 0}
-  navi: {fileID: 0}
-  Sprite: {fileID: 0}
-  damage: 0
-  maxHealth: 0
-  currHealth: 0
-  angle: 0
-  alertRange: 0
-  knockbackDuration: 0
-  knockbackPower: 0
-  speed: 0
-  playerSighted: 0
-  currPosition: {x: 0, y: 0}
-  distance: 0
-  time: 0
-  time_move: 0
-  currState: 0
-  monsterObj: {fileID: 0}
-  player: {fileID: 0}
-  target: {fileID: 0}
-  monsterBody: {fileID: 0}
-  targetLayerMobs:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &3976590779585634593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,7 +653,7 @@ MonoBehaviour:
   position: {x: 0, y: 0}
   newposition: {x: 0, y: 0}
   navi: {fileID: 0}
-  Sprite: {fileID: 0}
+  Sprite: {fileID: 3976590779585634586}
   damage: 0
   maxHealth: 0
   currHealth: 0
