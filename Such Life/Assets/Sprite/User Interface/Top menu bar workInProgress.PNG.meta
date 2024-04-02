@@ -1,7 +1,49 @@
 fileFormatVersion: 2
 guid: d3d8d2e46f0262e458e9a76f22767b46
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 2009663990196086395
+    second: Top menu bar workInProgress_0
+  - first:
+      213: 3548878833951945913
+    second: Top menu bar workInProgress_1
+  - first:
+      213: 4511052051969441121
+    second: Top menu bar workInProgress_2
+  - first:
+      213: 1966016566471210583
+    second: Top menu bar workInProgress_3
+  - first:
+      213: -4078842598554805999
+    second: Top menu bar workInProgress_4
+  - first:
+      213: -736873492669071637
+    second: Top menu bar workInProgress_5
+  - first:
+      213: -2822717732975463642
+    second: Top menu bar workInProgress_6
+  - first:
+      213: 4578332498713553195
+    second: Top menu bar workInProgress_7
+  - first:
+      213: -8247056959651137727
+    second: Top menu bar workInProgress_8
+  - first:
+      213: -6985201307532632260
+    second: Top menu bar workInProgress_9
+  - first:
+      213: -2501734882714675557
+    second: Top menu bar workInProgress_10
+  - first:
+      213: -2322201728174078578
+    second: Top menu bar workInProgress_11
+  - first:
+      213: -7735499509541280216
+    second: Top menu bar workInProgress_12
+  - first:
+      213: -3653632646865782078
+    second: Top menu bar workInProgress_13
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +74,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +83,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -68,7 +110,31 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -77,7 +143,301 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 246
+        width: 289
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76288d50c2c3eb10800000000000000
+      internalID: 2009663990196086395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 195
+        width: 289
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b4bb982f76204130800000000000000
+      internalID: 3548878833951945913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 150
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d7fe0d0f97a9e30800000000000000
+      internalID: 4511052051969441121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_3
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 150
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756bc0b96a1b84b10800000000000000
+      internalID: 1966016566471210583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 173
+        width: 92
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119d86a644a0567c0800000000000000
+      internalID: -4078842598554805999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_5
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 150
+        width: 103
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 11, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beefe09667916c5f0800000000000000
+      internalID: -736873492669071637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_6
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 11
+        width: 132
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6233dc06d21b3d8d0800000000000000
+      internalID: -2822717732975463642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_7
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 130
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29a2798621898f30800000000000000
+      internalID: 4578332498713553195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_8
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 126
+        width: 92
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 147b495d3619c8d80800000000000000
+      internalID: -8247056959651137727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_9
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 99
+        width: 92
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f5ce38b649f0f90800000000000000
+      internalID: -6985201307532632260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_10
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 78
+        width: 92
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b969691016d084dd0800000000000000
+      internalID: -2501734882714675557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_11
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 55
+        width: 103
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e85c26fe4d1e5cfd0800000000000000
+      internalID: -2322201728174078578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_12
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 31
+        width: 92
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82665953e2cf5a490800000000000000
+      internalID: -7735499509541280216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top menu bar workInProgress_13
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 4
+        width: 92
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ca7bc72770bb4dc0800000000000000
+      internalID: -3653632646865782078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
