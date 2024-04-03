@@ -14,6 +14,7 @@ public class SetID : MonoBehaviour
 
     private void OnEnable()
     {
+                    //Event this function is listening
         EventManager.getID += returnID;
         EventManager.forceIDValidation += forceValidate;
     }
@@ -23,7 +24,6 @@ public class SetID : MonoBehaviour
         EventManager.getID -= returnID;
         EventManager.forceIDValidation -= forceValidate;
     }
-
 
     private string returnID(GameObject isOurGameObject, ref string id)
     {
