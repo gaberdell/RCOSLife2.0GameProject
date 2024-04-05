@@ -49,9 +49,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         this.enabled = false;
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EnemyMovement>().enabled = false;
-        GetComponent<SpriteRenderer>().enabled = false;
+        //GetComponent<SpriteRenderer>().enabled = false;
         // Destroy after death animation
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, 1.0f);
     }
     
 }
