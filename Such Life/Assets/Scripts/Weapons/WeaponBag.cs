@@ -25,6 +25,18 @@ public class WeaponBag : MonoBehaviour
         return null;
     }
 
+    private void OnEnable()
+    {
+        EventManager.getWeaponBag += InstantiateWeapon;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.getWeaponBag -= InstantiateWeapon;
+    }
+
+    
+
     public void InstantiateWeapon(Vector3 Position)
     {
         Weapon droppedItem = GetDroppedWeapon();
