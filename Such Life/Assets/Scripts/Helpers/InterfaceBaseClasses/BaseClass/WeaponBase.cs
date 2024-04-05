@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "New Weapon", menuName = "WeaponTemplateDoNotCreate")]
-public class Weapon : ScriptableObject
+public class WeaponBase : ScriptableObject
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common

@@ -33,6 +33,8 @@ public class EventManager : MonoBehaviour
 
     public delegate float GetWalkSpeedDelegate();
 
+    public delegate void GetWeaponBagDelegate(Vector3 postition);
+
     //Make the Event
     public static event CloseInventoryDelegate closeInventoryUIEvent;
 
@@ -61,6 +63,11 @@ public class EventManager : MonoBehaviour
     public static event DealDamageDelegate onDealDamage;
 
     public static event GetWalkSpeedDelegate getWalkSpeed;
+
+    public static event GetWeaponBagDelegate getWeaponBag;
+
+    
+
 
     //Make it so the event can be called
     public static void CloseInventoryUI(bool closePlayerInventory) {
@@ -146,5 +153,10 @@ public class EventManager : MonoBehaviour
     {
         if (getWalkSpeed != null) return getWalkSpeed();
         else return 0f;
+    }
+
+    public static void GetWeaponBag(Vector3 position)
+    {
+        if(getWeaponBag != null) getWeaponBag(position);
     }
 }

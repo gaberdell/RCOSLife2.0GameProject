@@ -9,10 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc818f0fd0a312145b4a257543da1b70, type: 3}
-  m_Name: Mythic
+  m_Script: {fileID: 11500000, guid: 51979c6045ea31245a2e7a0e74629bdb, type: 3}
+  m_Name: Axe
   m_EditorClassIdentifier: 
-  WRarity: Mythic
-  MAttack: 200
-  RAttack: 100
-  DropChance: 0
+  MAttack: 0
+  RAttack: 0
+  Rarity: 
+  WeaponType: 
+  Reinforce: 0
+  WArchetype: {fileID: 0}
+  sprite: {fileID: 0}
+  Pierce: 0
+  FiringRate: 0
+  Capacity: 0
+  ReloadSpeed: 0
