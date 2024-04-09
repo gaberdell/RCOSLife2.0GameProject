@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51979c6045ea31245a2e7a0e74629bdb, type: 3}
   m_Name: sword
   m_EditorClassIdentifier: 
-  MAttack: 0
-  RAttack: 0
-  Rarity: 
-  WeaponType: 
-  Reinforce: 0
+  _meleeAttack: 0
+  _rangeAttack: 0
+  _rarity: 
+  _weaponType: 
+  _reinforce: 0
   WArchetype: {fileID: 0}
-  sprite: {fileID: 21300000, guid: 38bd4d9a148ba434c9c5d1a9420ac55d, type: 3}
-  Pierce: 0
-  FiringRate: 0
-  Capacity: 0
-  ReloadSpeed: 0
+  sprite: {fileID: 21300000, guid: 2d41893b083ec76479816ca189c0e9fa, type: 3}
+  _pierce: 0
+  _firingRate: 0
+  _capacity: 0
+  _reloadSpeed: 0
