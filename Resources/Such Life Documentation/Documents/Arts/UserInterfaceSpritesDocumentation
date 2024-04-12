@@ -1,0 +1,47 @@
+This is a documentation regarding the User Interface Sprites created in Spring 2024.
+
+Navigation: SuchLife/Assets/User Interface
+
+Fonts: 
+This set of serif fonts is create for the game. The set of serif font contain upper case and lower case letters(no punctuation or numbers yet). There are two versions, one version is 1 pixels wide(in the FontsForButtonsAndOtherUI folder) while the other is scaled up to 2 pixels(The files started with Revised).
+
+For specific information on tricky kernings for uppercase letters, please refer to "UpperCaseLetterKerningSuggestions.png"(this is for the 1px letters, if using 2 px, multiply all suggested kerns by 2).
+
+
+There has been multiple versions of the main inventory developed, the version being used in spring 2024 is in the file "MainInventoryAndSideBar".
+- The 6 designs on the right are inventory at the bottom of the screen, while the 5 inventories are the bigger inventories on the left side of the screen
+- Dimensions/colors:
+Bottom screen UI(numbered 1~6 from top to bottom)
+	All of them have the same colors:
+	- Lighter brown color: #da9771
+	- Darker brown color: #70391a
+	Dimensions:
+	The inner square dimension(light brown square area, dark brown frame excluded): 
+		- All rows except first and last rows are 14 pixels wide
+		- First and last rows are 12 pixels wide to create a rounded effect
+	The dark brown color frame:
+		- Excluding indent is 16 x 16 pixels
+		- Indents are 1 pixel
+Bigger Main UI(On the right, sidebar + 4x5 grids)
+	Same base colors:
+	(Base, same color as the bottom screen UI)
+		- Lighter brown color: #da9771
+		- Darker brown color: #70391a
+		- Unselected side bar teal/1px between the grids(the lighter variant): #4abcbd
+		- Selected side bar teal(Darker variant): #3b9393
+	Dimensions:
+		Main grids:
+		- Each inner grid is 16 x 16 pixels maximum, indented corners are indented by 1 pixels each(meaning the first and last rows are 14 pixels wide instead)
+		- Without indent, the frames are 18 x 18 pixels, but each of the border is actually 16 pixels long to accommodate 1 pixel indent
+		Side bar unselected:
+		- The verticles of the unselected side bars are 14 pixels(for indent) and 16 pixels(unindented side)
+		- The horizontals of the unselected side bars are 13 pixels wide
+		- The inner boxed area of the unselected side bars are 12 x 14 pixels, the indented rows are 10 pixels wide instead
+		Side bar selected: 
+		- Same verticle length as unselected
+		- Horizontals of the selected side bars are 14 pixels wide
+		- The inner boxed area is 14 x 14 pixels, indented rows are 12 pixels wide instead
+
+For more specific instruction and dimension, see "MainInventoryAndSideBarInstructions.png"
+
+
