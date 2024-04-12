@@ -41,6 +41,15 @@ public class ItemPickUp : MonoBehaviour
         freezecount = freezetime;
     }
 
+    public void AssignItem(Item newItem)
+    {
+        item = newItem;
+    }
+    public void AssignInventoryData(InventoryItemData data)
+    {
+        ItemData = data;
+    }
+
     private void OnEnable()
     {
 

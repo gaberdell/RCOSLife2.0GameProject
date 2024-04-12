@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
-public class Weapon : ScriptableObject
+public class Weapon : InventoryItemData
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 
     // All weapon stats have in common
@@ -14,7 +14,8 @@ public class Weapon : ScriptableObject
     [SerializeField]private string _weaponType; //Melee, Hybrid, Range
     [SerializeField]private int _reinforce; //Overflow repair will be converted into this bar. Boost weapon’s damage when this bar has a value that is bigger than 0
     [SerializeField]public Archetype WArchetype; // Declared in Archetype ScriptableObject
-    [SerializeField]public Sprite sprite; // Weapon sprite
+
+    //Sprite stored in icon which is a member of InventoryItemData
 
     //Melee
 

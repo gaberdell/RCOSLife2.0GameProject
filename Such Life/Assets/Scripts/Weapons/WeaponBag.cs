@@ -44,8 +44,9 @@ public class WeaponBag : MonoBehaviour
         if(droppedItem  != null){
 
             GameObject lootGameObject = Instantiate(WeaponPrefab, Position, Quaternion.identity);
-            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.sprite; //now we need a sprite for weapon drop
-            lootGameObject.GetComponent<WeaponData>().AssignSO(droppedItem);
+            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.Icon; //now we need a sprite for weapon drop
+            lootGameObject.GetComponent<ItemPickUp>().AssignInventoryData(droppedItem);
+            lootGameObject.GetComponent<ItemPickUp>().AssignItem(new Item(droppedItem));
         }
 
     }
