@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 8946075081499810222}
   - component: {fileID: 2926952070122094180}
   - component: {fileID: 8924714513764161784}
-  - component: {fileID: 8924714513764161785}
+  - component: {fileID: 8931086214838836439}
   m_Layer: 0
   m_Name: MC-combat
   m_TagString: Untagged
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 100
---- !u!114 &8924714513764161785
+--- !u!114 &8931086214838836439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -544,10 +544,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 4582910093240942844}
-  weapon: {fileID: 1251229256541659323}
+  weapon: {fileID: 0}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 0
   attackRange: 0.5
   attackDamage: 40
   AttackRate: 2
@@ -555,7 +555,7 @@ MonoBehaviour:
     m_Name: Attack
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 1f7eabab-a0c9-45f7-9c3e-f1fdd0c61343
+    m_Id: 1f9879ec-bf95-4232-8e00-f6979aca82d0
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings: []
