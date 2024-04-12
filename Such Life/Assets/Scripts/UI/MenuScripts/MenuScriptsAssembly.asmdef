@@ -2,7 +2,10 @@
     "name": "MenuScriptsAssembly",
     "rootNamespace": "",
     "references": [
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "PlayerInputAssembly",
+        "Unity.InputSystem",
+        "EventManager"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
