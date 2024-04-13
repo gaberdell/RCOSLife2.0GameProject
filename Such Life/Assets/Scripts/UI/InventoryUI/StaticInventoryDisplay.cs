@@ -25,7 +25,7 @@ public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private InventoryHolder inventoryHolder;
     [SerializeField] private InventorySlot_UI[] slots;
-
+    public InventorySlot_UI[] theSlots => slots;
 
     private void OnEnable()
     {

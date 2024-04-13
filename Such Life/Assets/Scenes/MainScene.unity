@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: 6e2f4cdc-dc27-469c-9861-301ec7460e42
+  _id: a9766c07-ff6c-4811-a7b9-8dee34723c87
 --- !u!50 &81271284
 Rigidbody2D:
   serializedVersion: 4
@@ -1735,6 +1735,7 @@ GameObject:
   - component: {fileID: 557588007}
   - component: {fileID: 557588006}
   - component: {fileID: 557588010}
+  - component: {fileID: 557588011}
   m_Layer: 5
   m_Name: Player_Hotbar
   m_TagString: Untagged
@@ -1874,6 +1875,19 @@ MonoBehaviour:
   - {fileID: 1906170048}
   - {fileID: 1023971017}
   - {fileID: 1053527227}
+--- !u!114 &557588011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557588004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9720b1971541a64dabc33be7d8ddb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHotBarDisplay: {fileID: 557588010}
 --- !u!1 &561096803
 GameObject:
   m_ObjectHideFlags: 0
@@ -4212,7 +4226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: d37a9906-e9c0-4c31-94f4-dc3d1eb1c135
+  _id: f14ae6db-0043-4f89-98e6-cc0cca853c60
 --- !u!50 &1632195501
 Rigidbody2D:
   serializedVersion: 4
