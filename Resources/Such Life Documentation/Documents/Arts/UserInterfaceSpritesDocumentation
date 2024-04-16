@@ -43,5 +43,38 @@ Bigger Main UI(On the right, sidebar + 4x5 grids)
 		- The inner boxed area is 14 x 14 pixels, indented rows are 12 pixels wide instead
 
 For more specific instruction and dimension, see "MainInventoryAndSideBarInstructions.png"
+------------------------------------------------------------------------------------------
+Here are some other sprites created this semester but might not have been used:
 
-
+Regarding "AllPossibleWeaponStatIcon.png":
+These icons are created in response to the equipments documentation.
+(To navigate to equipments documentation: Resources/Such Life Documentation/Documents/Game Design/Equipments.docx)
+If anything have changed in the future of this game, feel free to repurpose or adjust these icons.
+The possible stat bonus from the original documents include:
+	- Attack
+	- % Attack
+	- HP
+	- % HP
+	- Defense(physical)
+	- % Defense (physical)
+	- Defense(magical)
+	- % Defense (magical)
+	- % Effect resistence
+	- % Effectiveness
+	- % Crit
+	- % Crit Damage
+To see which icon is which, see "AllPossibleWeaponsStatIconGuide.png"
+They are numbered as in the png above as:
+- Attack = 1
+- % Attack = 2
+- crit = 3
+- % crit = 4
+- % crit damage = 5
+- HP = 6
+- % HP = 7
+- % Defense (physical) = 8
+- Defense(physical) = 9
+- % Defense (magical) = 10
+- Defense(magical) = 11
+- % Effectiveness = 12
+- % Effect resistence = 13
