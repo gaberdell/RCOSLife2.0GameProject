@@ -60,13 +60,13 @@ public class DynamicInventoryDisplay : InventoryDisplay
     public override void AssignSlot(InventorySystem inventoryToShow, int offset)
     {
         slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
-
+        
         //prevent accessing null object (NullException Error)
         if (inventoryToShow == null)
         {
             return;
         }
-
+        
 
         //create and pair the inventory slot
         for (int i = offset; i < inventoryToShow.InventorySize; i++)
@@ -74,7 +74,7 @@ public class DynamicInventoryDisplay : InventoryDisplay
             //What the fudge knuckles is this?
             InventorySlot_UI uiSlot = Instantiate(slotPrefab, transform);
             slotDictionary.Add(uiSlot, inventoryToShow.InventorySlots[i]);
-            uiSlot.Init(inventoryToShow.InventorySlots[i]);
+            uiSlot.Init(inventoryToShow.InventorySlots[i]); //Set Assigned InventorySlot
             uiSlot.UpdateUISlot();
         }
         //DynamicText.GetComponent<DynamicTextControl>().GrabCorners();

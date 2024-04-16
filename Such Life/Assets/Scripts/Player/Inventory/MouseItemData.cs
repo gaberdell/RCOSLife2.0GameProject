@@ -126,7 +126,11 @@ public class MouseItemData : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        inventorySlotToTrigger = null;
-        insideObject = false;
+        //Check so we don't leave early
+        if (collision.gameObject == inventorySlotToTrigger)
+        {
+            inventorySlotToTrigger = null;
+            insideObject = false;
+        }
     }
 }

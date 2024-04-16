@@ -95,16 +95,17 @@ public class InventoryUIController : MonoBehaviour
     
     void ShowInventory(InventorySystem inventoryToShow, int offset)
     {
-        inventoryPanel.RefreshDynamicInventory(inventoryToShow, offset);
+        //This order matters as the other way will reset all the slots
         inventoryPanel.gameObject.SetActive(true);
+        inventoryPanel.RefreshDynamicInventory(inventoryToShow, offset);
+        
     }
 
 
     void ShowPlayerInventory(InventorySystem inventoryToShow, int offset)
     {
-        Debug.Log(inventoryToShow);
-        playerBackpackPanel.RefreshDynamicInventory(inventoryToShow, offset);
         playerBackpackPanel.gameObject.SetActive(true);
+        playerBackpackPanel.RefreshDynamicInventory(inventoryToShow, offset);
     }
 
 
