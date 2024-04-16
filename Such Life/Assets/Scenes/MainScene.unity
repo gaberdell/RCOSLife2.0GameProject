@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: a9766c07-ff6c-4811-a7b9-8dee34723c87
+  _id: 2387c3c0-3b0d-440f-8d18-e88fc7a54e9e
 --- !u!50 &81271284
 Rigidbody2D:
   serializedVersion: 4
@@ -1887,7 +1887,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9720b1971541a64dabc33be7d8ddb97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  handItemSprite: {fileID: 732418254}
   playerHotBarDisplay: {fileID: 557588010}
+  newColor: {r: 0.4056604, g: 0.19550848, b: 0.12437701, a: 1}
 --- !u!1 &561096803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,6 +2582,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9974325cc212ea449a1a434275f0ec6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &732418254 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3256653051368632768, guid: e726b2ec016d1884c8f9d97385656aa9, type: 3}
+  m_PrefabInstance: {fileID: 5642498061771927943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &805214578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,7 +2826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseInventoryItem: {fileID: 157629966}
-  slotPrefab: {fileID: 7449900925749526604}
+  slotPrefab: {fileID: 1822991032020418258, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
 --- !u!114 &819532989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4226,7 +4233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: f14ae6db-0043-4f89-98e6-cc0cca853c60
+  _id: 763b0f1b-4ef6-4a10-ab50-bafab45991fa
 --- !u!50 &1632195501
 Rigidbody2D:
   serializedVersion: 4
@@ -5775,7 +5782,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseInventoryItem: {fileID: 157629966}
-  slotPrefab: {fileID: 7449900925749526604}
+  slotPrefab: {fileID: 1822991032020418258, guid: 4072b4e98da3ef94fb9bd1b56b3e3f4a, type: 3}
 --- !u!114 &2020816863
 MonoBehaviour:
   m_ObjectHideFlags: 0

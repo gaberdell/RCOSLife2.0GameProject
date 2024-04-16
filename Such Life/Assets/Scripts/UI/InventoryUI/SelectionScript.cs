@@ -9,7 +9,13 @@ public class SelectionScript : MonoBehaviour
     private static int numberOfHotBarKeys = 10;
 
     [SerializeField]
-    StaticInventoryDisplay playerHotBarDisplay;
+    private SpriteRenderer handItemSprite;
+
+    [SerializeField]
+    private StaticInventoryDisplay playerHotBarDisplay;
+
+    [SerializeField]
+    private Color newColor;
 
     private InventorySlot_UI[] slots = new InventorySlot_UI[numberOfHotBarKeys];
 
@@ -18,8 +24,12 @@ public class SelectionScript : MonoBehaviour
                                                  KeyCode.Alpha7, KeyCode.Alpha8, KeyCode.Alpha9,
                                                  KeyCode.Alpha0};
 
-    private GameObject[] gameObjects = new GameObject[numberOfHotBarKeys];
+    private Image[] hotbarImages = new Image[numberOfHotBarKeys];
 
+    private Image highLightedImage = null;
+    private InventorySlot_UI slot = null;
+
+    private Color baseColor;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +37,7 @@ public class SelectionScript : MonoBehaviour
         for (int i = 0; i < numberOfHotBarKeys; i++)
         {
             slots[i] = null;
-            gameObjects[i] = null;
+            hotbarImages[i] = null;
         }
 
 
@@ -35,9 +45,10 @@ public class SelectionScript : MonoBehaviour
         foreach  (InventorySlot_UI slotUI in playerHotBarDisplay.theSlots)
         {
             slots[count] = slotUI;
-            gameObjects[count] = slotUI.gameObject;
+            hotbarImages[count] = slotUI.gameObject.GetComponent<Image>();
             count++;
         }
+        baseColor = hotbarImages[0].GetComponent<Image>().color;
     }
 
     // Update is called once per frame
@@ -47,8 +58,32 @@ public class SelectionScript : MonoBehaviour
         {
             if (Input.GetKeyDown(keyCodesToCycleThrough[i]))
             {
-                gameObjects[i].GetComponent<Image>().color = Color.white;
+                if (highLightedImage != null) {
+                    highLightedImage.color = baseColor;
+                }
+
+                if (highLightedImage != hotbarImages[i])
+                {
+                    hotbarImages[i].color = newColor;
+                    highLightedImage = hotbarImages[i];
+                    slot = slots[i];
+                }
+                else
+                {
+                    highLightedImage = null;
+                    slot = null;
+                }
+                
+
             }
+        }
+        if (slot != null)
+        {
+            handItemSprite.sprite = slot.ItemSprite.sprite;
+        }
+        else
+        {
+            handItemSprite.sprite = null;
         }
     }
 }

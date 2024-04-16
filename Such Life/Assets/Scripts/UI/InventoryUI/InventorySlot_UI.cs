@@ -30,6 +30,8 @@ public class InventorySlot_UI : MonoBehaviour
 
     private Button button;
 
+    public Image ItemSprite => itemSprite;
+
     //getter for our private variable
     public InventorySlot AssignedInventorySlot => assignedInventorySlot;
     public InventoryDisplay ParentDisplay { get; private set; }
