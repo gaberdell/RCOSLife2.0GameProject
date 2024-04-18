@@ -29,6 +29,7 @@ public class InventoryItemData : ScriptableObject
     public int GoldValue; //For the shop
 
     public bool placeable;
+    public bool rotatable; //is the placable object able to be rotated
     public GameObject placeObject;
 
     public string colliderType = "box"; // "box" refers to box collider, "circle" refers to circle collider, initizlized to box

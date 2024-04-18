@@ -29,18 +29,36 @@ using System;
 public class PlaceObject : MonoBehaviour
 {
     //WHY IS IT ALWAYS PUBLIC FUNCTIONS C# HAS BUILT-IN GETTERS AND SETTERS YOU KNOW
-    public MouseItemData mouseItem;
-    public Transform player;
-    public float placingRadius = 5f;   // how far player can place objects
-    public float droppingRadius = 1f;
+    [SerializeField]
+    private MouseItemData mouseItem;
+    [SerializeField]
+    private Transform player;
+    [SerializeField]
+    private float placingRadius = 5f;   // how far player can place objects
+    [SerializeField]
+    private float droppingRadius = 1f;
+
+    [SerializeField]
     public float gridWidth = 0.6f;
+    [SerializeField]
     public float gridHeight = 0.6f;
-    private Dictionary<string, GameObject> locationVSgameobjects;
-    private int stage = 1;   // stage = 1: right click to place object; stage = 2: right click to rotate object (rotatable object only)
+
+    private bool isRotating = false;   // stage = 1: right click to place object; stage = 2: right click to rotate object (rotatable object only)
     private GameObject current;   // point to current game object
     public GameObject placingRadiusobj;   // display the range of placing objects (circle around player)
     private InventoryItemData itemdata;
     // hotbar item goes here
+
+    private void OnEnable()
+    {
+        //CREATE A FUNCTION FOR WHEN ITS ABOUT TO BE PLACED
+    }
+
+    private void OnDisable()
+    {
+        //Memory removal for the same thing
+    }
+
 
     private Vector3 convertToGridCoordinate(Vector3 pos)
     {
@@ -66,60 +84,19 @@ public class PlaceObject : MonoBehaviour
         return new Vector3(x, y, playerPos.z);
     }
 
-    private GameObject createGameObject(string name, Vector3 pos, string key)
+    private GameObject createGameObject(GameObject prefab, Vector3 pos)
     {
-        // create gameobject with name, scale at position pos
+        GameObject newObject = Instantiate(prefab);
+        newObject.transform.position = pos;   
 
-        /*
-        GameObject currentObject = new GameObject(name);
-
-        // add class components here
-        House housetest = currentObject.AddComponent(typeof(House)) as House;
-        //itemPkup.pickUpRadius = 0.5f;
-
-        currentObject.transform.localScale = scale;
-        currentObject.transform.position = pos;
-        locationVSgameobjects.Add(key, currentObject);
-
-        return currentObject;
-        */
-
-        //GameObject currentObject = Instantiate(GameObject.Find(name));
-        GameObject currentObject = new GameObject(name);
-        SpriteRenderer rend = currentObject.AddComponent<SpriteRenderer>();
-        rend.sprite = itemdata.Icon;
-        if (itemdata.colliderType == "circle")
-        {
-            CircleCollider2D cc = currentObject.AddComponent<CircleCollider2D>();
-            cc.radius = itemdata.circleColliderRadius;
-        }
-        else if (itemdata.colliderType == "box")
-        {
-            var bc = currentObject.AddComponent<BoxCollider2D>();
-            bc.size = itemdata.boxColliderSize;
-        }
-        ItemPickUp itempk = currentObject.AddComponent(typeof(ItemPickUp)) as ItemPickUp;
-        //itempk.ItemData = itemdata;
-
-        //GameObject currentObject = Instantiate(Resources.Load(name) as GameObject);
-
-
-        currentObject.transform.position = pos;
-        if (itemdata.placeable)
-        {
-            locationVSgameobjects.Add(key, currentObject);
-        }
-        
-
-        return currentObject;
+        return newObject;
     }
     
     void Start()
     {
-        locationVSgameobjects = new Dictionary<string, GameObject>();
         placingRadiusobj.transform.position = player.transform.position;
         placingRadiusobj.transform.localScale = new Vector3(placingRadius, placingRadius, 0f);
-        var sprr = placingRadiusobj.GetComponent<SpriteRenderer>();
+        SpriteRenderer sprr = placingRadiusobj.GetComponent<SpriteRenderer>();
         Color c = Color.white;
         c.a = 0f;
         sprr.color = c;
@@ -147,7 +124,7 @@ public class PlaceObject : MonoBehaviour
             c.a = 0f;
             sprr.color = c;
         }
-        if (Mouse.current.rightButton.wasPressedThisFrame && stage == 1)
+        if (Mouse.current.rightButton.wasPressedThisFrame && isRotating == false)
         {
             Vector3 mousepos = Mouse.current.position.ReadValue();
             mousepos.z = Camera.main.nearClipPlane;
@@ -160,19 +137,19 @@ public class PlaceObject : MonoBehaviour
 
             if (itemdata.placeable) // placeable
             {
-                if (locationVSgameobjects.ContainsKey(key))
+                //FEATURE TO REIMPLEMENT -> Check if place location has a collider if so don't place there
+                /*if (locationVSgameobjects.ContainsKey(key))
                 {
                     Debug.Log("cannot place here, something already exists");
                     return;
-                }
-                else if (Vector3.Distance(mousepos, playerpos) <= placingRadius) // and placeable
+                }*/
+                if (Vector3.Distance(mousepos, playerpos) <= placingRadius) // and placeable
                 {
                     // placeable items
-                    //createGameObject("House", new Vector3(1f, 1f, 1f), mousepos, key);
-                    current = createGameObject(itemdata.DisplayName, mousepos, key);
-                    if (true) // object is rotatable
+                    current = createGameObject(itemdata.placeObject, mousepos);
+                    if (itemdata.rotatable) // object is rotatable
                     {
-                        stage = 2;
+                        isRotating = true;
                     }
                     Debug.Log("placed item");
                     mouseItem.ClearSlot();
@@ -188,7 +165,7 @@ public class PlaceObject : MonoBehaviour
                 for (int i = 0; i < mouseItem.AssignedInventorySlot.StackSize; i++)
                 {
                     Vector3 droppos = generateRandomPosition(playerpos);
-                    current = createGameObject(itemdata.DisplayName, droppos, key);
+                    current = createGameObject(itemdata.ItemPrefab, droppos);
                     Debug.Log("dropped item");
                 }
                 mouseItem.ClearSlot();
@@ -199,24 +176,25 @@ public class PlaceObject : MonoBehaviour
             
         }
 
-        if (Mouse.current.rightButton.wasPressedThisFrame && stage == 2)
+        if (Mouse.current.rightButton.wasPressedThisFrame && isRotating == true)
         {
             current.transform.Rotate(0f, 0f, 90f);
         }
-        if (Mouse.current.leftButton.wasPressedThisFrame && stage == 1)
+        if (Mouse.current.leftButton.wasPressedThisFrame && isRotating == false)
         {
             Vector3 playerpos = player.transform.position;
             for (int i = 0; i < mouseItem.AssignedInventorySlot.StackSize; i++)
             {
+                //Swap out with a normalized vector from the players position to the drop point and multipled by the place distance vector
                 Vector3 droppos = generateRandomPosition(playerpos);
-                current = createGameObject(itemdata.DisplayName, droppos, "");
+                current = createGameObject(itemdata.placeObject, droppos);
                 Debug.Log("dropped item");
             }
             mouseItem.ClearSlot();
         }
-        if (Mouse.current.leftButton.wasPressedThisFrame && stage == 2)
+        if (Mouse.current.leftButton.wasPressedThisFrame && isRotating == true)
         {
-            stage = 1;
+            isRotating = false;
         }
     }
 
