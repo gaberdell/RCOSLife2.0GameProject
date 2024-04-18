@@ -8,35 +8,30 @@ using static PlasticPipe.Server.MonitorStats;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GamePaused = false;
-    public GameObject pauseMenuUI;
+    [SerializeField] private GameObject pauseMenuUI;
 
-    [SerializeField] private playerAction UIController;
-    [SerializeField] private InputAction pause;
-
+    private PlayerControl UIController;
     private void Start()
     {
-        UIController = new playerAction();
+        UIController = new PlayerControl();
     }
 
     private void OnEnable()
     {
-        UIController.UI.Enable();
-
-        pause = UIController.UI.Pause;
-        pause.Enable();
-        pause.performed += PauseFunct();
-
+        UIController.Enable();
+        UIController.UI.Pause.performed += PauseFunct;
     }
 
     // Remove disabled functions
     private void OnDisable()
     {
-        UIController.UI.Disable();
-        pause.performed -= PauseFunct;
+        UIController.Disable();
+        UIController.UI.Pause.performed -= PauseFunct;
     }
 
     private void PauseFunct(InputAction.CallbackContext context)
     {
+        Debug.Log("pause function");
         if (GamePaused)
         {
             Resume();
@@ -49,6 +44,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Debug.Log("RESUME");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
@@ -56,6 +52,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        Debug.Log("PAUSE");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamePaused = true;

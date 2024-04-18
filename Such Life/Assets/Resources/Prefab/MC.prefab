@@ -379,6 +379,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 53d20c1f-faa7-4eb6-800c-71e9ee512f9e
     m_ActionName: Player/Attack[/Keyboard/v]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea6c2a05-01b7-42ae-a966-f80aa84c6039
+    m_ActionName: UI/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
