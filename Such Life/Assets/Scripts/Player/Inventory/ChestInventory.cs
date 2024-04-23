@@ -75,7 +75,7 @@ public class ChestInventory : InventoryHolder, IInteractable
         {
             OnDynamicInventoryDisplayRequested?.Invoke(primaryInvSystem, 0);
             EventManager.GetWeaponBag(transform.position);
-            Destroy(gameObject);
+            //Destroy(gameObject);
             DynTextObject.SetActive(true);
             //Name is also inherited
             DynText.text = name;

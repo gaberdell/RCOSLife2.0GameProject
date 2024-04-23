@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon")]
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Inventory System/Weapon")]
 public class Weapon : InventoryItemData
 {//Nothing gets assigned until a specific type of weapon calls these variables.
 

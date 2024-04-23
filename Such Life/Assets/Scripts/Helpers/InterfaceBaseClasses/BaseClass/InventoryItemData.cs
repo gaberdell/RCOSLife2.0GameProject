@@ -23,6 +23,8 @@ public class InventoryItemData : ScriptableObject
     public string DisplayName;
     [TextArea(4, 4)]
     public string Description;
+
+    new public string name;
     public Sprite Icon;
     public int MaxStackSize;
     public string Type;

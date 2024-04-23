@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class WeaponBag : MonoBehaviour
@@ -35,20 +36,18 @@ public class WeaponBag : MonoBehaviour
         EventManager.getWeaponBag -= InstantiateWeapon;
     }
 
-    
-
     public void InstantiateWeapon(Vector3 Position)
     {
         Weapon droppedItem = GetDroppedWeapon();
 
         if(droppedItem  != null){
-
-            GameObject lootGameObject = Instantiate(WeaponPrefab, Position, Quaternion.identity);
-            lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.Icon; //now we need a sprite for weapon drop
-            lootGameObject.GetComponent<ItemPickUp>().AssignInventoryData(droppedItem);
-            lootGameObject.GetComponent<ItemPickUp>().AssignItem(new Item(droppedItem));
+            //GameObject lootGameObject = Instantiate(WeaponPrefab, Position, Quaternion.identity);
+            GetComponent<ChestInventory>().AddToPrimaryInventory(droppedItem,1);
+            //lootGameObject.GetComponent<SpriteRenderer>().sprite = droppedItem.Icon; //need animation
+            //lootGameObject.GetComponent<ItemPickUp>().AssignInventoryData(droppedItem);
         }
 
     }
     
 }
+
