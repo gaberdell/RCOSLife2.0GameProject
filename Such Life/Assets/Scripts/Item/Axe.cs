@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class Axe : Weapon {
+class Axe : MonoBehaviour {
     
     void Start()
     {
