@@ -22,6 +22,10 @@ public class EventManager : MonoBehaviour
 
     public delegate void InventorySlotPressed(GameObject inventoryslot);
 
+    public delegate void CurrentItemSelected(InventoryItemData selectedItem);
+
+    public delegate void CurrentSlotSelected(IInventorySlot selectedItem);
+
     //Delegates with returns
 
     public delegate bool ContainSpecificDataDelegate(string ID, bool isSavableObjects);
@@ -55,6 +59,10 @@ public class EventManager : MonoBehaviour
     public static event SetPlayerWalkSpeedDelegate setPlayerWalkSpeed;
 
     public static event InventorySlotPressed inventorySlotPressed;
+
+    public static event CurrentItemSelected currentlySelectedItem;
+
+    public static event CurrentSlotSelected currentSlotSelected;
 
         //Events with returns
 
@@ -119,6 +127,16 @@ public class EventManager : MonoBehaviour
     public static void PressInventorySlot(GameObject inventoryslot)
     {
         if (inventorySlotPressed != null) inventorySlotPressed(inventoryslot);
+    }
+
+    public static void SelectedCurrentItem(InventoryItemData selectedItem)
+    {
+        if (currentlySelectedItem != null) currentlySelectedItem(selectedItem);
+    }
+
+    public static void SelectedCurrentSlot(IInventorySlot selectedSlot)
+    {
+        if (currentSlotSelected != null) currentSlotSelected(selectedSlot);
     }
 
     public static bool ContainSpecificData(string ID, bool isObjectsToSave = false)

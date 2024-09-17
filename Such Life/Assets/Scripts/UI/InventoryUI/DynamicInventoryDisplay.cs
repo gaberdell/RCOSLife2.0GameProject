@@ -29,6 +29,9 @@ public class DynamicInventoryDisplay : InventoryDisplay
 
     public GameObject DynamicText { get; set; }
 
+    [SerializeField]
+    private List<InventorySlot_UI> armorSlots;
+
     //Helper class
     private void ClearSlots()
     {
@@ -44,17 +47,21 @@ public class DynamicInventoryDisplay : InventoryDisplay
         }
     }
 
+    //Should be the only way to modify the inventory
     public void RefreshDynamicInventory(InventorySystem inventoryToShow, int offset)
     {
         //clear out slots, update and assign slots 
         ClearSlots();
         inventorySystem = inventoryToShow;
-        if (inventorySystem != null)
-        {
-            inventorySystem.OnInventorySlotChanged += UpdateSlot;
-        }
-
         AssignSlot(inventoryToShow, offset);
+    }
+
+    public void RefreshDynamicInventoryArmor(InventorySystem inventoryToShow, int offset, int armorOffset)
+    {
+        //clear out slots, update and assign slots 
+        ClearSlots();
+        inventorySystem = inventoryToShow;
+        AssignSlotArmor(inventoryToShow, offset, armorOffset);
     }
 
     public override void AssignSlot(InventorySystem inventoryToShow, int offset)
@@ -66,25 +73,46 @@ public class DynamicInventoryDisplay : InventoryDisplay
         {
             return;
         }
-        
 
         //create and pair the inventory slot
         for (int i = offset; i < inventoryToShow.InventorySize; i++)
         {
+            //Will create the prefab around the specified script aswell
+            //Hence how this works
+            //Position is not needed as this
+            InventorySlot_UI uiSlot = Instantiate(slotPrefab, transform);
+            slotDictionary.Add(uiSlot, inventoryToShow.InventorySlots[i]);
+            uiSlot.AssignInventorySlotTo(inventoryToShow.InventorySlots[i]); //Set Assigned InventorySlot
+        }
+    }
+
+    public void AssignSlotArmor(InventorySystem inventoryToShow, int offset, int armorOffset)
+    {
+        slotDictionary = new Dictionary<InventorySlot_UI, InventorySlot>();
+
+        //prevent accessing null object (NullException Error)
+        if (inventoryToShow == null)
+        {
+            return;
+        }
+
+        int i = offset;
+        foreach (InventorySlot_UI armorSlot in armorSlots)
+        {
+            //What the fudge knuckles is this?
+            slotDictionary.Add(armorSlot, inventoryToShow.InventorySlots[i]);
+            armorSlot.AssignInventorySlotTo(inventoryToShow.InventorySlots[i]); //Set Assigned InventorySlot
+            i++;
+        }
+
+        //create and pair the inventory slot
+        for (; i < inventoryToShow.InventorySize; i++)
+        {
             //What the fudge knuckles is this?
             InventorySlot_UI uiSlot = Instantiate(slotPrefab, transform);
             slotDictionary.Add(uiSlot, inventoryToShow.InventorySlots[i]);
-            uiSlot.Init(inventoryToShow.InventorySlots[i]); //Set Assigned InventorySlot
-            uiSlot.UpdateUISlot();
+            uiSlot.AssignInventorySlotTo(inventoryToShow.InventorySlots[i]); //Set Assigned InventorySlot
         }
         //DynamicText.GetComponent<DynamicTextControl>().GrabCorners();
-    }
-
-    private void OnDisable()
-    {
-        if (inventorySystem != null)
-        {
-            inventorySystem.OnInventorySlotChanged -= UpdateSlot;
-        }
     }
 }

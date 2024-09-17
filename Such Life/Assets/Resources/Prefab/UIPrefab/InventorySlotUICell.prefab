@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 8305555059774910947}
   - component: {fileID: 1822991032020418258}
   m_Layer: 5
-  m_Name: InventorySlot_UI
+  m_Name: InventorySlotUICell
   m_TagString: BoxTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -264,6 +264,7 @@ MonoBehaviour:
   assignedInventorySlot:
     itemData: {fileID: 0}
     stackSize: -1
+  itemTypeCheck: -1
 --- !u!1 &7156112921197732460
 GameObject:
   m_ObjectHideFlags: 0

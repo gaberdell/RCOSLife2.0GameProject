@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 398998a903765594e951801e77a76361, type: 3}
+  m_Name: Chest Block
+  m_EditorClassIdentifier: 
+  placeGameObject: {fileID: 3064959841960340406, guid: 27fb14e0edaeeab4abea2a23a4c45703, type: 3}
+  placeTile: {fileID: 11400000, guid: 3de204fd5bc404449a58cbe56f6c163e, type: 2}

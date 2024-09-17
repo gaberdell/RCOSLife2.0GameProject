@@ -36,7 +36,6 @@ public abstract class InventoryHolder : MonoBehaviour, IInventoryHolder
         else
         {
             primaryInvSystem.AddBlankSlotsToSize(inventorySize);
-            primaryInvSystem.PrintSlots();
         }
     }
 

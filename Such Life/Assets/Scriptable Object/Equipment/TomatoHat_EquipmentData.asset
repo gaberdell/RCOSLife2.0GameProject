@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c542106a5b5d3439b40ab0f42f0a4a, type: 3}
+  m_Name: TomatoHat_EquipmentData
+  m_EditorClassIdentifier: 
+  northSprite: {fileID: -6857439750549744992, guid: 7419450083ec35c46a015bf323e48af0, type: 3}
+  northEastSprite: {fileID: -6857439750549744992, guid: 7419450083ec35c46a015bf323e48af0, type: 3}
+  eastSprite: {fileID: -2364177149823841816, guid: 7419450083ec35c46a015bf323e48af0, type: 3}
+  southEastSprite: {fileID: -1722307969952383859, guid: 7419450083ec35c46a015bf323e48af0, type: 3}
+  southSprite: {fileID: -1722307969952383859, guid: 7419450083ec35c46a015bf323e48af0, type: 3}
+  southWestSprite: {fileID: -1722307969952383859, guid: 7419450083ec35c46a015bf323e48af0, type: 3}
+  westSprite: {fileID: 8748010976857260321, guid: 7419450083ec35c46a015bf323e48af0, type: 3}
+  northWestSprite: {fileID: -6857439750549744992, guid: 7419450083ec35c46a015bf323e48af0, type: 3}

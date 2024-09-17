@@ -18,9 +18,31 @@ public class InventorySlot : IInventorySlot
 {
     [SerializeField] private InventoryItemData itemData; //Reference to the item
     [SerializeField] private int stackSize; // current stack size of an item
+    private ItemType itemTypeCheck;
 
     public InventoryItemData ItemData => itemData;
     public int StackSize => stackSize;
+
+    public ItemType ItemTypeCheck { get { return itemTypeCheck; } set { itemTypeCheck = value; } }
+
+    public delegate void ItemSlotUpdateDelegate();
+
+    public event ItemSlotUpdateDelegate itemSlotUpdated;
+
+
+    private void fireItemSlotUpdate()
+    {
+        if (stackSize <= 0)
+        {
+            stackSize = -1;
+            itemData = null;
+            itemTypeCheck = 0;
+        }
+        if (itemSlotUpdated != null)
+        {
+            itemSlotUpdated();
+        }
+    }
 
     /* Constructor */
     public InventorySlot(InventoryItemData itemInfo, int amount)
@@ -35,9 +57,6 @@ public class InventorySlot : IInventorySlot
         ClearSlot();
     }
 
-
-
-
     /* Methods */
     public void ClearSlot()
     {
@@ -48,11 +67,13 @@ public class InventorySlot : IInventorySlot
     public void AddToStack(int amount)
     {
         stackSize += amount;
+        fireItemSlotUpdate();
     }
 
     public void RemoveFromStack(int amount)
     {
         stackSize -= amount;
+        fireItemSlotUpdate();
     }
 
     // Assign item directly to the slot
@@ -76,6 +97,7 @@ public class InventorySlot : IInventorySlot
     {
         itemData = data;
         stackSize = amount;
+        fireItemSlotUpdate();
     }
 
     //check to see if there is room left in stack, if yes, combine until
@@ -116,4 +138,7 @@ public class InventorySlot : IInventorySlot
         splitStack = new InventorySlot(itemData, halfStack); //create copy of the slot w/ 1/2 stack size
         return true;
     }
+
+
+    //
 }

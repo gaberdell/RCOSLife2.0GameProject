@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb133a7ba3f611242a95b42f69c4b135, type: 3}
+  m_Name: PotatoData
+  m_EditorClassIdentifier: 
+  ID: 3
+  DisplayName: Potato
+  Description: A starchy vegetable that can be turn into a magical clear liquid.
+  Icon: {fileID: 21300000, guid: 2725d289d00416f4691c273dec37c89f, type: 3}
+  MaxStackSize: 2
+  Type: 
+  GoldValue: 2
+  placeable: 0
+  rotatable: 0
+  placeObject: {fileID: 0}
+  colliderType: box
+  boxColliderSize: {x: 2, y: 2}
+  circleColliderRadius: 0
+  ItemPrefab: {fileID: 2921799629105317106, guid: 023be2e9fd60145419d625a50408d39a, type: 3}
+  itemTypes: 1

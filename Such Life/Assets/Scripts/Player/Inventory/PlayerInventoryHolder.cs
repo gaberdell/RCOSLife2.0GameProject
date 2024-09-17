@@ -25,8 +25,12 @@ public class PlayerInventoryHolder : InventoryHolder
     public static UnityAction OnPlayerInventoryChanged;
     public playerAction playerControl;
     private string playerChestID;
+    //want to increase or decrease size of player hotbar? change this number here
+    [SerializeField] protected int armorOffset = 8;
 
-    public static UnityAction<InventorySystem, int> OnPlayerInventoryDisplayRequested;
+    public int ArmorOffset => armorOffset;
+
+    public static UnityAction<InventorySystem, int, int> OnPlayerInventoryDisplayRequested;
 
     private void Start()
     {
@@ -67,7 +71,7 @@ public class PlayerInventoryHolder : InventoryHolder
         bool openInventoryKeyPressed = playerControl.Player.OpenInventory.WasPressedThisFrame();
         if (openInventoryKeyPressed)
         {
-            OnPlayerInventoryDisplayRequested?.Invoke(primaryInvSystem, offset);
+            OnPlayerInventoryDisplayRequested?.Invoke(primaryInvSystem, offset, armorOffset);
         }
     }
 

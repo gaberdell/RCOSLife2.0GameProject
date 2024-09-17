@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Equipment", menuName = "Inventory/Equipment")]
+[CreateAssetMenu(fileName = "New Equipment", menuName = "Old Inventory System (Deprecated)/Equipment")]
 public class Equipment : Item
 {
     /* Equipment multiplier chart */
@@ -156,7 +156,6 @@ public class Equipment : Item
     {
         base.Use();
         // equip the equipment
-        EquipmentManager.instance.Equip(this);
         // remove it from inventory if all of the amount got use up or subtract the amount by 1
         RemoveFromInventory();
     }

@@ -23,8 +23,6 @@ public class InventorySystem
     //Inventory getter
     public List<InventorySlot> InventorySlots => Inventory;
 
-    public UnityAction<InventorySlot> OnInventorySlotChanged;
-
     public int InventorySize { get => InventorySlots.Count; }
     //public int InventorySize {return InventorySlots.Count; };
 
@@ -45,16 +43,12 @@ public class InventorySystem
         AddBlankSlotsToSize(size);
     }
 
-    public InventorySystem()
-    {
-        Debug.Log("Shadow called");
-    }
-
     public void AddBlankSlotsToSize(int size)
     {
         for (int i = Inventory.Count; i < size; i++)
         {
-            Inventory.Add(new InventorySlot());
+            InventorySlot newInventorySlot = new InventorySlot();
+            Inventory.Add(newInventorySlot);
         }
     }
 
@@ -73,7 +67,6 @@ public class InventorySystem
                 if (emptySlot.IsEnoughSpaceInStack(amountToAdd))
                 {
                     emptySlot.AddToStack(amountToAdd);
-                    OnInventorySlotChanged?.Invoke(emptySlot);
                     //EventManager.UpdateInventorySlot(this, emptySlot);
                     return true;
                 }
@@ -87,7 +80,6 @@ public class InventorySystem
             {
                 //add item into available slot
                 freeSlot.UpdateInventorySlot(itemToAdd, amountToAdd);
-                OnInventorySlotChanged?.Invoke(freeSlot);
                 //EventManager.UpdateInventorySlot(this, freeSlot);
                 return true;
             }

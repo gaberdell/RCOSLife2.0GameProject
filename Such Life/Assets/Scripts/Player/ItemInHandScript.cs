@@ -11,6 +11,32 @@ public class ItemInHandScript : MonoBehaviour
 
     private const float _radiansToDegrees = 57.2f;
 
+    private void OnEnable()
+    {
+        EventManager.currentlySelectedItem += UpdateRenderForNewItem;
+    }
+
+    private void OnDisable()
+    {
+        EventManager.currentlySelectedItem -= UpdateRenderForNewItem;
+    }
+
+
+
+    private void UpdateRenderForNewItem(InventoryItemData selectedItem)
+    {
+        if (selectedItem)
+            spriteRenderer.sprite = selectedItem.Icon;
+        else
+            spriteRenderer.sprite = null;
+
+    }
+
+    private void Start()
+    {
+        spriteRenderer.sprite = null;
+    }
+
     void Update()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

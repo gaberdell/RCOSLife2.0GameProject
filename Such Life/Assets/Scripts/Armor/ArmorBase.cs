@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //allow you to create an object of this type in the asset menu by right clicking
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Equipment", menuName = "Old Inventory System (Deprecated)/ArmorBase")]
 public class ArmorBase : InventoryItemData
 {
     //ArmorBase will only account for what is common within all of the armor piece. For individual equipment piece,

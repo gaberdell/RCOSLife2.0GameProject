@@ -30,7 +30,7 @@ public class InventoryItemData : ScriptableObject
 
     public bool placeable;
     public bool rotatable; //is the placable object able to be rotated
-    public GameObject placeObject;
+    public BlockPlaceData placeObject;
 
     public string colliderType = "box"; // "box" refers to box collider, "circle" refers to circle collider, initizlized to box
     public Vector2 boxColliderSize = new Vector2(2f, 2f); // box collider initialized to 2x2
@@ -38,4 +38,7 @@ public class InventoryItemData : ScriptableObject
 
     public GameObject ItemPrefab;
 
+    public ItemType itemTypes = ItemType.Normal;
+
+    public EquipmentData equipmentConnection;
 }

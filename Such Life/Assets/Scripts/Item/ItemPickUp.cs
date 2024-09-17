@@ -10,11 +10,11 @@ public class ItemPickUp : MonoBehaviour
 {
     //Serailized Field Objects ie stuff to add definitions to in the editor...
     [SerializeField]
-    private Item item;
-    [SerializeField]
     private float pickUpRadius = 1f;
     [SerializeField]
     private ItemPickUpSaveData itemSaveData;
+    [SerializeField]
+    private int amountOfItem = 1;
 
     // would changing this to a general var/ scriptable object data type work? ItemData can be a piece of armor, equipment, building materials, resources, ...
     public InventoryItemData ItemData; 
@@ -84,7 +84,7 @@ public class ItemPickUp : MonoBehaviour
 
         if ((inventory == null) || (freeze)) return;
 
-        if (inventory.AddToPrimaryInventory(ItemData, 1))
+        if (inventory.AddToPrimaryInventory(ItemData, amountOfItem))
         { 
             Destroy(this.gameObject);
         }

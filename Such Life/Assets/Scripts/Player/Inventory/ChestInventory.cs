@@ -16,7 +16,8 @@ using UnityEngine.UI;
 /// </summary>
 public class ChestInventory : InventoryHolder, IInteractable
 {
-    public GameObject DynTextObject;
+
+    GameObject DynTextObject;
     public GameObject spriteChild;
     private SpriteRenderer localRenderer;
     public Sprite[] chestSprites;
@@ -48,6 +49,8 @@ public class ChestInventory : InventoryHolder, IInteractable
 
     private void Start()
     {
+        DynTextObject = ImportantGameObjectReferencesSingleton.DynText;
+
         localRenderer = spriteChild.GetComponent<SpriteRenderer>();
         EventManager.GetID(gameObject, ref ourID);
         DynText = DynTextObject.GetComponent<Text>();

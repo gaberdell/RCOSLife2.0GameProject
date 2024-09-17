@@ -79,11 +79,15 @@ public class SelectionScript : MonoBehaviour
         }
         if (slot != null)
         {
-            handItemSprite.sprite = slot.ItemSprite.sprite;
+            //handItemSprite.sprite = slot.ItemSprite.sprite;
+            EventManager.SelectedCurrentItem(slot.AssignedInventorySlot.ItemData);
+            EventManager.SelectedCurrentSlot(slot.AssignedInventorySlot);
         }
         else
         {
-            handItemSprite.sprite = null;
+            //handItemSprite.sprite = null;
+            EventManager.SelectedCurrentItem(null);
+            EventManager.SelectedCurrentSlot(null);
         }
     }
 }

@@ -6,7 +6,8 @@
         "EventManager",
         "InterfaceAssembly",
         "BaseClassAssembly",
-        "PlayerInputAssembly"
+        "PlayerInputAssembly",
+        "InventoryAssembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

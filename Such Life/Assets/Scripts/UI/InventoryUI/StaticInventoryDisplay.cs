@@ -47,8 +47,6 @@ public class StaticInventoryDisplay : InventoryDisplay
         if (inventoryHolder != null)
         {
             inventorySystem = inventoryHolder.PrimaryInventorySystem;
-            inventorySystem.OnInventorySlotChanged += UpdateSlot;
-
         }
         else
         {
@@ -76,7 +74,7 @@ public class StaticInventoryDisplay : InventoryDisplay
         for (int i = 0; i < inventoryHolder.Offset; i++)
         {
             slotDictionary.Add(slots[i], inventorySystem.InventorySlots[i]);
-            slots[i].Init(inventorySystem.InventorySlots[i]);  
+            slots[i].AssignInventorySlotTo(inventorySystem.InventorySlots[i]);  
         }
     }
 

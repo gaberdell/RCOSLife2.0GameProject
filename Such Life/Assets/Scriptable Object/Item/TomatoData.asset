@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb133a7ba3f611242a95b42f69c4b135, type: 3}
-  m_Name: Ladder
+  m_Name: TomatoData
   m_EditorClassIdentifier: 
-  ID: 5
-  DisplayName: 
-  Description: Ladder place it for ladderey goodness!
-  Icon: {fileID: 21300000, guid: 7573524589b9bf7419ad5f2e8a5d6753, type: 3}
-  MaxStackSize: 0
-  Type: Block
-  GoldValue: 0
-  placeable: 1
+  ID: 2
+  DisplayName: Tomato
+  Description: Red, juicy.... fruit.... hmmmm... Wait I thought it was a vegetable?!
+  Icon: {fileID: 21300000, guid: 3326234b9d73a1046a580061c79f3785, type: 3}
+  MaxStackSize: 3
+  Type: 
+  GoldValue: 1
+  placeable: 0
+  rotatable: 0
   placeObject: {fileID: 0}
   colliderType: box
   boxColliderSize: {x: 2, y: 2}
   circleColliderRadius: 0
-  ItemPrefab: {fileID: 3369838871260848028, guid: c60cefa2598b61f4abe7b00912ee5478, type: 3}
+  ItemPrefab: {fileID: 8602753799084525264, guid: c7b5be1758ce64a0c8c8dbcb250bd69a, type: 3}
+  itemTypes: 1

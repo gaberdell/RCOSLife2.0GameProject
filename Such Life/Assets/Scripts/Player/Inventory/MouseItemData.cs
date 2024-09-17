@@ -63,7 +63,6 @@ public class MouseItemData : MonoBehaviour
             transform.position = Mouse.current.position.ReadValue();
             if(Mouse.current.leftButton.wasPressedThisFrame && !insideObject)
             {
-                Debug.Log("Placed?!?!");
                 if(AssignedInventorySlot.ItemData.ItemPrefab != null){
                     Vector3 newPos = my_cam.ScreenToWorldPoint(Input.mousePosition);
                     newPos.z = 0.0f;
@@ -82,7 +81,6 @@ public class MouseItemData : MonoBehaviour
         }
         if (Mouse.current.leftButton.wasPressedThisFrame && insideObject)
         {
-            Debug.Log("Hello?");
             EventManager.PressInventorySlot(inventorySlotToTrigger);
             //inventorySlotToTrigger.GetComponent<InventorySlot_UI>()
             //OnUISlotClick

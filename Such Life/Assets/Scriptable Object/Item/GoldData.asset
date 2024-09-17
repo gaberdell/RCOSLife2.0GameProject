@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb133a7ba3f611242a95b42f69c4b135, type: 3}
+  m_Name: GoldData
+  m_EditorClassIdentifier: 
+  ID: 1
+  DisplayName: Gold
+  Description: Gold coins used as currency.
+  Icon: {fileID: -641143830685118463, guid: aa15c65014a0b9349aff8caaf8aa8c4e, type: 3}
+  MaxStackSize: 100
+  Type: 
+  GoldValue: 1
+  placeable: 0
+  rotatable: 0
+  placeObject: {fileID: 0}
+  colliderType: box
+  boxColliderSize: {x: 2, y: 2}
+  circleColliderRadius: 0
+  ItemPrefab: {fileID: 903408220234057191, guid: e8862fbc042cb4447b4874b7754b28c2, type: 3}
+  itemTypes: 1

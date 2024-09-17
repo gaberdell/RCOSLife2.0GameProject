@@ -27,21 +27,42 @@ public class InventorySlot_UI : MonoBehaviour
     private TextMeshProUGUI itemCount;
     [SerializeField] 
     private InventorySlot assignedInventorySlot;
+    [SerializeField]
+    private InventoryDisplay manuallySetDisplay;
+
 
     private Button button;
 
     public Image ItemSprite => itemSprite;
 
+    [SerializeField]
+    private ItemType itemTypeCheck;
+
     //getter for our private variable
-    public InventorySlot AssignedInventorySlot => assignedInventorySlot;
+    public InventorySlot AssignedInventorySlot { get { return assignedInventorySlot; }
+        set { 
+            if (assignedInventorySlot != null)
+            {
+                assignedInventorySlot.ItemTypeCheck = (ItemType) 0b111111111;
+                assignedInventorySlot.itemSlotUpdated -= UpdateUISlot;
+            }
+            assignedInventorySlot = value;
+            assignedInventorySlot.ItemTypeCheck = itemTypeCheck;
+            assignedInventorySlot.itemSlotUpdated += UpdateUISlot;
+        }
+    }
+    
     public InventoryDisplay ParentDisplay { get; private set; }
     private void Awake()
     {
         ClearSlot();
 
         itemSprite.preserveAspect = true;
-        
-        ParentDisplay = transform.parent.GetComponent<InventoryDisplay>();
+
+        if (manuallySetDisplay == null)
+            ParentDisplay = transform.parent.GetComponent<InventoryDisplay>(); // prob the issue is right here
+        else
+            ParentDisplay = manuallySetDisplay;
     }
 
     public void OnEnable()
@@ -54,16 +75,18 @@ public class InventorySlot_UI : MonoBehaviour
         EventManager.inventorySlotPressed -= OnUISlotClick;
     }
 
-    public void Init(InventorySlot slot)
+    public void AssignInventorySlotTo(InventorySlot slot)
     {
-        assignedInventorySlot = slot;
+        AssignedInventorySlot = slot;
         UpdateUISlot(slot); //update the UI 
     }
 
-    public void UpdateUISlot(InventorySlot slot)
+    private void UpdateUISlot(InventorySlot slot)
     {
-        if(slot.ItemData != null)
+
+        if (slot.ItemData != null)
         {
+            Debug.Log(itemSprite);
             itemSprite.sprite = slot.ItemData.Icon;
             itemSprite.color = Color.white;
             if(slot.StackSize > 1)
@@ -82,7 +105,7 @@ public class InventorySlot_UI : MonoBehaviour
     }
 
     //refresh the inventory slot and check for item
-    public void UpdateUISlot()
+    private void UpdateUISlot()
     {
         if(assignedInventorySlot != null)
         {
@@ -101,10 +124,11 @@ public class InventorySlot_UI : MonoBehaviour
 
     public void OnUISlotClick(GameObject isUs)
     {
+
         if (isUs == gameObject)
         {
             //Access display class function
-            ParentDisplay?.SlotClicked(this);
+            ParentDisplay?.SlotClicked(this, itemTypeCheck);
         }
     }
 }

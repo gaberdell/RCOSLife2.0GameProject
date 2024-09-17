@@ -146,7 +146,7 @@ public class PlaceObject : MonoBehaviour
                 if (Vector3.Distance(mousepos, playerpos) <= placingRadius) // and placeable
                 {
                     // placeable items
-                    current = createGameObject(itemdata.placeObject, mousepos);
+                    //current = createGameObject(itemdata.placeObject, mousepos);
                     if (itemdata.rotatable) // object is rotatable
                     {
                         isRotating = true;
@@ -187,7 +187,7 @@ public class PlaceObject : MonoBehaviour
             {
                 //Swap out with a normalized vector from the players position to the drop point and multipled by the place distance vector
                 Vector3 droppos = generateRandomPosition(playerpos);
-                current = createGameObject(itemdata.placeObject, droppos);
+                //current = createGameObject(itemdata.placeObject, droppos);
                 Debug.Log("dropped item");
             }
             mouseItem.ClearSlot();

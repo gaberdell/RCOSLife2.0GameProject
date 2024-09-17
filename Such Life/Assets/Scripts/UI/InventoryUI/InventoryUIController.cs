@@ -30,6 +30,7 @@ public class InventoryUIController : MonoBehaviour
     public DynamicInventoryDisplay inventoryPanel;
     public GameObject dynamicText;
     public DynamicInventoryDisplay playerBackpackPanel;
+    public GameObject playerEquipmentPanel;
 
     public playerAction playerControl;
     
@@ -40,6 +41,7 @@ public class InventoryUIController : MonoBehaviour
         dynamicText.SetActive(false);
         inventoryPanel.gameObject.SetActive(false);
         playerBackpackPanel.gameObject.SetActive(false);
+        playerEquipmentPanel.gameObject.SetActive(false);
     }
 
     private void OnEnable()
@@ -78,6 +80,7 @@ public class InventoryUIController : MonoBehaviour
         if (playerBackpackPanel.gameObject.activeInHierarchy && closePlayerInventory)
         {
             playerBackpackPanel.gameObject.SetActive(false);
+            playerEquipmentPanel.gameObject.SetActive(false);
         }
     }
     
@@ -102,10 +105,13 @@ public class InventoryUIController : MonoBehaviour
     }
 
 
-    void ShowPlayerInventory(InventorySystem inventoryToShow, int offset)
+    void ShowPlayerInventory(InventorySystem inventoryToShow, int offset, int armorOffset)
     {
         playerBackpackPanel.gameObject.SetActive(true);
-        playerBackpackPanel.RefreshDynamicInventory(inventoryToShow, offset);
+        playerEquipmentPanel.gameObject.SetActive(true);
+
+        //playerEquipmentPanel.RefreshDynamicInventoryArmor(inventoryToShow, offset, armorOffset);
+        playerBackpackPanel.RefreshDynamicInventoryArmor(inventoryToShow, offset, armorOffset);
     }
 
 
