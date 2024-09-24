@@ -25,6 +25,6 @@ MonoBehaviour:
   colliderType: box
   boxColliderSize: {x: 2, y: 2}
   circleColliderRadius: 0
-  ItemPrefab: {fileID: 0}
+  ItemPrefab: {fileID: 3984242073497368557, guid: 724d0f117b7478744baac28e8428727d, type: 3}
   itemTypes: 1
   equipmentConnection: {fileID: 0}
