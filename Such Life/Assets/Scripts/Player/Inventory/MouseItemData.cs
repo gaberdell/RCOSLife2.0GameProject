@@ -81,6 +81,7 @@ public class MouseItemData : MonoBehaviour
         }
         if (Mouse.current.leftButton.wasPressedThisFrame && insideObject)
         {
+            //Debug.Log("Do you exsist? " + inventorySlotToTrigger.name);
             EventManager.PressInventorySlot(inventorySlotToTrigger);
             //inventorySlotToTrigger.GetComponent<InventorySlot_UI>()
             //OnUISlotClick

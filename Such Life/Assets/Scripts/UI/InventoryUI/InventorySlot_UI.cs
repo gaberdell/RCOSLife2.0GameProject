@@ -67,11 +67,17 @@ public class InventorySlot_UI : MonoBehaviour
 
     public void OnEnable()
     {
+        if (assignedInventorySlot != null) {
+            assignedInventorySlot.itemSlotUpdated += UpdateUISlot;
+        }
         EventManager.inventorySlotPressed += OnUISlotClick;
     }
 
     public void OnDisable()
     {
+        if (assignedInventorySlot != null) {
+            assignedInventorySlot.itemSlotUpdated -= UpdateUISlot;
+        }
         EventManager.inventorySlotPressed -= OnUISlotClick;
     }
 
@@ -83,10 +89,8 @@ public class InventorySlot_UI : MonoBehaviour
 
     private void UpdateUISlot(InventorySlot slot)
     {
-
         if (slot.ItemData != null)
         {
-            Debug.Log(itemSprite);
             itemSprite.sprite = slot.ItemData.Icon;
             itemSprite.color = Color.white;
             if(slot.StackSize > 1)

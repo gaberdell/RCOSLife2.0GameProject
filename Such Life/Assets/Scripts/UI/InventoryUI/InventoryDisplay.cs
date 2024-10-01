@@ -73,10 +73,6 @@ public abstract class InventoryDisplay : MonoBehaviour
 
         //If it's end 
         int compareInts = itemTypeByteOther & ourItemTypeByte;
-        /*Debug.Log("Item Type(s) of item : " + itemTypeByteOther.ToString());
-        Debug.Log("Item Type(s) of Slot : " + ourItemTypeByte.ToString());
-        Debug.Log("Binary & Operator : " + compareInts.ToString());
-        Debug.Log("Is it greater than one? : " + (compareInts > 0).ToString());*/
 
         //One of our items match
         if (compareInts > 0)
