@@ -6,14 +6,31 @@ using UnityEngine.Tilemaps;
 public class BlockInteraction : MonoBehaviour
 {
 
+    protected Tilemap placingTileMap;
+
+    [SerializeField]
+    protected float playerReach = 6;
+
+    [SerializeField]
+    protected Vector3 tileOffset = new Vector3(0.5f, 0.5f, 0);
+
+    [SerializeField]
+    protected float testIfBlockStepSize = 0.1f;
+
     List<Vector3> listOfStepPoints = new List<Vector3>();
 
-    protected bool isTilePartOfRay(Tilemap currentTileMap, Vector3 origin, Vector3 directionOfVector, float stepSize, out Vector3 vector3WithNoBlock)
+    virtual protected void Start()
     {
-        TileBase currentHitTile = null;
+        placingTileMap = GameObject.Find("Tilemap_placeables").GetComponent<Tilemap>();
+    }
+
+
+    protected Vector3 isTilePartOfRay(Tilemap currentTileMap, Vector3 origin, Vector3 directionOfVector, float stepSize, out Vector3 vector3WithNoBlock)
+    {
 
         float sizeOfVector = directionOfVector.magnitude;
 
+       
 
         Vector3 stepAddVector = directionOfVector.normalized * stepSize;
 
@@ -21,9 +38,10 @@ public class BlockInteraction : MonoBehaviour
         Vector3 previousStepThrough = origin;
         bool successfulReachedEnd = true;
         listOfStepPoints.Clear();
-        for (Vector3 stepThroughVector = origin; (stepThroughVector - origin).magnitude < sizeOfVector; stepThroughVector += stepAddVector)
+        Vector3 stepThroughVector;
+        for (stepThroughVector = origin; (stepThroughVector - origin).magnitude < sizeOfVector; stepThroughVector += stepAddVector)
         {
-            if ((currentHitTile = currentTileMap.GetTile(currentTileMap.WorldToCell(stepThroughVector))) != null)
+            if ((currentTileMap.GetTile(currentTileMap.WorldToCell(stepThroughVector))) != null)
             {
                 successfulReachedEnd = false;
                 break;
@@ -49,12 +67,12 @@ public class BlockInteraction : MonoBehaviour
         if (previousStepThrough != origin)
         {
             vector3WithNoBlock = previousStepThrough;
-            return true;
+            return stepThroughVector;
         }
         else
         {
             vector3WithNoBlock = origin;
-            return false;
+            return stepThroughVector;
         }
 
     }

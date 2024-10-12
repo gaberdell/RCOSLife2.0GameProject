@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 6433802198877147689}
   - component: {fileID: 980919668002211803}
   - component: {fileID: 4600259063794194074}
+  - component: {fileID: 6470730851005777418}
   m_Layer: 12
   m_Name: MC
   m_TagString: Player
@@ -520,9 +521,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74818104744ed3043bbaf269ce42831f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blockPreview: {fileID: 2318746586888245224}
-  tileOffset: {x: 0.5, y: 0.5, z: 0}
   playerReach: 2.4
+  tileOffset: {x: 0.5, y: 0.5, z: 0}
+  testIfBlockStepSize: 0.1
+  blockPreview: {fileID: 2318746586888245224}
+--- !u!114 &6470730851005777418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724269156444419255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e37155230e30bc459e1d4010006aa1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerReach: 2.7
+  tileOffset: {x: 0.5, y: 0.5, z: 0}
   testIfBlockStepSize: 0.1
 --- !u!1 &2113011258371227514
 GameObject:

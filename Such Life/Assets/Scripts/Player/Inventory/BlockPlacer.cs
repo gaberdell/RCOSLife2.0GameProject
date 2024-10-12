@@ -9,7 +9,6 @@ public class BlockPlacer : BlockInteraction
     InventoryItemData currentlyHeldItem;
     InventorySlot currentInventorySlot;
 
-    Tilemap placingTileMap;
     GameObject currentInstaitedPrefabParent;
 
     [SerializeField]
@@ -17,14 +16,6 @@ public class BlockPlacer : BlockInteraction
 
     SpriteRenderer previewRenderer;
 
-    [SerializeField]
-    Vector3 tileOffset = new Vector3(0.5f,0.5f,0);
-
-    [SerializeField]
-    float playerReach = 6;
-
-    [SerializeField]
-    float testIfBlockStepSize = 0.1f;
 
     List<Vector3> listOfStepPoints = new List<Vector3>();
 
@@ -38,10 +29,10 @@ public class BlockPlacer : BlockInteraction
         EventManager.currentSlotSelected -= UpdateCurrentlySelectedSlot;
     }
 
-    void Start()
+    override protected void Start()
     {
+        base.Start();
         previewRenderer = blockPreview.GetComponent<SpriteRenderer>();
-        placingTileMap = GameObject.Find("Tilemap_placeables").GetComponent<Tilemap>();
         currentInstaitedPrefabParent = GameObject.Find("InstantiatedPlacedObjects");
     }
 
