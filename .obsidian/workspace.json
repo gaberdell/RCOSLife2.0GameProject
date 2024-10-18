@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "7b066551c8c8e47c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebe7707c7efa82c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d96103537c8d4168",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentation/readme.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ab8cfc035e140d47",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ab5fe778c073dec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "42135d881eebb5ac",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4bac5370c1de1291",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fe5eb9263ddb672c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "f09db19ee1324927",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd685bf2b1c450e5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9ffef0f6246d844a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Documentation/readme.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ec9425f7f7b87ee9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Documentation/readme.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1857537e409bd708",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "98487a9e6dd2bc69",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Documentation/readme.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "d96103537c8d4168",
+  "lastOpenFiles": [
+    "Documentation/ScriptsConnections.canvas",
+    "Documentation/readme.md",
+    "Documentation/Scripts.canvas",
+    "Such Life/Temp/RefreshSync/118",
+    "Such Life/Library/Artifacts/8f/8f5f9fd7d1a14017f5acd3c770924887",
+    "Such Life/Library/Artifacts/bc/bcf9114704e1dca406b27535a7fcc8f1",
+    "Such Life/Library/Artifacts/ff/ffad849afd4874bc95544898c6ee030f",
+    "Such Life/Library/Artifacts/e9/e93f02a9544faf8da322624346ea39c0",
+    "Such Life/Library/Artifacts/b6/b676b9fb820fd5a8d35b4d37786ead60",
+    "Such Life/Library/Artifacts/fc/fcc72f020d9adcf2ac1c4758534581e2",
+    "Such Life/Library/Artifacts/4f/4f07c5eceba3d86e7a8205fba4a93c7b",
+    "Such Life/Library/Artifacts/89/89cea2d0f13a89d42f74fdf95cd8d577",
+    "Such Life/Library/TempArtifacts/Extra/85033d0b747513a4ba9c274da2b6856a",
+    "Documentation/eeUntitled.canvas",
+    "Untitled.md",
+    "README.md",
+    "2024-10-15.md"
+  ]
+}
