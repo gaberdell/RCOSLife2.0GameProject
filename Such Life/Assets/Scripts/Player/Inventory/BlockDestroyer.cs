@@ -5,6 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class BlockDestroyer : BlockInteraction
 {
+    [SerializeField]
+    BlockItemDictionary blockItemDictionary;
 
     // Start is called before the first frame update
     override protected void Start()
@@ -40,9 +42,19 @@ public class BlockDestroyer : BlockInteraction
 
             Vector3Int destroyPos = placingTileMap.WorldToCell(tileToDestroy);
 
-            if (placingTileMap.GetTile(destroyPos) != null)
+            TileBase checkedTile;
+
+            if ((checkedTile = placingTileMap.GetTile(destroyPos)) != null)
             {
+
+                Debug.Log(checkedTile.name);
                 placingTileMap.SetTile(destroyPos, null);
+                if (blockItemDictionary.tileToItemPrefabDict[checkedTile])
+                {
+                    GameObject newBlockItem = Instantiate(blockItemDictionary.tileToItemPrefabDict[checkedTile]);
+                    newBlockItem.transform.position = destroyPos;
+                }
+                //Find Some way to tell what block was chosen and destroy it
             }
         }
     }

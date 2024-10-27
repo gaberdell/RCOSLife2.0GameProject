@@ -16,9 +16,6 @@ public class BlockPlacer : BlockInteraction
 
     SpriteRenderer previewRenderer;
 
-
-    List<Vector3> listOfStepPoints = new List<Vector3>();
-
     private void OnEnable()
     {
         EventManager.currentSlotSelected += UpdateCurrentlySelectedSlot;

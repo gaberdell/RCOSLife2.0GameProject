@@ -540,6 +540,7 @@ MonoBehaviour:
   playerReach: 2.7
   tileOffset: {x: 0.5, y: 0.5, z: 0}
   testIfBlockStepSize: 0.1
+  blockItemDictionary: {fileID: 11400000, guid: b1202bbd33df8214ba519cc64b65b501, type: 2}
 --- !u!1 &2113011258371227514
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,11 @@ public class BlockInteraction : MonoBehaviour
 
     List<Vector3> listOfStepPoints = new List<Vector3>();
 
+    //Dumb stupid dictionairy is the only way we can tell what is block and what is other thing
+    [SerializeField]
+    protected static SerializableDictionary<TileBase, GameObject> tileMapToItem;
+
+
     virtual protected void Start()
     {
         placingTileMap = GameObject.Find("Tilemap_placeables").GetComponent<Tilemap>();
