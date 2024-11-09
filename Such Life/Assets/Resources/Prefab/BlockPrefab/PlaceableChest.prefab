@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3064959841960340405}
   m_Layer: 6
   m_Name: PlaceableChest
-  m_TagString: Untagged
+  m_TagString: CanBeDestroyed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: 2f39a6e3-cab1-48da-a87a-065378b6660b
+  _id: 484bf772-5289-435c-a1bb-b3bfd8d809b2
 --- !u!114 &3064959841960340405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +112,6 @@ MonoBehaviour:
   primaryInvSystem:
     Inventory: []
   offset: 10
-  DynTextObject: {fileID: 0}
   spriteChild: {fileID: 3064959842865756846}
   chestSprites:
   - {fileID: 21300000, guid: 9ce724fe985e1c94cb1f24a5937c7706, type: 3}

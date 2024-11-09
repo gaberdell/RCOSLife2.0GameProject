@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerReach: 2.4
   tileOffset: {x: 0.5, y: 0.5, z: 0}
-  testIfBlockStepSize: 0.1
+  testIfBlockStepSize: 0.25
   blockPreview: {fileID: 2318746586888245224}
 --- !u!114 &6470730851005777418
 MonoBehaviour:
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerReach: 2.7
   tileOffset: {x: 0.5, y: 0.5, z: 0}
-  testIfBlockStepSize: 0.1
+  testIfBlockStepSize: 0.25
   blockItemDictionary: {fileID: 11400000, guid: b1202bbd33df8214ba519cc64b65b501, type: 2}
   blockPreview: {fileID: 5042455531444185749}
   destroyPlaceOffset: {x: 0.5, y: 0.5, z: 0.5}

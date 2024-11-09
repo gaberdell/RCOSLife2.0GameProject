@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 //For the rotation info thanks!
 
 //Info on branchlessly doing stuff in https://dev.to/jobinrjohnson/branchless-programming-does-it-really-matter-20j4
-
+//Info on converting 
 
 public class BlockDestroyer : BlockInteraction
 {
@@ -85,6 +85,8 @@ public class BlockDestroyer : BlockInteraction
                     newBlockItem.transform.position = destroyObjectPos;
                     
                 }
+                // Alright Check if the block above it is related to the check tile. If so then Destroy it
+
                 
             }
         }

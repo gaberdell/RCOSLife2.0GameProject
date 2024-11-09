@@ -67,8 +67,6 @@ public class BlockInteraction : MonoBehaviour
             }
         }
 
-
-
         if (previousStepThrough != origin)
         {
             vector3WithNoBlock = previousStepThrough;
