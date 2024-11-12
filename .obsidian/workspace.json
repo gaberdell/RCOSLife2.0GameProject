@@ -16,10 +16,30 @@
                 "file": "Documentation/readme.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "readme"
+            }
+          },
+          {
+            "id": "52aac301c6ad3e13",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Documentation/ScriptsConnections.canvas",
+                "viewState": {
+                  "x": 4298.51480722485,
+                  "y": -1159.3334806522837,
+                  "zoom": -1.8552481159716876
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "ScriptsConnections"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -39,7 +59,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +76,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +86,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -85,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentation/readme.md",
+                "file": "Documentation/ScriptsConnections.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +119,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for ScriptsConnections"
             }
           },
           {
@@ -102,10 +130,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Documentation/readme.md",
+                "file": "Documentation/ScriptsConnections.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from ScriptsConnections"
             }
           },
           {
@@ -116,7 +146,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +157,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentation/readme.md"
-              }
+                "file": "Documentation/ScriptsConnections.canvas"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of ScriptsConnections"
             }
           }
         ]
@@ -146,8 +180,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d96103537c8d4168",
+  "active": "52aac301c6ad3e13",
   "lastOpenFiles": [
+    "Such Life/Temp/UnityTempFile-4c2a1a37135563a47997d06c0b9a61a0",
+    "Such Life/Temp/ProcessJobs",
+    "Such Life/Library/EditorInstance.json",
+    "Such Life/Logs/shadercompiler-UnityShaderCompiler.exe0.log",
     "Documentation/ScriptsConnections.canvas",
     "Documentation/readme.md",
     "Documentation/Scripts.canvas",
@@ -158,9 +196,6 @@
     "Such Life/Library/Artifacts/e9/e93f02a9544faf8da322624346ea39c0",
     "Such Life/Library/Artifacts/b6/b676b9fb820fd5a8d35b4d37786ead60",
     "Such Life/Library/Artifacts/fc/fcc72f020d9adcf2ac1c4758534581e2",
-    "Such Life/Library/Artifacts/4f/4f07c5eceba3d86e7a8205fba4a93c7b",
-    "Such Life/Library/Artifacts/89/89cea2d0f13a89d42f74fdf95cd8d577",
-    "Such Life/Library/TempArtifacts/Extra/85033d0b747513a4ba9c274da2b6856a",
     "Documentation/eeUntitled.canvas",
     "Untitled.md",
     "README.md",
