@@ -1,0 +1,1 @@
+Scripts contains every script in the current version of Such Life, and their folders & subfolders. ScriptsConnections contains Scripts but with class inheritances and references mapped with connections between the script files. 
