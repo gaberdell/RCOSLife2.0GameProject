@@ -38,8 +38,7 @@ public class EquipmentManager : MonoBehaviour
     }
 
     private void OnEnable()
-    {
-        Debug.Log(playerInventory.InventorySlots.Count);
+    { 
         PlayerInventoryHolder.OnPlayerInventoryDisplayRequested += SetUpFunction;
 
         isSetUpFunctionEnabled = true;
@@ -58,7 +57,6 @@ public class EquipmentManager : MonoBehaviour
 
     public void UpdateSlotHead()
     {
-        Debug.Log("Sus");
         armorAnimator.setItemToRender(playerInventory.InventorySlots[10].ItemData);
     }
 

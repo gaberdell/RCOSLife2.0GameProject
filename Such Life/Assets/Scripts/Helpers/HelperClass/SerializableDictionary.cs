@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 /* This is an workaround way of trying to serialize dictionary. Unity does not allow serializing dictionary */
 /* Thank you for the people who answer the question in the post: https://answers.unity.com/questions/460727/how-to-serialize-dictionary-with-unity-serializati.html */
+//Old version is bricked shout out to Eduard Malkhasyan for fixing this old thing. This code is based off of his
+//Find his repo here https://github.com/EduardMalkhasyan/Serializable-Dictionary-Unity/tree/master
+//Lastly https://www.youtube.com/watch?v=hG3q-RMD0eA Ian McManus video here very helpful
 
 [System.Serializable]
 public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, ISerializationCallbackReceiver
@@ -15,26 +19,24 @@ public class SerializableDictionary<TKey, TValue> : Dictionary<TKey, TValue>, IS
     private List<TValue> values = new List<TValue>();
 
     // save the dictionary to lists
-    public void OnBeforeSerialize()
+    void ISerializationCallbackReceiver.OnBeforeSerialize() { }
+
+#if UNITY_EDITOR
+    public void EditorOnly_Add(TKey addKey, TValue addValue)
     {
-        keys.Clear();
-        values.Clear();
-        foreach (KeyValuePair<TKey, TValue> pair in this)
-        {
-            keys.Add(pair.Key);
-            values.Add(pair.Value);
-        }
+        keys.Add(addKey);
+        values.Add(addValue);
     }
+#endif
 
     // load dictionary from lists
-    public void OnAfterDeserialize()
+    void ISerializationCallbackReceiver.OnAfterDeserialize()
     {
-        this.Clear();
-
-        if (keys.Count != values.Count)
-            throw new System.Exception(string.Format("there are {0} keys and {1} values after deserialization. Make sure that both key and value types are serializable."));
-
-        for (int i = 0; i < keys.Count; i++)
-            this.Add(keys[i], values[i]);
+        if (keys.Count == values.Count)
+        {
+            this.Clear();
+            for (int i = 0; i < keys.Count; i++)
+                this[keys[i]] = values[i];
+        }
     }
 }
