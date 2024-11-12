@@ -25,10 +25,14 @@ public class BlockDestroyer : BlockInteraction
     float previewAngleOffset = -90;
     float roundPreviewAnglesTo = 90;
 
+    LayerMask interactableMask;
+
     // Start is called before the first frame update
     override protected void Start()
     {
         base.Start();
+        //Grab the mask for the GameObject associated we want to destroy
+        interactableMask = LayerMask.GetMask("Interactable");
     }
 
     // Update is called once per frame
@@ -73,21 +77,26 @@ public class BlockDestroyer : BlockInteraction
 
         //If right click down then check if the destroyable tile would place an object
         // if so desetroy it
-        if (Input.GetKeyDown(KeyCode.Mouse0)) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && checkedTile != null) 
         {
-            if (checkedTile != null)
-            {
-                Debug.Log(checkedTile.name);
-                placingTileMap.SetTile(destroyPos, null);
-                if (blockItemDictionary.tileToItemPrefabDict[checkedTile])
-                {
-                    GameObject newBlockItem = Instantiate(blockItemDictionary.tileToItemPrefabDict[checkedTile]);
-                    newBlockItem.transform.position = destroyObjectPos;
-                    
-                }
-                // Alright Check if the block above it is related to the check tile. If so then Destroy it
+            // Alright Check if the block above it is related to the check tile. If so then Destroy it
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(destroyObjectPos, 0.25f, interactableMask);
 
-                
+            foreach (Collider2D phyCollider in colliders) {
+                CanBeCreatedBy copiedObjectCreatedByData = phyCollider.gameObject.GetComponent<CanBeCreatedBy>();
+                if (copiedObjectCreatedByData && copiedObjectCreatedByData.TileMadeWith == checkedTile)
+                {
+                    Destroy(phyCollider.gameObject);
+                }
+            }
+
+            Debug.Log(checkedTile.name);
+            placingTileMap.SetTile(destroyPos, null);
+            if (blockItemDictionary.tileToItemPrefabDict[checkedTile])
+            {
+                GameObject newItem = Instantiate(blockItemDictionary.tileToItemPrefabDict[checkedTile]);
+                newItem.transform.position = destroyObjectPos;
+
             }
         }
     }

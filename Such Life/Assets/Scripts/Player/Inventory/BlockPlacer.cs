@@ -85,7 +85,10 @@ public class BlockPlacer : BlockInteraction
                     GameObject currentlyHeldPrefab = currentlyHeldItem.placeObject.placeGameObject;
                     if (currentlyHeldPrefab)
                     {
-                        Instantiate(currentlyHeldPrefab, blockPreview.transform.position, Quaternion.identity, currentInstaitedPrefabParent.transform);
+                        GameObject copiedObject = Instantiate(currentlyHeldPrefab, blockPreview.transform.position, Quaternion.identity, currentInstaitedPrefabParent.transform);
+                        CanBeCreatedBy copiedObjectCreatedByData = copiedObject.GetComponent<CanBeCreatedBy>();
+                        copiedObjectCreatedByData.IsMadeByPlayer = true;
+                        copiedObjectCreatedByData.TileMadeWith = currentlyHeldItem.placeObject.placeTile;
                     }
                 }
 

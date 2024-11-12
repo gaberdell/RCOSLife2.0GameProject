@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3064959841960340403}
   - component: {fileID: 3064959841960340404}
   - component: {fileID: 3064959841960340405}
+  - component: {fileID: 2373181962028673364}
   m_Layer: 6
   m_Name: PlaceableChest
   m_TagString: CanBeDestroyed
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: 484bf772-5289-435c-a1bb-b3bfd8d809b2
+  _id: 90322338-03eb-492c-8f8f-c39f96b163fb
 --- !u!114 &3064959841960340405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +118,22 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9ce724fe985e1c94cb1f24a5937c7706, type: 3}
   - {fileID: 21300000, guid: 0d454619892e3bf47ae665bcc6b8505f, type: 3}
   - {fileID: 21300000, guid: 85d62fa9e5820c04594650c1df9ee05d, type: 3}
+--- !u!114 &2373181962028673364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064959841960340406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f2499bd5c51c5b4ea143e43738780b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilesThatCanCreateThisObject:
+  - {fileID: 11400000, guid: 3de204fd5bc404449a58cbe56f6c163e, type: 2}
+  isMadeByPlayer: 1
+  tileBaseThatWasMadeWith: {fileID: 0}
 --- !u!1 &3064959842865756846
 GameObject:
   m_ObjectHideFlags: 0

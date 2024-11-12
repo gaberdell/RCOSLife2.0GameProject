@@ -9,6 +9,7 @@ TagManager:
   - CanFly
   - MouseTag
   - BoxTag
+  - CanBeDestroyed
   layers:
   - Default
   - TransparentFX

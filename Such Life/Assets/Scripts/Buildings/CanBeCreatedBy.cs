@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 //Just a single script that holds a bit of Data that can be implemented easily
 //Denotes what tile or tiles create this object.
+//Honestly I wonder if some type of data container object file would be most beneficial for this kind of stuff
 public class CanBeCreatedBy : MonoBehaviour
 {
     [SerializeField]

@@ -9,7 +9,8 @@
         "BaseClassAssembly",
         "HelperClass",
         "PlayerInputAssembly",
-        "ItemAssembly"
+        "ItemAssembly",
+        "BuildingsAssembly"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
