@@ -1,0 +1,10 @@
+{
+  "simple-canvasearch:open-canvasearch-modal": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "Q"
+    }
+  ]
+}

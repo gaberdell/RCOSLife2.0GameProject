@@ -1,0 +1,204 @@
+{
+  "main": {
+    "id": "7b066551c8c8e47c",
+    "type": "split",
+    "children": [
+      {
+        "id": "ebe7707c7efa82c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d96103537c8d4168",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Documentation/readme.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "readme"
+            }
+          },
+          {
+            "id": "52aac301c6ad3e13",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Documentation/ScriptsConnections.canvas",
+                "viewState": {
+                  "x": 4298.51480722485,
+                  "y": -1159.3334806522837,
+                  "zoom": -1.8552481159716876
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "ScriptsConnections"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ab8cfc035e140d47",
+    "type": "split",
+    "children": [
+      {
+        "id": "4ab5fe778c073dec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "42135d881eebb5ac",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4bac5370c1de1291",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "fe5eb9263ddb672c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "f09db19ee1324927",
+    "type": "split",
+    "children": [
+      {
+        "id": "cd685bf2b1c450e5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9ffef0f6246d844a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Documentation/ScriptsConnections.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for ScriptsConnections"
+            }
+          },
+          {
+            "id": "ec9425f7f7b87ee9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Documentation/ScriptsConnections.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from ScriptsConnections"
+            }
+          },
+          {
+            "id": "1857537e409bd708",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "98487a9e6dd2bc69",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Documentation/ScriptsConnections.canvas"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of ScriptsConnections"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "52aac301c6ad3e13",
+  "lastOpenFiles": [
+    "Such Life/Temp/UnityTempFile-4c2a1a37135563a47997d06c0b9a61a0",
+    "Such Life/Temp/ProcessJobs",
+    "Such Life/Library/EditorInstance.json",
+    "Such Life/Logs/shadercompiler-UnityShaderCompiler.exe0.log",
+    "Documentation/ScriptsConnections.canvas",
+    "Documentation/readme.md",
+    "Documentation/Scripts.canvas",
+    "Such Life/Temp/RefreshSync/118",
+    "Such Life/Library/Artifacts/8f/8f5f9fd7d1a14017f5acd3c770924887",
+    "Such Life/Library/Artifacts/bc/bcf9114704e1dca406b27535a7fcc8f1",
+    "Such Life/Library/Artifacts/ff/ffad849afd4874bc95544898c6ee030f",
+    "Such Life/Library/Artifacts/e9/e93f02a9544faf8da322624346ea39c0",
+    "Such Life/Library/Artifacts/b6/b676b9fb820fd5a8d35b4d37786ead60",
+    "Such Life/Library/Artifacts/fc/fcc72f020d9adcf2ac1c4758534581e2",
+    "Documentation/eeUntitled.canvas",
+    "Untitled.md",
+    "README.md",
+    "2024-10-15.md"
+  ]
+}

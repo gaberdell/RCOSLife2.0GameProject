@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -89,6 +90,11 @@ public class BlockPlacer : BlockInteraction
                     }
                 }
 
+            }
+            else if (currentlyHeldItem.placeObject == null)
+            {
+                previewRenderer.sprite = null;
+                blockPreview.transform.localPosition = Vector3.zero;
             }
         }
         else
