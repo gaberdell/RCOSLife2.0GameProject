@@ -15,5 +15,7 @@ MonoBehaviour:
   tileToItemPrefabDict:
     keys:
     - {fileID: 11400000, guid: 3c6b26d07661d1b4681804e7ea799e6c, type: 2}
+    - {fileID: 11400000, guid: 3de204fd5bc404449a58cbe56f6c163e, type: 2}
     values:
     - {fileID: 2653132261738640211, guid: a20b2c2b1c317ba45a94a9a325ce2ff5, type: 3}
+    - {fileID: 3984242073497368557, guid: 724d0f117b7478744baac28e8428727d, type: 3}
