@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Tilemaps;
 
 
 public class PlayerMovement : MouseFollow
@@ -40,6 +42,9 @@ public class PlayerMovement : MouseFollow
     
     private bool combatMove; //if the player is currently dashing/rolling/ability related to combat movement, it should not be able to move until it is finished
     private bool canMove; //whether or not you can move, ex if you are stunned or after you tp
+
+    [SerializeField] private int height; //keep track of player height for collisions with above/below layers
+    [SerializeField] private Tilemap currLayer;
 
     private void OnEnable()
     {
@@ -105,6 +110,8 @@ public class PlayerMovement : MouseFollow
         rollTime = .4f;
         rollCooldown = 4;
         lastRollUsed = 0 - rollCooldown;
+
+        height = -2;
     }
     // Update is called once per frame
     void Update() {
@@ -340,4 +347,42 @@ public class PlayerMovement : MouseFollow
         }
     }
 
+
+    
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Tilemap colliderTilemap = collision.gameObject.GetComponent<Tilemap>();
+        int sortingOrder = collision.gameObject.GetComponent<Renderer>().sortingOrder;
+        //what tile is player colliding with
+        Tile T = colliderTilemap.GetTile<Tile>(colliderTilemap.WorldToCell(gameObject.transform.position));
+        //compare heights; if equal then stop collision
+        print(sortingOrder);
+        if (sortingOrder == height)
+        {
+            print("same layer!");
+            //ignore collision with this object
+        }
+        else
+        {
+            //handle 'entrance' tiles
+            //if certain tiles are on certain layers then they will be treated as 'entrance' tiles and will change the player's height when entering 
+            if (T.name == "TilesetExample_20")
+            {
+                //update player height
+                height = sortingOrder;
+
+                //ignore collisions between player and this object
+                
+            }
+        }
+
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        //restore player height
+
+        //restore collisions
+    }
 }
