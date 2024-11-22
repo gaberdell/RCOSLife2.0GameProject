@@ -352,16 +352,19 @@ public class PlayerMovement : MouseFollow
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("enter");
         Tilemap colliderTilemap = collision.gameObject.GetComponent<Tilemap>();
         int sortingOrder = collision.gameObject.GetComponent<Renderer>().sortingOrder;
         //what tile is player colliding with
         Tile T = colliderTilemap.GetTile<Tile>(colliderTilemap.WorldToCell(gameObject.transform.position));
+        print(T.name);
         //compare heights; if equal then stop collision
-        print(sortingOrder);
+        //(sortingOrder);
         if (sortingOrder == height)
         {
             print("same layer!");
             //ignore collision with this object
+            Physics2D.IgnoreCollision(collision, gameObject.GetComponent<Collider2D>(), true);
         }
         else
         {
@@ -373,7 +376,9 @@ public class PlayerMovement : MouseFollow
                 height = sortingOrder;
 
                 //ignore collisions between player and this object
-                
+                Physics2D.IgnoreCollision(collision, gameObject.GetComponent<Collider2D>(), true);
+                gameObject.GetComponent<Renderer>().sortingOrder = height + 1;
+
             }
         }
 
@@ -381,8 +386,15 @@ public class PlayerMovement : MouseFollow
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        //restore player height
+        print("leave");
+        //restore player height if leaving from a ledge
+        if(height > -2)
+        {
+            height -= 1;//temp
+            gameObject.GetComponent<Renderer>().sortingOrder = height + 1;
+            //restore collisions
+            Physics2D.IgnoreCollision(collision, gameObject.GetComponent<Collider2D>(), false);
+        }
 
-        //restore collisions
     }
 }

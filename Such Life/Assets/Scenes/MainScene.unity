@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: de8dc203-1b7a-4c19-8063-59b5bac6f7c7
+  _id: ba9dfca4-3414-4082-ab65-53e98fea8a39
 --- !u!50 &81271284
 Rigidbody2D:
   serializedVersion: 4
@@ -4543,7 +4543,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3.971231, y: -11.584311}
+  m_Offset: {x: 3.971231, y: -11}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4554,7 +4554,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.984494, y: 7.645809}
+  m_Size: {x: 12.984494, y: 6}
   m_EdgeRadius: 0
 --- !u!61 &1033561159
 BoxCollider2D:
@@ -7929,7 +7929,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isSetID: 0
-  _id: cc5bd5d1-4eae-4466-a2c5-a3163aa6014d
+  _id: 678ea2ba-cd0f-4442-ba40-f03e25631d99
 --- !u!50 &1632195501
 Rigidbody2D:
   serializedVersion: 4
